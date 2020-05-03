@@ -1,4 +1,7 @@
 
 public class test {
-    system.out.println("hellow world");
+    int a=10;
+
+    a = a+10;
+
 }
