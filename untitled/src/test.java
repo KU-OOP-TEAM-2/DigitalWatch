@@ -6,6 +6,4 @@ public class test {
         a = a+10;
         System.out.println("hellw");
     }
-
-
 }
