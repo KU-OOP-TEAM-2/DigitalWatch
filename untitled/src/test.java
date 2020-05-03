@@ -1,8 +1,11 @@
 
 public class test {
-    int a=10;
+    public static void main(String[] args){
+        int a=10;
 
-    a = a+10;
-    System.out.println("hellw");
+        a = a+10;
+        System.out.println("hellw");
+    }
+
 
 }
