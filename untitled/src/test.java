@@ -5,7 +5,7 @@ public class test {
 
         a = a+10;
         System.out.println("hedl0dl00");
-		System.out.println("heldddel00");
+		System.out.println("heldddedsl00");
 
     }
 }
