@@ -9,4 +9,10 @@ public class test1Test extends TestCase {
         int b=5;
         assertEquals(8,t.add(a,b));
     }
+
+    public void testMulti() {
+        int a=3;
+        int b = 5;
+        assertEquals(15,t.multi(a,b));
+    }
 }
