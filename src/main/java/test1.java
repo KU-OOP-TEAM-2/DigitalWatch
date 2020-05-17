@@ -5,7 +5,7 @@ public class test1 {
 
         a =add(a,5);
         a = multi(a,5);
-        System.out.println(a);
+        System.out.println("result :" +a);
     }
 
    int add(int a , int b){return a+b;}
