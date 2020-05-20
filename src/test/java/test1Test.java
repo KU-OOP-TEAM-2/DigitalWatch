@@ -1,5 +1,5 @@
 import junit.framework.TestCase;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 public class test1Test extends TestCase {
 
@@ -19,5 +19,10 @@ public class test1Test extends TestCase {
 
     public void tf() {
         assertEquals(3,t.tf(3));
+    }
+
+    @Test
+    public void one() {
+        assertEquals(1,t.one());
     }
 }
