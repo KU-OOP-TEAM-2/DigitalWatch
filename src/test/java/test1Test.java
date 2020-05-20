@@ -17,8 +17,7 @@ public class test1Test extends TestCase {
         assertEquals(15,t.multi(a,b));
     }
 
-    @Test
-    void tf() {
+    public void tf() {
         assertEquals(3,t.tf(3));
     }
 }
