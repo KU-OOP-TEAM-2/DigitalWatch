@@ -11,4 +11,5 @@ public class test1 {
    int multi(int a,int b){return a*b;}
    int tf(int a){return a;}
    int one(){return 1;}
+    int two(){return 2;}
 }

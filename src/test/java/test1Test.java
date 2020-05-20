@@ -25,4 +25,9 @@ public class test1Test extends TestCase {
     public void one() {
         assertEquals(1,t.one());
     }
+
+    @Test
+    public void two() {
+        assertEquals(2,t.one());
+    }
 }
