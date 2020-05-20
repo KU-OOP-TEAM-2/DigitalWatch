@@ -12,4 +12,5 @@ public class test1 {
    int tf(int a){return a;}
    int one(){return 1;}
     int two(){return 2;}
+    int three(){return 3;}
 }

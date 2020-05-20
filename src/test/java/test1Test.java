@@ -28,6 +28,11 @@ public class test1Test extends TestCase {
 
     @Test
     public void two() {
-        assertEquals(2,t.one());
+        assertEquals(2,t.two());
+    }
+
+    @Test
+    public void three() {
+        assertEquals(3,t.three());
     }
 }
