@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="test1Test" tests="2" skipped="0" failures="1" errors="0" timestamp="2020-05-20T09:24:29" hostname="LAPTOP-JVLL175T" time="0.007">
+<testsuite name="test1Test" tests="2" skipped="0" failures="1" errors="0" timestamp="2020-05-20T09:29:07" hostname="LAPTOP-JVLL175T" time="0.004">
   <properties/>
-  <testcase name="testAdd" classname="test1Test" time="0.002"/>
-  <testcase name="testMulti" classname="test1Test" time="0.004">
+  <testcase name="testAdd" classname="test1Test" time="0.001"/>
+  <testcase name="testMulti" classname="test1Test" time="0.002">
     <failure message="junit.framework.AssertionFailedError: expected:&lt;16&gt; but was:&lt;20&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;16&gt; but was:&lt;20&gt;
 	at junit.framework.Assert.fail(Assert.java:57)
 	at junit.framework.Assert.failNotEquals(Assert.java:329)
