@@ -12,7 +12,7 @@ public class test1Test extends TestCase {
     }
 
     public void testMulti() {
-        int a=3;
+        int a=3;//asdasddd
         int b = 5;
         assertEquals(15,t.multi(a,b));
         assertEquals(20,t.multi(a+1,b));
