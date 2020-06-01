@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1933c4b6-928c-4ca2-81a5-8cbf21a3826b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1/fileContent/fileContent.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/test1Test.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/test1Test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/default-package.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/default-package.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-test1Test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-test1Test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/ATM/ATM.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/ATM/management.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/BankSystem/Account.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/BankSystem/Bank.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/BankSystem/bankofamerica.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/BankSystem/citi.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/BankSystem/kb.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/BankSystem/shinhan.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/GUI/GUIController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/Item/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/Item/Card.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/Item/TrafficCard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/Item/TrafficCard.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/Item/bankofamerica_Book.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/Item/bankofamerica_Card.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/Item/citi_Book.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/Item/citi_Card.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/Item/kb_Book.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/Item/kb_Card.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/Item/shinhan_Book.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/Item/shinhan_Card.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1cWlJrckF45bHNwvg5Zmkz2DFOX" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../test1" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+  </component>
+  <component name="RunManager" selected="Gradle.tt">
+    <configuration name="Plugin" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":runIde" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="tt" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Gradle.tt" />
+      <item itemvalue="Gradle.Plugin" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1933c4b6-928c-4ca2-81a5-8cbf21a3826b" name="Default Changelist" comment="" />
+      <created>1590652161915</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1590652161915</updated>
+      <workItem from="1590652165849" duration="1346000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590735834045">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1590735834045" />
+    <state x="548" y="153" key="FileChooserDialogImpl" timestamp="1590738946226">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="548" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1590738946226" />
+    <state width="1339" height="210" key="GridCell.Tab.0.bottom" timestamp="1590738861602">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1339" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590738861602" />
+    <state width="1339" height="210" key="GridCell.Tab.0.center" timestamp="1590738861601">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1339" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590738861601" />
+    <state width="1339" height="210" key="GridCell.Tab.0.left" timestamp="1590738861601">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1339" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590738861601" />
+    <state width="1339" height="210" key="GridCell.Tab.0.right" timestamp="1590738861602">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1339" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590738861602" />
+    <state width="1327" height="261" key="GridCell.Tab.1.bottom" timestamp="1590736121221">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1327" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590736121221" />
+    <state width="1327" height="261" key="GridCell.Tab.1.center" timestamp="1590736121221">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1327" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1590736121221" />
+    <state width="1327" height="261" key="GridCell.Tab.1.left" timestamp="1590736121221">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1327" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1590736121221" />
+    <state width="1327" height="261" key="GridCell.Tab.1.right" timestamp="1590736121221">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1327" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1590736121221" />
+    <state x="277" y="57" key="SettingsEditor" timestamp="1590675513176">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1590675513176" />
+    <state x="185" y="12" key="new project wizard" timestamp="1590652319296">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="185" y="12" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1590652319296" />
+  </component>
+</project>
