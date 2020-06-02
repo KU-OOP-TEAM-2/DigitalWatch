@@ -4,27 +4,28 @@ import java.util.concurrent.Callable;
 import java.time.*;
 
 public class Tick implements Callable<Void>{
-    Tick(){
+    private static boolean endFlag;
 
+    Tick(){
+        endFlag = false;
     }
+
+    public void setEndFlag(boolean flag){endFlag = flag;}
 
     public Void call(){
         LocalDateTime currentTime,prevTime;
+        currentTime = LocalDateTime.now();
+        prevTime = currentTime;
 
-        //set base time
-        prevTime = LocalDateTime.now();
-
-        int elapesdTime;
-        int checkSecond = 0;
         while(true){
-            //set current time
-            currentTime = LocalDateTime.now();
-
-            // |base-currentTime|
+            if(endFlag){
+                break;
+            }
             Duration duration = Duration.between(prevTime, currentTime);
 
-            elapesdTime = duration.getNano()*1000000;
-
+            int elapesdTime = duration.getNano()*1000000;
+            int checkSecond = 0;
+            int checkMinute = 0;
             //tick per 10millisecond
             if(elapesdTime == 10) {
                 //stopwatch
@@ -36,6 +37,9 @@ public class Tick implements Callable<Void>{
 
                     //calorie check
 
+                    //Timer
+                    ((Timer)ModeManager.SingletonModeManager.getmodes()[2]).decreaseTimer();
+
                     //alarm
                 }
                 //not yet 1 second
@@ -43,9 +47,18 @@ public class Tick implements Callable<Void>{
                     checkSecond++;
                 }
 
-                //set new base time
-                prevTime = LocalDateTime.now();
+                //when duration = 1 minute
+                if(checkMinute == 6000){
+                    checkMinute = 0;
+                    //alarm
+
+                }
+                //not yet 1 minute
+                else{
+                    checkMinute++;
+                }
             }
         }
+        return null;
     }
 }
