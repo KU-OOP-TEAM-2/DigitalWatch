@@ -32,6 +32,10 @@ public class ModeManager {
     }
     //모드매니저
     public static ModeManager SingletonModeManager;
+
+    //새로 추가 함수 Mode배열
+    public Mode[] getmodes(){return modes;}
+
     //Time Alarm Timer Stopwatch Calorie Check 순
     //0     1       2       3       4       5
     private Boolean[] isModeActive;
