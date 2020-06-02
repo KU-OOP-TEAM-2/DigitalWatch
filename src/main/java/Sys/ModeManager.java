@@ -1,5 +1,7 @@
 package Sys;
 
+import org.bouncycastle.i18n.MissingEntryException;
+
 import java.util.*;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
@@ -35,8 +37,8 @@ public class ModeManager {
     //새로 추가 함수 Mode배열
     public Mode[] getmodes(){return modes;}
 
-    //Time Alarm Timer Stopwatch Calorie Check 순
-    //0     1       2       3       4       5
+    //Time Alarm Timer Stopwatch CalorieCheck WorldTime
+    //0     1       2       3       4            5
     private Boolean[] isModeActive;
     private Boolean[] editStatus;//set mode 중 return to default screen시 저장안하기 위해 이 변수로 편집.  //천민수 : 저희 default시 저장 안하는 부분도 있는건가요?
 
@@ -46,24 +48,24 @@ public class ModeManager {
     //각 mode에 대한 index값이 들어가게 됨.
 
     //private Button clickedButton;
-    private Boolean longClickedFlag;
+    //private Boolean longClickedFlag;
     private Boolean buzzerFlag;
-    private int elapsedTime;
+    private float elapsedTime;
     private int ActiveModeCounter;//setMode때 4개의 mode가 활성화되어야만 탈출가능 그때 참조할 변수 active된 mode의 개수
     private int currentCursor;//setMode시에 status값을 바꿀 때 참조할 index
 
     //Mode  Adjust  Forward Reverse
     //0     1       2       3
-    private int Button;
     private boolean isEditMode;
 
     //객체 생성 ms
     private Buzzer buzzer;
 
-    public void setButton(int Button){this.Button = Button;}
-    public int getButton() {return this.Button;}
-
-    public void setLongClickedFlag(boolean flag){longClickedFlag = flag;}
+    // ClickedButton 매개로 주는 것으로
+    //private int Button;
+//    public void setButton(int Button){this.Button = Button;}
+//    public int getButton() {return this.Button;}
+//    public void setLongClickedFlag(boolean flag){longClickedFlag = flag;}
 
 
     public void makeThread(){
@@ -80,16 +82,50 @@ public class ModeManager {
             }
         }
     }
+    public void plus_ElapsedTime(float tt){
+        elapsedTime += tt;
+        return;
+    }
 
-    public void clickButton() {
-        //이건 뭔가요..?
-        if(currentMode==0 && Button==0 && longClickedFlag==false && isEditMode==false){
+    //설정모드에서 5초가 지나면 default화면으로 복귀
+    public void returnToDefault(){
+        elapsedTime++;
+        if(isEditMode && elapsedTime >= 5){
+            switch (currentMode){
+                case 0:
+                    ((Time) modes[1]).saveData();
+                    break;
+                case 1:
+                    ((Alarm) modes[1]).saveAlarm();
+                    break;
+                case 2:
+                    ((Timer) modes[1]).saveTimer();
+                    break;
+                case 4:
+                    ((CalorieCheck) modes[1]).saveCalorieSetting();
+                    break;
+                case 8:
+                    ((Alarm) modes[1]).saveAlarm();
+                    break;
+                default: // 3-stopwatch, 5 worldtime은 set이 없다.
+                    break;
 
+            }
+            isEditMode = !isEditMode;
         }
+    }
+
+    public void clickButton(int Button, boolean longClickedFlag) {
+        //이건 뭔가요..?
+//        if(currentMode==0 && Button==0 && longClickedFlag==false && isEditMode==false){
+//
+//        }
+        elapsedTime=0.0f;
         if(buzzerFlag){// 버저 울릴때
             //아무 버튼이나 들어오면
             if(Button != -1)
                 buzzer.stopBuzzer();
+
         }
         else{
             switch (currentMode){
@@ -134,7 +170,40 @@ public class ModeManager {
                         else if(Button == 3);   //지정된 버튼이 없다.
                     }
                     break;
-                case 2:
+                case 2: //Timer Mode
+
+                    if(isEditMode){
+                        if(Button==0){
+                            ((Timer)modes[2]).changeCursor();
+                        }else if(Button ==1){
+                            ((Timer)modes[2]).saveTimer();
+                            isEditMode = !isEditMode;
+                        }else if(Button==2){
+                            ((Timer)modes[2]).increaseData();
+                        }else if(Button ==3){
+                            ((Timer)modes[2]).decreaseData();
+                        }else{}
+
+                    }
+                    else{
+                        if(Button == 0 && longClickedFlag == true) {    //set Mode로 진입.
+                            currentMode=8;
+                            isEditMode = !isEditMode;
+                        }
+                        else if(Button == 0 && longClickedFlag == false) {    //Mode : changeMode
+                            this.changeMode();
+                        }else if(Button ==1){
+                            ((Timer)modes[2]).cancelTimer();
+                        }else if(Button ==1 && longClickedFlag ==true){ //setTimer 진입
+                            ((Timer)modes[2]).enterEditTimer();
+                            isEditMode= !isEditMode;
+                        }else if(Button==2 ){ //start Timer
+                            ((Timer)modes[2]).start_pauseTimer();
+
+                        }else if(Button ==3){
+
+                        }else{}
+                    }
                     break;
                 case 3: //StopWatch
                         if(Button == 0)
@@ -151,9 +220,9 @@ public class ModeManager {
                     break;
                 case 4:
                     break;
-                case 5:
+                case 5:  //world time
                     break;
-                case 8:
+                case 8: //set Mode
                     break;
                 default:
                     break;

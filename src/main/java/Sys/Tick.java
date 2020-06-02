@@ -21,6 +21,7 @@ public class Tick implements Callable<Void>{
             if(endFlag){
                 break;
             }
+
             Duration duration = Duration.between(prevTime, currentTime);
 
             int elapsedTime = duration.getNano()*1000000;
@@ -31,6 +32,7 @@ public class Tick implements Callable<Void>{
                 //stopwatch
                 ((StopWatch)ModeManager.SingletonModeManager.getmodes()[3]).increaseCurrentTime();
 
+                ModeManager.SingletonModeManager.plus_ElapsedTime(0.01f);//10ms 에 한번씩 더해주게
                 //when duration = 1 second
                 if (checkSecond == 100) {
                     checkSecond = 0;
