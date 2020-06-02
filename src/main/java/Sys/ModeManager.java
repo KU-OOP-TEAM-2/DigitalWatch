@@ -74,10 +74,11 @@ public class ModeManager {
      *
      */
     public void changeMode() {
-        int i=0;
+
         while(true){
-            if(modes[i++].getActive() == true){
-                nowMode = modes[i];
+            currentMode =(currentMode+1)%6;
+            if(modes[currentMode].getActive() == true){
+                nowMode = modes[currentMode];
                 break;
             }
         }
@@ -88,6 +89,8 @@ public class ModeManager {
      */
     public void clcikButton() {
         // TODO implement here
+
+
     }
 
 
