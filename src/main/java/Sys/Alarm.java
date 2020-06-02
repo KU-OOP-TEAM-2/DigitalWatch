@@ -40,7 +40,7 @@ public class Alarm implements Mode{
             LocalDateTime traceCurrentTime;
             LocalTime currentTime;
             while(true){
-                traceCurrentTime = time.getCurrentTime();
+//                traceCurrentTime = time.getCurrentTime();/
                 currentTime = traceCurrentTime.toLocalTime();
                 
                 for(int i=0; i < 4; i++){
