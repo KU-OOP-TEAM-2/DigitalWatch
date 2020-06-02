@@ -12,7 +12,6 @@
   <component name="ChangeListManager">
     <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="Mode manager world time 추가">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +62,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
-  <component name="RunManager" selected="JUnit.test1Test">
+  <component name="RunManager" selected="Application.Main_test">
     <configuration name="Main_test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GUI.Main_test" />
       <module name="git_teampj.main" />
@@ -149,6 +148,20 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="GUI in softwarevv.main" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="softwarevv.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="GUI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="GUI" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="test1Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="git_teampj.test" />
       <option name="PACKAGE_NAME" value="" />
@@ -164,12 +177,14 @@
       <item itemvalue="Gradle.test1Test" />
       <item itemvalue="Gradle.Tests in 'git_teampj'" />
       <item itemvalue="JUnit.test1Test" />
+      <item itemvalue="JUnit.GUI in softwarevv.main" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main_test" />
+        <item itemvalue="JUnit.GUI in softwarevv.main" />
         <item itemvalue="Gradle.Tests in 'git_teampj'" />
         <item itemvalue="JUnit.test1Test" />
-        <item itemvalue="Application.Main_test" />
         <item itemvalue="Gradle.test1Test" />
       </list>
     </recent_temporary>
@@ -243,6 +258,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Mode manager world time 추가" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="972" y="134" key="#Main_test" timestamp="1591081204056">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="972" y="134" key="#Main_test/0.0.2560.1040@0.0.2560.1040" timestamp="1591081204056" />
     <state x="760" y="274" key="#Project_Structure" timestamp="1591076943535">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -292,10 +311,11 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591080644079" />
-    <state x="1002" y="486" key="git4idea.merge.GitPullDialog" timestamp="1591080196600">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="1002" y="361" key="git4idea.merge.GitPullDialog" timestamp="1591081116716">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="752" y="361" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591078691554" />
+    <state x="1002" y="361" key="git4idea.merge.GitPullDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1591081116716" />
     <state x="1002" y="486" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591080196600" />
   </component>
 </project>
