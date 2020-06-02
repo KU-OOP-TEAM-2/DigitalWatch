@@ -13,10 +13,10 @@ public class ModeManager {
     public ModeManager() {
         buzzer = new Buzzer();
         time = new Time();
-        alarm = new Alarm(buzzer, (Time)time);
+        alarm = new Alarm(buzzer, time);
         stopWatch = new StopWatch();
         timer = new Timer();
-       // calorieCheck = new CalorieCheck();
+        calorieCheck = new CalorieCheck();
 
         modes = new Mode[5];
         modes[0] = time;
@@ -25,6 +25,7 @@ public class ModeManager {
         modes[3] = stopWatch;
         modes[4] = calorieCheck;
         nowMode = modes[0];
+        
 
     }
 
@@ -57,15 +58,27 @@ public class ModeManager {
 
     private Mode nowMode;
     //ms
+    
+
+
+
+
+
+
+
+
+
+
 
     /**
      *
      */
     public void changeMode() {
-        int i=0;
+
         while(true){
-            if(modes[++i].getActive() == true){
-                nowMode = modes[i];
+            currentMode =(currentMode+1)%6;
+            if(modes[currentMode].getActive() == true){
+                nowMode = modes[currentMode];
                 break;
             }
         }
@@ -76,6 +89,8 @@ public class ModeManager {
      */
     public void clcikButton() {
         // TODO implement here
+
+
     }
 
 

@@ -41,22 +41,14 @@ public class Time implements Mode{
 
      */
 
-    public void run() {//thread로 돌릴 함수 1초마다 currentTime 값 1씩 증가.
-
-        while(true) {
-            try{
-                Thread.sleep(1000);
-            }catch(Exception e){
-                System.out.println(e.getMessage());
-            }
+    public void timeflow() {//thread로 돌릴 함수 1초마다 currentTime 값 1씩 증가.
 
             if(this.currentTime.plusSeconds(1).getYear()<9999) {
                 this.currentTime=this.currentTime.plusSeconds(1);
             }
             else {
-                this.currentTime=this.currentTime.plusSeconds(1).plusYears(-10000);
+                this.currentTime = this.currentTime.plusSeconds(1).plusYears(-10000);
             }
-        }
     }
 
 

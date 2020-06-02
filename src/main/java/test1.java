@@ -1,5 +1,5 @@
 public class test1 {
-    public void main(){
+    public void main(String[] args){
         int a;
         int c;
         a = 3;
