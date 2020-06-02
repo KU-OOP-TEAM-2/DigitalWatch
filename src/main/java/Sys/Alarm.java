@@ -13,7 +13,7 @@ public class Alarm implements Mode{
 
         //ModeManager에서 사용중인 buzzer를 받아서 사용.
         this.buzzer = buzzer;
-        //Time의 시간을 받아와야지 buzzer를 작동가능.
+        //Time의 시간을 받아와야지 buzzer를 작동가능./
         this.time = (Time)time;
         //cursor==true : Hour || cursor==false: minute.
         isCursorOnHour = true;
