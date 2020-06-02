@@ -10,11 +10,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="Sys, GUI">
-      <change afterPath="$PROJECT_DIR$/.idea/DWSystem.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Sys/CalorieCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="1.8">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/Timer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/Timer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,13 +44,6 @@
       </state>
     </system>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -70,9 +61,22 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
-  <component name="RunManager" selected="Gradle.Tests in 'git_teampj'">
+  <component name="RunManager" selected="JUnit.test1Test">
+    <configuration name="Main_test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GUI.Main_test" />
+      <module name="git_teampj.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="GUI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tests in 'git_teampj'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -145,14 +149,27 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="test1Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="git_teampj.test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="test1Test" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Gradle.git_teampj" />
       <item itemvalue="Gradle.test1Test" />
       <item itemvalue="Gradle.Tests in 'git_teampj'" />
+      <item itemvalue="Application.Main_test" />
+      <item itemvalue="JUnit.test1Test" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.Tests in 'git_teampj'" />
+        <item itemvalue="JUnit.test1Test" />
+        <item itemvalue="Application.Main_test" />
         <item itemvalue="Gradle.test1Test" />
       </list>
     </recent_temporary>
@@ -182,7 +199,21 @@
       <option name="project" value="LOCAL" />
       <updated>1591075393715</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Timer -&gt;Thread 제거">
+      <created>1591075917305</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1591075917305</updated>
+    </task>
+    <task id="LOCAL-00004" summary="1.8">
+      <created>1591076961162</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1591076961162</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -199,21 +230,23 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Sys, GUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sys, GUI" />
+    <MESSAGE value="Timer -&gt;Thread 제거" />
+    <MESSAGE value="1.8" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.8" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="760" y="274" key="#Project_Structure" timestamp="1591074210150">
+    <state x="760" y="274" key="#Project_Structure" timestamp="1591076943535">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="760" y="274" key="#Project_Structure/0.0.2560.1400@0.0.2560.1400" timestamp="1591074210150" />
+    <state x="760" y="274" key="#Project_Structure/0.0.2560.1400@0.0.2560.1400" timestamp="1591076943535" />
     <state x="986" y="314" key="#Tests_in_'git_teampj'" timestamp="1591074182315">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="986" y="314" key="#Tests_in_'git_teampj'/0.0.2560.1400@0.0.2560.1400" timestamp="1591074182315" />
-    <state x="734" y="354" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591073463671">
+    <state x="734" y="354" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591076648908">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="734" y="354" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591073463671" />
+    <state x="734" y="354" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591076648908" />
     <state x="1085" y="405" key="#com.intellij.ide.util.MemberChooser" timestamp="1591074707858">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -222,33 +255,37 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="454" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1591073036048" />
-    <state width="1258" height="405" key="GridCell.Tab.0.bottom" timestamp="1591075201345">
+    <state width="2517" height="520" key="GridCell.Tab.0.bottom" timestamp="1591076965507">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1258" height="405" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591075201345" />
-    <state width="1258" height="405" key="GridCell.Tab.0.center" timestamp="1591075201345">
+    <state width="2517" height="520" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591076965507" />
+    <state width="2517" height="520" key="GridCell.Tab.0.center" timestamp="1591076965507">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1258" height="405" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591075201345" />
-    <state width="1258" height="405" key="GridCell.Tab.0.left" timestamp="1591075201345">
+    <state width="2517" height="520" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591076965507" />
+    <state width="2517" height="520" key="GridCell.Tab.0.left" timestamp="1591076965507">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1258" height="405" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591075201345" />
-    <state width="1258" height="405" key="GridCell.Tab.0.right" timestamp="1591075201345">
+    <state width="2517" height="520" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591076965507" />
+    <state width="2517" height="520" key="GridCell.Tab.0.right" timestamp="1591076965507">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1258" height="405" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591075201345" />
-    <state x="781" y="344" key="SettingsEditor" timestamp="1591074286297">
+    <state width="2517" height="520" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591076965507" />
+    <state x="781" y="344" key="SettingsEditor" timestamp="1591076609638">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="781" y="344" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1591074286297" />
-    <state x="872" y="432" key="Vcs.Push.Dialog.v2" timestamp="1591075404504">
+    <state x="781" y="344" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1591076609638" />
+    <state x="872" y="432" key="Vcs.Push.Dialog.v2" timestamp="1591076973632">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591075404504" />
+    <state x="872" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591076973632" />
     <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591073284209">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591073284209" />
+    <state x="1002" y="486" key="git4idea.merge.GitPullDialog" timestamp="1591075990163">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1002" y="486" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591075990163" />
   </component>
 </project>
