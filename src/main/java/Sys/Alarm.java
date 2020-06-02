@@ -59,10 +59,10 @@ public class Alarm implements Mode{
         currentTime=traceCurrentTime.toLocalTime();
         for(int i=0; i < 4; i++){
             if(currentTime.compareTo(alarm[i].requestExpirationTime()) == 0){
-                buzzer.beepBuzzer();
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
 
