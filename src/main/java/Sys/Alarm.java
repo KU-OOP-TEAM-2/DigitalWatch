@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 public class Alarm implements Mode{
 
     //ModeManager에서 Buzzer객체
-    public Alarm(Buzzer buzzer, Time time) {
+    public Alarm(Buzzer buzzer, Mode time) {
 
         //ModeManager에서 사용중인 buzzer를 받아서 사용.
         this.buzzer = buzzer;
@@ -24,10 +24,9 @@ public class Alarm implements Mode{
         }
 
         //Thread
-        //alarmThread = new AlarmThread("alarmThread");
+        alarmThread = new AlarmThread("alarmThread");
     }
 
-    /*
     private class AlarmThread implements Runnable{
         Thread t;
         
@@ -50,21 +49,7 @@ public class Alarm implements Mode{
                 }
             }
         }
-    }*/
-
-    public boolean checkAlarmBuzz(){
-        LocalDateTime traceCurrentTime;
-        LocalTime currentTime;
-        traceCurrentTime = time.getCurrentTime();
-        currentTime=traceCurrentTime.toLocalTime();
-        for(int i=0; i < 4; i++){
-            if(currentTime.compareTo(alarm[i].requestExpirationTime()) == 0){
-                return true;
-            }
-        }
-        return false;
     }
-
 
 
     
@@ -79,7 +64,7 @@ public class Alarm implements Mode{
     private LocalTime copyOfAlarmTimer;
 
     //추가 - 변수
-    //private AlarmThread alarmThread;
+    private AlarmThread alarmThread;
 
     //추가 - 변수
     private Buzzer buzzer;
@@ -152,10 +137,10 @@ public class Alarm implements Mode{
     }
 
     /**
-     *GUI에서 사용할 커서.
+     *
      */
 
-    //
+    //GUI에서 사용할 커서.
     public boolean isCursorHour(){
         return isCursorOnHour;
     }
@@ -187,6 +172,5 @@ public class Alarm implements Mode{
     public boolean getActive(){
         return isActivated;
     }
-
 
 }
