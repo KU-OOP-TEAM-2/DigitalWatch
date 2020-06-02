@@ -10,7 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="gitnore">
+    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sys/Alarm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/Alarm.java" afterDir="false" />
     </list>
@@ -234,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591081222368</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="gitnore">
+      <created>1591085333116</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1591085333116</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -275,6 +282,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1085" y="405" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1591074707858" />
+    <state x="794" y="86" key="CommitChangelistDialog2" timestamp="1591085332366">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="794" y="86" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1591085332366" />
     <state x="1060" y="454" key="FileChooserDialogImpl" timestamp="1591073036048">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -312,10 +323,11 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591082108336" />
-    <state x="1002" y="486" key="git4idea.merge.GitPullDialog" timestamp="1591080196600">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="1002" y="361" key="git4idea.merge.GitPullDialog" timestamp="1591086129152">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="752" y="361" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591078691554" />
+    <state x="1002" y="361" key="git4idea.merge.GitPullDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1591086129152" />
     <state x="1002" y="486" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591080196600" />
     <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1591081751999">
       <screen x="0" y="0" width="2560" height="1400" />

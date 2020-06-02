@@ -50,8 +50,6 @@ public class Alarm implements Mode{
             }
         }
     }
-
-
     
     private AlarmTimer alarm[];
 
@@ -64,9 +62,6 @@ public class Alarm implements Mode{
     private LocalTime copyOfAlarmTimer;
 
     //추가 - 변수
-    private AlarmThread alarmThread;
-
-    //추가 - 변수
     private Buzzer buzzer;
 
     private Time time;
@@ -76,27 +71,10 @@ public class Alarm implements Mode{
     
     
     //requestNextAlarm, requestFirstAlarm는 지울것임 (시퀀스 다이어그램 수정도 같이..)
-    public LocalTime requestNextAlarm_2(){
+    public LocalTime changeAlarm(){
         currentAlarmTimerIndex = (currentAlarmTimerIndex + 1) % 4;
         return alarm[currentAlarmTimerIndex].requestExpirationTime();
     }
-
-    public LocalTime requestNextAlarm() {
-        this.currentAlarmTimerIndex = (this.currentAlarmTimerIndex+1) % 4;
-        LocalTime time = alarm[currentAlarmTimerIndex].requestExpirationTime();
-        return time;
-
-        //어떤 Type을 modeManager에 전달해줄지..?
-        //여기가 display를 사용하는 주체가 되는것..?
-    }
-
-
-    public LocalTime requestFirstAlarm() {
-        this.currentAlarmTimerIndex = 0;
-        LocalTime time = alarm[currentAlarmTimerIndex].requestExpirationTime();
-        return time;
-    }
-
 
     public void turnOnOffAlarm() {
         alarm[currentAlarmTimerIndex].toggleAlarmTimer();
@@ -172,8 +150,5 @@ public class Alarm implements Mode{
     public boolean getActive(){
         return isActivated;
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> 6812e8ea2251d205ba169896cac135060f5e1855
 }
