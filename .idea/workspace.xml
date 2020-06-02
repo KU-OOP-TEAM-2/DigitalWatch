@@ -10,8 +10,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="Mode manager 정리">
+    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="ModeManger getmmodes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/Tick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/Tick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/Timer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/Timer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -226,7 +228,35 @@
       <option name="project" value="LOCAL" />
       <updated>1591080918788</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="gitnore">
+      <created>1591081222368</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1591081222368</updated>
+    </task>
+    <task id="LOCAL-00008" summary="clcikButton">
+      <created>1591082339271</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1591082339271</updated>
+    </task>
+    <task id="LOCAL-00009" summary="ModeManger 변수">
+      <created>1591087389673</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1591087389673</updated>
+    </task>
+    <task id="LOCAL-00010" summary="ModeManger getmmodes">
+      <created>1591087617053</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1591087617053</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -247,7 +277,11 @@
     <MESSAGE value="1.8" />
     <MESSAGE value="Mode manager world time 추가" />
     <MESSAGE value="Mode manager 정리" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mode manager 정리" />
+    <MESSAGE value="gitnore" />
+    <MESSAGE value="clcikButton" />
+    <MESSAGE value="ModeManger 변수" />
+    <MESSAGE value="ModeManger getmmodes" />
+    <option name="LAST_COMMIT_MESSAGE" value="ModeManger getmmodes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="760" y="274" key="#Project_Structure" timestamp="1591076943535">
@@ -270,39 +304,47 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="454" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1591073036048" />
-    <state width="2517" height="520" key="GridCell.Tab.0.bottom" timestamp="1591081098894">
+    <state width="2517" height="520" key="GridCell.Tab.0.bottom" timestamp="1591081969925">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="520" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591081098894" />
-    <state width="2517" height="520" key="GridCell.Tab.0.center" timestamp="1591081098894">
+    <state width="2517" height="520" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591081969925" />
+    <state width="2517" height="520" key="GridCell.Tab.0.center" timestamp="1591081969925">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="520" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591081098894" />
-    <state width="2517" height="520" key="GridCell.Tab.0.left" timestamp="1591081098893">
+    <state width="2517" height="520" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591081969925" />
+    <state width="2517" height="520" key="GridCell.Tab.0.left" timestamp="1591081969925">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="520" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591081098893" />
-    <state width="2517" height="520" key="GridCell.Tab.0.right" timestamp="1591081098894">
+    <state width="2517" height="520" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591081969925" />
+    <state width="2517" height="520" key="GridCell.Tab.0.right" timestamp="1591081969925">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="520" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591081098894" />
+    <state width="2517" height="520" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591081969925" />
+    <state x="248" y="121" key="MergeDialog" timestamp="1591082012879">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="248" y="121" key="MergeDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591082012879" />
     <state x="781" y="344" key="SettingsEditor" timestamp="1591076609638">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="781" y="344" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1591076609638" />
-    <state x="872" y="432" key="Vcs.Push.Dialog.v2" timestamp="1591080930713">
+    <state x="872" y="432" key="Vcs.Push.Dialog.v2" timestamp="1591087443831">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="654" y="321" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591078515772" />
-    <state x="872" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591080930713" />
-    <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591080967702">
+    <state x="872" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591087443831" />
+    <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591085881809">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591080967702" />
-    <state x="1002" y="486" key="git4idea.merge.GitPullDialog" timestamp="1591080196600">
+    <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591085881809" />
+    <state x="1002" y="486" key="git4idea.merge.GitPullDialog" timestamp="1591084716215">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="752" y="361" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591078691554" />
-    <state x="1002" y="486" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591080196600" />
+    <state x="1002" y="486" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591084716215" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1591081751999">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1591081751999" />
   </component>
 </project>

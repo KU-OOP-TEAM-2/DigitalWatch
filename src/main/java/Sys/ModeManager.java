@@ -1,6 +1,10 @@
 package Sys;
 
 import java.util.*;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 /**
  *
@@ -23,9 +27,14 @@ public class ModeManager {
         modes[4] = new CalorieCheck();
         modes[5] =new WorldTime();
         nowMode = modes[0];
-        
+        SingletonModeManager=this;
         isEditMode = false;
     }
+    //모드매니저
+    public static ModeManager SingletonModeManager;
+
+    //새로 추가 함수 Mode배열
+    public Mode[] getmodes(){return modes;}
 
     //Time Alarm Timer Stopwatch Calorie Check 순
     //0     1       2       3       4       5
@@ -56,7 +65,6 @@ public class ModeManager {
 
     private Mode nowMode;
     //ms
-    
 
     public void setButton(int Button){this.Button = Button;}
     public int getButton() {return this.Button;}
@@ -64,7 +72,11 @@ public class ModeManager {
     public void setLongClickedFlag(boolean flag){longClickedFlag = flag;}
 
 
-
+    public void makeThread(){
+        Tick task = new Tick();
+        ExecutorService service = Executors.newFixedThreadPool(2);
+        Future<Void> future = service.submit(task);
+    }
 
 
 
@@ -89,6 +101,42 @@ public class ModeManager {
         // TODO implement here
         if(currentMode==0 && Button==0 && longClickedFlag==false && isEditMode==false){
 
+        }
+        if(buzzerFlag){// 버저 울릴때
+            //stop buzz
+        }
+        else{
+            switch (currentMode){
+                case 0://Time 모드  일때
+                    if(isEditMode){
+                        //button 1234
+                    }
+                    else{
+                        //button 1234
+                    }
+                    break;
+                
+                case 1://알람 모드  일때
+                    if(isEditMode){
+                        //button 1234
+                    }
+                    else{
+                        //button 1234
+                    }
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 8:
+                    break;
+                default:
+                    break;
+            }
         }
 
 
