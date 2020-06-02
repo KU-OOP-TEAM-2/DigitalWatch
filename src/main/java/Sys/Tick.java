@@ -36,6 +36,8 @@ public class Tick implements Callable<Void>{
                     //time
 
                     //calorie check
+
+                    //
                 }
                 //not yet 1 second
                 else {
