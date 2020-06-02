@@ -27,10 +27,11 @@ public class ModeManager {
         modes[4] = new CalorieCheck();
         modes[5] =new WorldTime();
         nowMode = modes[0];
-        
+        SingletonModeManager=this;
         isEditMode = false;
     }
-
+    //모드매니저
+    public static ModeManager SingletonModeManager;
     //Time Alarm Timer Stopwatch Calorie Check 순
     //0     1       2       3       4       5
     private Boolean[] isModeActive;
