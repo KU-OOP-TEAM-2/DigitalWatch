@@ -17,13 +17,14 @@ public class ModeManager {
         stopWatch = new StopWatch();
         timer = new Timer();
         calorieCheck = new CalorieCheck();
-
+        worldTime= new WorldTime();
         modes = new Mode[5];
         modes[0] = time;
         modes[1] = alarm;
         modes[2] = timer;
         modes[3] = stopWatch;
         modes[4] = calorieCheck;
+        modes[5] =worldTime;
         nowMode = modes[0];
         
 
@@ -74,7 +75,6 @@ public class ModeManager {
      *
      */
     public void changeMode() {
-
         while(true){
             currentMode =(currentMode+1)%6;
             if(modes[currentMode].getActive() == true){

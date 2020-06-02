@@ -10,9 +10,40 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="add Calorie Check">
+    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="change Mode">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/CalorieCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/CalorieCheck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/GUI/Alarm_Pane$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/GUI/Alarm_Pane$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/GUI/Alarm_Pane.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/GUI/CalorieCheck_Pane$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/GUI/CalorieCheck_Pane$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/GUI/CalorieCheck_Pane.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/GUI/ImageDir.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/GUI/Main_test$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/GUI/Main_test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/GUI/Stopwatch_Pane$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/GUI/Stopwatch_Pane$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/GUI/Stopwatch_Pane.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/GUI/TimeKeeping_Pane$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/GUI/TimeKeeping_Pane$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/GUI/TimeKeeping_Pane.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/GUI/Timer_Pane$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/GUI/Timer_Pane$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/GUI/Timer_Pane.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/GUI/WorldTime_Pane$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/GUI/WorldTime_Pane$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/GUI/WorldTime_Pane.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/GUI/watchGUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Sys/Alarm$AlarmThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Sys/Alarm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Sys/AlarmTimer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Sys/Buzzer$BuzzerThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Sys/Buzzer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Sys/City.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Sys/Mode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Sys/Time.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/WorldTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/WorldTime.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,19 +306,19 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="781" y="344" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1591076609638" />
-    <state x="654" y="321" key="Vcs.Push.Dialog.v2" timestamp="1591078515772">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="654" y="321" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591078515772" />
-    <state x="872" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591076973632" />
-    <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591073284209">
+    <state x="872" y="432" key="Vcs.Push.Dialog.v2" timestamp="1591080118220">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591073284209" />
-    <state x="752" y="361" key="git4idea.merge.GitPullDialog" timestamp="1591078691554">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="654" y="321" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591078515772" />
+    <state x="872" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591080118220" />
+    <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591080125114">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591080125114" />
+    <state x="1002" y="486" key="git4idea.merge.GitPullDialog" timestamp="1591080196600">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="752" y="361" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591078691554" />
-    <state x="1002" y="486" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591075990163" />
+    <state x="1002" y="486" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591080196600" />
   </component>
 </project>
