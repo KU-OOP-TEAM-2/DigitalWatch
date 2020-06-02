@@ -1,6 +1,10 @@
 package Sys;
 
 import java.util.*;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 /**
  *
@@ -56,7 +60,6 @@ public class ModeManager {
 
     private Mode nowMode;
     //ms
-    
 
     public void setButton(int Button){this.Button = Button;}
     public int getButton() {return this.Button;}
@@ -64,7 +67,11 @@ public class ModeManager {
     public void setLongClickedFlag(boolean flag){longClickedFlag = flag;}
 
 
-
+    public void makeThread(){
+        Tick task = new Tick();
+        ExecutorService service = Executors.newFixedThreadPool(2);
+        Future<Void> future = service.submit(task);
+    }
 
 
 
