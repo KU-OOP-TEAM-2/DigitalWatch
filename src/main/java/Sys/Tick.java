@@ -38,7 +38,7 @@ public class Tick implements Callable<Void>{
                     //calorie check
 
                     //Timer
-                    ModeManager.SingletonModeManager
+                    ((Timer)ModeManager.SingletonModeManager.getmodes()[2]).decreaseTimer();
                 }
                 //not yet 1 second
                 else {

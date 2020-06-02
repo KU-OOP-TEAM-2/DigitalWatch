@@ -10,9 +10,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="ModeManger 변수">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" afterDir="false" />
+    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="ModeManger getmmodes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sys/Tick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/Tick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/Timer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/Timer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591087389673</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="ModeManger getmmodes">
+      <created>1591087617053</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1591087617053</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -272,7 +280,8 @@
     <MESSAGE value="gitnore" />
     <MESSAGE value="clcikButton" />
     <MESSAGE value="ModeManger 변수" />
-    <option name="LAST_COMMIT_MESSAGE" value="ModeManger 변수" />
+    <MESSAGE value="ModeManger getmmodes" />
+    <option name="LAST_COMMIT_MESSAGE" value="ModeManger getmmodes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="760" y="274" key="#Project_Structure" timestamp="1591076943535">

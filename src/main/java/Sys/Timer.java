@@ -123,8 +123,8 @@ public class Timer implements  Mode{
         saveTimerFlag=true;
     }
 
-    //
-    private void decreaseTimer() {
+    //public으로 바꿈
+    public void decreaseTimer() {
         // TODO implement here
         if(pauseTimerFlag){
             return;
