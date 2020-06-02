@@ -90,6 +90,42 @@ public class ModeManager {
         if(currentMode==0 && Button==0 && longClickedFlag==false && isEditMode==false){
 
         }
+        if(buzzerFlag){// 버저 울릴때
+            //stop buzz
+        }
+        else{
+            switch (currentMode){
+                case 0://Time 모드  일때
+                    if(isEditMode){
+                        //button 1234
+                    }
+                    else{
+                        //button 1234
+                    }
+                    break;
+                
+                case 1://알람 모드  일때
+                    if(isEditMode){
+                        //button 1234
+                    }
+                    else{
+                        //button 1234
+                    }
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 8:
+                    break;
+                default:
+                    break;
+            }
+        }
 
 
     }
