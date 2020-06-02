@@ -10,7 +10,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="" />
+    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,6 +45,11 @@
     </system>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1ckVJvK3m1JWo3Gh7qo5Cp32Rep" />
@@ -273,7 +281,21 @@
       <option name="project" value="LOCAL" />
       <updated>1591106961300</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Alarm, StopWatch 완성, ModeManager, Tick부분 추가.">
+      <created>1591107036912</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1591107036912</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Alarm, StopWatch 완성, ModeManager, Tick부분 추가.">
+      <created>1591107147106</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1591107147106</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -298,7 +320,8 @@
     <MESSAGE value="clcikButton" />
     <MESSAGE value="ModeManger 변수" />
     <MESSAGE value="ModeManger getmmodes" />
-    <option name="LAST_COMMIT_MESSAGE" value="ModeManger getmmodes" />
+    <MESSAGE value="Alarm, StopWatch 완성, ModeManager, Tick부분 추가." />
+    <option name="LAST_COMMIT_MESSAGE" value="Alarm, StopWatch 완성, ModeManager, Tick부분 추가." />
   </component>
   <component name="WindowStateProjectService">
     <state x="760" y="274" key="#Project_Structure" timestamp="1591076943535">
@@ -317,10 +340,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1085" y="405" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1591074707858" />
-    <state x="794" y="86" key="CommitChangelistDialog2" timestamp="1591107025392">
+    <state x="794" y="86" key="CommitChangelistDialog2" timestamp="1591107146397">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="794" y="86" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1591107025392" />
+    <state x="794" y="86" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1591107146397" />
     <state x="1060" y="454" key="FileChooserDialogImpl" timestamp="1591073036048">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -349,11 +372,11 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="781" y="344" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1591076609638" />
-    <state x="872" y="321" key="Vcs.Push.Dialog.v2" timestamp="1591106967477">
+    <state x="872" y="321" key="Vcs.Push.Dialog.v2" timestamp="1591107171003">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="654" y="321" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591078515772" />
-    <state x="872" y="321" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1591106967477" />
+    <state x="872" y="321" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1591107171003" />
     <state x="872" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591087443831" />
     <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591085881809">
       <screen x="0" y="0" width="2560" height="1400" />

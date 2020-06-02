@@ -109,12 +109,12 @@ public class ModeManager {
                            ((Alarm) modes[1]).saveAlarm();
                            isEditMode = !isEditMode;
                         }
-                        else if(Button == 0) {  //Mode를 눌렀을 때 저장하고 defualtScreen으로.
+                        else if(Button == 0)    //Mode : Cursor 옮김
+                            ((Alarm)modes[1]).changeCursor();
+                        else if(Button == 1) {  //Adjust를 눌렀을 때 저장하고 defualtScreen으로.
                             ((Alarm) modes[1]).saveAlarm();
                             isEditMode = !isEditMode;
                         }
-                        else if(Button == 1)    //Adjust : Cursor 옮김
-                            ((Alarm)modes[1]).changeCursor();
                         else if(Button == 2)    //Forward : Cursor의 데이터를 증가시킴.
                             ((Alarm)modes[1]).increaseAlarmTime();
                         else if(Button == 3)    //Reverse : Cursor의 데이터를 감소시킴.
@@ -139,15 +139,15 @@ public class ModeManager {
                 case 3: //StopWatch
                         if(Button == 0)
                             this.changeMode();  //Mode : changeMode
-                        if(Button == 1 && !( ((StopWatch)modes[3]).getIsPaused() ))  //Adjust 장타 : resume 되어있었다면 laptime save.
+                        else if(Button == 1 && !( ((StopWatch)modes[3]).getIsPaused() ))  //Adjust 장타 : resume 되어있었다면 laptime save.
                             ((StopWatch)modes[3]).lapStopwatch();
-                        if(Button == 1 && ((StopWatch)modes[3]).getIsPaused()) //Adjust : paused라면 reset.
+                        else if(Button == 1 && ((StopWatch)modes[3]).getIsPaused()) //Adjust : paused라면 reset.
                             ((StopWatch)modes[3]).resetStopwatch();
-                        if(Button == 2 && ((StopWatch)modes[3]).getIsPaused())  //Forward : puased라면 start. , 사실 Resume이나 Start나 operation 내부 동작은 같다...
+                        else if(Button == 2 && ((StopWatch)modes[3]).getIsPaused())  //Forward : puased라면 start. , 사실 Resume이나 Start나 operation 내부 동작은 같다...
                             ((StopWatch)modes[3]).startStopwatch();
-                        if(Button == 2 && !( ((StopWatch)modes[3]).getIsPaused() )) //Forward : paused가 아니라면 pause.
+                        else if(Button == 2 && !( ((StopWatch)modes[3]).getIsPaused() )) //Forward : paused가 아니라면 pause.
                             ((StopWatch)modes[3]).pauseStopwatch();
-                        if(Button == 3);    //지정된 버튼이 없다.
+                        else if(Button == 3);    //지정된 버튼이 없다.
                     break;
                 case 4:
                     break;
