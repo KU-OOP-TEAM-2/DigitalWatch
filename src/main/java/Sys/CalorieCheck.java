@@ -1,14 +1,13 @@
 package Sys;
 
-//package ~~~
-
+import java.time.*;
 import java.util.*;
 
 /*
 import GUI class;
 import Time class;
  */
-public class CalorieCheck {
+public class CalorieCheck implements Mode{
 
     /**
      * Default constructor
@@ -40,8 +39,8 @@ public class CalorieCheck {
     /**
      *
      */
-    private int Calorie;
-    public int getCalorie() {return Calorie;}
+    private double Calorie;
+    public double getCalorie() {return Calorie;}
     public void setCalorie(int Calorie){this.Calorie = Calorie;}
 
     /**
@@ -66,6 +65,8 @@ public class CalorieCheck {
         cursor = !cursor;
     }
 
+    public void setActive(boolean act) {isActivated = act;};
+    public boolean getActive() {return isActivated;};
     /**
      *
      */
@@ -155,5 +156,9 @@ public class CalorieCheck {
         Speed = 5;
         Weight = 60;
         Calorie = 0;
+    }
+
+    private void calculateCalorie(){
+        Calorie = 0.0157 * ( ( 0.1 * Speed + 3.5 ) /3.5 ) * Weight * CalorieTime.getSecond();
     }
 }
