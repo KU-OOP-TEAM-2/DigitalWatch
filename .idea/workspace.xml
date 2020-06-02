@@ -12,7 +12,7 @@
   <component name="ChangeListManager">
     <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="gitnore">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/Alarm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/Alarm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
