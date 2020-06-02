@@ -11,84 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="Sys, GUI">
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/test1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/test-instrumented/test1Test.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/idea-sandbox/plugins-test/git_teampj/lib/annotations-13.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/idea-sandbox/plugins-test/git_teampj/lib/git_teampj-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/idea-sandbox/plugins-test/git_teampj/lib/kotlin-stdlib-1.3.72.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/idea-sandbox/plugins-test/git_teampj/lib/kotlin-stdlib-common-1.3.72.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/idea-sandbox/plugins-test/git_teampj/lib/kotlin-stdlib-jdk7-1.3.72.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/idea-sandbox/plugins-test/git_teampj/lib/kotlin-stdlib-jdk8-1.3.72.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/build-history.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/last-build.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/build-history.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/last-build.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/kotlin/gitteampj10SNAPSHOTjar-classes.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/libs/git_teampj-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/patchedPluginXmlFiles/plugin.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/META-INF/plugin.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/tmp/jar/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/classes/GUI/Alarm_Pane$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/classes/GUI/Alarm_Pane$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/classes/GUI/Alarm_Pane.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/classes/GUI/CalorieCheck_Pane$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/classes/GUI/CalorieCheck_Pane$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/classes/GUI/CalorieCheck_Pane.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/classes/GUI/ImageDir.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/classes/GUI/Main_test$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/classes/GUI/Main_test.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/classes/GUI/Stopwatch_Pane$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/classes/GUI/Stopwatch_Pane$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/classes/GUI/Stopwatch_Pane.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/classes/GUI/TimeKeeping_Pane$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/classes/GUI/TimeKeeping_Pane$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/classes/GUI/TimeKeeping_Pane.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/classes/GUI/Timer_Pane$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/classes/GUI/Timer_Pane$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/classes/GUI/Timer_Pane.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/classes/GUI/WorldTime_Pane$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/classes/GUI/WorldTime_Pane$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/classes/GUI/WorldTime_Pane.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/classes/GUI/watchGUI.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/classes/Sys/Alarm$AlarmThread.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/classes/Sys/Alarm.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/classes/Sys/AlarmTimer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/classes/Sys/Buzzer$BuzzerThread.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/classes/Sys/Buzzer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/classes/Sys/City.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/classes/Sys/Mode.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/classes/Sys/Time.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/resources/META-INF/plugin.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/Alarm_Pane.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/CalorieCheck_Pane.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/ImageDir.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/Main_test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/Stopwatch_Pane.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/TimeKeeping_Pane.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/Timer_Pane.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/WorldTime_Pane.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/watchGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ImageFiles/alphaFSeg_18.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ImageFiles/alphaNSeg_18.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ImageFiles/clock45.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ImageFiles/clockDead45.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ImageFiles/colon_14.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ImageFiles/colon_45.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ImageFiles/number0Seg_18.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ImageFiles/number0Seg_45.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ImageFiles/seg14Dead_18.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ImageFiles/seg14Dead_45.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Sys/Alarm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Sys/AlarmTimer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Sys/Buzzer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Sys/City.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Sys/Mode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Sys/StopWatch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Sys/Time.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Sys/Timer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Sys/WorldTime.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/Timer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/Timer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591074886854</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Sys, GUI">
+      <created>1591075393715</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1591075393715</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -302,10 +233,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="781" y="344" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1591074286297" />
-    <state x="872" y="432" key="Vcs.Push.Dialog.v2" timestamp="1591074905462">
+    <state x="872" y="432" key="Vcs.Push.Dialog.v2" timestamp="1591075404504">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591074905462" />
+    <state x="872" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591075404504" />
     <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591073284209">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
