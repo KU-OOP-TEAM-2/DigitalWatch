@@ -75,11 +75,11 @@ public class Alarm implements Mode{
     public boolean isAlarmTimeCheck(){
         LocalDateTime traceCurrentTime;
         LocalTime currentTime;
-        int sec;
         traceCurrentTime = time.getCurrentTime();
         currentTime = traceCurrentTime.toLocalTime();
 
         for(int i=0;i<4;i++){
+            //LocalTime이 xx:xx:00이고 현재시간과 expirationTime을 비교해서 두 조건 충족.
             if(currentTime.getSecond() == 0 && currentTime.compareTo(alarm[i].requestExpirationTime())==-0) {
                 buzzer.beepBuzzer();
                 return true;
@@ -87,8 +87,7 @@ public class Alarm implements Mode{
         }
         return false;
     }
-    
-    //requestNextAlarm, requestFirstAlarm는 지울것임 (시퀀스 다이어그램 수정도 같이..)
+
     public LocalTime changeAlarm(){
         currentAlarmTimerIndex = (currentAlarmTimerIndex + 1) % 4;
         return alarm[currentAlarmTimerIndex].requestExpirationTime();
@@ -103,12 +102,7 @@ public class Alarm implements Mode{
      *
      */
     public void enterEditAlarm() {
-        //
         copyOfAlarmTimer = this.alarm[currentAlarmTimerIndex].requestExpirationTime();
-
-        //깜박이는 커서 display...
-        //copyOfAlarmTimer를 사용해서.
-
     }
 
     /**
@@ -130,6 +124,11 @@ public class Alarm implements Mode{
             copyOfAlarmTimer = copyOfAlarmTimer.minusHours(1);
         else
             copyOfAlarmTimer = copyOfAlarmTimer.minusMinutes(1);
+    }
+
+    //현재 보여줄 AlarmTimer.
+    public LocalTime getCopyOfAlarmTimer(){
+        return copyOfAlarmTimer;
     }
 
     /**

@@ -26,7 +26,6 @@ public class ModeManager {
         modes[3] = new StopWatch();
         modes[4] = new CalorieCheck();
         modes[5] =new WorldTime();
-        nowMode = modes[0];
         SingletonModeManager=this;
         isEditMode = false;
     }
@@ -61,11 +60,6 @@ public class ModeManager {
     //객체 생성 ms
     private Buzzer buzzer;
 
-    //private CalorieCheck calorieCheck;
-
-    private Mode nowMode;
-    //ms
-
     public void setButton(int Button){this.Button = Button;}
     public int getButton() {return this.Button;}
 
@@ -78,27 +72,17 @@ public class ModeManager {
         Future<Void> future = service.submit(task);
     }
 
-
-
-
-    /**
-     *
-     */
     public void changeMode() {
         while(true){
-            currentMode =(currentMode+1)%6;
+            currentMode = (currentMode+1)%6;
             if(modes[currentMode].getActive() == true){
-                nowMode = modes[currentMode];
                 break;
             }
         }
     }
 
-    /**
-     *
-     */
-    public void clcikButton() {
-        // TODO implement here
+    public void clickButton() {
+
         if(currentMode==0 && Button==0 && longClickedFlag==false && isEditMode==false){
 
         }
@@ -118,6 +102,7 @@ public class ModeManager {
                 
                 case 1://알람 모드  일때
                     if(isEditMode){
+                        if()
                         //button 1234
                     }
                     else{
