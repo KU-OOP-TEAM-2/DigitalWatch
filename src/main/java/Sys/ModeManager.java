@@ -11,20 +11,17 @@ public class ModeManager {
      * Default constructor
      */
     public ModeManager() {
+
         buzzer = new Buzzer();
-        time = new Time();
-        alarm = new Alarm(buzzer, time);
-        stopWatch = new StopWatch();
-        timer = new Timer();
-        calorieCheck = new CalorieCheck();
-        worldTime= new WorldTime();
+
+
         modes = new Mode[5];
-        modes[0] = time;
-        modes[1] = alarm;
-        modes[2] = timer;
-        modes[3] = stopWatch;
-        modes[4] = calorieCheck;
-        modes[5] =worldTime;
+        modes[0] = new Time();
+        modes[1] = new Alarm(buzzer, modes[0]);
+        modes[2] = new Timer();
+        modes[3] = new StopWatch();
+        modes[4] = new CalorieCheck();
+        modes[5] =new WorldTime();
         nowMode = modes[0];
         
 
@@ -49,12 +46,7 @@ public class ModeManager {
 
     //객체 생성 ms
     private Buzzer buzzer;
-    private Mode time;
-    private Mode alarm;
-    private Mode stopWatch;
-    private Mode timer;
-    private Mode calorieCheck;
-    private WorldTime worldTime;
+
     //private CalorieCheck calorieCheck;
 
     private Mode nowMode;
