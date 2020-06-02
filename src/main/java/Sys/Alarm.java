@@ -137,10 +137,10 @@ public class Alarm implements Mode{
     }
 
     /**
-     *
+     *GUI에서 사용할 커서.
      */
 
-    //GUI에서 사용할 커서.
+    //
     public boolean isCursorHour(){
         return isCursorOnHour;
     }
