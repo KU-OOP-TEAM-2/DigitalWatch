@@ -299,10 +299,11 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591080967702" />
-    <state x="1002" y="486" key="git4idea.merge.GitPullDialog" timestamp="1591080196600">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="1002" y="361" key="git4idea.merge.GitPullDialog" timestamp="1591084611874">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="752" y="361" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591078691554" />
+    <state x="1002" y="361" key="git4idea.merge.GitPullDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1591084611874" />
     <state x="1002" y="486" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591080196600" />
   </component>
 </project>
