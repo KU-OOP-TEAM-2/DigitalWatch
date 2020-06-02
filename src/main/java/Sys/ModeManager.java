@@ -24,10 +24,12 @@ public class ModeManager {
         modes[5] =new WorldTime();
         nowMode = modes[0];
         
-
+        isEditMode = false;
     }
 
-    private Boolean[] isModeActive;//Time Alarm Timer Stopwatch Calorie Check 순
+    //Time Alarm Timer Stopwatch Calorie Check 순
+    //0     1       2       3       4       5
+    private Boolean[] isModeActive;
     private Boolean[] editStatus;//set mode 중 return to default screen시 저장안하기 위해 이 변수로 편집.
 
     private Mode[] modes;
@@ -42,7 +44,10 @@ public class ModeManager {
     private int ActiveModeCounter;//setMode때 4개의 mode가 활성화되어야만 탈출가능 그때 참조할 변수 active된 mode의 개수
     private int currentCursor;//setMode시에 status값을 바꿀 때 참조할 index
 
-
+    //Mode  Adjust  Forward Reverse
+    //0     1       2       3
+    private int Button;
+    private boolean isEditMode;
 
     //객체 생성 ms
     private Buzzer buzzer;
@@ -53,9 +58,10 @@ public class ModeManager {
     //ms
     
 
+    public void setButton(int Button){this.Button = Button;}
+    public int getButton() {return this.Button;}
 
-
-
+    public void setLongClickedFlag(boolean flag){longClickedFlag = flag;}
 
 
 
@@ -81,6 +87,9 @@ public class ModeManager {
      */
     public void clcikButton() {
         // TODO implement here
+        if(currentMode==0 && Button==0 && longClickedFlag==false && isEditMode==false){
+
+        }
 
 
     }
