@@ -24,9 +24,10 @@ public class Alarm implements Mode{
         }
 
         //Thread
-        alarmThread = new AlarmThread("alarmThread");
+        //alarmThread = new AlarmThread("alarmThread");
     }
 
+    /*
     private class AlarmThread implements Runnable{
         Thread t;
         
@@ -49,26 +50,43 @@ public class Alarm implements Mode{
                 }
             }
         }
-    }
-    
-    private AlarmTimer alarm[];
-
-    private int currentAlarmTimerIndex;
-
-    //추가 - 변수
-    private boolean isCursorOnHour;
-
-    //추가 - 변수 AlarmTimer 수정할 때...
-    private LocalTime copyOfAlarmTimer;
-
-    //추가 - 변수
+    }*/
+    //추가 - 변수(buzzer객체와 time객체를 받아서 사용하기 위해서)
     private Buzzer buzzer;
 
     private Time time;
 
+
+    private AlarmTimer alarm[];
+
+    //현재 Display할 AlarmTimer의 index.
+    private int currentAlarmTimerIndex;
+
+    //추가 - 변수
+    //현재 Display할, 그리고 현재 보고 있는 Cursor의 위치: (시간, 분 中 택 1)
+    private boolean isCursorOnHour;
+
+    //추가 - 변수 AlarmTimer 수정할 때 임시변수.
+    private LocalTime copyOfAlarmTimer;
     //추가 - 변수
     private boolean isActivated; 
-    
+
+
+    public boolean isAlarmTimeCheck(){
+        LocalDateTime traceCurrentTime;
+        LocalTime currentTime;
+        int sec;
+        traceCurrentTime = time.getCurrentTime();
+        currentTime = traceCurrentTime.toLocalTime();
+
+        for(int i=0;i<4;i++){
+            if(currentTime.getSecond() == 0 && currentTime.compareTo(alarm[i].requestExpirationTime())==-0) {
+                buzzer.beepBuzzer();
+                return true;
+            }
+        }
+        return false;
+    }
     
     //requestNextAlarm, requestFirstAlarm는 지울것임 (시퀀스 다이어그램 수정도 같이..)
     public LocalTime changeAlarm(){
