@@ -25,6 +25,7 @@ public class ModeManager {
         modes[3] = stopWatch;
         modes[4] = calorieCheck;
         nowMode = modes[0];
+        
 
     }
 
