@@ -29,28 +29,7 @@ public class Timer implements  Mode{
 
 
     }
-    private class TimerThread implements Runnable{
-        Thread t;
 
-        TimerThread(String name){
-            t = new Thread(this, name);
-            t.start();
-        }
-
-        public void run(){
-            LocalDateTime defaulTime=LocalDateTime.of(2000,1,1,0,0,0);
-            while(true){
-                if(!pauseTimerFlag){
-                    if(defaulTime.isAfter(timerTime)){
-                        //ModeManager.beepbuzzer()
-                        pauseTimerFlag=true;
-                        timerTime=LocalDateTime.of(2000,1,1,0,0,0);
-                    }
-                }
-            }
-        }
-
-    }
     //이거는 안쓸듯
     private LocalDateTime settingTimer;
 
@@ -153,6 +132,16 @@ public class Timer implements  Mode{
 
         //
         timerTime.minusSeconds(1);
+
+        if(!pauseTimerFlag){
+            LocalDateTime defaulTime=LocalDateTime.of(2000,1,1,0,0,0);
+            if(defaulTime.isAfter(timerTime)){
+                //ModeManager.beepbuzzer()
+                pauseTimerFlag=true;
+                timerTime=LocalDateTime.of(2000,1,1,0,0,0);
+            }
+        }
+
     }
 
 
