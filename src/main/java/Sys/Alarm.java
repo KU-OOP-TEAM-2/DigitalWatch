@@ -187,6 +187,4 @@ public class Alarm implements Mode{
     public boolean getActive(){
         return isActivated;
     }
-
-
 }

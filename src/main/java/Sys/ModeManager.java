@@ -13,10 +13,10 @@ public class ModeManager {
     public ModeManager() {
         buzzer = new Buzzer();
         time = new Time();
-        alarm = new Alarm(buzzer, time);
+        alarm = new Alarm(buzzer, (Time)time);
         stopWatch = new StopWatch();
         timer = new Timer();
-        calorieCheck = new CalorieCheck();
+       // calorieCheck = new CalorieCheck();
 
         modes = new Mode[5];
         modes[0] = time;
@@ -57,17 +57,6 @@ public class ModeManager {
 
     private Mode nowMode;
     //ms
-    
-
-
-
-
-
-
-
-
-
-
 
     /**
      *
@@ -75,7 +64,7 @@ public class ModeManager {
     public void changeMode() {
         int i=0;
         while(true){
-            if(modes[i++].getActive() == true){
+            if(modes[++i].getActive() == true){
                 nowMode = modes[i];
                 break;
             }
