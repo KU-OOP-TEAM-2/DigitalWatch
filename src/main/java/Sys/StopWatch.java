@@ -78,20 +78,16 @@ public class StopWatch implements Mode{
             return;
     }
 
-    /**
-     * 
-     */
+    //이게 왜 필요한지 모르곘습니다... 일단은 그냥 두겠습니다.
     public void stopCurrentTime() {
         lapTime = currentStopWatchTime;
     }
 
-    /**
-     * 
-     */
+    //이게 왜 필요한지 모르겠습니다... 일단은 그냥 두겠습니다.
     public void saveLapTime() {
         lapTime = currentStopWatchTime;
     }
-
+    //이게 왜 필요한지 모르겠습니다... 일단은 그냥 두겠습니다.
     public void resetCurrentTime() {
         currentStopWatchTime.of(0,0,0,0);
         lapTime.of(0,0,0,0);
@@ -104,6 +100,8 @@ public class StopWatch implements Mode{
     public boolean getActive() {
         return this.isActivated;
     }
-
+    public boolean getIsPaused(){
+        return isPaused;
+    }
 
 }
