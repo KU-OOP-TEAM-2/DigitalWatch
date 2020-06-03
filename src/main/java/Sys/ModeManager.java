@@ -19,7 +19,7 @@ public class ModeManager {
         buzzer = new Buzzer();
 
 
-        modes = new Mode[5];
+        modes = new Mode[6];
         modes[0] = new Time();
         modes[1] = new Alarm(buzzer, modes[0]);
         modes[2] = new Timer();
@@ -27,6 +27,7 @@ public class ModeManager {
         modes[4] = new CalorieCheck();
         modes[5] =new WorldTime();
         nowMode = modes[0];
+        editStatus= new Boolean[6];
         SingletonModeManager=this;
         isEditMode = false;
     }
@@ -38,7 +39,7 @@ public class ModeManager {
 
     //Time Alarm Timer Stopwatch CalorieCheck WorldTime
     //0     1       2       3       4            5
-    private Boolean[] isModeActive;
+    //private Boolean[] isModeActive; //사용이제 안하는..
     private Boolean[] editStatus;//set mode 중 return to default screen시 저장안하기 위해 이 변수로 편집.
 
     private Mode[] modes;
@@ -247,7 +248,10 @@ public class ModeManager {
     public void enterEditMode() {
         this.currentMode=8;
         this.currentCursor=0;
-        this.editStatus=this.isModeActive;
+
+        for(int i= 0; i<6;i++)
+            editStatus[i]= modes[i].getActive();
+
     }
 
 
@@ -289,7 +293,8 @@ public class ModeManager {
 
 
     public void saveModeData() {
-        this.isModeActive=this.editStatus;
+        for(int i= 0; i<6;i++)
+            modes[i].setActive(editStatus[i]);
     }
 
     //시퀀스 다이어그램 수정 사항. 없애도 되는 함수.
