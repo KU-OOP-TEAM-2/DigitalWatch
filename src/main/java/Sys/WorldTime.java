@@ -22,6 +22,7 @@ public class WorldTime implements Mode{
 
 
     public WorldTime(){
+        this.worldTimes= new City[6];
         this.worldTimes[0]=new City(0,"SEL");
         this.worldTimes[1]=new City(1,"PAR");
         this.worldTimes[2]=new City(0,"LON");

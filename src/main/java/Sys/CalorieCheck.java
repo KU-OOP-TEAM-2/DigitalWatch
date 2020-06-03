@@ -188,6 +188,6 @@ public class CalorieCheck implements Mode{
     private void calculateCalorie(){
         int allSeconds = CalorieTime.getHour()*3600 + CalorieTime.getMinute()*60
                 + CalorieTime.getSecond();
-        Calorie = 0.0157 * ( ( 0.1 * Speed + 3.5 ) /3.5 ) * Weight * allSeconds;
+        Calorie = (int) (0.0157 * ( ( 0.1 * Speed + 3.5 ) /3.5 ) * Weight * allSeconds);
     }
 }
