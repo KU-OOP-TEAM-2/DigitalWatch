@@ -17,16 +17,20 @@ public class Tick implements Callable<Void>{
         currentTime = LocalDateTime.now();
         prevTime = currentTime;
 
+        Duration duration;
+        int elapsedTime;
+        int checkSecond;
+        int checkMinute;
         while(true){
             if(endFlag){
                 break;
             }
 
-            Duration duration = Duration.between(prevTime, currentTime);
+             duration = Duration.between(prevTime, currentTime);
 
-            int elapsedTime = duration.getNano()*1000000;
-            int checkSecond = 0;
-            int checkMinute = 0;
+             elapsedTime = duration.getNano()*1000000;
+             checkSecond = 0;
+             checkMinute = 0;
             //tick per 10millisecond
             if(elapsedTime == 10) {
                 //stopwatch
@@ -37,7 +41,7 @@ public class Tick implements Callable<Void>{
                 if (checkSecond == 100) {
                     checkSecond = 0;
                     //time
-
+                    ((Time)ModeManager.SingletonModeManager.getmodes()[0]).timeflow();
                     //calorie check
 
                     //Timer
