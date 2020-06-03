@@ -11,9 +11,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="ModeManger getmmodes">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/Tick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/Tick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/Timer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/Timer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Alarm_Pane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Alarm_Pane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/ImageDir.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/ImageDir.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Stopwatch_Pane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Stopwatch_Pane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Timer_Pane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Timer_Pane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +71,7 @@
   <component name="RunManager" selected="Application.Main_test">
     <configuration name="Main_test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GUI.Main_test" />
-      <module name="git_teampj.main" />
+      <module name="softwarevv.main" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="GUI.*" />
@@ -284,6 +288,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="ModeManger getmmodes" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="972" y="320" key="#Main_test" timestamp="1591089672038">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="972" y="320" key="#Main_test/0.0.2560.1410@0.0.2560.1410" timestamp="1591089672038" />
     <state x="760" y="274" key="#Project_Structure" timestamp="1591076943535">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -292,10 +300,11 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="986" y="314" key="#Tests_in_'git_teampj'/0.0.2560.1400@0.0.2560.1400" timestamp="1591074182315" />
-    <state x="734" y="354" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591076648908">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="734" y="357" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591090372187">
+      <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="734" y="354" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591076648908" />
+    <state x="734" y="357" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1410@0.0.2560.1410" timestamp="1591090372187" />
     <state x="1085" y="405" key="#com.intellij.ide.util.MemberChooser" timestamp="1591074707858">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -304,22 +313,26 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="454" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1591073036048" />
-    <state width="2517" height="520" key="GridCell.Tab.0.bottom" timestamp="1591081969925">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="2517" height="404" key="GridCell.Tab.0.bottom" timestamp="1591115313559">
+      <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state width="2517" height="520" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591081969925" />
-    <state width="2517" height="520" key="GridCell.Tab.0.center" timestamp="1591081969925">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="2517" height="404" key="GridCell.Tab.0.bottom/0.0.2560.1410@0.0.2560.1410" timestamp="1591115313559" />
+    <state width="2517" height="404" key="GridCell.Tab.0.center" timestamp="1591115313559">
+      <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state width="2517" height="520" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591081969925" />
-    <state width="2517" height="520" key="GridCell.Tab.0.left" timestamp="1591081969925">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="2517" height="404" key="GridCell.Tab.0.center/0.0.2560.1410@0.0.2560.1410" timestamp="1591115313559" />
+    <state width="2517" height="404" key="GridCell.Tab.0.left" timestamp="1591115313559">
+      <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state width="2517" height="520" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591081969925" />
-    <state width="2517" height="520" key="GridCell.Tab.0.right" timestamp="1591081969925">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="2517" height="404" key="GridCell.Tab.0.left/0.0.2560.1410@0.0.2560.1410" timestamp="1591115313559" />
+    <state width="2517" height="404" key="GridCell.Tab.0.right" timestamp="1591115313559">
+      <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state width="2517" height="520" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591081969925" />
+    <state width="2517" height="404" key="GridCell.Tab.0.right/0.0.2560.1410@0.0.2560.1410" timestamp="1591115313559" />
     <state x="248" y="121" key="MergeDialog" timestamp="1591082012879">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
