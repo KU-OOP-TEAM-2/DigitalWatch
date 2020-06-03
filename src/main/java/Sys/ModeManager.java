@@ -81,7 +81,7 @@ public class ModeManager {
 
     public void plus_ElapsedTime(float tt){
         elapsedTime += tt;
-        return;
+        returnToDefault();
     }
 
     /**
@@ -96,8 +96,8 @@ public class ModeManager {
         }
     }
     //설정모드에서 5초가 지나면 default화면으로 복귀
-    public void returnToDefault(){
-        elapsedTime++;
+    private void returnToDefault(){
+
         if(isEditMode && elapsedTime >= 5){
             switch (currentMode){
                 case 0:
