@@ -7,12 +7,18 @@
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="">
+    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="default screan , Timer clicked">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/StopWatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/StopWatch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,35 +261,7 @@
       <option name="project" value="LOCAL" />
       <updated>1591087617053</updated>
     </task>
-    <task id="LOCAL-00011" summary="ModeManger getmmodes">
-      <created>1591100257699</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1591100257699</updated>
-    </task>
-    <task id="LOCAL-00012" summary="ModeManger getmmodes">
-      <created>1591103196988</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1591103196988</updated>
-    </task>
-    <task id="LOCAL-00013" summary="ModeManger getmmodes">
-      <created>1591106961300</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1591106961300</updated>
-    </task>
-    <task id="LOCAL-00014" summary="StopWatch">
-      <created>1591197156021</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1591197156021</updated>
-    </task>
-    <option name="localTasksCounter" value="15" />
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -291,7 +269,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -308,8 +298,7 @@
     <MESSAGE value="clcikButton" />
     <MESSAGE value="ModeManger 변수" />
     <MESSAGE value="ModeManger getmmodes" />
-    <MESSAGE value="StopWatch" />
-    <option name="LAST_COMMIT_MESSAGE" value="StopWatch" />
+    <option name="LAST_COMMIT_MESSAGE" value="ModeManger getmmodes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="760" y="274" key="#Project_Structure" timestamp="1591076943535">
@@ -328,10 +317,6 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1085" y="405" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1591074707858" />
-    <state x="794" y="86" key="CommitChangelistDialog2" timestamp="1591197155296">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="794" y="86" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1591197155296" />
     <state x="1060" y="454" key="FileChooserDialogImpl" timestamp="1591073036048">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -360,21 +345,20 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="781" y="344" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1591076609638" />
-    <state x="872" y="321" key="Vcs.Push.Dialog.v2" timestamp="1591197188006">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="654" y="321" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591078515772" />
-    <state x="872" y="321" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1591197188006" />
-    <state x="872" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591087443831" />
-    <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591085881809">
+    <state x="872" y="432" key="Vcs.Push.Dialog.v2" timestamp="1591087443831">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591085881809" />
-    <state x="1002" y="486" key="git4idea.merge.GitPullDialog" timestamp="1591084716215">
+    <state x="654" y="321" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591078515772" />
+    <state x="872" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591087443831" />
+    <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591192497681">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591192497681" />
+    <state x="1002" y="486" key="git4idea.merge.GitPullDialog" timestamp="1591192382931">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="752" y="361" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591078691554" />
-    <state x="1002" y="486" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591084716215" />
+    <state x="1002" y="486" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591192382931" />
     <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1591081751999">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
