@@ -30,7 +30,7 @@ public class Timer implements  Mode{
 
     }
 
-    //cancel 용 Timer 변수 저장
+    //이거는 안쓸듯
     private LocalDateTime settingTimer;
 
     //시간 을 99 까지 표현해야 하므로 Display할때 day까지 묶어서 계산해야함
@@ -120,15 +120,14 @@ public class Timer implements  Mode{
 
     public void saveTimer() {
         // TODO implement here
-        this.settingTimer=this.timerTime;
         saveTimerFlag=true;
     }
 
     //public으로 바꿈
-    public boolean decreaseTimer() {
+    public void decreaseTimer() {
         // TODO implement here
         if(pauseTimerFlag){
-            return false;
+            return;
         }
 
         //
@@ -136,36 +135,18 @@ public class Timer implements  Mode{
 
         if(!pauseTimerFlag){
             LocalDateTime defaulTime=LocalDateTime.of(2000,1,1,0,0,0);
-            if(defaulTime.isAfter(timerTime) || defaulTime.isEqual(timerTime)){
+            if(defaulTime.isAfter(timerTime)){
                 //ModeManager.beepbuzzer()
                 pauseTimerFlag=true;
                 timerTime=LocalDateTime.of(2000,1,1,0,0,0);
-                return true;
             }
         }
-        return false;
-
 
     }
 
-    public void start_pauseTimer(){
-        if(pauseTimerFlag){
-            if(timerTime.getDayOfMonth()==1 && timerTime.getHour()==0 && timerTime.getSecond()==0 && timerTime.getMinute()==0){
-                //0 리셋 상태일 때 아무작동 x
-                return;
-            }
-            else{
-                pauseTimerFlag=false;
-            }
-        }
-        else{ //pauseTimer;
-            pauseTimerFlag=true;
-        }
-    }
 
     public void startTimer() {
         // TODO implement here
-
         pauseTimerFlag=false;
     }
 
@@ -184,14 +165,13 @@ public class Timer implements  Mode{
 
     public void cancelTimer() {
         // TODO implement here
-        timerTime= this.settingTimer;
-    }
+        timerTime= LocalDateTime.of(2000,1,1,0,0,0);
 
-    //get cursor
+
+    }
     public int getCurrentCursor() {
         return this.timerCursor;
     }
-    //get Timer time
     public LocalDateTime getTimerTime() {return this.timerTime;}
 
 }

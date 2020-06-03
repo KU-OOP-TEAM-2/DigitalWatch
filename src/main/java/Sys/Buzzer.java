@@ -13,6 +13,7 @@ public class Buzzer {
      */
     public Buzzer() {
         buzzerOn = false;
+        buzzerThread = new BuzzerThread("buzzerThread");
     }
 
     /**
@@ -23,11 +24,25 @@ public class Buzzer {
     //추가된 부분
     private final int BEEPCOUNT = 10;
     //추가된 부분
+    private BuzzerThread buzzerThread;
 
+    private class BuzzerThread implements Runnable{
+        Thread t;
+        
+        BuzzerThread(String name){
+            t = new Thread(this, name);
+            t.start();
+        }
+
+        public void run(){
+            beepBuzzer();
+            }
+        }
+
+    /**
+     * 
+     */
     public void beepBuzzer() {
-        //buzzer가 울리고 있었다면 씹는다.
-        if(buzzerOn == true)
-            return;
         buzzerOn = true;
         int i = 0;
         for(i=0; i < BEEPCOUNT && buzzerOn; i++){

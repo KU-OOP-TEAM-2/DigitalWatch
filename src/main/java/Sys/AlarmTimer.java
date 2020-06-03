@@ -19,16 +19,27 @@ public class AlarmTimer {
         isActivated = false;
     }
 
-
+    /**
+     * LocalDateTime Type -> LocalTime.
+     */
     private LocalTime expirationTime;
 
+    /**
+     *
+     */
     private boolean isActivated;
 
 
+    /**
+     * void -> LocalTime, getter
+     */
     public LocalTime requestExpirationTime() {
         return expirationTime;
     }
 
+    /**
+     *
+     */
     public void toggleAlarmTimer() {
         if(this.isActivated == true)
             this.isActivated = false;
@@ -36,6 +47,9 @@ public class AlarmTimer {
             this.isActivated = true;
     }
 
+    /**
+     *
+     */
     public void saveAlarmTime(LocalTime expirationTime) {
         this.expirationTime = expirationTime;
     }
