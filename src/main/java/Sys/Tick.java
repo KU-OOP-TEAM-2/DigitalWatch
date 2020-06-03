@@ -14,13 +14,19 @@ public class Tick implements Callable<Void>{
 
     public Void call(){
         LocalDateTime currentTime,prevTime;
+
+        //currentTime : 현재 시간 저장
         currentTime = LocalDateTime.now();
+
+        //prevTime : 기준점 시간 저장
         prevTime = currentTime;
 
         while(true){
             if(endFlag){
                 break;
             }
+            //현재 시간 갱신
+            currentTime = LocalDateTime.now();
             Duration duration = Duration.between(prevTime, currentTime);
 
             int elapsedTime = duration.getNano()*1000000;
@@ -62,6 +68,9 @@ public class Tick implements Callable<Void>{
                 else{
                     checkMinute++;
                 }
+
+                //기준 시간점 새로 갱신
+                prevTime = LocalDateTime.now();
             }
         }
         return null;
