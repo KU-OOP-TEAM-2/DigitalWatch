@@ -3,6 +3,7 @@ package GUI;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.nio.file.Path;
 
 public class Main_test{
 
@@ -17,7 +18,7 @@ public class Main_test{
     WorldTime_Pane wtPane = new WorldTime_Pane();
     CalorieCheck_Pane ccPane = new CalorieCheck_Pane();
 
-    watchGUI mainGUI = new watchGUI(ccPane); //initialized with TimeKeeping mode
+    watchGUI mainGUI = new watchGUI(timeKeepingPane); //initialized with TimeKeeping mode
 
     mainGUI.getModeB().addActionListener(new ActionListener() {
       @Override

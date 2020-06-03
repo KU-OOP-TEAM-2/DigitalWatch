@@ -48,17 +48,17 @@ public class Alarm_Pane extends JPanel {
       }
     };
 
-    //Images
-    ImageIcon seg14DeadBigImg = new ImageIcon(ImageDir.SegDead14Big_dir);
-    ImageIcon seg14DeadImg = new ImageIcon(ImageDir.SegDead14_dir);
-    ImageIcon colonImg = new ImageIcon(ImageDir.colon_dir);
-    ImageIcon colonBigImg = new ImageIcon(ImageDir.colonBig_dir);
-    ImageIcon clockImg = new ImageIcon(ImageDir.clock_dir);
-    ImageIcon clockDeadImg = new ImageIcon(ImageDir.clockDead_dir);
-    ImageIcon num0BigImg = new ImageIcon(ImageDir.num0big_dir);
-    ImageIcon num0Img = new ImageIcon(ImageDir.num0_dir);
-    ImageIcon fImg = new ImageIcon(ImageDir.fSeg_dir);
-    ImageIcon nImg = new ImageIcon(ImageDir.nSeg_dir);
+    //load Images from resource folder
+    ImageIcon seg14DeadBigImg = new ImageIcon(this.getClass().getResource(ImageDir.SegDead14Big_dir));
+    ImageIcon seg14DeadImg = new ImageIcon(this.getClass().getResource(ImageDir.SegDead14_dir));
+    ImageIcon colonImg = new ImageIcon(this.getClass().getResource(ImageDir.colon_dir));
+    ImageIcon colonBigImg = new ImageIcon(this.getClass().getResource(ImageDir.colonBig_dir));
+    ImageIcon clockImg = new ImageIcon(this.getClass().getResource(ImageDir.clock_dir));
+    ImageIcon clockDeadImg = new ImageIcon(this.getClass().getResource(ImageDir.clockDead_dir));
+    ImageIcon num0BigImg = new ImageIcon(this.getClass().getResource(ImageDir.num0Big_dir));
+    ImageIcon num0Img = new ImageIcon(this.getClass().getResource(ImageDir.num0_dir));
+    ImageIcon fImg = new ImageIcon(this.getClass().getResource(ImageDir.fSeg_dir));
+    ImageIcon nImg = new ImageIcon(this.getClass().getResource(ImageDir.nSeg_dir));
 
     //second Seg
     secondSegs = new JLabel[10];
