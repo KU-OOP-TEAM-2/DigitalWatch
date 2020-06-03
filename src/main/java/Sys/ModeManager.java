@@ -83,7 +83,7 @@ public class ModeManager {
 
     /**
      *
-     */
+     *///
     public void changeMode() {
         while(true){
             currentMode = (currentMode+1)%6;
