@@ -62,8 +62,8 @@ public class StopWatch implements Mode{
      * Tick에서 사용할 함수.
      * Paused되지 않았다면 틱마다 1ms == 1e7만큼 증가.
      * Paused되어있다면 증가시키지 않는다.
-     * 증가되는 함수는 GUI Display부분이나 중간 단계에서 01:39:59:99를 99:59:00으로 표현하도록 parsing필요.
-     * 01:39:59:99를 지난다면 overflow가 발생하도록, 00:00:00:00부터 시작하도록 함.
+     * 증가되는 함수는 GUI Display부분이나 중간 단계에서 00:59:59:99를 가져갈 수 있도록 getCurrentStopWatchTime_XXX()구현.
+     * 00:59:59:99를 지난다면 overflow가 발생하도록, 00:00:00:00부터 시작하도록 함.
     **/
     public void increaseCurrentTime() {
         is100ms = (is100ms + 1) % 100;
