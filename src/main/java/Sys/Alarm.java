@@ -22,7 +22,7 @@ public class Alarm implements Mode{
         for(int i=0; i < alarm.length; i++){
             alarm[i] = new AlarmTimer();
         }
-
+        isActivated=true;
         //Thread
         //alarmThread = new AlarmThread("alarmThread");
     }

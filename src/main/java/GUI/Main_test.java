@@ -15,6 +15,10 @@ public class Main_test{
   public static Mode[] _modes;
   public static void main(String[] args) {
 
+    // 임의로 Mode manager 생성
+    _modeManager=new ModeManager();
+    _modes= _modeManager.getmodes();
+
     TimeKeeping_Pane timeKeepingPane = new TimeKeeping_Pane();
     Alarm_Pane alarmPane = new Alarm_Pane();
     Timer_Pane timerPane = new Timer_Pane();
@@ -50,9 +54,6 @@ public class Main_test{
       }
     });
 
-    // 임의로 Mode manager 생성
-    _modeManager=new ModeManager();
-    _modes= _modeManager.getmodes();
 
   }
 
