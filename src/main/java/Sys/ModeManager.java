@@ -86,24 +86,22 @@ public class ModeManager {
      */
     public void changeMode() {
         while(true){
-            currentMode =(currentMode+1)%6;
+            currentMode = (currentMode+1)%6;
             if(modes[currentMode].getActive() == true){
-                nowMode = modes[currentMode];
                 break;
             }
         }
     }
 
-    /**
-     *
-     */
-    public void clcikButton() {
-        // TODO implement here
+    public void clickButton() {
+        //이건 뭔가요..?
         if(currentMode==0 && Button==0 && longClickedFlag==false && isEditMode==false){
 
         }
         if(buzzerFlag){// 버저 울릴때
-            //stop buzz
+            //아무 버튼이나 들어오면
+            if(Button != -1)
+                buzzer.stopBuzzer();
         }
         else{
             switch (currentMode){
@@ -119,14 +117,49 @@ public class ModeManager {
                 case 1://알람 모드  일때
                     if(isEditMode){
                         //button 1234
+                        if(elapsedTime >= 5) {    //elapsedTime이 5초 이상일 때 저장하고 defaultScreen으로.
+                           ((Alarm) modes[1]).saveAlarm();
+                           isEditMode = !isEditMode;
+                        }
+                        else if(Button == 0)    //Mode : Cursor 옮김
+                            ((Alarm)modes[1]).changeCursor();
+                        else if(Button == 1) {  //Adjust를 눌렀을 때 저장하고 defualtScreen으로.
+                            ((Alarm) modes[1]).saveAlarm();
+                            isEditMode = !isEditMode;
+                        }
+                        else if(Button == 2)    //Forward : Cursor의 데이터를 증가시킴.
+                            ((Alarm)modes[1]).increaseAlarmTime();
+                        else if(Button == 3)    //Reverse : Cursor의 데이터를 감소시킴.
+                            ((Alarm)modes[1]).decreaseAlarmTime();
                     }
                     else{
-                        //button 1234
+                        if(Button == 0 && longClickedFlag == true) {    //setMode로 진입.
+                            ((Alarm) modes[1]).enterEditAlarm();
+                            isEditMode = !isEditMode;
+                        }
+                        else if(Button == 0 && longClickedFlag == false)    //Mode : changeMode
+                            this.changeMode();
+                        else if(Button == 1)    //Adjust : 현재 보고 있는 Alarm을 바꾼다.
+                            ((Alarm)modes[1]).changeAlarm();
+                        else if(Button == 2)    //Forward : 현재 보고 있는 알람을 on/off시킨다.
+                            ((Alarm)modes[1]).turnOnOffAlarm();
+                        else if(Button == 3);   //지정된 버튼이 없다.
                     }
                     break;
                 case 2:
                     break;
-                case 3:
+                case 3: //StopWatch
+                        if(Button == 0)
+                            this.changeMode();  //Mode : changeMode
+                        else if(Button == 1 && !( ((StopWatch)modes[3]).getIsPaused() ))  //Adjust 장타 : resume 되어있었다면 laptime save.
+                            ((StopWatch)modes[3]).lapStopwatch();
+                        else if(Button == 1 && ((StopWatch)modes[3]).getIsPaused()) //Adjust : paused라면 reset.
+                            ((StopWatch)modes[3]).resetStopwatch();
+                        else if(Button == 2 && ((StopWatch)modes[3]).getIsPaused())  //Forward : puased라면 start. , 사실 Resume이나 Start나 operation 내부 동작은 같다...
+                            ((StopWatch)modes[3]).startStopwatch();
+                        else if(Button == 2 && !( ((StopWatch)modes[3]).getIsPaused() )) //Forward : paused가 아니라면 pause.
+                            ((StopWatch)modes[3]).pauseStopwatch();
+                        else if(Button == 3);    //지정된 버튼이 없다.
                     break;
                 case 4:
                     break;
