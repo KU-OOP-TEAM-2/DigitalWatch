@@ -177,8 +177,40 @@ public class ModeManager {
                         else if(Button == 3);   //지정된 버튼이 없다.
                     }
                     break;
-                case 2:
-                    break;
+                case 2:case 2: //Timer Mode
+
+                    if(isEditMode){
+                        if(Button==0){
+                            ((Timer)modes[2]).changeCursor();
+                        }else if(Button ==1){
+                            ((Timer)modes[2]).saveTimer();
+                            isEditMode = !isEditMode;
+                        }else if(Button==2){
+                            ((Timer)modes[2]).increaseData();
+                        }else if(Button ==3){
+                            ((Timer)modes[2]).decreaseData();
+                        }else{}
+
+                    }
+                    else{
+                        if(Button == 0 && longClickedFlag == true) {    //set Mode로 진입.
+                            currentMode=8;
+                            isEditMode = !isEditMode;
+                        }
+                        else if(Button == 0 && longClickedFlag == false) {    //Mode : changeMode
+                            this.changeMode();
+                        }else if(Button ==1){
+                            ((Timer)modes[2]).cancelTimer();
+                        }else if(Button ==1 && longClickedFlag ==true){ //setTimer 진입
+                            ((Timer)modes[2]).enterEditTimer();
+                            isEditMode= !isEditMode;
+                        }else if(Button==2 ){ //start Timer
+                            ((Timer)modes[2]).start_pauseTimer();
+
+                        }else if(Button ==3){
+
+                        }else{}
+                    }
                 case 3: //StopWatch
                         if(Button == 0)
                             this.changeMode();  //Mode : changeMode
@@ -194,9 +226,9 @@ public class ModeManager {
                     break;
                 case 4:
                     break;
-                case 5:
+                case 5: //World Time
                     break;
-                case 8:
+                case 8: //Set mode
                     break;
                 default:
                     break;
