@@ -1,5 +1,8 @@
 package GUI;
 
+import Sys.Mode;
+import Sys.ModeManager;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,7 +11,8 @@ import java.nio.file.Path;
 public class Main_test{
 
   public static int modeNum = 1;
-
+  public static ModeManager _modeManager;
+  public static Mode[] _modes;
   public static void main(String[] args) {
 
     TimeKeeping_Pane timeKeepingPane = new TimeKeeping_Pane();
@@ -43,6 +47,10 @@ public class Main_test{
         else modeNum = 1;
       }
     });
+
+    // 임의로 Mode manager 생성
+    _modeManager=new ModeManager();
+    _modes= _modeManager.getmodes();
 
   }
 
