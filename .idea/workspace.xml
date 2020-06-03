@@ -12,7 +12,7 @@
   <component name="ChangeListManager">
     <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/StopWatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/StopWatch.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,10 +172,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main_test" />
-        <item itemvalue="Gradle.Tests in 'git_teampj'" />
         <item itemvalue="JUnit.test1Test" />
+        <item itemvalue="Gradle.Tests in 'git_teampj'" />
         <item itemvalue="Gradle.test1Test" />
+        <item itemvalue="Application.Main_test" />
+        <item itemvalue="JUnit.test1Test" />
       </list>
     </recent_temporary>
   </component>
@@ -372,16 +373,20 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="781" y="344" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1591076609638" />
-    <state x="872" y="321" key="Vcs.Push.Dialog.v2" timestamp="1591107171003">
+    <state x="872" y="321" key="Vcs.Push.Dialog.v2" timestamp="1591195496496">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="654" y="321" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591078515772" />
-    <state x="872" y="321" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1591107171003" />
+    <state x="872" y="321" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1591195496496" />
     <state x="872" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591087443831" />
     <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591085881809">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591085881809" />
+    <state x="965" y="306" key="git4idea.merge.GitMergeDialog" timestamp="1591195480207">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="965" y="306" key="git4idea.merge.GitMergeDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1591195480207" />
     <state x="1002" y="486" key="git4idea.merge.GitPullDialog" timestamp="1591084716215">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
