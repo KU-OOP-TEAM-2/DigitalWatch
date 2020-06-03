@@ -58,7 +58,7 @@ public class Timer_Pane extends JPanel{
         ImageIcon num0BigImg = new ImageIcon(ImageDir.num0big_dir);
         ImageIcon num0Img = new ImageIcon(ImageDir.num0_dir);
         ImageIcon fImg = new ImageIcon(ImageDir.fSeg_dir);
-        ImageIcon nImg = new ImageIcon(ImageDir.nSeg_dir);
+        ImageIcon nImg = new ImageIcon(ImageDir.nseg_dir);
 
         //second Seg
         secondSegs = new JLabel[10];

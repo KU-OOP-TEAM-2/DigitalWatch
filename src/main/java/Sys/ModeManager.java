@@ -97,7 +97,7 @@ public class ModeManager {
     /**
      *
      */
-    public void clickButton() {
+    public void clcikButton() {
         // TODO implement here
         if(currentMode==0 && Button==0 && longClickedFlag==false && isEditMode==false){
 
