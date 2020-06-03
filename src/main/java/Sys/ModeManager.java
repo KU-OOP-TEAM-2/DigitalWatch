@@ -177,7 +177,7 @@ public class ModeManager {
                         else if(Button == 3);   //지정된 버튼이 없다.
                     }
                     break;
-                case 2:case 2: //Timer Mode
+                case 2: //Timer Mode
 
                     if(isEditMode){
                         if(Button==0){
