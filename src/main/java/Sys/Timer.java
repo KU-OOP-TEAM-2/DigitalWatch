@@ -132,7 +132,7 @@ public class Timer implements  Mode{
         }
 
         //
-        timerTime.minusSeconds(1);
+        timerTime.minusNanos(10000000);
 
         if(!pauseTimerFlag){
             LocalDateTime defaulTime=LocalDateTime.of(2000,1,1,0,0,0);

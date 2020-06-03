@@ -20,7 +20,9 @@ public class Tick implements Callable<Void>{
 
         //prevTime : 기준점 시간 저장
         prevTime = currentTime;
-
+        int elapsedTime;
+        int checkSecond = 0;
+        int checkMinute = 0;
         while(true){
             if(endFlag){
                 break;
@@ -29,14 +31,13 @@ public class Tick implements Callable<Void>{
             currentTime = LocalDateTime.now();
             Duration duration = Duration.between(prevTime, currentTime);
 
-            int elapsedTime = duration.getNano()*1000000;
-            int checkSecond = 0;
-            int checkMinute = 0;
+            elapsedTime= duration.getNano()/1000000;
+
             //tick per 10millisecond
             if(elapsedTime == 10) {
                 //stopwatch
                 ((StopWatch)ModeManager.SingletonModeManager.getmodes()[3]).increaseCurrentTime();
-
+                ((Timer)ModeManager.SingletonModeManager.getmodes()[2]).decreaseTimer();
                 //when duration = 1 second
                 if (checkSecond == 100) {
                     checkSecond = 0;
@@ -45,7 +46,6 @@ public class Tick implements Callable<Void>{
                     //calorie check
 
                     //Timer
-                    ((Timer)ModeManager.SingletonModeManager.getmodes()[2]).decreaseTimer();
 
                     //alarm
                     //Buzzer를 여기서 울리는것이 아니라 Alarm객체 내부에서 울리도록 함.
