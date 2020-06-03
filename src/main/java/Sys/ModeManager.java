@@ -296,7 +296,7 @@ public class ModeManager {
         for(int i= 0; i<6;i++)
             modes[i].setActive(editStatus[i]);
     }
-
+    public int getCurrentMode(){ return this.currentMode; }
     //시퀀스 다이어그램 수정 사항. 없애도 되는 함수.
     public void changeToFirstMode() {
         // TODO implement here

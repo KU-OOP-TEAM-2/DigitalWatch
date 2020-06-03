@@ -27,17 +27,19 @@ public class Main_test{
     mainGUI.getModeB().addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        switch(modeNum){
-          case 1:
+        _modeManager.changeMode();
+
+        switch(_modeManager.getCurrentMode()){
+          case 2:
             switchPanel(mainGUI, timerPane);
             break;
-          case 2:
+          case 1:
             switchPanel(mainGUI, alarmPane);
             break;
           case 3:
             switchPanel(mainGUI, swPane);
             break;
-          case 4:
+          case 0:
             switchPanel(mainGUI, timeKeepingPane);
             break;
           default:

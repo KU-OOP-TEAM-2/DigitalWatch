@@ -16,8 +16,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="returnToDefault 오타수정">
+    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="Set Mode 부분 배열-&gt; 각 class 내부 변수로 수정">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Main_test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Main_test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -296,7 +297,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591199947849</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Set Mode 부분 배열-&gt; 각 class 내부 변수로 수정">
+      <created>1591200561840</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1591200561840</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -337,7 +345,8 @@
     <MESSAGE value="Timer Click 추가" />
     <MESSAGE value="Timer 함수 정리, Cancel 수정" />
     <MESSAGE value="returnToDefault 오타수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="returnToDefault 오타수정" />
+    <MESSAGE value="Set Mode 부분 배열-&gt; 각 class 내부 변수로 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="Set Mode 부분 배열-&gt; 각 class 내부 변수로 수정" />
   </component>
   <component name="WindowStateProjectService">
     <state x="760" y="274" key="#Project_Structure" timestamp="1591076943535">
@@ -388,15 +397,15 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="781" y="344" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1591076609638" />
-    <state x="872" y="432" key="Vcs.Push.Dialog.v2" timestamp="1591199955375">
+    <state x="872" y="432" key="Vcs.Push.Dialog.v2" timestamp="1591200568847">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="654" y="321" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591078515772" />
-    <state x="872" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591199955375" />
-    <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591199964365">
+    <state x="872" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591200568847" />
+    <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591204932353">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591199964365" />
+    <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591204932353" />
     <state x="1002" y="486" key="git4idea.merge.GitPullDialog" timestamp="1591192382931">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
