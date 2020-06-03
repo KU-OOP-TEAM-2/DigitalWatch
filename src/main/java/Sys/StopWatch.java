@@ -17,7 +17,7 @@ public class StopWatch implements Mode{
         isActivated = true;
         lapTime.of(0,0,0,0);
         isPaused = true;
-        overflowStopWatchTime.of(1,39,59,99000000);
+        overflowStopWatchTime.of(0,59,59,99000000);
 
     }
 
@@ -25,7 +25,7 @@ public class StopWatch implements Mode{
     private LocalTime currentStopWatchTime;
     private LocalTime lapTime;
     private LocalTime overflowStopWatchTime;
-
+    private int is100ms = 0;
     private Boolean isPaused;
 
 
@@ -66,16 +66,19 @@ public class StopWatch implements Mode{
      * 01:39:59:99를 지난다면 overflow가 발생하도록, 00:00:00:00부터 시작하도록 함.
     **/
     public void increaseCurrentTime() {
-        if(!isPaused) {
-            if (this.currentStopWatchTime.compareTo(overflowStopWatchTime) == 0) {
-                currentStopWatchTime.of(0, 0, 0, 0);
-            } else {
-                //millisecond의 앞 두자리만 보여줄것이므로 1e7
-                currentStopWatchTime.plusNanos(10000000);
+        is100ms = (is100ms + 1) % 100;
+        if(is100ms == 0){
+            if(!isPaused) {
+                if (this.currentStopWatchTime.compareTo(overflowStopWatchTime) == 0) {
+                    pauseStopwatch();
+                } else {
+                    //millisecond의 앞 두자리만 보여줄것이므로 1e7
+                    currentStopWatchTime.plusNanos(10000000);
+                }
             }
+            else
+                return;
         }
-        else
-            return;
     }
 
     //이게 왜 필요한지 모르곘습니다... 일단은 그냥 두겠습니다.
@@ -103,5 +106,17 @@ public class StopWatch implements Mode{
     public boolean getIsPaused(){
         return isPaused;
     }
+
+    public int getStopWatchTime_Minute(){
+        return currentStopWatchTime.getMinute();
+    }
+    public int getStopWatchTime_Second(){
+        return currentStopWatchTime.getSecond();
+    }
+    public int getStopWatchTime_100Ms(){
+        return (currentStopWatchTime.getNano() * 10000000);
+    }
+
+
 
 }
