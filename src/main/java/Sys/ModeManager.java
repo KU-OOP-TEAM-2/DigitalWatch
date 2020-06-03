@@ -98,7 +98,7 @@ public class ModeManager {
     //설정모드에서 5초가 지나면 default화면으로 복귀
     private void returnToDefault(){
 
-        if(isEditMode && elapsedTime >= 5){
+        if(isEditMode && elapsedTime >= 5.0f){
             switch (currentMode){
                 case 0:
                     ((Time) modes[1]).saveData();
@@ -113,7 +113,7 @@ public class ModeManager {
                     ((CalorieCheck) modes[1]).saveCalorieSetting();
                     break;
                 case 8:
-                    ((Alarm) modes[1]).saveAlarm();
+                    this.saveModeData();
                     break;
                 default: // 3-stopwatch, 5 worldtime은 set이 없다.
                     break;
