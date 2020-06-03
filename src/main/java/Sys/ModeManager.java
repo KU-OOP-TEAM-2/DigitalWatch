@@ -26,6 +26,7 @@ public class ModeManager {
         modes[3] = new StopWatch();
         modes[4] = new CalorieCheck();
         modes[5] =new WorldTime();
+        nowMode = modes[0];
         SingletonModeManager=this;
         isEditMode = false;
     }
@@ -38,7 +39,7 @@ public class ModeManager {
     //Time Alarm Timer Stopwatch Calorie Check 순
     //0     1       2       3       4       5
     private Boolean[] isModeActive;
-    private Boolean[] editStatus;//set mode 중 return to default screen시 저장안하기 위해 이 변수로 편집.  //천민수 : 저희 default시 저장 안하는 부분도 있는건가요?
+    private Boolean[] editStatus;//set mode 중 return to default screen시 저장안하기 위해 이 변수로 편집.
 
     private Mode[] modes;
     private int currentMode;//0~5 Time Alarm Timer Stopwatch Calorie Check 순으로    *8일경우 setMode
@@ -60,6 +61,11 @@ public class ModeManager {
     //객체 생성 ms
     private Buzzer buzzer;
 
+    //private CalorieCheck calorieCheck;
+
+    private Mode nowMode;
+    //ms
+
     public void setButton(int Button){this.Button = Button;}
     public int getButton() {return this.Button;}
 
@@ -72,6 +78,12 @@ public class ModeManager {
         Future<Void> future = service.submit(task);
     }
 
+
+
+
+    /**
+     *
+     *///
     public void changeMode() {
         while(true){
             currentMode = (currentMode+1)%6;
@@ -217,5 +229,13 @@ public class ModeManager {
         this.isModeActive=this.editStatus;
     }
 
+    //시퀀스 다이어그램 수정 사항. 없애도 되는 함수.
+    public void changeToFirstMode() {
+        // TODO implement here
+    }
+
+    /**
+     *
+     */
 
 }
