@@ -10,17 +10,13 @@
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="Tick, Timer decreaseTimer수정">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/Timer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/Timer.java" afterDir="false" />
-    </list>
+    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="add buzzer flag" />
+    <list id="75641970-afe3-41f4-8211-ac3bdcb41cb9" name="Revert &quot;edit Tick constructor&quot;" comment="reset branch" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,6 +49,8 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="1ckVJvK3m1JWo3Gh7qo5Cp32Rep" />
   <component name="ProjectViewState">
@@ -332,7 +330,28 @@
       <option name="project" value="LOCAL" />
       <updated>1591206842615</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="reset branch">
+      <created>1591255524876</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1591255524876</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Revert &quot;edit Tick constructor&quot;&#10;&#10;This reverts commit b5b1356a">
+      <created>1591255734101</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1591255734101</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Revert &quot;edit Tick constructor&quot;&#10;&#10;This reverts commit b5b1356a">
+      <created>1591255812408</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1591255812408</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -378,7 +397,9 @@
     <MESSAGE value="WorldTime 배열 Null 오류, Calorie check 계산부 타입캐스팅" />
     <MESSAGE value="Mode 들 생성자 실행 check" />
     <MESSAGE value="Tick, Timer decreaseTimer수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tick, Timer decreaseTimer수정" />
+    <MESSAGE value="reset branch" />
+    <MESSAGE value="Revert &quot;edit Tick constructor&quot;&#10;&#10;This reverts commit b5b1356a" />
+    <option name="LAST_COMMIT_MESSAGE" value="Revert &quot;edit Tick constructor&quot;&#10;&#10;This reverts commit b5b1356a" />
   </component>
   <component name="WindowStateProjectService">
     <state x="760" y="274" key="#Project_Structure" timestamp="1591076943535">
@@ -397,9 +418,14 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1085" y="405" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1591074707858" />
-    <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog" timestamp="1591199933729">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="622" y="71" key="CommitChangelistDialog2" timestamp="1591255811922">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="622" y="71" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1591255811922" />
+    <state x="69" y="68" width="1782" height="904" key="DiffContextDialog" timestamp="1591255833606">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="69" y="68" width="1782" height="904" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591255833606" />
     <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591199933729" />
     <state x="1060" y="454" key="FileChooserDialogImpl" timestamp="1591073036048">
       <screen x="0" y="0" width="2560" height="1400" />
@@ -429,10 +455,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="781" y="344" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1591076609638" />
-    <state x="872" y="432" key="Vcs.Push.Dialog.v2" timestamp="1591206180980">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="654" y="321" key="Vcs.Push.Dialog.v2" timestamp="1591255831311">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="654" y="321" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591078515772" />
+    <state x="654" y="321" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591255831311" />
     <state x="872" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591206180980" />
     <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591205925540">
       <screen x="0" y="0" width="2560" height="1400" />
