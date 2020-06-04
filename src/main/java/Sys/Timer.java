@@ -25,6 +25,7 @@ public class Timer implements  Mode{
     public Timer() {
         isActivated=true;
         timerTime= LocalDateTime.of(2000,1,1,2,0,0);
+        settingTimer=LocalDateTime.of(2000,1,1,2,0,0);
         pauseTimerFlag=false;
 
 
