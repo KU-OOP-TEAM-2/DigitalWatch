@@ -5,11 +5,28 @@ import java.awt.*;
 
 public class Stopwatch_Pane extends JPanel {
 
-    JPanel secondSegBody;
-    JPanel firstSegBody;
+    //Segment JPanel
+    private JPanel secondSegBody;
+    private JPanel firstSegBody;
 
-    JLabel secondSegs[]; // Second Segment. 10 components
-    JLabel firstSegs[]; // First Segment. 8 components
+    //Image Label owned by Segment Panel
+    private JLabel secondSegs[]; // Second Segment. 10 components
+    private JLabel firstSegs[]; // First Segment. 8 components
+    private JLabel clockLabel; //clock icon
+    private JLabel meridiemLabel; //AM PM text label
+    private JLabel swLabel; // Stopwatch text label
+
+    //ImageIcon (will put into JLabel)
+    private ImageIcon seg14DeadBigImg; //grey big seg image
+    private ImageIcon seg14DeadImg; //grey seg image
+    private ImageIcon numBigImgs[]; //big num image 0 ~ 9
+    private ImageIcon numImgs[]; //small num image 0 ~ 9
+    private ImageIcon colonBigImg; //big colon image
+    private ImageIcon colonImg; //small colon image
+    private ImageIcon clockImg; //black clock image
+    private ImageIcon clockDeadImg; //grey clock image
+    private ImageIcon fImg; // alphabet F
+    private ImageIcon nImg; // alphabet N
 
     public Stopwatch_Pane() {
 
@@ -49,37 +66,49 @@ public class Stopwatch_Pane extends JPanel {
         };
 
         //load Images from resource folder
-        ImageIcon seg14DeadBigImg = new ImageIcon(this.getClass().getResource(ImageDir.SegDead14Big_dir));
-        ImageIcon seg14DeadImg = new ImageIcon(this.getClass().getResource(ImageDir.SegDead14_dir));
-        ImageIcon colonImg = new ImageIcon(this.getClass().getResource(ImageDir.colon_dir));
-        ImageIcon colonBigImg = new ImageIcon(this.getClass().getResource(ImageDir.colonBig_dir));
-        ImageIcon clockImg = new ImageIcon(this.getClass().getResource(ImageDir.clock_dir));
-        ImageIcon clockDeadImg = new ImageIcon(this.getClass().getResource(ImageDir.clockDead_dir));
-        ImageIcon num0BigImg = new ImageIcon(this.getClass().getResource(ImageDir.num0Big_dir));
-        ImageIcon num0Img = new ImageIcon(this.getClass().getResource(ImageDir.num0_dir));
-        ImageIcon fImg = new ImageIcon(this.getClass().getResource(ImageDir.fSeg_dir));
-        ImageIcon nImg = new ImageIcon(this.getClass().getResource(ImageDir.nSeg_dir));
+        seg14DeadBigImg = new ImageIcon(this.getClass().getResource(ImageDir.SegDead14Big_dir));
+        seg14DeadImg = new ImageIcon(this.getClass().getResource(ImageDir.SegDead14_dir));
+        colonImg = new ImageIcon(this.getClass().getResource(ImageDir.colon_dir));
+        colonBigImg = new ImageIcon(this.getClass().getResource(ImageDir.colonBig_dir));
+        clockImg = new ImageIcon(this.getClass().getResource(ImageDir.clock_dir));
+        clockDeadImg = new ImageIcon(this.getClass().getResource(ImageDir.clockDead_dir));
+
+        numBigImgs = new ImageIcon[10]; // first segment's numbers
+        for(int i=0; i<10; i++){
+            numBigImgs[i] = new ImageIcon(this.getClass().getResource(ImageDir.numBigdirs[i]));
+        }
+
+        numImgs = new ImageIcon[10]; // second segment's numbers
+        for(int i=0; i<10; i++){
+            numImgs[i] = new ImageIcon(this.getClass().getResource(ImageDir.numdirs[i]));
+        }
+
+        fImg = new ImageIcon(this.getClass().getResource(ImageDir.fSeg_dir));
+        nImg = new ImageIcon(this.getClass().getResource(ImageDir.nSeg_dir));
 
         //second Seg
         secondSegs = new JLabel[10];
         for(int i=0; i<10; i++){
-            if(i <= 1) secondSegs[i] = new JLabel(seg14DeadImg);
-            else if(!(i == 4 || i == 7)) secondSegs[i] = new JLabel(num0Img);
+            if(i == 0 || i == 9) secondSegs[i] = new JLabel(seg14DeadImg);
+            else if(i >= 2 && i<= 3) secondSegs[i] = new JLabel(fImg);
+            else if(i == 5) secondSegs[i] = new JLabel(nImg);
+            else if(!(i == 4 || i == 7)) secondSegs[i] = new JLabel(numImgs[0]);
             else secondSegs[i] = new JLabel(colonImg);
         }
 
         //first Seg
         firstSegs = new JLabel[8];
         for(int i=0; i<8; i++){
-            if(!(i == 2 || i == 5)) firstSegs[i] = new JLabel(num0BigImg);
+            if(i >= 6) firstSegs[i] = new JLabel(seg14DeadBigImg);
+            else if(!(i == 2 || i == 5)) firstSegs[i] = new JLabel(numBigImgs[0]);
             else firstSegs[i] = new JLabel(colonBigImg);
         }
 
         //Clock Icon
-        JLabel clockLabel = new JLabel(clockDeadImg);
+        clockLabel = new JLabel(clockDeadImg);
 
-        JLabel meridiemLabel = new JLabel("LAP");
-        JLabel swLabel = new JLabel("STOPWATCH");
+        meridiemLabel = new JLabel("LAP");
+        swLabel = new JLabel("STOPWATCH");
 
 
         secondSegBody.setSize(205, 55);

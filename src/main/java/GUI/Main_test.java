@@ -15,6 +15,10 @@ public class Main_test{
   public static Mode[] _modes;
   public static void main(String[] args) {
 
+    // 임의로 Mode manager 생성
+    _modeManager=new ModeManager();
+    _modes= _modeManager.getmodes();
+
     TimeKeeping_Pane timeKeepingPane = new TimeKeeping_Pane();
     Alarm_Pane alarmPane = new Alarm_Pane();
     Timer_Pane timerPane = new Timer_Pane();
@@ -27,17 +31,19 @@ public class Main_test{
     mainGUI.getModeB().addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        switch(modeNum){
-          case 1:
+        _modeManager.changeMode();
+
+        switch(_modeManager.getCurrentMode()){
+          case 2:
             switchPanel(mainGUI, timerPane);
             break;
-          case 2:
+          case 1:
             switchPanel(mainGUI, alarmPane);
             break;
           case 3:
             switchPanel(mainGUI, swPane);
             break;
-          case 4:
+          case 0:
             switchPanel(mainGUI, timeKeepingPane);
             break;
           default:
@@ -48,9 +54,6 @@ public class Main_test{
       }
     });
 
-    // 임의로 Mode manager 생성
-    _modeManager=new ModeManager();
-    _modes= _modeManager.getmodes();
 
   }
 

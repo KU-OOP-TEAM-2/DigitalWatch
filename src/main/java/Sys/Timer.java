@@ -30,7 +30,7 @@ public class Timer implements  Mode{
 
     }
 
-    //이거는 안쓸듯
+    //cancel 용 Timer 변수 저장
     private LocalDateTime settingTimer;
 
     //시간 을 99 까지 표현해야 하므로 Display할때 day까지 묶어서 계산해야함
@@ -120,34 +120,58 @@ public class Timer implements  Mode{
 
     public void saveTimer() {
         // TODO implement here
+        this.settingTimer=this.timerTime;
         saveTimerFlag=true;
     }
 
     //public으로 바꿈
-    public void decreaseTimer() {
+    public boolean decreaseTimer() {
         // TODO implement here
         if(pauseTimerFlag){
-            return;
+            return false;
         }
 
         //
-        timerTime.minusSeconds(1);
+        timerTime.minusNanos(10000000);
 
         if(!pauseTimerFlag){
             LocalDateTime defaulTime=LocalDateTime.of(2000,1,1,0,0,0);
-            if(defaulTime.isAfter(timerTime)){
+            if(defaulTime.isAfter(timerTime) || defaulTime.isEqual(timerTime)){
                 //ModeManager.beepbuzzer()
                 pauseTimerFlag=true;
                 timerTime=LocalDateTime.of(2000,1,1,0,0,0);
+                return true;
             }
         }
+        return false;
+
 
     }
 
+    public void start_pauseTimer(){
+        if(pauseTimerFlag){
+            if(timerTime.getDayOfMonth()==1 && timerTime.getHour()==0 && timerTime.getSecond()==0 && timerTime.getMinute()==0){
+                //0 리셋 상태일 때 아무작동 x
+                return;
+            }
+            else{
+                pauseTimerFlag=false;
+            }
+        }
+        else{ //pauseTimer;
+            pauseTimerFlag=true;
+        }
+    }
 
     public void startTimer() {
         // TODO implement here
-        pauseTimerFlag=false;
+        if(timerTime.getDayOfMonth()==1 && timerTime.getHour()==0 && timerTime.getSecond()==0 && timerTime.getMinute()==0){
+            //0 리셋 상태일 때 아무작동 x
+            return;
+        }
+        else {
+            pauseTimerFlag = false;
+        }
     }
 
 
@@ -165,13 +189,16 @@ public class Timer implements  Mode{
 
     public void cancelTimer() {
         // TODO implement here
-        timerTime= LocalDateTime.of(2000,1,1,0,0,0);
-
-
+        timerTime= this.settingTimer;
     }
+
+    //get cursor
     public int getCurrentCursor() {
         return this.timerCursor;
     }
+    //get Timer time
     public LocalDateTime getTimerTime() {return this.timerTime;}
-
+    public boolean getpauseTimerFlag() {return this.pauseTimerFlag; }
 }
+
+

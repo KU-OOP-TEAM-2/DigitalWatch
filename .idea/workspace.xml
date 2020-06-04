@@ -7,11 +7,19 @@
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="">
+    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="Tick, Timer decreaseTimer수정">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/Timer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/Timer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,11 +52,6 @@
     </system>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="minsoo" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1ckVJvK3m1JWo3Gh7qo5Cp32Rep" />
@@ -171,11 +174,10 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.test1Test" />
+        <item itemvalue="Application.Main_test" />
         <item itemvalue="Gradle.Tests in 'git_teampj'" />
+        <item itemvalue="JUnit.test1Test" />
         <item itemvalue="Gradle.test1Test" />
-        <item itemvalue="Application.Main_test" />
-        <item itemvalue="Application.Main_test" />
       </list>
     </recent_temporary>
   </component>
@@ -260,49 +262,77 @@
       <option name="project" value="LOCAL" />
       <updated>1591087617053</updated>
     </task>
-    <task id="LOCAL-00011" summary="ModeManger getmmodes">
-      <created>1591100257699</created>
+    <task id="LOCAL-00011" summary="return to default 추가">
+      <created>1591199123834</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1591100257699</updated>
+      <updated>1591199123834</updated>
     </task>
-    <task id="LOCAL-00012" summary="ModeManger getmmodes">
-      <created>1591103196988</created>
+    <task id="LOCAL-00012" summary="return to default 추가">
+      <created>1591199196709</created>
       <option name="number" value="00012" />
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1591103196988</updated>
+      <updated>1591199196709</updated>
     </task>
-    <task id="LOCAL-00013" summary="ModeManger getmmodes">
-      <created>1591106961300</created>
+    <task id="LOCAL-00013" summary="Timer Click 추가">
+      <created>1591199263621</created>
       <option name="number" value="00013" />
       <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
-      <updated>1591106961300</updated>
+      <updated>1591199263621</updated>
     </task>
-    <task id="LOCAL-00014" summary="StopWatch">
-      <created>1591197156021</created>
+    <task id="LOCAL-00014" summary="Timer 함수 정리, Cancel 수정">
+      <created>1591199488828</created>
       <option name="number" value="00014" />
       <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
-      <updated>1591197156021</updated>
+      <updated>1591199488828</updated>
     </task>
-    <task id="LOCAL-00015" summary="StopWatch">
-      <created>1591197374879</created>
+    <task id="LOCAL-00015" summary="returnToDefault 오타수정">
+      <created>1591199947849</created>
       <option name="number" value="00015" />
       <option name="presentableId" value="LOCAL-00015" />
       <option name="project" value="LOCAL" />
-      <updated>1591197374879</updated>
+      <updated>1591199947849</updated>
     </task>
-    <task id="LOCAL-00016" summary="StopWatch">
-      <created>1591198178340</created>
+    <task id="LOCAL-00016" summary="Set Mode 부분 배열-&gt; 각 class 내부 변수로 수정">
+      <created>1591200561840</created>
       <option name="number" value="00016" />
       <option name="presentableId" value="LOCAL-00016" />
       <option name="project" value="LOCAL" />
-      <updated>1591198178340</updated>
+      <updated>1591200561840</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Main_test에 ModeManger추가">
+      <created>1591205907834</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1591205907834</updated>
+    </task>
+    <task id="LOCAL-00018" summary="WorldTime 배열 Null 오류, Calorie check 계산부 타입캐스팅">
+      <created>1591206069381</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1591206069381</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Mode 들 생성자 실행 check">
+      <created>1591206174565</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1591206174565</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Tick, Timer decreaseTimer수정">
+      <created>1591206842615</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1591206842615</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -310,7 +340,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -327,8 +369,16 @@
     <MESSAGE value="clcikButton" />
     <MESSAGE value="ModeManger 변수" />
     <MESSAGE value="ModeManger getmmodes" />
-    <MESSAGE value="StopWatch" />
-    <option name="LAST_COMMIT_MESSAGE" value="StopWatch" />
+    <MESSAGE value="return to default 추가" />
+    <MESSAGE value="Timer Click 추가" />
+    <MESSAGE value="Timer 함수 정리, Cancel 수정" />
+    <MESSAGE value="returnToDefault 오타수정" />
+    <MESSAGE value="Set Mode 부분 배열-&gt; 각 class 내부 변수로 수정" />
+    <MESSAGE value="Main_test에 ModeManger추가" />
+    <MESSAGE value="WorldTime 배열 Null 오류, Calorie check 계산부 타입캐스팅" />
+    <MESSAGE value="Mode 들 생성자 실행 check" />
+    <MESSAGE value="Tick, Timer decreaseTimer수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tick, Timer decreaseTimer수정" />
   </component>
   <component name="WindowStateProjectService">
     <state x="760" y="274" key="#Project_Structure" timestamp="1591076943535">
@@ -347,30 +397,30 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1085" y="405" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1591074707858" />
-    <state x="794" y="86" key="CommitChangelistDialog2" timestamp="1591198177526">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog" timestamp="1591199933729">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="794" y="86" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1591198177526" />
+    <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591199933729" />
     <state x="1060" y="454" key="FileChooserDialogImpl" timestamp="1591073036048">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="454" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1591073036048" />
-    <state width="2517" height="520" key="GridCell.Tab.0.bottom" timestamp="1591081969925">
+    <state width="2517" height="194" key="GridCell.Tab.0.bottom" timestamp="1591207588052">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="520" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591081969925" />
-    <state width="2517" height="520" key="GridCell.Tab.0.center" timestamp="1591081969925">
+    <state width="2517" height="194" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591207588052" />
+    <state width="2517" height="194" key="GridCell.Tab.0.center" timestamp="1591207588052">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="520" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591081969925" />
-    <state width="2517" height="520" key="GridCell.Tab.0.left" timestamp="1591081969925">
+    <state width="2517" height="194" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591207588052" />
+    <state width="2517" height="194" key="GridCell.Tab.0.left" timestamp="1591207588052">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="520" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591081969925" />
-    <state width="2517" height="520" key="GridCell.Tab.0.right" timestamp="1591081969925">
+    <state width="2517" height="194" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591207588052" />
+    <state width="2517" height="194" key="GridCell.Tab.0.right" timestamp="1591207588052">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="520" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591081969925" />
+    <state width="2517" height="194" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591207588052" />
     <state x="248" y="121" key="MergeDialog" timestamp="1591082012879">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -379,25 +429,20 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="781" y="344" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1591076609638" />
-    <state x="100" y="100" width="2360" height="840" key="ShowDiffWithBranchDialog" timestamp="1591198222817">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="100" y="100" width="2360" height="840" key="ShowDiffWithBranchDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1591198222817" />
-    <state x="872" y="321" key="Vcs.Push.Dialog.v2" timestamp="1591198211972">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="654" y="321" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591078515772" />
-    <state x="872" y="321" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1591198211972" />
-    <state x="872" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591087443831" />
-    <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591085881809">
+    <state x="872" y="432" key="Vcs.Push.Dialog.v2" timestamp="1591206180980">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591085881809" />
-    <state x="1002" y="486" key="git4idea.merge.GitPullDialog" timestamp="1591084716215">
+    <state x="654" y="321" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591078515772" />
+    <state x="872" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591206180980" />
+    <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591205925540">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591205925540" />
+    <state x="1002" y="486" key="git4idea.merge.GitPullDialog" timestamp="1591206191994">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="752" y="361" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591078691554" />
-    <state x="1002" y="486" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591084716215" />
+    <state x="1002" y="486" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591206191994" />
     <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1591081751999">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

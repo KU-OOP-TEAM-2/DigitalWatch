@@ -6,7 +6,7 @@ import java.time.LocalTime;
 //gmt 값->서울 9 ,파리1, 런던0,  시드니10,LA -7 ,뉴욕 -4
 //서울 SEL, 파리PAR, 런던LON,시드니SYD,LA LAX , 뉴욕 NYC
 public class WorldTime implements Mode{
-    private City worldTimes[];
+    private City[] worldTimes;
     private int CurrentCity;//0~5
 
     private boolean isActivated;
@@ -22,6 +22,7 @@ public class WorldTime implements Mode{
 
 
     public WorldTime(){
+        this.worldTimes= new City[6];
         this.worldTimes[0]=new City(0,"SEL");
         this.worldTimes[1]=new City(1,"PAR");
         this.worldTimes[2]=new City(0,"LON");
