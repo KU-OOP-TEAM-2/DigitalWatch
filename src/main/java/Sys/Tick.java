@@ -5,13 +5,9 @@ import java.time.*;
 
 public class Tick implements Callable<Void>{
     private static boolean endFlag;
-    private ModeManager myModeManager;
-    private Mode[] modes;
 
-    Tick(ModeManager myModeManager){
+    Tick(){
         endFlag = false;
-        this.myModeManager = myModeManager;
-        modes = myModeManager.getmodes();
     }
 
     public void setEndFlag(boolean flag){endFlag = flag;}
@@ -40,21 +36,21 @@ public class Tick implements Callable<Void>{
             //tick per 10millisecond
             if(elapsedTime == 10) {
                 //stopwatch
-                ((StopWatch)modes[3]).increaseCurrentTime();
-                //time
-
-                //calorie check
-                ((CalorieCheck)modes[4]).increaseCalorieCheckTimer();
+                ((StopWatch)ModeManager.SingletonModeManager.getmodes()[3]).increaseCurrentTime();
+                ((Timer)ModeManager.SingletonModeManager.getmodes()[2]).decreaseTimer();
                 //when duration = 1 second
                 if (checkSecond == 100) {
                     checkSecond = 0;
+                    //time
+
+                    //calorie check
 
                     //Timer
-                    ((Timer)modes[2]).decreaseTimer();
+
                     //alarm
                     //Buzzer를 여기서 울리는것이 아니라 Alarm객체 내부에서 울리도록 함.
                     //구현 방식의 차이에 따라 추후 바뀔 수 있는 부분입니다.
-                    ((Alarm)modes[1]).isAlarmTimeCheck();
+                    ((Alarm)ModeManager.SingletonModeManager.getmodes()[1]).isAlarmTimeCheck();
                 }
                 //not yet 1 second
                 else {

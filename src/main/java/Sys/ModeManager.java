@@ -74,7 +74,7 @@ public class ModeManager {
 
 
     public void makeThread(){
-        Tick task = new Tick(this);
+        Tick task = new Tick();
         ExecutorService service = Executors.newFixedThreadPool(2);
         Future<Void> future = service.submit(task);
     }
