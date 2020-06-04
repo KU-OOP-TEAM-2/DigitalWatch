@@ -319,7 +319,7 @@ public class ModeManager {
     public void enterEditMode() {
         this.currentMode=8;
         this.currentCursor=0;
-
+        isEditMode=true;
         for(int i= 0; i<6;i++)
             editStatus[i]= modes[i].getActive();
 
@@ -376,6 +376,8 @@ public class ModeManager {
                 }
             }
         }//active list 순서별로 다시 정렬-> display를 위해서
+
+        isEditMode=false;
     }
     public int getCurrentMode(){ return this.currentMode; }
     //시퀀스 다이어그램 수정 사항. 없애도 되는 함수.
