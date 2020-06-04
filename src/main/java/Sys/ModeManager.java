@@ -26,7 +26,6 @@ public class ModeManager {
         modes[3] = new StopWatch();
         modes[4] = new CalorieCheck();
         modes[5] = new WorldTime();
-        modes[5] = new WorldTime();
         this.activeList=new int[4];
         for(int i=0;i<4;i++){
             this.activeList[i]=i;
@@ -197,18 +196,22 @@ public class ModeManager {
                             ((Alarm)modes[1]).decreaseAlarmTime();
                     }
                     else{
-                        if(Button == 0 && longClickedFlag == false)    //Mode : changeMode
+                        if(Button == 0 && longClickedFlag == false) {    //Mode : changeMode
                             this.changeMode();
-                        else if(Button == 0 && longClickedFlag == true)
+                        }
+                        else if(Button == 0 && longClickedFlag == true) {
                             this.enterEditMode();
+                        }
                         else if(Button == 1 && longClickedFlag == true) {    //Adjust 눌렀을 때 set Alarm으로 진잊
                             ((Alarm) modes[1]).enterEditAlarm(); //
                             isEditMode = !isEditMode;
                         }
-                        else if(Button == 1)    //Adjust : 현재 보고 있는 Alarm을 바꾼다.
-                            ((Alarm)modes[1]).changeAlarm();
-                        else if(Button == 2)    //Forward : 현재 보고 있는 알람을 on/off시킨다.
-                            ((Alarm)modes[1]).turnOnOffAlarm();
+                        else if(Button == 1 && longClickedFlag == false) {    //Adjust : 현재 보고 있는 Alarm을 바꾼다.
+                            ((Alarm) modes[1]).changeAlarm();
+                        }
+                        else if(Button == 2 && longClickedFlag == false) {    //Forward : 현재 보고 있는 알람을 on/off시킨다.
+                            ((Alarm) modes[1]).turnOnOffAlarm();
+                        }
                         else if(Button == 3);   //지정된 버튼이 없다.
                     }
                     break;
@@ -249,6 +252,7 @@ public class ModeManager {
 
                         }else{}
                     }
+                    break;
                 case 3: //StopWatch
                         if(Button == 0 && longClickedFlag == false)
                             this.changeMode();  //Mode : changeMode

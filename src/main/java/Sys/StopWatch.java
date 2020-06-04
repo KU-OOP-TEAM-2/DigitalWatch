@@ -16,15 +16,13 @@ public class StopWatch implements Mode{
     //객체를 만들 때 Time, Timer, Alarm, Stopwatch를 Activate 시키고 그 외 2개는 Deactivate.
     public StopWatch() {
         LocalDate temp = LocalDate.now();
-        currentStopWatchTime.of(0,0,0,0);
+        currentStopWatchTime = LocalTime.of(0,0,0,0);
         isActivated = true;
-        lapTime.of(0,0,0,0);
+        lapTime= LocalTime.of(0,0,0,0);
         isPaused = true;
-        overflowStopWatchTime.of(0,59,59,99000000);
-
+        overflowStopWatchTime= LocalTime.of(0,59,59,99000000);
     }
 
-    private LocalDate temp;
     private LocalTime currentStopWatchTime;
     private LocalTime lapTime;
     private LocalTime overflowStopWatchTime;
@@ -52,8 +50,8 @@ public class StopWatch implements Mode{
 
     //버튼 검사를 해서 paused상태에서만 기능이 작동하는지 검사.
     public void resetStopwatch() {
-        currentStopWatchTime.of(0,0,0,0);
-        lapTime.of(0,0,0,0);
+        currentStopWatchTime = LocalTime.of(0,0,0,0);
+        lapTime = LocalTime.of(0,0,0,0);
     }
 
     public void lapStopwatch() {
@@ -95,8 +93,8 @@ public class StopWatch implements Mode{
     }
     //이게 왜 필요한지 모르겠습니다... 일단은 그냥 두겠습니다.
     public void resetCurrentTime() {
-        currentStopWatchTime.of(0,0,0,0);
-        lapTime.of(0,0,0,0);
+        currentStopWatchTime = LocalTime.of(0,0,0,0);
+        lapTime = LocalTime.of(0,0,0,0);
     }
 
     private boolean isActivated;
@@ -110,10 +108,8 @@ public class StopWatch implements Mode{
         return isPaused;
     }
 
-    public LocalDateTime getCurrentStopWatchTime(){return currentStopWatchTime.atDate(temp);}
-    public LocalDateTime getLapStopWatchTime(){return currentStopWatchTime.atDate(temp);}
-
-
+    public LocalTime getCurrentStopWatchTime(){return currentStopWatchTime;}
+    public LocalTime getLapStopWatchTime(){return lapTime;}
 
 
 }

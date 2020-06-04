@@ -40,4 +40,6 @@ public class AlarmTimer {
         this.expirationTime = expirationTime;
     }
 
+    public boolean isActivatedTimer(){return this.isActivated;}
+
 }

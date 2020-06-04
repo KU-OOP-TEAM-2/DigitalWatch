@@ -9,8 +9,6 @@ import Sys.*;
 
 public class Main_test_2 {
 
-  public static ModeManager _modeManager;
-
   public static void main(String[] args) {
 
     watchGUI mainGUI = new watchGUI(); //initialized with TimeKeeping mode

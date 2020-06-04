@@ -7,6 +7,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 
 public class watchGUI extends JFrame implements Runnable{
@@ -25,6 +26,11 @@ public class watchGUI extends JFrame implements Runnable{
 	private static final int MODE_STOPWATCH = 3;
 	private static final int MODE_CCHECK = 4;
 	private static final int MODE_WTIME = 5;
+
+	private static final int MODE_BUTTON = 0;
+	private static final int ADJUST_BUTTON = 1;
+	private static final int FORWARD_BUTTON = 2;
+	private static final int REVERSE_BUTTON = 3;
 
 	private JPanel framePane;
 
@@ -53,6 +59,8 @@ public class watchGUI extends JFrame implements Runnable{
 	private ImageIcon colonImg; //small colon image
 	private ImageIcon clockImg; //black clock image
 	private ImageIcon clockDeadImg; //grey clock image
+	private ImageIcon alphaNImg; //alphabet N
+	private ImageIcon alphaFImg; //alphabet F
 
 
 	public watchGUI() {
@@ -67,6 +75,8 @@ public class watchGUI extends JFrame implements Runnable{
 		colonBigImg = new ImageIcon(this.getClass().getResource(ImageDir.colonBig_dir));
 		clockImg = new ImageIcon(this.getClass().getResource(ImageDir.clock_dir));
 		clockDeadImg = new ImageIcon(this.getClass().getResource(ImageDir.clockDead_dir));
+		alphaFImg = new ImageIcon(this.getClass().getResource(ImageDir.fSeg_dir));
+		alphaNImg = new ImageIcon(this.getClass().getResource(ImageDir.nSeg_dir));
 		numBigImgs = new ImageIcon[10]; // first segment's numbers
 		for(int i=0; i<10; i++){
 			numBigImgs[i] = new ImageIcon(this.getClass().getResource(ImageDir.numBigdirs[i]));
@@ -98,28 +108,28 @@ public class watchGUI extends JFrame implements Runnable{
 		adjustB.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				modeManager.clickButton(1, false);
+				modeManager.clickButton(ADJUST_BUTTON, false);
 			}
 		});
 		modeB = new JButton();
 		modeB.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				modeManager.clickButton(0, false);
+				modeManager.clickButton(MODE_BUTTON, false);
 			}
 		});
 		forwardB = new JButton();
 		forwardB.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				modeManager.clickButton(2, false);
+				modeManager.clickButton(FORWARD_BUTTON, false);
 			}
 		});
 		reverseB = new JButton();
 		reverseB.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				modeManager.clickButton(3, false);
+				modeManager.clickButton(REVERSE_BUTTON, false);
 			}
 		});
 
@@ -220,6 +230,10 @@ public class watchGUI extends JFrame implements Runnable{
 	public ImageIcon getClockImg() { return clockImg; }
 
 	public ImageIcon getClockDeadImg() { return clockDeadImg; }
+
+	public ImageIcon getAlphaNImg() { return alphaNImg; }
+
+	public ImageIcon getAlphaFImg() { return alphaFImg; }
 
 
 	//GUI Update Methods
@@ -690,6 +704,30 @@ public class watchGUI extends JFrame implements Runnable{
 		}
 	}
 
+	private void keepYearToArray(int year, int yearArray[]){
+		if(year < 10){
+			for(int i=0; i<3; i++) yearArray[i] = 0;
+			yearArray[3] = year;
+		}else if(year>=10 && year<100){
+			for(int i=0; i<2; i++) yearArray[i] = 0;
+			for(int i=yearArray.length-1; i>=0; i--){
+				yearArray[i] = year%10;
+				year /= 10;
+			}
+		}else if(year>=100 && year<1000){
+			yearArray[0] = 0;
+			for(int i=yearArray.length-1; i>=0; i--){
+				yearArray[i] = year%10;
+				year /= 10;
+			}
+		}else{
+			for(int i=yearArray.length-1; i>=0; i--){
+				yearArray[i] = year%10;
+				year /= 10;
+			}
+		}
+	}
+
 	@Override
 	public void run() { // update GUI
 		while(true) {
@@ -712,11 +750,6 @@ public class watchGUI extends JFrame implements Runnable{
 					int minuteNum[] = new int[2];
 					int secondNum[] = new int[2];
 
-					for (int i = yearNum.length - 1; i >= 0; i--) {
-						yearNum[i] = year % 10;
-						year /= 10;
-					}
-
 					if (hour < 12) {
 						getTimeKeepingPane().getMeridiemLabel().setText("AM");
 					} else {
@@ -725,6 +758,7 @@ public class watchGUI extends JFrame implements Runnable{
 					getTimeKeepingPane().getDowLabel().setText(temp.getDayOfWeek().toString().substring(0, 3)); //display day of week only 3 words
 
 					//split time value
+					keepYearToArray(year, yearNum);
 					keepValueToArray(month, monthNum);
 					keepValueToArray(day, dayNum);
 					keepHourToArray(hour, hourNum);
@@ -753,10 +787,48 @@ public class watchGUI extends JFrame implements Runnable{
 					break;
 
 				case MODE_ALARM: //if current Mode is Alarm
-					LocalDateTime alarmTime = ((Alarm)(modeManager.getmodes()[1])).getCurrentAlarmTimer();
+					Alarm alarm = (Alarm) modeManager.getmodes()[1];
+
+					LocalDateTime alarmTime = alarm.getCurrentAlarmTimer();
+					boolean isActivatedTimer = alarm.getCurrentAlarmisActivated();
 
 					int alarmHour = alarmTime.getHour();
 					int alarmMin = alarmTime.getMinute();
+					int timerIndex = alarm.getCurrentAlarmIndex() + 1;
+
+					int ahNum[] = new int[2];
+					int amNum[] = new int[2];
+
+					//split time value
+					keepHourToArray(alarmHour, ahNum);
+					keepValueToArray(alarmMin, amNum);
+
+
+					//second Segment img set
+					if(isActivatedTimer){ //DISPLAY ON
+						for(int i=0; i<2; i++) getAlarmPane().getSecondSegs()[i].setIcon(getSeg14DeadImg());
+						getAlarmPane().getSecondSegs()[2].setIcon(getNumImgs()[0]);
+						getAlarmPane().getSecondSegs()[3].setIcon(getAlphaNImg());
+					}else{ // DISPLAY OFF
+						getAlarmPane().getSecondSegs()[0].setIcon(getSeg14DeadImg());
+						getAlarmPane().getSecondSegs()[1].setIcon(getNumImgs()[0]);
+						getAlarmPane().getSecondSegs()[2].setIcon(getAlphaFImg());
+						getAlarmPane().getSecondSegs()[3].setIcon(getAlphaFImg());
+					}
+					getAlarmPane().getSecondSegs()[4].setIcon(getColonImg());
+					getAlarmPane().getSecondSegs()[5].setIcon(getAlphaNImg());
+					getAlarmPane().getSecondSegs()[6].setIcon(getNumImgs()[0]);
+					getAlarmPane().getSecondSegs()[7].setIcon(getColonImg());
+					getAlarmPane().getSecondSegs()[8].setIcon(getNumImgs()[timerIndex]);
+					getAlarmPane().getSecondSegs()[9].setIcon(getSeg14DeadImg());
+
+					//first Segment img set
+					for (int i=0; i<8; i++) {
+						if (i>=0 && i<2) changefirstImg(MODE_ALARM, i, ahNum[i]);
+						else if (i>=3 && i<5) changefirstImg(MODE_ALARM, i, amNum[i-3]);
+						else if (i>=6 && i<8) getAlarmPane().getFirstSegs()[i].setIcon(getSeg14DeadBigImg());
+						else if(i==2 || i==5) getAlarmPane().getFirstSegs()[i].setIcon(getColonBigImg());
+					}
 
 
 					getAlarmPane().getClockLabel().setIcon(getClockDeadImg());
@@ -804,6 +876,53 @@ public class watchGUI extends JFrame implements Runnable{
 
 				case MODE_STOPWATCH: //if current Mode is Stopwatch
 
+					LocalTime swTime = ((StopWatch)modeManager.getmodes()[3]).getCurrentStopWatchTime();
+					LocalTime lapTime = ((StopWatch)modeManager.getmodes()[3]).getLapStopWatchTime();
+
+					int swMin = swTime.getMinute();
+					int swSec = swTime.getSecond();
+					int swmSec = swTime.getNano()*1000000;
+
+					int lapMin = lapTime.getMinute();
+					int lapSec = lapTime.getSecond();
+					int lapmSec = lapTime.getNano()*1000000;
+
+					int smNum[] = new int[2];
+					int ssNum[] = new int[2];
+					int smsNum[] = new int[2];
+
+					int lmNum[] = new int[2];
+					int lsNum[] = new int[2];
+					int lmsNum[] = new int[2];
+
+					//split Time Value
+					keepValueToArray(swMin, smNum);
+					keepValueToArray(swSec, ssNum);
+					keepValueToArray(swmSec, smsNum);
+					keepValueToArray(lapMin, lmNum);
+					keepValueToArray(lapSec, lsNum);
+					keepValueToArray(lapmSec, lmsNum);
+
+					//set second segment Img (min, sec, ms)
+					for (int i = 0; i < 10; i++) {
+						if (i>=0 && i<2) getSwPane().getSecondSegs()[i].setIcon(getSeg14DeadImg());
+						else if(i>=2 && i<4) changeSecondImg(MODE_STOPWATCH, i, lmNum[i-2]);
+						else if(i>=5 && i<7) changeSecondImg(MODE_STOPWATCH, i, lsNum[i-5]);
+						else if(i>=8 && i<10) changeSecondImg(MODE_STOPWATCH, i, lmsNum[i-8]);
+						else if(i==4 || i==7) getSwPane().getSecondSegs()[i].setIcon(colonImg);
+					}
+
+					//set first segment Img (min, sec, ms)
+					for (int i = 0; i < 8; i++) {
+						if (i>=0 && i<2) changefirstImg(MODE_STOPWATCH, i, smNum[i]);
+						else if (i>=3 && i<5) changefirstImg(MODE_STOPWATCH, i, ssNum[i-3]);
+						else if (i>=6 && i<8) changefirstImg(MODE_STOPWATCH, i, smsNum[i-6]);
+						else if(i==2 || i==5) getSwPane().getFirstSegs()[i].setIcon(getColonBigImg());
+					}
+
+					//set default clock icon
+					swPane.getClockLabel().setIcon(getClockDeadImg());
+					if(!(getWatchBodyPane().equals(swPane))) switchPanel(this, swPane);
 					break;
 
 				case MODE_CCHECK: //if current Mode is CalorieCheck
