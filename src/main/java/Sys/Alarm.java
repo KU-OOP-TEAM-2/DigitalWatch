@@ -22,11 +22,12 @@ public class Alarm implements Mode{
         for(int i=0; i < alarm.length; i++){
             alarm[i] = new AlarmTimer();
         }
-
+        isActivated=true;
         //Thread
-        alarmThread = new AlarmThread("alarmThread");
+        //alarmThread = new AlarmThread("alarmThread");
     }
 
+    /*
     private class AlarmThread implements Runnable{
         Thread t;
         
@@ -39,7 +40,7 @@ public class Alarm implements Mode{
             LocalDateTime traceCurrentTime;
             LocalTime currentTime;
             while(true){
-                traceCurrentTime = time.getCurrentTime();
+//                traceCurrentTime = time.getCurrentTime();/
                 currentTime = traceCurrentTime.toLocalTime();
                 
                 for(int i=0; i < 4; i++){
@@ -49,54 +50,48 @@ public class Alarm implements Mode{
                 }
             }
         }
-    }
-
-
-    
-    private AlarmTimer alarm[];
-
-    private int currentAlarmTimerIndex;
-
-    //추가 - 변수
-    private boolean isCursorOnHour;
-
-    //추가 - 변수 AlarmTimer 수정할 때...
-    private LocalTime copyOfAlarmTimer;
-
-    //추가 - 변수
-    private AlarmThread alarmThread;
-
-    //추가 - 변수
+    }*/
+    //추가 - 변수(buzzer객체와 time객체를 받아서 사용하기 위해서)
     private Buzzer buzzer;
 
     private Time time;
 
+
+    private AlarmTimer alarm[];
+
+    //현재 Display할 AlarmTimer의 index.
+    private int currentAlarmTimerIndex;
+
+    //추가 - 변수
+    //현재 Display할, 그리고 현재 보고 있는 Cursor의 위치: (시간, 분 中 택 1)
+    private boolean isCursorOnHour;
+
+    //추가 - 변수 AlarmTimer 수정할 때 임시변수.
+    private LocalTime copyOfAlarmTimer;
     //추가 - 변수
     private boolean isActivated; 
-    
-    
-    //requestNextAlarm, requestFirstAlarm는 지울것임 (시퀀스 다이어그램 수정도 같이..)
-    public LocalTime requestNextAlarm_2(){
+
+
+    public boolean isAlarmTimeCheck(){
+        LocalDateTime traceCurrentTime;
+        LocalTime currentTime;
+        traceCurrentTime = time.getCurrentTime();
+        currentTime = traceCurrentTime.toLocalTime();
+
+        for(int i=0;i<4;i++){
+            //LocalTime이 xx:xx:00이고 현재시간과 expirationTime을 비교해서 두 조건 충족.
+            if(currentTime.getSecond() == 0 && currentTime.compareTo(alarm[i].requestExpirationTime())==-0) {
+                buzzer.beepBuzzer();
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public LocalTime changeAlarm(){
         currentAlarmTimerIndex = (currentAlarmTimerIndex + 1) % 4;
         return alarm[currentAlarmTimerIndex].requestExpirationTime();
     }
-
-    public LocalTime requestNextAlarm() {
-        this.currentAlarmTimerIndex = (this.currentAlarmTimerIndex+1) % 4;
-        LocalTime time = alarm[currentAlarmTimerIndex].requestExpirationTime();
-        return time;
-
-        //어떤 Type을 modeManager에 전달해줄지..?
-        //여기가 display를 사용하는 주체가 되는것..?
-    }
-
-
-    public LocalTime requestFirstAlarm() {
-        this.currentAlarmTimerIndex = 0;
-        LocalTime time = alarm[currentAlarmTimerIndex].requestExpirationTime();
-        return time;
-    }
-
 
     public void turnOnOffAlarm() {
         alarm[currentAlarmTimerIndex].toggleAlarmTimer();
@@ -107,12 +102,7 @@ public class Alarm implements Mode{
      *
      */
     public void enterEditAlarm() {
-        //
         copyOfAlarmTimer = this.alarm[currentAlarmTimerIndex].requestExpirationTime();
-
-        //깜박이는 커서 display...
-        //copyOfAlarmTimer를 사용해서.
-
     }
 
     /**
@@ -134,6 +124,11 @@ public class Alarm implements Mode{
             copyOfAlarmTimer = copyOfAlarmTimer.minusHours(1);
         else
             copyOfAlarmTimer = copyOfAlarmTimer.minusMinutes(1);
+    }
+
+    //현재 보여줄 AlarmTimer.
+    public LocalTime getCopyOfAlarmTimer(){
+        return copyOfAlarmTimer;
     }
 
     /**

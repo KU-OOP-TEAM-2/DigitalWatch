@@ -13,14 +13,17 @@ public class CalorieCheck implements Mode{
      * Default constructor
      */
     public CalorieCheck() {
-        pauseCalorieCheck = true;
+        pauseCalorieCheckFlag = true;
         isActivated = false;
         cursor = false;
         Speed = 5;
         Weight = 60;
         Calorie = 0;
-//        CalorieTime = call system time library
+
+        //stopwatch 개념이므로 0시0분0초에서 시작
+        CalorieTime= LocalTime.of(0,0,0,0);
     }
+    LocalTime overflowStopWatchTime;
 
     /**
      *
@@ -39,18 +42,25 @@ public class CalorieCheck implements Mode{
     /**
      *
      */
-    private double Calorie;
-    public double getCalorie() {return Calorie;}
+    private int Calorie;
+    public int getCalorie() {
+        calculateCalorie();
+        return Calorie;
+    }
     public void setCalorie(int Calorie){this.Calorie = Calorie;}
 
     /**
-     *
+     stopwatch 개념의 시계
+     0시0분0초 ~ 23시 59분 59초까지 측정 가능하게 할 것
      */
-    private LocalDateTime CalorieTime;
-    public LocalDateTime getCalorieTime() {return CalorieTime;}
-//    flag
+    private LocalTime CalorieTime;
+    public LocalTime getCalorieTime() {return CalorieTime;}
+    public int getHour(){return CalorieTime.getHour();}
+    public int getMinute(){return CalorieTime.getMinute();}
+    public int getSecond(){return CalorieTime.getSecond();}
 
-    private boolean pauseCalorieCheck;
+    //    flag
+    private boolean pauseCalorieCheckFlag;
     private boolean isActivated;
 
     //    false = speed, true = weight
@@ -72,16 +82,16 @@ public class CalorieCheck implements Mode{
      */
     public void increaseData() {
         if(cursor){
-            if(Weight == 999){
-                Weight = 0;
+            if(tempWeight == 999){
+                tempWeight = 0;
             } else{
-                Weight += 1;
+                tempWeight += 1;
             }
         }else{
             if(Speed == 99){
-                Speed = 0;
+                tempSpeed = 0;
             } else {
-                Speed += 1;
+                tempSpeed += 1;
             }
         }
     }
@@ -106,7 +116,7 @@ public class CalorieCheck implements Mode{
     }
 
     /**
-     *
+     임시변수에 저장해놓은 값을 실제 speed, weigth 변수에 저장
      */
     public void saveCalorieSetting() {
         tempSpeed = Speed;
@@ -126,13 +136,16 @@ public class CalorieCheck implements Mode{
      *
      */
     public void startCalorieCheck() {
+        pauseCalorieCheckFlag = false;
         cursor = false;
+
     }
 
     /**
      *
      */
     public void resumeCaloreCheck() {
+        pauseCalorieCheckFlag = false;
         startCalorieCheck();
     }
 
@@ -140,14 +153,27 @@ public class CalorieCheck implements Mode{
      *
      */
     public void pauseCalorieCheck() {
-        pauseCalorieCheck = false;
+        pauseCalorieCheckFlag = true;
     }
 
+    public void endCalorieCheck(){
+        pauseCalorieCheckFlag = true;
+    }
     /**
      *
      */
     public void increaseCalorieCheckTimer() {
-        CalorieTime.plusSeconds(1);
+        //calorie check가 pause 상태가 아닐 때
+        if(!pauseCalorieCheckFlag){
+            //23시 59분 59초가 되면 시간측정 및 계산 종료
+            if(CalorieTime.getHour() == 23 && CalorieTime.getMinute() == 59
+                    && CalorieTime.getSecond() == 59){
+                endCalorieCheck();
+            }
+            else{
+                CalorieTime.plusSeconds(1);
+            }
+        }
     }
 
     public void resetCalorieCheck(){
@@ -156,9 +182,12 @@ public class CalorieCheck implements Mode{
         Speed = 5;
         Weight = 60;
         Calorie = 0;
+        CalorieTime = LocalTime.of(0,0,0,0);
     }
 
     private void calculateCalorie(){
-        Calorie = 0.0157 * ( ( 0.1 * Speed + 3.5 ) /3.5 ) * Weight * CalorieTime.getSecond();
+        int allSeconds = CalorieTime.getHour()*3600 + CalorieTime.getMinute()*60
+                + CalorieTime.getSecond();
+        Calorie = (int) (0.0157 * ( ( 0.1 * Speed + 3.5 ) /3.5 ) * Weight * allSeconds);
     }
 }
