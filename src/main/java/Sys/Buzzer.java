@@ -4,7 +4,7 @@ package Sys;
 import java.util.*;
 import java.awt.*;
 /**
- * 
+ *
  */
 public class Buzzer {
 
@@ -13,19 +13,37 @@ public class Buzzer {
      */
     public Buzzer() {
         buzzerOn = false;
+        buzzerThread = new BuzzerThread("buzzerThread");
+        isAlarmRinging = false;
     }
 
     /**
-     * 
+     *
      */
     private Boolean buzzerOn;
-
+    private Boolean isAlarmRinging;
     //추가된 부분
     private final int BEEPCOUNT = 10;
     //추가된 부분
+    private BuzzerThread buzzerThread;
 
+    private class BuzzerThread implements Runnable{
+        Thread t;
+
+        BuzzerThread(String name){
+            t = new Thread(this, name);
+            t.start();
+        }
+
+        public void run(){
+            beepBuzzer();
+        }
+    }
+
+    /**
+     *
+     */
     public void beepBuzzer() {
-        //buzzer가 울리고 있었다면 씹는다.
         if(buzzerOn == true)
             return;
         buzzerOn = true;
@@ -33,17 +51,21 @@ public class Buzzer {
         for(i=0; i < BEEPCOUNT && buzzerOn; i++){
             java.awt.Toolkit.getDefaultToolkit().beep();
             try {
-				Thread.sleep(1000); // introduce delay
-			} catch (InterruptedException e) {
-			}
+                Thread.sleep(1000); // introduce delay
+            } catch (InterruptedException e) {
+            }
         }
     }
 
     /**
-     * 
+     *
      */
     public void stopBuzzer() {
         buzzerOn = false;
+        isAlarmRinging = false;
     }
+    public boolean getBuzzerOn(){return buzzerOn;}
+    public boolean getIsAlarmRinging(){return isAlarmRinging;}
+    public void setIsAlarmRinging(boolean isAlarmRinging){this.isAlarmRinging = isAlarmRinging;}
 
 }
