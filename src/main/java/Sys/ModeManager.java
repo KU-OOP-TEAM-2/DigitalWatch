@@ -160,9 +160,9 @@ public class ModeManager {
                         //time keeping 일 때
                         switch (Button) {
                             case 0:
-                                if (longClickedFlag == true)
+                                if (longClickedFlag == true) {
                                     this.enterEditMode();
-                                else
+                                } else
                                     this.changeMode();
                                 break;
                             case 1:
@@ -228,8 +228,7 @@ public class ModeManager {
                     }
                     else{
                         if(Button == 0 && longClickedFlag == true) {    //set Mode로 진입.
-                            currentMode=8;
-                            isEditMode = !isEditMode;
+                            this.enterEditMode();
                         }
                         else if(Button == 0 && longClickedFlag == false) {    //Mode : changeMode
                             this.changeMode();
