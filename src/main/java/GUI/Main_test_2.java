@@ -42,16 +42,16 @@ public class Main_test_2{
       @Override
       public void actionPerformed(ActionEvent e) {
         switch(_modeManager.getCurrentMode()){
-          case 1:
+          case 2:
             switchPanel(mainGUI, mainGUI.getTimerPane());
             break;
-          case 2:
+          case 1:
             switchPanel(mainGUI, mainGUI.getAlarmPane());
             break;
           case 3:
             switchPanel(mainGUI, mainGUI.getSwPane());
             break;
-          case 4:
+          case 0:
             switchPanel(mainGUI, mainGUI.getTimeKeepingPane());
             break;
           default:
