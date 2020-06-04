@@ -42,8 +42,8 @@ public class CalorieCheck implements Mode{
     /**
      *
      */
-    private double Calorie;
-    public double getCalorie() {
+    private int Calorie;
+    public int getCalorie() {
         calculateCalorie();
         return Calorie;
     }
@@ -189,7 +189,7 @@ public class CalorieCheck implements Mode{
     }
 
     private void calculateCalorie(){
-        double allSeconds = CalorieTime.getHour()*3600 + CalorieTime.getMinute()*60
+        int allSeconds = CalorieTime.getHour()*3600 + CalorieTime.getMinute()*60
                 + CalorieTime.getSecond();
         Calorie = (int) (0.0157 * ( ( 0.1 * Speed + 3.5 ) /3.5 ) * Weight * allSeconds);
     }
