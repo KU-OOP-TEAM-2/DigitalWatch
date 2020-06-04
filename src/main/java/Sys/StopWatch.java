@@ -2,6 +2,8 @@ package Sys;
 
 import java.util.*;
 import java.time.LocalTime;
+import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 /**
  * 
@@ -13,6 +15,7 @@ public class StopWatch implements Mode{
      */
     //객체를 만들 때 Time, Timer, Alarm, Stopwatch를 Activate 시키고 그 외 2개는 Deactivate.
     public StopWatch() {
+        LocalDate temp = LocalDate.now();
         currentStopWatchTime.of(0,0,0,0);
         isActivated = true;
         lapTime.of(0,0,0,0);
@@ -21,7 +24,7 @@ public class StopWatch implements Mode{
 
     }
 
-
+    private LocalDate temp;
     private LocalTime currentStopWatchTime;
     private LocalTime lapTime;
     private LocalTime overflowStopWatchTime;
@@ -107,15 +110,9 @@ public class StopWatch implements Mode{
         return isPaused;
     }
 
-    public int getStopWatchTime_Minute(){
-        return currentStopWatchTime.getMinute();
-    }
-    public int getStopWatchTime_Second(){
-        return currentStopWatchTime.getSecond();
-    }
-    public int getStopWatchTime_100Ms(){
-        return (currentStopWatchTime.getNano() * 10000000);
-    }
+    public LocalDateTime getCurrentStopWatchTime(){return currentStopWatchTime.atDate(temp);}
+    public LocalDateTime getLapStopWatchTime(){return currentStopWatchTime.atDate(temp);}
+
 
 
 

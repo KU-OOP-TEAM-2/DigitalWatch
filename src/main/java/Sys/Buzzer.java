@@ -62,8 +62,10 @@ public class Buzzer {
      */
     public void stopBuzzer() {
         buzzerOn = false;
+        isAlarmRinging = false;
     }
     public boolean getBuzzerOn(){return buzzerOn;}
     public boolean getIsAlarmRinging(){return isAlarmRinging;}
+    public void setIsAlarmRinging(boolean isAlarmRinging){this.isAlarmRinging = isAlarmRinging;}
 
 }

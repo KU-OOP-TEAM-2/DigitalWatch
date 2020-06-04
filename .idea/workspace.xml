@@ -17,8 +17,9 @@
   <component name="ChangeListManager">
     <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="edit Tick">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/WorldTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/WorldTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/Alarm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/Alarm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/Buzzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/Buzzer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/StopWatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/StopWatch.java" afterDir="false" />
     </list>
     <list id="75641970-afe3-41f4-8211-ac3bdcb41cb9" name="Revert &quot;edit Tick constructor&quot;" comment="reset branch" />
     <option name="SHOW_DIALOG" value="false" />

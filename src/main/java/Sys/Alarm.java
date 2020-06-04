@@ -2,6 +2,7 @@ package Sys;
 import java.util.*;
 import java.time.LocalTime;
 import java.time.LocalDateTime;
+import java.time.LocalDate;
 /**
  *
  */
@@ -10,7 +11,7 @@ public class Alarm implements Mode{
 
     //ModeManager에서 Buzzer객체
     public Alarm(Buzzer buzzer, Mode time) {
-
+        temp = LocalDate.now();
         //ModeManager에서 사용중인 buzzer를 받아서 사용.
         this.buzzer = buzzer;
         //Time의 시간을 받아와야지 buzzer를 작동가능.
@@ -56,6 +57,8 @@ public class Alarm implements Mode{
 
     private Time time;
 
+    private LocalDate temp;
+
 
     private AlarmTimer alarm[];
 
@@ -82,7 +85,7 @@ public class Alarm implements Mode{
             //LocalTime이 xx:xx:00이고 현재시간과 expirationTime을 비교해서 두 조건 충족.
             if(currentTime.getSecond() == 0 && currentTime.compareTo(alarm[i].requestExpirationTime())==-0) {
                 buzzer.beepBuzzer();
-
+                buzzer.setIsAlarmRinging(true);
                 return true;
             }
         }
@@ -128,8 +131,8 @@ public class Alarm implements Mode{
     }
 
     //현재 보여줄 AlarmTimer.
-    public LocalTime getCopyOfAlarmTimer(){
-        return copyOfAlarmTimer;
+    public LocalDateTime getCopyOfAlarmTimer(){
+        return copyOfAlarmTimer.atDate(temp);
     }
 
     /**
@@ -158,8 +161,8 @@ public class Alarm implements Mode{
     }
 
     //추가 - getter
-    public LocalTime getCurrentAlarmTimer(){
-        return alarm[currentAlarmTimerIndex].requestExpirationTime();
+    public LocalDateTime getCurrentAlarmTimer(){
+        return (alarm[currentAlarmTimerIndex].requestExpirationTime()).atDate(temp);
     }
 
     public void setActive(boolean act){
