@@ -757,7 +757,7 @@ public class watchGUI extends JFrame implements Runnable{
 
 					int alarmHour = alarmTime.getHour();
 					int alarmMin = alarmTime.getMinute();
-					
+
 
 					getAlarmPane().getClockLabel().setIcon(getClockDeadImg());
 					if(!(getWatchBodyPane().equals(alarmPane))) switchPanel(this, alarmPane);
