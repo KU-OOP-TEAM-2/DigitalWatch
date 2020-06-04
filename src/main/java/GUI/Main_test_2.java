@@ -20,23 +20,23 @@ public class Main_test_2{
     updateGUI.start();
 
     //test thread
-    Thread tickCount = new Thread(new Runnable() {
-      @Override
-      public void run() {
-        LocalDateTime ldt = LocalDateTime.of(2020,01,01,00,00,00,00);
-        while(true){
-          ldt = ldt.plusSeconds(1);
-          mainGUI.getTimeKeepingPane().setCurrentTime(ldt);
-          System.out.println(mainGUI.getTimeKeepingPane().getCurrentTime());
-          try {
-            Thread.sleep(1000);
-          } catch (InterruptedException e) {
-            e.printStackTrace();
-          }
-        }
-      }
-    });
-    tickCount.start();
+//    Thread tickCount = new Thread(new Runnable() {
+//      @Override
+//      public void run() {
+//        LocalDateTime ldt = LocalDateTime.of(2020,01,01,00,00,00,00);
+//        while(true){
+//          ldt = ldt.plusSeconds(1);
+//          mainGUI.getTimeKeepingPane().setCurrentTime(ldt);
+//          System.out.println(mainGUI.getTimeKeepingPane().getCurrentTime());
+//          try {
+//            Thread.sleep(1000);
+//          } catch (InterruptedException e) {
+//            e.printStackTrace();
+//          }
+//        }
+//      }
+//    });
+//    tickCount.start();
 
     mainGUI.getModeB().addActionListener(new ActionListener() {
       @Override

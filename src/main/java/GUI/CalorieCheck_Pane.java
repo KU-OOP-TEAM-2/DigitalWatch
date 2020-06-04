@@ -13,18 +13,9 @@ public class CalorieCheck_Pane extends JPanel {
   private JLabel secondSegs[]; // Second Segment. 10 components
   private JLabel firstSegs[]; // First Segment. 8 components
   private JLabel clockLabel; //clock icon
-  private JLabel meridiemLabel; //AM PM text label
-  private JLabel ccLabel; // World Time text
 
-  //ImageIcon (will put into JLabel)
-  private ImageIcon seg14DeadBigImg; //grey big seg image
-  private ImageIcon seg14DeadImg; //grey seg image
-  private ImageIcon numBigImgs[]; //big num image 0 ~ 9
-  private ImageIcon numImgs[]; //small num image 0 ~ 9
-  private ImageIcon colonBigImg; //big colon image
-  private ImageIcon colonImg; //small colon image
-  private ImageIcon clockImg; //black clock image
-  private ImageIcon clockDeadImg; //grey clock image
+  //text label owned by bodyPanel
+  private JLabel ccLabel; // World Time text
 
   public CalorieCheck_Pane() {
 
@@ -64,48 +55,28 @@ public class CalorieCheck_Pane extends JPanel {
       }
     };
 
-    //load Images from resource folder
-    seg14DeadBigImg = new ImageIcon(this.getClass().getResource(ImageDir.SegDead14Big_dir));
-    seg14DeadImg = new ImageIcon(this.getClass().getResource(ImageDir.SegDead14_dir));
-    colonImg = new ImageIcon(this.getClass().getResource(ImageDir.colon_dir));
-    colonBigImg = new ImageIcon(this.getClass().getResource(ImageDir.colonBig_dir));
-    clockImg = new ImageIcon(this.getClass().getResource(ImageDir.clock_dir));
-    clockDeadImg = new ImageIcon(this.getClass().getResource(ImageDir.clockDead_dir));
-    numBigImgs = new ImageIcon[10]; // first segment's numbers
-    for(int i=0; i<10; i++){
-      numBigImgs[i] = new ImageIcon(this.getClass().getResource(ImageDir.numBigdirs[i]));
-    }
-    numImgs = new ImageIcon[10]; // second segment's numbers
-    for(int i=0; i<10; i++){
-      numImgs[i] = new ImageIcon(this.getClass().getResource(ImageDir.numdirs[i]));
-    }
-
-
-    //second Seg
+    //initialize second segment labels
     secondSegs = new JLabel[10];
-    for(int i=0; i<10; i++){
-      if(i == 0 || i == 5 || i == 6) secondSegs[i] = new JLabel(seg14DeadImg);
-      else if(!(i == 4 || i == 7)) secondSegs[i] = new JLabel(numImgs[0]);
-      else secondSegs[i] = new JLabel(colonImg);
-    }
+    for(int i=0; i<10; i++) secondSegs[i] = new JLabel();
 
-    //first Seg
+    //initialize first segment labels
     firstSegs = new JLabel[8];
-    for(int i=0; i<8; i++){
-      if(!(i==2 || i==5)) firstSegs[i] = new JLabel(numBigImgs[0]);
-      else firstSegs[i] = new JLabel(colonBigImg);
-    }
+    for(int i=0; i<8; i++) firstSegs[i] = new JLabel();
 
     //Clock Icon
-    clockLabel = new JLabel(clockDeadImg);
+    clockLabel = new JLabel();
+
+    //'Calorie' Text Label
     ccLabel = new JLabel("CALORIE");
 
+    //second seg panel Info
     secondSegBody.setSize(205, 55);
     secondSegBody.setLocation(25,35);
     secondSegBody.setBackground(Color.white);
     secondSegBody.setLayout(new GridLayout(1, 10, 0, 0));
     secondSegBody.setBorder(BorderFactory.createEmptyBorder(10,10,10,10)); // Internal margin
 
+    //first seg panel info
     firstSegBody.setSize(360, 95);
     firstSegBody.setLocation(20, 120);
     firstSegBody.setBackground(Color.white);
@@ -153,6 +124,16 @@ public class CalorieCheck_Pane extends JPanel {
 
   }
 
+  public JLabel[] getSecondSegs() { return secondSegs; }
 
+  public void setSecondSegs(JLabel[] secondSegs) { this.secondSegs = secondSegs; }
+
+  public JLabel[] getFirstSegs() { return firstSegs; }
+
+  public void setFirstSegs(JLabel[] firstSegs) { this.firstSegs = firstSegs; }
+
+  public JLabel getClockLabel() { return clockLabel; }
+
+  public void setClockLabel(JLabel clockLabel) { this.clockLabel = clockLabel; }
 
 }

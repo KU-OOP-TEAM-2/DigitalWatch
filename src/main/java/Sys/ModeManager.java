@@ -25,7 +25,7 @@ public class ModeManager {
         modes[2] = new Timer();
         modes[3] = new StopWatch();
         modes[4] = new CalorieCheck();
-        modes[5] =new WorldTime();
+        modes[5] = new WorldTime();
         modes[5] = new WorldTime();
         this.activeList=new int[4];
         for(int i=0;i<4;i++){
