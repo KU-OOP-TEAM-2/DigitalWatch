@@ -9,27 +9,23 @@ import Sys.*;
 
 public class Main_test_2{
 
-  public static int modeNum = 1;
+  public static ModeManager _modeManager;
 
   public static void main(String[] args) {
 
-    LocalDateTime ldt = LocalDateTime.of(2020,01,01,00,00,00,00);
+    _modeManager = new ModeManager();
 
-//    countThread cth = new countThread(LocalDateTime.of(2020,01,01,00,00,00,00));
-//    cth.start();
-
-    watchGUI mainGUI = new watchGUI(ldt); //initialized with TimeKeeping mode
+    watchGUI mainGUI = new watchGUI(); //initialized with TimeKeeping mode
     Thread updateGUI = new Thread(mainGUI);
     updateGUI.start();
 
+    //test thread
     Thread tickCount = new Thread(new Runnable() {
       @Override
       public void run() {
-
         LocalDateTime ldt = LocalDateTime.of(2020,01,01,00,00,00,00);
-
         while(true){
-          ldt = ldt.plusHours(1);
+          ldt = ldt.plusSeconds(1);
           mainGUI.getTimeKeepingPane().setCurrentTime(ldt);
           System.out.println(mainGUI.getTimeKeepingPane().getCurrentTime());
           try {
@@ -45,7 +41,7 @@ public class Main_test_2{
     mainGUI.getModeB().addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        switch(modeNum){
+        switch(_modeManager.getCurrentMode()){
           case 1:
             switchPanel(mainGUI, mainGUI.getTimerPane());
             break;
@@ -61,8 +57,6 @@ public class Main_test_2{
           default:
             break;
         }
-        if(modeNum != 4)modeNum++;
-        else modeNum = 1;
       }
     });
 
@@ -75,37 +69,5 @@ public class Main_test_2{
     mainGUI.revalidate();
     mainGUI.repaint();
   }
-
-  static class countThread extends Thread{
-
-    private LocalDateTime ldt;
-
-    public countThread(LocalDateTime ldt){
-      setLdt(ldt);
-    }
-
-    @Override
-    public void run(){
-      while(true) {
-        setLdt(ldt.plusDays(1));
-        System.out.println(ldt);
-        try {
-          sleep(1000);
-        } catch (InterruptedException e) {
-          e.printStackTrace();
-        }
-      }
-    }
-
-    public LocalDateTime getLdt() {
-      return ldt;
-    }
-
-    public void setLdt(LocalDateTime ldt) {
-      this.ldt = ldt;
-    }
-
-  }
-
 
 }

@@ -27,6 +27,7 @@ public class ModeManager {
         modes[4] = new CalorieCheck();
         modes[5] =new WorldTime();
         modes[5] = new WorldTime();
+        this.activeList=new int[4];
         for(int i=0;i<4;i++){
             this.activeList[i]=i;
         }
@@ -35,6 +36,8 @@ public class ModeManager {
         editStatus= new Boolean[6];
         SingletonModeManager=this;
         isEditMode = false;
+        buzzerFlag=false;
+
     }
     //모드매니저
     public static ModeManager SingletonModeManager;
@@ -198,12 +201,14 @@ public class ModeManager {
                             ((Alarm)modes[1]).decreaseAlarmTime();
                     }
                     else{
-                        if(Button == 0 && longClickedFlag == true) {    //setMode로 진입.
-                            ((Alarm) modes[1]).enterEditAlarm();
+                        if(Button == 0 && longClickedFlag == false)    //Mode : changeMode
+                            this.changeMode();
+                        else if(Button == 0 && longClickedFlag == true)
+                            this.enterEditMode();
+                        else if(Button == 1 && longClickedFlag == true) {    //Adjust 눌렀을 때 set Alarm으로 진잊
+                            ((Alarm) modes[1]).enterEditAlarm(); //
                             isEditMode = !isEditMode;
                         }
-                        else if(Button == 0 && longClickedFlag == false)    //Mode : changeMode
-                            this.changeMode();
                         else if(Button == 1)    //Adjust : 현재 보고 있는 Alarm을 바꾼다.
                             ((Alarm)modes[1]).changeAlarm();
                         else if(Button == 2)    //Forward : 현재 보고 있는 알람을 on/off시킨다.
@@ -249,8 +254,10 @@ public class ModeManager {
                         }else{}
                     }
                 case 3: //StopWatch
-                        if(Button == 0)
+                        if(Button == 0 && longClickedFlag == false)
                             this.changeMode();  //Mode : changeMode
+                        else if(Button == 0 && longClickedFlag == true)
+                            this.enterEditMode();
                         else if(Button == 1 && !( ((StopWatch)modes[3]).getIsPaused() ))  //Adjust 장타 : resume 되어있었다면 laptime save.
                             ((StopWatch)modes[3]).lapStopwatch();
                         else if(Button == 1 && ((StopWatch)modes[3]).getIsPaused()) //Adjust : paused라면 reset.
@@ -315,7 +322,7 @@ public class ModeManager {
     public void enterEditMode() {
         this.currentMode=8;
         this.currentCursor=0;
-
+        isEditMode=true;
         for(int i= 0; i<6;i++)
             editStatus[i]= modes[i].getActive();
 
@@ -372,6 +379,8 @@ public class ModeManager {
                 }
             }
         }//active list 순서별로 다시 정렬-> display를 위해서
+
+        isEditMode=false;
     }
     public int getCurrentMode(){ return this.currentMode; }
     //시퀀스 다이어그램 수정 사항. 없애도 되는 함수.

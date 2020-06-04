@@ -1,11 +1,18 @@
 package GUI;
 
+import Sys.*;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.time.LocalDateTime;
 
 
 public class watchGUI extends JFrame implements Runnable{
+
+	public static ModeManager _modeManager;
+	public static Mode[] modes;
 	
 	private static final int FRAME_WIDTH = 500;
 	private static final int FRAME_HEIGHT = 320;
@@ -30,11 +37,14 @@ public class watchGUI extends JFrame implements Runnable{
 	private JButton forwardB;
 	private JButton reverseB;
 
-
-	public watchGUI(LocalDateTime ldt) {
-
+	private LocalDateTime currentTime;
 
 
+	public watchGUI() {
+
+		_modeManager = new ModeManager();
+
+		this.currentTime = ((Time)(_modeManager.getmodes()[0])).getCurrentTime();
 		//set window's name
 		this.setTitle("Digital Watch");
 		this.setSize(FRAME_WIDTH, FRAME_HEIGHT);
@@ -42,7 +52,7 @@ public class watchGUI extends JFrame implements Runnable{
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setResizable(false);
 
-		timeKeepingPane = new TimeKeeping_Pane(ldt);
+		timeKeepingPane = new TimeKeeping_Pane(this.currentTime);
 		alarmPane = new Alarm_Pane();
 		timerPane = new Timer_Pane();
 		swPane = new Stopwatch_Pane();
@@ -54,9 +64,33 @@ public class watchGUI extends JFrame implements Runnable{
 		nameLabel = new JLabel("Digital Watch #2");
 
 		adjustB = new JButton();
+		adjustB.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				_modeManager.clickButton(1, false);
+			}
+		});
 		modeB = new JButton();
+		modeB.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				_modeManager.clickButton(0, false);
+			}
+		});
 		forwardB = new JButton();
+		forwardB.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				_modeManager.clickButton(2, false);
+			}
+		});
 		reverseB = new JButton();
+		reverseB.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				_modeManager.clickButton(3, false);
+			}
+		});
 
 		this.watchBodyPane = new JPanel();
 
@@ -138,6 +172,16 @@ public class watchGUI extends JFrame implements Runnable{
 
 	public JButton getReverseB() {
 		return reverseB;
+	}
+
+
+	//GUI Update Methods
+	private static void switchPanel(watchGUI mainGUI, JPanel newPanel){
+		mainGUI.getFramePane().remove(mainGUI.getWatchBodyPane());
+		mainGUI.setWatchBodyPane(newPanel);
+		mainGUI.getFramePane().add(mainGUI.getWatchBodyPane());
+		mainGUI.revalidate();
+		mainGUI.repaint();
 	}
 
 	private void changeSecondImg(int index, int digitIndex){
@@ -252,7 +296,7 @@ public class watchGUI extends JFrame implements Runnable{
 	}
 
 	@Override
-	public void run() {
+	public void run() { // update GUI
 		while(true) {
 
 			LocalDateTime temp = getTimeKeepingPane().getCurrentTime();
@@ -304,7 +348,6 @@ public class watchGUI extends JFrame implements Runnable{
 				if(i>=3 && i<5) changefirstImg(i, minuteNum[i-3]);
 				if(i>=6 && i<8) changefirstImg(i, secondNum[i-6]);
 			}
-
 
 			revalidate();
 			repaint();
