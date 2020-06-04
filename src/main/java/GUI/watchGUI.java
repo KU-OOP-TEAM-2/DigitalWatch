@@ -881,11 +881,11 @@ public class watchGUI extends JFrame implements Runnable{
 
 					int swMin = swTime.getMinute();
 					int swSec = swTime.getSecond();
-					int swmSec = swTime.getNano()*1000000;
+					int swmSec = swTime.getNano()/10000000;
 
 					int lapMin = lapTime.getMinute();
 					int lapSec = lapTime.getSecond();
-					int lapmSec = lapTime.getNano()*1000000;
+					int lapmSec = lapTime.getNano()/10000000;
 
 					int smNum[] = new int[2];
 					int ssNum[] = new int[2];
@@ -940,7 +940,7 @@ public class watchGUI extends JFrame implements Runnable{
 			revalidate();
 			repaint();
 			try {
-				Thread.sleep(10);
+				Thread.sleep(0, 100000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

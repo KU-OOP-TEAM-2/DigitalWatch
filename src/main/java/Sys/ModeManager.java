@@ -262,7 +262,7 @@ public class ModeManager {
                             ((StopWatch)modes[3]).lapStopwatch();
                         else if(Button == 1 && ((StopWatch)modes[3]).getIsPaused()) //Adjust : paused라면 reset.
                             ((StopWatch)modes[3]).resetStopwatch();
-                        else if(Button == 2 && ((StopWatch)modes[3]).getIsPaused())  //Forward : puased라면 start. , 사실 Resume이나 Start나 operation 내부 동작은 같다...
+                        else if(Button == 2 && ((StopWatch)modes[3]).getIsPaused())  //Forward : paused라면 start. , 사실 Resume이나 Start나 operation 내부 동작은 같다...
                             ((StopWatch)modes[3]).startStopwatch();
                         else if(Button == 2 && !( ((StopWatch)modes[3]).getIsPaused() )) //Forward : paused가 아니라면 pause.
                             ((StopWatch)modes[3]).pauseStopwatch();

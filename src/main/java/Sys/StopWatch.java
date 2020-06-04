@@ -73,8 +73,7 @@ public class StopWatch implements Mode{
                 if (this.currentStopWatchTime.compareTo(overflowStopWatchTime) == 0) {
                     pauseStopwatch();
                 } else {
-                    //millisecond의 앞 두자리만 보여줄것이므로 1e7
-                    currentStopWatchTime.plusNanos(10000000);
+                    currentStopWatchTime = currentStopWatchTime.plusNanos(10000);
                 }
             }
             else
