@@ -42,8 +42,8 @@ public class CalorieCheck implements Mode{
     /**
      *
      */
-    private int Calorie;
-    public int getCalorie() {
+    private double Calorie;
+    public double getCalorie() {
         calculateCalorie();
         return Calorie;
     }
@@ -163,6 +163,9 @@ public class CalorieCheck implements Mode{
      *
      */
     public void increaseCalorieCheckTimer() {
+        //10ms마다 호출된다
+        //하지만 기본단위는 초이다.
+
         //calorie check가 pause 상태가 아닐 때
         if(!pauseCalorieCheckFlag){
             //23시 59분 59초가 되면 시간측정 및 계산 종료
@@ -171,7 +174,7 @@ public class CalorieCheck implements Mode{
                 endCalorieCheck();
             }
             else{
-                CalorieTime.plusSeconds(1);
+                CalorieTime.plusNanos(10000000);
             }
         }
     }
@@ -186,7 +189,7 @@ public class CalorieCheck implements Mode{
     }
 
     private void calculateCalorie(){
-        int allSeconds = CalorieTime.getHour()*3600 + CalorieTime.getMinute()*60
+        double allSeconds = CalorieTime.getHour()*3600 + CalorieTime.getMinute()*60
                 + CalorieTime.getSecond();
         Calorie = (int) (0.0157 * ( ( 0.1 * Speed + 3.5 ) /3.5 ) * Weight * allSeconds);
     }

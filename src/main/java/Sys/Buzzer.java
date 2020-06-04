@@ -19,6 +19,7 @@ public class Buzzer {
      * 
      */
     private Boolean buzzerOn;
+    private boolean isAlarmRinging;
 
     //추가된 부분
     private final int BEEPCOUNT = 10;

@@ -26,6 +26,11 @@ public class ModeManager {
         modes[3] = new StopWatch();
         modes[4] = new CalorieCheck();
         modes[5] =new WorldTime();
+        modes[5] = new WorldTime();
+        for(int i=0;i<4;i++){
+            this.activeList[i]=i;
+        }
+        SingletonModeManager = this;
         nowMode = modes[0];
         editStatus= new Boolean[6];
         SingletonModeManager=this;
@@ -34,8 +39,7 @@ public class ModeManager {
     //모드매니저
     public static ModeManager SingletonModeManager;
 
-    //새로 추가 함수 Mode배열
-    public Mode[] getmodes(){return modes;}
+
 
     //Time Alarm Timer Stopwatch CalorieCheck WorldTime
     //0     1       2       3       4            5
@@ -74,7 +78,7 @@ public class ModeManager {
 
 
     public void makeThread(){
-        Tick task = new Tick();
+        Tick task = new Tick(this);
         ExecutorService service = Executors.newFixedThreadPool(2);
         Future<Void> future = service.submit(task);
     }
@@ -138,11 +142,40 @@ public class ModeManager {
         else{
             switch (currentMode){
                 case 0://Time 모드  일때
-                    if(isEditMode){
-                        //button 1234
+                    if (isEditMode) {
+                        //setTime일때
+                        switch (Button) {
+                            case 0:
+                                ((Time) this.modes[0]).changeCursor();
+                            case 1:
+                                ((Time) this.modes[0]).saveData();
+                            case 2:
+                                ((Time) this.modes[0]).increaseData();
+                            case 3:
+                                ((Time) this.modes[0]).decreaseData();
+                        }
+
                     }
-                    else{
-                        //button 1234
+                    else {
+                        //time keeping 일 때
+                        switch (Button) {
+                            case 0:
+                                if (longClickedFlag == true)
+                                    this.enterEditMode();
+                                else
+                                    this.changeMode();
+                                break;
+                            case 1:
+                                if (longClickedFlag == true)
+                                    ((Time) this.modes[0]).enterEditData();
+                                break;
+                            case 2:
+                                //do nothing
+                                break;
+                            case 3:
+                                //do nothing
+                                break;
+                        }
                     }
                     break;
                 
@@ -232,8 +265,39 @@ public class ModeManager {
                 case 4:
                     break;
                 case 5: //World Time
+                    switch (Button) {
+                        case 0:
+                            if (longClickedFlag == true)
+                                this.enterEditMode();
+                            else
+                                this.changeMode();
+                            break;
+                        case 1:
+                            //do nothing
+                            break;
+                        case 2:
+                            ((WorldTime) this.modes[5]).changeTimezone();
+                            break;
+                        case 3:
+                            //do nothing
+                            break;
+                    }
                     break;
                 case 8: //Set mode
+                    switch (Button) {
+                        case 0:
+                            this.changeCursor();
+                            break;
+                        case 1:
+                            this.saveModeData();
+                            break;
+                        case 2:
+                            this.changeStatus();
+                            break;
+                        case 3:
+                            //do nothing
+                            break;
+                    }
                     break;
                 default:
                     break;
@@ -297,8 +361,18 @@ public class ModeManager {
 
 
     public void saveModeData() {
-        for(int i= 0; i<6;i++)
-            modes[i].setActive(editStatus[i]);
+        for (int i = 0; i < 5; i++) {
+            this.modes[i].setActive(this.editStatus[i]);
+        }
+        for (int i = 3; i > 0; i--) {
+            for (int j = 0; j < i; j++) {
+                if (this.activeList[j] > this.activeList[j + 1]) {
+                    int temp = this.activeList[j];
+                    this.activeList[j] = this.activeList[j + 1];
+                    this.activeList[j + 1] = temp;
+                }
+            }
+        }//active list 순서별로 다시 정렬-> display를 위해서
     }
     public int getCurrentMode(){ return this.currentMode; }
     //시퀀스 다이어그램 수정 사항. 없애도 되는 함수.
@@ -306,8 +380,15 @@ public class ModeManager {
         // TODO implement here
     }
 
-    /**
-     *
-     */
+    public int[] getActiveList(){
+        return this.activeList;
+    }
+    public int getCurrentCursor(){
+        return this.currentCursor;
+    }
+
+    public Mode[] getmodes() {
+        return modes;
+    }
 
 }
