@@ -27,6 +27,7 @@ public class ModeManager {
         modes[4] = new CalorieCheck();
         modes[5] =new WorldTime();
         modes[5] = new WorldTime();
+        this.activeList=new int[4];
         for(int i=0;i<4;i++){
             this.activeList[i]=i;
         }
@@ -35,6 +36,8 @@ public class ModeManager {
         editStatus= new Boolean[6];
         SingletonModeManager=this;
         isEditMode = false;
+        buzzerFlag=false;
+
     }
     //모드매니저
     public static ModeManager SingletonModeManager;

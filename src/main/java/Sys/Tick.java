@@ -48,7 +48,7 @@ public class Tick implements Callable<Void>{
                 //when duration = 1 second
                 if (checkSecond == 100) {
                     checkSecond = 0;
-
+                    ((Time)modes[0]).timeflow();
                     //Timer
                     ((Timer)modes[2]).decreaseTimer();
                     //alarm
