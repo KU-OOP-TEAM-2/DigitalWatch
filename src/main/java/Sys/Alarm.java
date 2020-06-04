@@ -82,6 +82,7 @@ public class Alarm implements Mode{
             //LocalTime이 xx:xx:00이고 현재시간과 expirationTime을 비교해서 두 조건 충족.
             if(currentTime.getSecond() == 0 && currentTime.compareTo(alarm[i].requestExpirationTime())==-0) {
                 buzzer.beepBuzzer();
+
                 return true;
             }
         }
