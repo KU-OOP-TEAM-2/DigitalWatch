@@ -3,7 +3,7 @@ package GUI;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.nio.file.Path;
+import java.time.LocalDateTime;
 
 public class Main_test{
 
@@ -11,30 +11,48 @@ public class Main_test{
 
   public static void main(String[] args) {
 
-    TimeKeeping_Pane timeKeepingPane = new TimeKeeping_Pane();
-    Alarm_Pane alarmPane = new Alarm_Pane();
-    Timer_Pane timerPane = new Timer_Pane();
-    Stopwatch_Pane swPane = new Stopwatch_Pane();
-    WorldTime_Pane wtPane = new WorldTime_Pane();
-    CalorieCheck_Pane ccPane = new CalorieCheck_Pane();
+    LocalDateTime ldt = LocalDateTime.of(2020,01,01,00,00,00,00);
 
-    watchGUI mainGUI = new watchGUI(timeKeepingPane); //initialized with TimeKeeping mode
+
+    watchGUI mainGUI = new watchGUI(ldt); //initialized with TimeKeeping mode
+    Thread updateGUI = new Thread(mainGUI);
+    updateGUI.start();
+
+    Thread tickCount = new Thread(new Runnable() {
+      @Override
+      public void run() {
+
+        LocalDateTime ldt = LocalDateTime.of(2020,01,01,00,00,00,00);
+
+        while(true){
+          ldt = ldt.plusSeconds(1);
+          mainGUI.getTimeKeepingPane().setCurrentTime(ldt);
+          System.out.println(mainGUI.getTimeKeepingPane().getCurrentTime());
+          try {
+            Thread.sleep(1000);
+          } catch (InterruptedException e) {
+            e.printStackTrace();
+          }
+        }
+      }
+    });
+    tickCount.start();
 
     mainGUI.getModeB().addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
         switch(modeNum){
           case 1:
-            switchPanel(mainGUI, timerPane);
+            switchPanel(mainGUI, mainGUI.getTimerPane());
             break;
           case 2:
-            switchPanel(mainGUI, alarmPane);
+            switchPanel(mainGUI, mainGUI.getAlarmPane());
             break;
           case 3:
-            switchPanel(mainGUI, swPane);
+            switchPanel(mainGUI, mainGUI.getSwPane());
             break;
           case 4:
-            switchPanel(mainGUI, timeKeepingPane);
+            switchPanel(mainGUI, mainGUI.getTimeKeepingPane());
             break;
           default:
             break;
@@ -53,4 +71,37 @@ public class Main_test{
     mainGUI.revalidate();
     mainGUI.repaint();
   }
+
+  static class countThread extends Thread{
+
+    private LocalDateTime ldt;
+
+    public countThread(LocalDateTime ldt){
+      setLdt(ldt);
+    }
+
+    @Override
+    public void run(){
+      while(true) {
+        setLdt(ldt.plusDays(1));
+        System.out.println(ldt);
+        try {
+          sleep(1000);
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        }
+      }
+    }
+
+    public LocalDateTime getLdt() {
+      return ldt;
+    }
+
+    public void setLdt(LocalDateTime ldt) {
+      this.ldt = ldt;
+    }
+
+  }
+
+
 }

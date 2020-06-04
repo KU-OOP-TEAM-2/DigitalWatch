@@ -5,8 +5,15 @@ public class ImageDir {
 	//NUMBERS
 	public static String SegDead14Big_dir = path + "seg14Dead_45.png";
 	public static String SegDead14_dir = path + "seg14Dead_18.png";
-	public static String num0Big_dir = path + "number0Seg_45.png";
-	public static String num0_dir = path + "number0Seg_18.png";
+
+	public static String numBigdirs[] = {path + "number0Seg_45.png", path + "number1Seg_45.png", path + "number2Seg_45.png",
+					path + "number3Seg_45.png", path + "number4Seg_45.png", path + "number5Seg_45.png", path + "number6Seg_45.png",
+					path + "number7Seg_45.png", path + "number8Seg_45.png", path + "number9Seg_45.png"};
+
+	public static String numdirs[] = {path + "number0Seg_18.png", path + "number1Seg_18.png", path + "number2Seg_18.png",
+					path + "number3Seg_18.png", path + "number4Seg_18.png", path + "number5Seg_18.png", path + "number6Seg_18.png",
+					path + "number7Seg_18.png", path + "number8Seg_18.png", path + "number9Seg_18.png"};
+
 
 	//ALPHABETS
 	public static String fSeg_dir = path + "alphaFSeg_18.png";
