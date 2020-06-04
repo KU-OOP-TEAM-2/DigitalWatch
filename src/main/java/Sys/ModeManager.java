@@ -205,9 +205,13 @@ public class ModeManager {
                         }else if(Button ==1 && longClickedFlag ==true){ //setTimer 진입
                             ((Timer)modes[2]).enterEditTimer();
                             isEditMode= !isEditMode;
-                        }else if(Button==2 ){ //start Timer
-                            ((Timer)modes[2]).start_pauseTimer();
-
+                        }else if(Button==2 ){ //start Timer , pause Timer
+                            if(((Timer)modes[2]).getpauseTimerFlag()){
+                                ((Timer)modes[2]).startTimer();
+                            }
+                            else{
+                                ((Timer)modes[2]).pauseTimer();
+                            }
                         }else if(Button ==3){
 
                         }else{}

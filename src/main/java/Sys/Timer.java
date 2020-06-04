@@ -163,6 +163,30 @@ public class Timer implements  Mode{
         }
     }
 
+    public void startTimer() {
+        // TODO implement here
+        if(timerTime.getDayOfMonth()==1 && timerTime.getHour()==0 && timerTime.getSecond()==0 && timerTime.getMinute()==0){
+            //0 리셋 상태일 때 아무작동 x
+            return;
+        }
+        else {
+            pauseTimerFlag = false;
+        }
+    }
+
+
+    public void pauseTimer() {
+        // TODO implement here
+        pauseTimerFlag=true;
+    }
+
+
+    public void resumeTimer() {
+        // TODO implement here
+        pauseTimerFlag=false;
+    }
+
+
     public void cancelTimer() {
         // TODO implement here
         timerTime= this.settingTimer;
@@ -174,24 +198,7 @@ public class Timer implements  Mode{
     }
     //get Timer time
     public LocalDateTime getTimerTime() {return this.timerTime;}
-
+    public boolean getpauseTimerFlag() {return this.pauseTimerFlag; }
 }
-     //밑의 함수들은 삭제해도 될듯
-//    public void startTimer() {
-//        // TODO implement here
-//
-//        pauseTimerFlag=false;
-//    }
-//
-//
-//    public void pauseTimer() {
-//        // TODO implement here
-//        pauseTimerFlag=true;
-//    }
-//
-//
-//    public void resumeTimer() {
-//        // TODO implement here
-//        pauseTimerFlag=false;
-//    }
+
 
