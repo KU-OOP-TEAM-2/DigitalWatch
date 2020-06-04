@@ -236,7 +236,7 @@ public class ModeManager {
                         }
                         else if(Button == 0 && longClickedFlag == false) {    //Mode : changeMode
                             this.changeMode();
-                        }else if(Button ==1){
+                        }else if(Button ==1 && longClickedFlag ==false){
                             ((Timer)modes[2]).cancelTimer();
                         }else if(Button ==1 && longClickedFlag ==true){ //setTimer 진입
                             ((Timer)modes[2]).enterEditTimer();

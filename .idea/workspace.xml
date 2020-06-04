@@ -16,9 +16,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="activeList 최초 선언부 추가">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Main_test_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Main_test_2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/Tick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/Tick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/Timer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/Timer.java" afterDir="false" />
     </list>
     <list id="75641970-afe3-41f4-8211-ac3bdcb41cb9" name="Revert &quot;edit Tick constructor&quot;" comment="reset branch" />
     <option name="SHOW_DIALOG" value="false" />
@@ -470,22 +468,22 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="454" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1591073036048" />
-    <state width="2517" height="194" key="GridCell.Tab.0.bottom" timestamp="1591267319658">
+    <state width="2517" height="194" key="GridCell.Tab.0.bottom" timestamp="1591312136199">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="194" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591267319658" />
-    <state width="2517" height="194" key="GridCell.Tab.0.center" timestamp="1591267319658">
+    <state width="2517" height="194" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591312136199" />
+    <state width="2517" height="194" key="GridCell.Tab.0.center" timestamp="1591312136198">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="194" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591267319658" />
-    <state width="2517" height="194" key="GridCell.Tab.0.left" timestamp="1591267319658">
+    <state width="2517" height="194" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591312136198" />
+    <state width="2517" height="194" key="GridCell.Tab.0.left" timestamp="1591312136198">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="194" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591267319658" />
-    <state width="2517" height="194" key="GridCell.Tab.0.right" timestamp="1591267319658">
+    <state width="2517" height="194" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591312136198" />
+    <state width="2517" height="194" key="GridCell.Tab.0.right" timestamp="1591312136198">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="194" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591267319658" />
+    <state width="2517" height="194" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591312136198" />
     <state x="248" y="121" key="MergeDialog" timestamp="1591082012879">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
