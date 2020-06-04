@@ -15,7 +15,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="add buzzer flag" />
+    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <list id="75641970-afe3-41f4-8211-ac3bdcb41cb9" name="Revert &quot;edit Tick constructor&quot;" comment="reset branch" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -351,7 +353,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591255812408</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="add buzzer flag">
+      <created>1591256189329</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1591256189329</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -399,7 +408,8 @@
     <MESSAGE value="Tick, Timer decreaseTimer수정" />
     <MESSAGE value="reset branch" />
     <MESSAGE value="Revert &quot;edit Tick constructor&quot;&#10;&#10;This reverts commit b5b1356a" />
-    <option name="LAST_COMMIT_MESSAGE" value="Revert &quot;edit Tick constructor&quot;&#10;&#10;This reverts commit b5b1356a" />
+    <MESSAGE value="add buzzer flag" />
+    <option name="LAST_COMMIT_MESSAGE" value="add buzzer flag" />
   </component>
   <component name="WindowStateProjectService">
     <state x="760" y="274" key="#Project_Structure" timestamp="1591076943535">
@@ -418,10 +428,11 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1085" y="405" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1591074707858" />
-    <state x="622" y="71" key="CommitChangelistDialog2" timestamp="1591255811922">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="829" y="71" key="CommitChangelistDialog2" timestamp="1591256188565">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="622" y="71" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1591255811922" />
+    <state x="829" y="71" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1591256188565" />
     <state x="69" y="68" width="1782" height="904" key="DiffContextDialog" timestamp="1591255833606">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -464,14 +475,16 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591205925540" />
-    <state x="1002" y="486" key="git4idea.merge.GitPullDialog" timestamp="1591206191994">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="1002" y="361" key="git4idea.merge.GitPullDialog" timestamp="1591256223623">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="752" y="361" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591078691554" />
+    <state x="1002" y="361" key="git4idea.merge.GitPullDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1591256223623" />
     <state x="1002" y="486" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591206191994" />
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1591081751999">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="943" y="234" width="672" height="504" key="search.everywhere.popup" timestamp="1591256947340">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
+    <state x="943" y="234" width="672" height="504" key="search.everywhere.popup/0.0.2560.1040@0.0.2560.1040" timestamp="1591256947340" />
     <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1591081751999" />
   </component>
 </project>
