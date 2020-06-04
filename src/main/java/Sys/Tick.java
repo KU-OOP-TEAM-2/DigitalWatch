@@ -23,8 +23,6 @@ public class Tick implements Callable<Void>{
         int elapsedTime;
         int checkSecond = 0;
         int checkMinute = 0;
-
-
         while(true){
             if(endFlag){
                 break;
@@ -44,7 +42,7 @@ public class Tick implements Callable<Void>{
                 if (checkSecond == 100) {
                     checkSecond = 0;
                     //time
-                    ((Time)ModeManager.SingletonModeManager.getmodes()[0]).timeflow();
+
                     //calorie check
 
                     //Timer
