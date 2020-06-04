@@ -198,12 +198,14 @@ public class ModeManager {
                             ((Alarm)modes[1]).decreaseAlarmTime();
                     }
                     else{
-                        if(Button == 0 && longClickedFlag == true) {    //setMode로 진입.
-                            ((Alarm) modes[1]).enterEditAlarm();
+                        if(Button == 0 && longClickedFlag == false)    //Mode : changeMode
+                            this.changeMode();
+                        else if(Button == 0 && longClickedFlag == true)
+                            this.enterEditMode();
+                        else if(Button == 1 && longClickedFlag == true) {    //Adjust 눌렀을 때 set Alarm으로 진잊
+                            ((Alarm) modes[1]).enterEditAlarm(); //
                             isEditMode = !isEditMode;
                         }
-                        else if(Button == 0 && longClickedFlag == false)    //Mode : changeMode
-                            this.changeMode();
                         else if(Button == 1)    //Adjust : 현재 보고 있는 Alarm을 바꾼다.
                             ((Alarm)modes[1]).changeAlarm();
                         else if(Button == 2)    //Forward : 현재 보고 있는 알람을 on/off시킨다.
@@ -249,8 +251,10 @@ public class ModeManager {
                         }else{}
                     }
                 case 3: //StopWatch
-                        if(Button == 0)
+                        if(Button == 0 && longClickedFlag == false)
                             this.changeMode();  //Mode : changeMode
+                        else if(Button == 0 && longClickedFlag == true)
+                            this.enterEditMode();
                         else if(Button == 1 && !( ((StopWatch)modes[3]).getIsPaused() ))  //Adjust 장타 : resume 되어있었다면 laptime save.
                             ((StopWatch)modes[3]).lapStopwatch();
                         else if(Button == 1 && ((StopWatch)modes[3]).getIsPaused()) //Adjust : paused라면 reset.
