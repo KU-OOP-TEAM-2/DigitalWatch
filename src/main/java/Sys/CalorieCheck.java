@@ -14,6 +14,7 @@ public class CalorieCheck implements Mode{
      */
     public CalorieCheck() {
         pauseCalorieCheckFlag = true;
+        startCalorieCheckFlag = false;
         isActivated = false;
         cursor = false;
         Speed = 5;
@@ -54,13 +55,24 @@ public class CalorieCheck implements Mode{
      0시0분0초 ~ 23시 59분 59초까지 측정 가능하게 할 것
      */
     private LocalTime CalorieTime;
+
+    //calorieTime getter
     public LocalTime getCalorieTime() {return CalorieTime;}
+    /**
     public int getHour(){return CalorieTime.getHour();}
     public int getMinute(){return CalorieTime.getMinute();}
     public int getSecond(){return CalorieTime.getSecond();}
+    */
+
+
+
 
     //    flag
     private boolean pauseCalorieCheckFlag;
+    public boolean getIsPause(){return pauseCalorieCheckFlag;}
+
+    private boolean startCalorieCheckFlag;
+    public boolean getIsStart(){return startCalorieCheckFlag;}
     private boolean isActivated;
 
     //    false = speed, true = weight
@@ -137,8 +149,8 @@ public class CalorieCheck implements Mode{
      */
     public void startCalorieCheck() {
         pauseCalorieCheckFlag = false;
+        startCalorieCheckFlag = true;
         cursor = false;
-
     }
 
     /**
@@ -146,7 +158,6 @@ public class CalorieCheck implements Mode{
      */
     public void resumeCaloreCheck() {
         pauseCalorieCheckFlag = false;
-        startCalorieCheck();
     }
 
     /**
@@ -158,6 +169,7 @@ public class CalorieCheck implements Mode{
 
     public void endCalorieCheck(){
         pauseCalorieCheckFlag = true;
+        startCalorieCheckFlag = false;
     }
     /**
      *
@@ -167,7 +179,7 @@ public class CalorieCheck implements Mode{
         //하지만 기본단위는 초이다.
 
         //calorie check가 pause 상태가 아닐 때
-        if(!pauseCalorieCheckFlag){
+        if(!pauseCalorieCheckFlag && startCalorieCheckFlag){
             //23시 59분 59초가 되면 시간측정 및 계산 종료
             if(CalorieTime.getHour() == 23 && CalorieTime.getMinute() == 59
                     && CalorieTime.getSecond() == 59){
@@ -180,7 +192,6 @@ public class CalorieCheck implements Mode{
     }
 
     public void resetCalorieCheck(){
-//        pauseCalorieCheck = true;
         cursor = false;
         Speed = 5;
         Weight = 60;

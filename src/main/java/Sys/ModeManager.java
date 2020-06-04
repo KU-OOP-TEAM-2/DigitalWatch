@@ -129,10 +129,6 @@ public class ModeManager {
     }
 
     public void clickButton(int Button, boolean longClickedFlag) {
-        //이건 뭔가요..?
-//        if(currentMode==0 && Button==0 && longClickedFlag==false && isEditMode==false){
-//
-//        }
         elapsedTime=0.0f;
         if(buzzerFlag){// 버저 울릴때
             //아무 버튼이나 들어오면
@@ -265,7 +261,91 @@ public class ModeManager {
                             ((StopWatch)modes[3]).pauseStopwatch();
                         else if(Button == 3);    //지정된 버튼이 없다.
                     break;
-                case 4:
+                case 4: //CalorieCheck
+                    //Set speed and weight 일 때
+                    if(isEditMode){
+                        switch (Button){
+                            //Mode Button
+                            //change cursor로 speed와 weight중 선택
+                            case 0:
+                                ((CalorieCheck) modes[4]).changeCursor();
+                                break;
+
+                            //Adjust Button
+                            //save data and exit set speed and weight
+                            case 1:
+                                ((CalorieCheck) modes[4]).saveCalorieSetting();
+                                break;
+
+                            //Forward Button
+                            case 2:
+                                ((CalorieCheck) modes[4]).increaseData();
+                                break;
+
+                            //Reverse Button
+                            case 3:
+                                ((CalorieCheck) modes[4]).decreaseData();
+                                break;
+                        }
+                    }
+
+                    //Set speed and weight가 아닐 때
+                    else {
+                        switch(Button) {
+                            //Mode Button
+                            case 0:
+                                //Mode Button이 꾹 눌렸을 때 = Set Mode를 한다
+                                if (longClickedFlag) {
+                                    this.enterEditMode();
+                                }
+                                //Mode Button이 짧게 눌렸을 때 = 다음 Mode를 화면에 디스플레이한다.
+                                else {
+                                    this.changeMode();
+                                }
+                                break;
+
+                            //Adjust Button
+                            case 1:
+                                //Adjust Button이 꾹 눌렸을 때 = Set Speed and Weight를 한다.
+                                if (longClickedFlag) {
+                                    ((CalorieCheck) modes[4]).enterSetSpeedandWeight();
+                                    isEditMode = !isEditMode;
+                                }
+                                //Adjust Button이 한번 짧게 누렸을 때 = Reset CalorieCheck
+                                else{
+                                    //pause 상태일 때만 reset
+                                    if(((CalorieCheck) modes[4]).getIsPause()){
+                                        ((CalorieCheck) modes[4]).resetCalorieCheck();
+                                    }
+                                }
+                                break;
+
+                            //Forward Button
+                            //start CalorieCheck, pause CalorieCheck, resume CalorieCheck
+                            case 2:
+                                //CalorieCheck가 시작된 상태다.
+                                if (!((CalorieCheck) modes[4]).getIsStart()) {
+                                    //CalorieCheck가 시작된 상태고 puase 상태다.
+                                    if (((CalorieCheck) modes[4]).getIsPause()) {
+                                        ((CalorieCheck) modes[4]).resumeCaloreCheck();
+                                    }
+                                    //CalorieCheck가 시작된 상태고 pause 상태가 아니다.
+                                    else {
+                                        ((CalorieCheck) modes[4]).pauseCalorieCheck();
+                                    }
+                                }
+                                //CalorieCheck가 시작되지 않은 상태다.
+                                else {
+                                    ((CalorieCheck) modes[4]).startCalorieCheck();
+                                }
+                                break;
+
+                            //Reverse Button
+                            case 3:
+                                //아무일도 안함
+                                break;
+                        }
+                    }
                     break;
                 case 5: //World Time
                     switch (Button) {
