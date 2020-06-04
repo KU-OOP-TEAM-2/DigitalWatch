@@ -15,7 +15,8 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="timer">
+    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="Timer">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sys/Timer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/Timer.java" afterDir="false" />
     </list>
     <list id="75641970-afe3-41f4-8211-ac3bdcb41cb9" name="Revert &quot;edit Tick constructor&quot;" comment="reset branch" />
@@ -403,7 +404,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591312290338</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Timer">
+      <created>1591312400650</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1591312400650</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -419,7 +427,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Sys, GUI" />
     <MESSAGE value="Timer -&gt;Thread 제거" />
     <MESSAGE value="1.8" />
     <MESSAGE value="Mode manager world time 추가" />
@@ -444,7 +451,8 @@
     <MESSAGE value="ignore" />
     <MESSAGE value="activeList 최초 선언부 추가" />
     <MESSAGE value="timer" />
-    <option name="LAST_COMMIT_MESSAGE" value="timer" />
+    <MESSAGE value="Timer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Timer" />
   </component>
   <component name="WindowStateProjectService">
     <state x="760" y="274" key="#Project_Structure" timestamp="1591076943535">
@@ -476,22 +484,22 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="454" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1591073036048" />
-    <state width="2517" height="194" key="GridCell.Tab.0.bottom" timestamp="1591312162024">
+    <state width="2517" height="194" key="GridCell.Tab.0.bottom" timestamp="1591313051763">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="194" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591312162024" />
-    <state width="2517" height="194" key="GridCell.Tab.0.center" timestamp="1591312162024">
+    <state width="2517" height="194" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591313051763" />
+    <state width="2517" height="194" key="GridCell.Tab.0.center" timestamp="1591313051762">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="194" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591312162024" />
-    <state width="2517" height="194" key="GridCell.Tab.0.left" timestamp="1591312162024">
+    <state width="2517" height="194" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591313051762" />
+    <state width="2517" height="194" key="GridCell.Tab.0.left" timestamp="1591313051762">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="194" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591312162024" />
-    <state width="2517" height="194" key="GridCell.Tab.0.right" timestamp="1591312162024">
+    <state width="2517" height="194" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591313051762" />
+    <state width="2517" height="194" key="GridCell.Tab.0.right" timestamp="1591313051762">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="194" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591312162024" />
+    <state width="2517" height="194" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591313051762" />
     <state x="248" y="121" key="MergeDialog" timestamp="1591082012879">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -500,11 +508,11 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="781" y="344" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1591263207383" />
-    <state x="872" y="432" key="Vcs.Push.Dialog.v2" timestamp="1591312298435">
+    <state x="872" y="432" key="Vcs.Push.Dialog.v2" timestamp="1591312408505">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="654" y="321" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591256174062" />
-    <state x="872" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591312298435" />
+    <state x="872" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591312408505" />
     <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591312306413">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -514,9 +522,9 @@
     </state>
     <state x="752" y="361" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591078691554" />
     <state x="1002" y="486" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591206191994" />
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1591081751999">
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1591312902535">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1591081751999" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1591312902535" />
   </component>
 </project>
