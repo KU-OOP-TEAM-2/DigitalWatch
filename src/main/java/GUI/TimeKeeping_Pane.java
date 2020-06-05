@@ -144,14 +144,6 @@ public class TimeKeeping_Pane extends JPanel{
     }
 
     //getters
-	public JPanel getSecondSegBody() {
-		return secondSegBody;
-	}
-
-	public JPanel getFirstSegBody() {
-		return firstSegBody;
-	}
-
 	public JLabel[] getSecondSegs() {
 		return secondSegs;
 	}

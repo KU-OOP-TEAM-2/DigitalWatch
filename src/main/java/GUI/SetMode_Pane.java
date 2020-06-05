@@ -87,7 +87,7 @@ public class SetMode_Pane extends JPanel{
     firstSegBody.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // Internal margin
 
     //Cursor
-    cursorLabel.setBounds(firstSegBody.getX() + 290, firstSegBody.getY() - 20, 20, 20);
+    cursorLabel.setBounds(firstSegBody.getX() + 276, firstSegBody.getY() - 20, 20, 20);
 
     //Clock
     clockLabel.setSize(50, 50);

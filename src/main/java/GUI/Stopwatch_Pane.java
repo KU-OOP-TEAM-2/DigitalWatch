@@ -138,24 +138,13 @@ public class Stopwatch_Pane extends JPanel {
         return secondSegs;
     }
 
-    public void setSecondSegs(JLabel[] secondSegs) {
-        this.secondSegs = secondSegs;
-    }
-
     public JLabel[] getFirstSegs() {
         return firstSegs;
-    }
-
-    public void setFirstSegs(JLabel[] firstSegs) {
-        this.firstSegs = firstSegs;
     }
 
     public JLabel getClockLabel() {
         return clockLabel;
     }
 
-    public void setClockLabel(JLabel clockLabel) {
-        this.clockLabel = clockLabel;
-    }
 }
 

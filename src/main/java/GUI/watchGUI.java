@@ -86,6 +86,7 @@ public class watchGUI extends JFrame implements Runnable{
 
 	//Variables to save Mode Manager's value
 	private static boolean isEditMode;
+	private static boolean isAlarmRinging;
 
 	//Variables to save TimeKeeping's value
 	private static boolean tkFormat;
@@ -168,7 +169,8 @@ public class watchGUI extends JFrame implements Runnable{
 
 	//Variables to save SET MODE value
 	private static int setModeCursor;
-	private static boolean isModeActive;
+	private static Boolean[] isModeActive;
+	private static int activeModeCounter;
 
 
 	public watchGUI() {
@@ -961,6 +963,7 @@ public class watchGUI extends JFrame implements Runnable{
 		while(true) {
 
 			isEditMode = modeManager.isEditMode();
+			isAlarmRinging = modeManager.getBuzzer().getIsAlarmRinging();
 
 			switch (modeManager.getCurrentMode()) {
 				case MODE_TIMEKEEPING://if current Mode is Time Keeping
@@ -1171,8 +1174,10 @@ public class watchGUI extends JFrame implements Runnable{
 					}
 
 
-					//set default clock icon
-					getTimeKeepingPane().getClockLabel().setIcon(getClockDeadImg());
+					//set clock icon
+					if(isAlarmRinging) getTimeKeepingPane().getClockLabel().setIcon(getClockImg());
+					else getTimeKeepingPane().getClockLabel().setIcon(getClockDeadImg());
+
 					if(!(getWatchBodyPane().equals(timeKeepingPane))) switchPanel(this, timeKeepingPane);
 					break;
 
@@ -1291,7 +1296,9 @@ public class watchGUI extends JFrame implements Runnable{
 						getAlarmPane().getTitle().setText("ALARM");
 					}
 
-					getAlarmPane().getClockLabel().setIcon(getClockDeadImg());
+					//set clock icon
+					if(isAlarmRinging) getAlarmPane().getClockLabel().setIcon(getClockImg());
+					else getAlarmPane().getClockLabel().setIcon(getClockDeadImg());
 					if(!(getWatchBodyPane().equals(alarmPane))) switchPanel(this, alarmPane);
 					break;
 
@@ -1386,8 +1393,9 @@ public class watchGUI extends JFrame implements Runnable{
 						getTimerPane().getTitle().setText("TIMER");
 					}
 
-					//set default clock icon
-					timerPane.getClockLabel().setIcon(getClockDeadImg());
+					//set clock icon
+					if(isAlarmRinging) getTimerPane().getClockLabel().setIcon(getClockImg());
+					else getTimerPane().getClockLabel().setIcon(getClockDeadImg());
 					if(!(getWatchBodyPane().equals(timerPane))) switchPanel(this, timerPane);
 
 					break;
@@ -1437,8 +1445,9 @@ public class watchGUI extends JFrame implements Runnable{
 						else if(i==2 || i==5) getSwPane().getFirstSegs()[i].setIcon(getColonBigImg());
 					}
 
-					//set default clock icon
-					swPane.getClockLabel().setIcon(getClockDeadImg());
+					//set clock icon
+					if(isAlarmRinging) getSwPane().getClockLabel().setIcon(getClockImg());
+					else getSwPane().getClockLabel().setIcon(getClockDeadImg());
 					if(!(getWatchBodyPane().equals(swPane))) switchPanel(this, swPane);
 					break;
 
@@ -1518,8 +1527,9 @@ public class watchGUI extends JFrame implements Runnable{
 						getCcPane().getTitle().setText("CALORIE CHECK");
 					}
 
-					//set default clock icon
-					getCcPane().getClockLabel().setIcon(getClockDeadImg());
+					//set clock icon
+					if(isAlarmRinging) getCcPane().getClockLabel().setIcon(getClockImg());
+					else getCcPane().getClockLabel().setIcon(getClockDeadImg());
 					if(!(getWatchBodyPane().equals(ccPane))) switchPanel(this, ccPane);
 					break;
 
@@ -1568,21 +1578,26 @@ public class watchGUI extends JFrame implements Runnable{
 						else if(i==2 || i==5) getWtPane().getFirstSegs()[i].setIcon(getColonBigImg());
 					}
 
-					//set default clock icon
-					getWtPane().getClockLabel().setIcon(getClockDeadImg());
+					//set clock icon
+					if(isAlarmRinging) getWtPane().getClockLabel().setIcon(getClockImg());
+					else getWtPane().getClockLabel().setIcon(getClockDeadImg());
 					if(!(getWatchBodyPane().equals(wtPane))) switchPanel(this, wtPane);
 					break;
 
 				case MODE_SETMODE:
 
 					setModeCursor = modeManager.getCurrentCursor();
-					isModeActive = modeManager.getmodes()[setModeCursor].getActive();
+					isModeActive = modeManager.getEditStatus();
+					activeModeCounter = modeManager.getActiveModeCounter();
 
 					//set 2nd segment Img
 					for (int i = 0; i < 10; i++) {
 						if (!(i == 4 || i == 7)) getSmPane().getSecondSegs()[i].setIcon(getSeg14DeadImg());
 						else getSmPane().getSecondSegs()[i].setIcon(colonImg);
 					}
+
+					getSmPane().getCursorLabel().setIcon(cursorImg);
+					getSmPane().getCursorLabel().setVisible(true);
 
 					switch(setModeCursor){
 						case MODE_TIMEKEEPING:
@@ -1595,7 +1610,7 @@ public class watchGUI extends JFrame implements Runnable{
 							getSmPane().getFirstSegs()[5].setIcon(getColonBigImg());
 							getSmPane().getFirstSegs()[7].setIcon(getSeg14DeadBigImg());
 
-							if(isModeActive) getSmPane().getFirstSegs()[6].setIcon(getAlphaAImg());
+							if(isModeActive[setModeCursor]) getSmPane().getFirstSegs()[6].setIcon(getAlphaAImg());
 							else getSmPane().getFirstSegs()[6].setIcon(getAlphaDImg());
 							break;
 
@@ -1609,7 +1624,7 @@ public class watchGUI extends JFrame implements Runnable{
 							getSmPane().getFirstSegs()[5].setIcon(getColonBigImg());
 							getSmPane().getFirstSegs()[7].setIcon(getSeg14DeadBigImg());
 
-							if(isModeActive) getSmPane().getFirstSegs()[6].setIcon(getAlphaAImg());
+							if(isModeActive[setModeCursor]) getSmPane().getFirstSegs()[6].setIcon(getAlphaAImg());
 							else getSmPane().getFirstSegs()[6].setIcon(getAlphaDImg());
 							break;
 
@@ -1623,7 +1638,7 @@ public class watchGUI extends JFrame implements Runnable{
 							getSmPane().getFirstSegs()[5].setIcon(getColonBigImg());
 							getSmPane().getFirstSegs()[7].setIcon(getSeg14DeadBigImg());
 
-							if(isModeActive) getSmPane().getFirstSegs()[6].setIcon(getAlphaAImg());
+							if(isModeActive[setModeCursor]) getSmPane().getFirstSegs()[6].setIcon(getAlphaAImg());
 							else getSmPane().getFirstSegs()[6].setIcon(getAlphaDImg());
 							break;
 
@@ -1637,7 +1652,7 @@ public class watchGUI extends JFrame implements Runnable{
 							getSmPane().getFirstSegs()[5].setIcon(getColonBigImg());
 							getSmPane().getFirstSegs()[7].setIcon(getSeg14DeadBigImg());
 
-							if(isModeActive) getSmPane().getFirstSegs()[6].setIcon(getAlphaAImg());
+							if(isModeActive[setModeCursor]) getSmPane().getFirstSegs()[6].setIcon(getAlphaAImg());
 							else getSmPane().getFirstSegs()[6].setIcon(getAlphaDImg());
 							break;
 
@@ -1651,7 +1666,7 @@ public class watchGUI extends JFrame implements Runnable{
 							getSmPane().getFirstSegs()[5].setIcon(getColonBigImg());
 							getSmPane().getFirstSegs()[7].setIcon(getSeg14DeadBigImg());
 
-							if(isModeActive) getSmPane().getFirstSegs()[6].setIcon(getAlphaAImg());
+							if(isModeActive[setModeCursor]) getSmPane().getFirstSegs()[6].setIcon(getAlphaAImg());
 							else getSmPane().getFirstSegs()[6].setIcon(getAlphaDImg());
 							break;
 
@@ -1665,12 +1680,17 @@ public class watchGUI extends JFrame implements Runnable{
 							getSmPane().getFirstSegs()[5].setIcon(getColonBigImg());
 							getSmPane().getFirstSegs()[7].setIcon(getSeg14DeadBigImg());
 
-							if(isModeActive) getSmPane().getFirstSegs()[6].setIcon(getAlphaAImg());
+							if(isModeActive[setModeCursor]) getSmPane().getFirstSegs()[6].setIcon(getAlphaAImg());
 							else getSmPane().getFirstSegs()[6].setIcon(getAlphaDImg());
 							break;
 					}
 
-					getSmPane().getClockLabel().setIcon(getClockDeadImg());
+					if(!(activeModeCounter == 4)) getSmPane().getTitle().setText("EXIT CONDITION: 4 ACTIVES, YOURS : " + activeModeCounter);
+					else getSmPane().getTitle().setText("SET MODE");
+
+					//set clock icon
+					if(isAlarmRinging) getSmPane().getClockLabel().setIcon(getClockImg());
+					else getSmPane().getClockLabel().setIcon(getClockDeadImg());
 					if(!(getWatchBodyPane().equals(smPane))) switchPanel(this, smPane);
 					break;
 			}

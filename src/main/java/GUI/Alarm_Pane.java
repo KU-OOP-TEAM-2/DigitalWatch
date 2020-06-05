@@ -74,7 +74,7 @@ public class Alarm_Pane extends JPanel {
     //Clock Icon
     clockLabel = new JLabel();
 
-    //AMPM & Day of week Label
+    //AMPM & alarm text Label
     meridiemLabel = new JLabel("AM");
     alarmLabel = new JLabel("ALARM");
 
@@ -103,7 +103,7 @@ public class Alarm_Pane extends JPanel {
     clockLabel.setSize(50, 50);
     clockLabel.setLocation(this.getWidth() - 80, secondSegBody.getLocation().y - 2);
 
-    //AM/PM & dayofweek
+    //AM/PM & Alarm Text
     meridiemLabel.setFont(new Font("Open Sans", Font.BOLD, 15));
     meridiemLabel.setHorizontalAlignment(SwingConstants.LEFT);
     meridiemLabel.setBounds((secondSegBody.getLocation().x + secondSegBody.getWidth()) + 5, secondSegBody.getLocation().y + 5, 41, 21);
@@ -144,14 +144,6 @@ public class Alarm_Pane extends JPanel {
   }
 
   //getters
-  public JPanel getSecondSegBody() {
-    return secondSegBody;
-  }
-
-  public JPanel getFirstSegBody() {
-    return firstSegBody;
-  }
-
   public JLabel[] getSecondSegs() {
     return secondSegs;
   }
@@ -176,20 +168,4 @@ public class Alarm_Pane extends JPanel {
 
   public JLabel[] getCursorLabel() { return cursorLabel; }
 
-  //setters
-  public void setSecondSegs(JLabel[] secondSegs) {
-    this.secondSegs = secondSegs;
-  }
-
-  public void setFirstSegs(JLabel[] firstSegs) {
-    this.firstSegs = firstSegs;
-  }
-
-  public void setClockLabel(JLabel clockLabel) {
-    this.clockLabel = clockLabel;
-  }
-
-  public void setMeridiemLabel(JLabel meridiemLabel) {
-    this.meridiemLabel = meridiemLabel;
-  }
 }
