@@ -39,6 +39,9 @@ public class Tick implements Callable<Void>{
 
             //tick per 10millisecond
             if(elapsedTime >= 10) {
+                //기준 시간점 새로 갱신
+                prevTime = LocalDateTime.now();
+
                 //Timer
                 ((Timer)modes[2]).decreaseTimer();
                 //stopwatch
@@ -76,8 +79,7 @@ public class Tick implements Callable<Void>{
                     checkMinute++;
                 }
 
-                //기준 시간점 새로 갱신
-                prevTime = LocalDateTime.now();
+
             }
         }
         return null;
