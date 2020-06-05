@@ -170,6 +170,7 @@ public class watchGUI extends JFrame implements Runnable{
 	//Variables to save SET MODE value
 	private static int setModeCursor;
 	private static Boolean[] isModeActive;
+	private static int activeModeCounter;
 
 
 	public watchGUI() {
@@ -1587,6 +1588,7 @@ public class watchGUI extends JFrame implements Runnable{
 
 					setModeCursor = modeManager.getCurrentCursor();
 					isModeActive = modeManager.getEditStatus();
+					activeModeCounter = modeManager.getActiveModeCounter();
 
 					//set 2nd segment Img
 					for (int i = 0; i < 10; i++) {
@@ -1682,6 +1684,9 @@ public class watchGUI extends JFrame implements Runnable{
 							else getSmPane().getFirstSegs()[6].setIcon(getAlphaDImg());
 							break;
 					}
+
+					if(!(activeModeCounter == 4)) getSmPane().getTitle().setText("EXIT CONDITION: 4 ACTIVES, YOURS : " + activeModeCounter);
+					else getSmPane().getTitle().setText("SET MODE");
 
 					//set clock icon
 					if(isAlarmRinging) getSmPane().getClockLabel().setIcon(getClockImg());

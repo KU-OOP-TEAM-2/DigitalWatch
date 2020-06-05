@@ -439,18 +439,7 @@ public class ModeManager {
         }
         else {
             this.editStatus[this.currentCursor]=true;
-            if(this.ActiveModeCounter==4) {
-                for(int i=0;i<6;i++) {
-                    if(editStatus[i]==true){
-                        editStatus[i]=false;
-                       break;
-                    }
-                }
-            }
-            else{
-                this.ActiveModeCounter++;
-            }
-
+            this.ActiveModeCounter++;
         }
     }
 
@@ -479,9 +468,7 @@ public class ModeManager {
     }
 
 
-    public int getCurrentCursor(){
-        return this.currentCursor;
-    }
+    public int getCurrentCursor(){ return this.currentCursor; }
 
 
     public Mode[] getmodes() { return modes; }
@@ -491,5 +478,8 @@ public class ModeManager {
     public Boolean[] getEditStatus(){ return this.editStatus;}
 
     public Buzzer getBuzzer() { return buzzer; }
+
+    public int getActiveModeCounter() {return this.ActiveModeCounter;}
+
 
 }

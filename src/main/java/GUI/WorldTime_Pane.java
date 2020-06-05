@@ -139,36 +139,18 @@ public class WorldTime_Pane extends JPanel {
     return secondSegs;
   }
 
-  public void setSecondSegs(JLabel[] secondSegs) {
-    this.secondSegs = secondSegs;
-  }
-
   public JLabel[] getFirstSegs() {
     return firstSegs;
-  }
-
-  public void setFirstSegs(JLabel[] firstSegs) {
-    this.firstSegs = firstSegs;
   }
 
   public JLabel getClockLabel() {
     return clockLabel;
   }
 
-  public void setClockLabel(JLabel clockLabel) {
-    this.clockLabel = clockLabel;
-  }
-
   public JLabel getMeridiemLabel() {
     return meridiemLabel;
   }
 
-  public void setMeridiemLabel(JLabel meridiemLabel) {
-    this.meridiemLabel = meridiemLabel;
-  }
-
   public JLabel getWtLabel() { return wtLabel; }
-
-  public void setWtLabel(JLabel wtLabel) { this.wtLabel = wtLabel; }
 
 }
