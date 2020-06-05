@@ -1,6 +1,7 @@
 package GUI;
 
 import Sys.*;
+import Sys.Timer;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,7 +14,6 @@ import java.time.LocalTime;
 public class watchGUI extends JFrame implements Runnable{
 
 	public ModeManager modeManager;
-	public Mode[] modes;
 	
 	private static final int FRAME_WIDTH = 500;
 	private static final int FRAME_HEIGHT = 320;
@@ -61,6 +61,81 @@ public class watchGUI extends JFrame implements Runnable{
 	private ImageIcon clockDeadImg; //grey clock image
 	private ImageIcon alphaNImg; //alphabet N
 	private ImageIcon alphaFImg; //alphabet F
+
+	//Variables to save TimeKeeping's value
+	private static int tkYear;
+	private static int tkMonth;
+	private static int tkDay;
+	private static int tkHour;
+	private static int tkMinute;
+	private static int tkSecond;
+	private static int tkYearNum[] = new int[4];
+	private static int tkMonthNum[] = new int[2];
+	private static int tkDayNum[] = new int[2];
+	private static int tkHourNum[] = new int[2];
+	private static int tkMinNum[] = new int[2];
+	private static int tkSecNum[] = new int[2];
+
+	//Variables to save Alarm's value
+	private static int alarmHour;
+	private static int alarmMin;
+	private static int timerIndex;
+	private static int ahNum[] = new int[2];
+	private static int amNum[] = new int[2];
+
+	//Variables to save Timer's value
+	private static int stDay;
+	private static int stHour;
+	private static int stMin;
+	private static int stSec;
+	private static int timerDay;
+	private static int timerHour;
+	private static int timerMin;
+	private static int timerSec;
+	private static int sethNum[] = new int[2];
+	private static int setmNum[] = new int[2];
+	private static int setsNum[] = new int[2];
+	private static int thNum[] = new int[2];
+	private static int tmNum[] = new int[2];
+	private static int tsNum[] = new int[2];
+
+	//Variables to save Stopwatch's value
+	private static int swHour;
+	private static int swMin;
+	private static int swSec;
+	private static int swmSec;
+	private static int lapHour;
+	private static int lapMin;
+	private static int lapSec;
+	private static int lapmSec;
+	private static int smNum[] = new int[2];
+	private static int ssNum[] = new int[2];
+	private static int smsNum[] = new int[2];
+	private static int lmNum[] = new int[2];
+	private static int lsNum[] = new int[2];
+	private static int lmsNum[] = new int[2];
+
+	//Variables to save Calorie's value
+	private static int ccWeight;
+	private static int ccSpeed;
+	private static int ccCalorie;
+	private static int cwNum[] = new int[3];
+	private static int csNum[] = new int[2];
+	private static int ccNum[] = new int[6];
+
+	//Variables to save WorldTime's value
+	private static int wtYear;
+	private static int wtMonth;
+	private static int wtDay;
+	private static int wtHour;
+	private static int wtMinute;
+	private static int wtSecond;
+	private static int wtYearNum[] = new int[4];
+	private static int wtMonthNum[] = new int[2];
+	private static int wtDayNum[] = new int[2];
+	private static int wtHourNum[] = new int[2];
+	private static int wtMinNum[] = new int[2];
+	private static int wtSecNum[] = new int[2];
 
 
 	public watchGUI() {
@@ -710,13 +785,13 @@ public class watchGUI extends JFrame implements Runnable{
 			yearArray[3] = year;
 		}else if(year>=10 && year<100){
 			for(int i=0; i<2; i++) yearArray[i] = 0;
-			for(int i=yearArray.length-1; i>=0; i--){
+			for(int i=yearArray.length-1; i>=2; i--){
 				yearArray[i] = year%10;
 				year /= 10;
 			}
 		}else if(year>=100 && year<1000){
 			yearArray[0] = 0;
-			for(int i=yearArray.length-1; i>=0; i--){
+			for(int i=yearArray.length-1; i>=1; i--){
 				yearArray[i] = year%10;
 				year /= 10;
 			}
@@ -724,6 +799,60 @@ public class watchGUI extends JFrame implements Runnable{
 			for(int i=yearArray.length-1; i>=0; i--){
 				yearArray[i] = year%10;
 				year /= 10;
+			}
+		}
+	}
+
+	private void keepWeightToArray(int weight, int weightArray[]){
+		if(weight < 10){
+			for(int i=0; i<2; i++) weightArray[i] = 0;
+			weightArray[2] = weight;
+		}else if(weight >= 10 && weight < 100){
+			weightArray[0] = 0;
+			for(int i=weightArray.length-1; i>=1; i--){
+				weightArray[i] = weight%10;
+				weight /= 10;
+			}
+		}else{
+			for(int i=weightArray.length-1; i>=0; i--){
+				weightArray[i] = weight%10;
+				weight /= 10;
+			}
+		}
+	}
+
+	private void keepCalorieToArray(int calorie, int calorieArray[]){
+		if(calorie < 10){
+			for(int i=0; i<5; i++) calorieArray[i] = 0;
+			calorieArray[5] = calorie;
+		}else if(calorie>=10 && calorie<100){
+			for(int i=0; i<4; i++) calorieArray[i] = 0;
+			for(int i=calorieArray.length-1; i>=4; i--){
+				calorieArray[i] = calorie%10;
+				calorie /= 10;
+			}
+		}else if(calorie>=100 && calorie<1000){
+			for(int i=0; i<3; i++) calorieArray[i] = 0;
+			for(int i=calorieArray.length-1; i>=3; i--){
+				calorieArray[i] = calorie%10;
+				calorie /= 10;
+			}
+		}else if(calorie>=1000 && calorie<10000){
+			for(int i=0; i<2; i++) calorieArray[i] = 0;
+			for(int i=calorieArray.length-1; i>=2; i--){
+				calorieArray[i] = calorie%10;
+				calorie /= 10;
+			}
+		}else if(calorie>=10000 && calorie<100000){
+			for(int i=0; i<1; i++) calorieArray[i] = 0;
+			for(int i=calorieArray.length-1; i>=1; i--){
+				calorieArray[i] = calorie%10;
+				calorie /= 10;
+			}
+		}else{
+			for(int i=calorieArray.length-1; i>=0; i--){
+				calorieArray[i] = calorie%10;
+				calorie /= 10;
 			}
 		}
 	}
@@ -736,48 +865,41 @@ public class watchGUI extends JFrame implements Runnable{
 				case MODE_TIMEKEEPING://if current Mode is Time Keeping
 					LocalDateTime temp = ((Time) (modeManager.getmodes()[0])).getCurrentTime();
 
-					int year = temp.getYear();
-					int month = temp.getMonthValue();
-					int day = temp.getDayOfMonth();
-					int hour = temp.getHour();
-					int minute = temp.getMinute();
-					int second = temp.getSecond();
+					tkYear = temp.getYear();
+					tkMonth = temp.getMonthValue();
+					tkDay = temp.getDayOfMonth();
+					tkHour = temp.getHour();
+					tkMinute = temp.getMinute();
+					tkSecond = temp.getSecond();
 
-					int yearNum[] = new int[4];
-					int monthNum[] = new int[2];
-					int dayNum[] = new int[2];
-					int hourNum[] = new int[2];
-					int minuteNum[] = new int[2];
-					int secondNum[] = new int[2];
-
-					if (hour < 12) {
+					if (tkHour < 12) {
 						getTimeKeepingPane().getMeridiemLabel().setText("AM");
 					} else {
 						getTimeKeepingPane().getMeridiemLabel().setText("PM");
 					}
-					getTimeKeepingPane().getDowLabel().setText(temp.getDayOfWeek().toString().substring(0, 3)); //display day of week only 3 words
+					getTimeKeepingPane().getDowLabel().setText(temp.getDayOfWeek().toString().substring(0, 3)); //display tkDay of week only 3 words
 
 					//split time value
-					keepYearToArray(year, yearNum);
-					keepValueToArray(month, monthNum);
-					keepValueToArray(day, dayNum);
-					keepHourToArray(hour, hourNum);
-					keepValueToArray(minute, minuteNum);
-					keepValueToArray(second, secondNum);
+					keepYearToArray(tkYear, tkYearNum);
+					keepValueToArray(tkMonth, tkMonthNum);
+					keepValueToArray(tkDay, tkDayNum);
+					keepHourToArray(tkHour, tkHourNum);
+					keepValueToArray(tkMinute, tkMinNum);
+					keepValueToArray(tkSecond, tkSecNum);
 
-					//set second segment Img (year, month, day)
+					//set 2nd segment Img (tkYear, tkMonth, tkDay)
 					for (int i=0; i<10; i++) {
-						if (i>=0 && i<4) changeSecondImg(MODE_TIMEKEEPING, i, yearNum[i]);
-						else if (i>=5 && i<7) changeSecondImg(MODE_TIMEKEEPING, i, monthNum[i-5]);
-						else if (i>=8 && i<10) changeSecondImg(MODE_TIMEKEEPING, i, dayNum[i-8]);
+						if (i>=0 && i<4) changeSecondImg(MODE_TIMEKEEPING, i, tkYearNum[i]);
+						else if (i>=5 && i<7) changeSecondImg(MODE_TIMEKEEPING, i, tkMonthNum[i-5]);
+						else if (i>=8 && i<10) changeSecondImg(MODE_TIMEKEEPING, i, tkDayNum[i-8]);
 						else if(i==4 || i==7) getTimeKeepingPane().getSecondSegs()[i].setIcon(getColonImg());
 					}
 
-					//set first segment Img (hour, minute, sec)
+					//set first segment Img (tkHour, tkMinute, sec)
 					for (int i=0; i<8; i++) {
-						if (i>=0 && i<2) changefirstImg(MODE_TIMEKEEPING, i, hourNum[i]);
-						else if (i>=3 && i<5) changefirstImg(MODE_TIMEKEEPING, i, minuteNum[i-3]);
-						else if (i>=6 && i<8) changefirstImg(MODE_TIMEKEEPING, i, secondNum[i-6]);
+						if (i>=0 && i<2) changefirstImg(MODE_TIMEKEEPING, i, tkHourNum[i]);
+						else if (i>=3 && i<5) changefirstImg(MODE_TIMEKEEPING, i, tkMinNum[i-3]);
+						else if (i>=6 && i<8) changefirstImg(MODE_TIMEKEEPING, i, tkSecNum[i-6]);
 						else if(i==2 || i==5) getTimeKeepingPane().getFirstSegs()[i].setIcon(getColonBigImg());
 					}
 
@@ -792,19 +914,16 @@ public class watchGUI extends JFrame implements Runnable{
 					LocalDateTime alarmTime = alarm.getCurrentAlarmTimer();
 					boolean isActivatedTimer = alarm.getCurrentAlarmisActivated();
 
-					int alarmHour = alarmTime.getHour();
-					int alarmMin = alarmTime.getMinute();
-					int timerIndex = alarm.getCurrentAlarmIndex() + 1;
-
-					int ahNum[] = new int[2];
-					int amNum[] = new int[2];
+					alarmHour = alarmTime.getHour();
+					alarmMin = alarmTime.getMinute();
+					timerIndex = alarm.getCurrentAlarmIndex() + 1;
 
 					//split time value
 					keepHourToArray(alarmHour, ahNum);
 					keepValueToArray(alarmMin, amNum);
 
 
-					//second Segment img set
+					//2nd Segment img set
 					if(isActivatedTimer){ //DISPLAY ON
 						for(int i=0; i<2; i++) getAlarmPane().getSecondSegs()[i].setIcon(getSeg14DeadImg());
 						getAlarmPane().getSecondSegs()[2].setIcon(getNumImgs()[0]);
@@ -836,31 +955,39 @@ public class watchGUI extends JFrame implements Runnable{
 					break;
 
 				case MODE_TIMER: //if current Mode is Timer
-					LocalDateTime timerTime = ((Sys.Timer)(modeManager.getmodes()[2])).getTimerTime();
+					Sys.Timer timer = (Sys.Timer) modeManager.getmodes()[2];
 
-					int timerHour = timerTime.getHour();
-					int timerMin = timerTime.getMinute();
-					int timerSec = timerTime.getSecond();
+					LocalDateTime timerTime = timer.getTimerTime();
+					LocalDateTime setTime = timer.getSettingTimer();
 
-					int thNum[] = new int[2];
-					int tmNum[] = new int[2];
-					int tsNum[] = new int[2];
+					stDay = setTime.getDayOfMonth();
+					stHour = (stDay-1)*24 + setTime.getHour();
+					stMin = setTime.getMinute();
+					stSec = setTime.getSecond();
+					timerDay = timerTime.getDayOfMonth();
+					timerHour = (timerDay-1)*24 + timerTime.getHour();
+					timerMin = timerTime.getMinute();
+					timerSec = timerTime.getSecond();
+
 
 					//split Time Value
+					keepValueToArray(stHour, sethNum);
+					keepValueToArray(stMin, setmNum);
+					keepValueToArray(stSec, setsNum);
 					keepValueToArray(timerHour, thNum);
 					keepValueToArray(timerMin, tmNum);
 					keepValueToArray(timerSec, tsNum);
 
-					//set second segment Img (year, month, day)
+					//set 2nd segment Img (tkYear, tkMonth, tkDay)
 					for (int i = 0; i < 10; i++) {
 						if (i>=0 && i<2) getTimerPane().getSecondSegs()[i].setIcon(getSeg14DeadImg());
-						else if(i>=2 && i<4) changeSecondImg(MODE_TIMER, i, thNum[i-2]);
-						else if(i>=5 && i<7) changeSecondImg(MODE_TIMER, i, tmNum[i-5]);
-						else if(i>=8 && i<10) changeSecondImg(MODE_TIMER, i, tsNum[i-8]);
+						else if(i>=2 && i<4) changeSecondImg(MODE_TIMER, i, sethNum[i-2]);
+						else if(i>=5 && i<7) changeSecondImg(MODE_TIMER, i, setmNum[i-5]);
+						else if(i>=8 && i<10) changeSecondImg(MODE_TIMER, i, setsNum[i-8]);
 						else if(i==4 || i==7) getTimerPane().getSecondSegs()[i].setIcon(colonImg);
 					}
 
-					//set first segment Img (hour, minute, sec)
+					//set first segment Img (tkHour, tkMinute, sec)
 					for (int i = 0; i < 8; i++) {
 						if (i>=0 && i<2) changefirstImg(MODE_TIMER, i, thNum[i]);
 						else if (i>=3 && i<5) changefirstImg(MODE_TIMER, i, tmNum[i-3]);
@@ -876,24 +1003,23 @@ public class watchGUI extends JFrame implements Runnable{
 
 				case MODE_STOPWATCH: //if current Mode is Stopwatch
 
-					LocalTime swTime = ((StopWatch)modeManager.getmodes()[3]).getCurrentStopWatchTime();
-					LocalTime lapTime = ((StopWatch)modeManager.getmodes()[3]).getLapStopWatchTime();
+					StopWatch stopwatch = (StopWatch) modeManager.getmodes()[3];
 
-					int swMin = swTime.getMinute();
-					int swSec = swTime.getSecond();
-					int swmSec = swTime.getNano()/10000000;
+					LocalTime swTime = stopwatch.getCurrentStopWatchTime();
+					LocalTime lapTime = stopwatch.getLapStopWatchTime();
 
-					int lapMin = lapTime.getMinute();
-					int lapSec = lapTime.getSecond();
-					int lapmSec = lapTime.getNano()/10000000;
+					swHour = swTime.getHour(); // we will not print 'HOUR'. But to convert it into minutes.
+					swMin = swTime.getMinute();
+					swSec = swTime.getSecond();
+					swmSec = swTime.getNano()/10000000;
 
-					int smNum[] = new int[2];
-					int ssNum[] = new int[2];
-					int smsNum[] = new int[2];
+					lapHour = lapTime.getHour();
+					lapMin = lapTime.getMinute();
+					lapSec = lapTime.getSecond();
+					lapmSec = lapTime.getNano()/10000000;
 
-					int lmNum[] = new int[2];
-					int lsNum[] = new int[2];
-					int lmsNum[] = new int[2];
+					if(swHour == 1) swMin += 60;
+					if(lapHour == 1) lapMin += 60;
 
 					//split Time Value
 					keepValueToArray(swMin, smNum);
@@ -927,9 +1053,41 @@ public class watchGUI extends JFrame implements Runnable{
 
 				case MODE_CCHECK: //if current Mode is CalorieCheck
 
+					CalorieCheck cCheck = (CalorieCheck) modeManager.getmodes()[4];
+
+					ccWeight = cCheck.getWeight();
+					ccSpeed = cCheck.getSpeed();
+					ccCalorie = cCheck.getCalorie();
+
+					//split value to array
+					keepWeightToArray(ccWeight, cwNum);
+					keepValueToArray(ccSpeed, csNum);
+					keepCalorieToArray(ccCalorie, ccNum);
+
+					//set Second seg Img (weight, speed)
+					for (int i = 0; i < 10; i++) {
+						if (i==0 || i==5 || i==6) getCcPane().getSecondSegs()[i].setIcon(getSeg14DeadImg());
+						else if(i>=1 && i<4) changeSecondImg(MODE_CCHECK, i, cwNum[i-1]);
+						else if(i>=8 && i<10) changeSecondImg(MODE_CCHECK, i, csNum[i-8]);
+						else if(i==4 || i==7) getCcPane().getSecondSegs()[i].setIcon(colonImg);
+					}
+
+					//set first seg Img
+					for (int i = 0; i < 8; i++) {
+						if (i==2 || i==5) getCcPane().getFirstSegs()[i].setIcon(getColonBigImg());
+						else if(i>=0 && i<2) changefirstImg(MODE_CCHECK, i, ccNum[i]);
+						else if(i>=3 && i<5) changefirstImg(MODE_CCHECK, i, ccNum[i-1]);
+						else if(i>=6 && i<8) changefirstImg(MODE_CCHECK, i, ccNum[i-2]);
+					}
+
+					//set default clock icon
+					swPane.getClockLabel().setIcon(getClockDeadImg());
+					if(!(getWatchBodyPane().equals(ccPane))) switchPanel(this, ccPane);
 					break;
 
 				case MODE_WTIME: //if current Mode is WorldTime
+
+					WorldTime wTime = (WorldTime) modeManager.getmodes()[5];
 
 					break;
 

@@ -17,10 +17,10 @@ public class StopWatch implements Mode{
     public StopWatch() {
         LocalDate temp = LocalDate.now();
         currentStopWatchTime = LocalTime.of(0,0,0,0);
-        isActivated = true;
+        isActivated = false;
         lapTime= LocalTime.of(0,0,0,0);
         isPaused = true;
-        overflowStopWatchTime= LocalTime.of(0,59,59,99000000);
+        overflowStopWatchTime= LocalTime.of(1,39,59,99000000);
     }
 
     private LocalTime currentStopWatchTime;

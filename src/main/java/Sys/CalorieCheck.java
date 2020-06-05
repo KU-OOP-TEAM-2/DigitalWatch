@@ -15,7 +15,7 @@ public class CalorieCheck implements Mode{
     public CalorieCheck() {
         pauseCalorieCheckFlag = true;
         startCalorieCheckFlag = false;
-        isActivated = false;
+        isActivated = true;
         cursor = false;
         Speed = 5;
         Weight = 60;
@@ -186,7 +186,7 @@ public class CalorieCheck implements Mode{
                 endCalorieCheck();
             }
             else{
-                CalorieTime.plusNanos(10000000);
+                CalorieTime = CalorieTime.plusNanos(10000000);
             }
         }
     }
