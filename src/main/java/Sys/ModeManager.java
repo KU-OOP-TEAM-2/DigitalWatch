@@ -6,6 +6,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
+
+
 /**
  *
  */
@@ -331,7 +333,7 @@ public class ModeManager {
                             //start CalorieCheck, pause CalorieCheck, resume CalorieCheck
                             case 2:
                                 //CalorieCheck가 시작된 상태다.
-                                if (!((CalorieCheck) modes[4]).getIsStart()) {
+                                if (((CalorieCheck) modes[4]).getIsStart()) {
                                     //CalorieCheck가 시작된 상태고 puase 상태다.
                                     if (((CalorieCheck) modes[4]).getIsPause()) {
                                         ((CalorieCheck) modes[4]).resumeCaloreCheck();

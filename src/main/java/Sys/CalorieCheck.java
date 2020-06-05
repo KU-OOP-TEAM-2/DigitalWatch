@@ -84,6 +84,7 @@ public class CalorieCheck implements Mode{
      *
      */
     public void changeCursor() {
+        System.out.println("CalorieCheck changeCursorS");
         cursor = !cursor;
     }
 
@@ -93,6 +94,7 @@ public class CalorieCheck implements Mode{
      *
      */
     public void increaseData() {
+        System.out.println("CalorieCheck increaseData");
         if(cursor){
             if(tempWeight == 999){
                 tempWeight = 0;
@@ -112,6 +114,7 @@ public class CalorieCheck implements Mode{
      *
      */
     public void decreaseData() {
+        System.out.println("CalorieCheck decreaseData");
         if(cursor){
             if(tempWeight == 0){
                 tempWeight = 999;
@@ -131,6 +134,7 @@ public class CalorieCheck implements Mode{
      임시변수에 저장해놓은 값을 실제 speed, weigth 변수에 저장
      */
     public void saveCalorieSetting() {
+        System.out.println("CalorieCheck saveData");
         tempSpeed = Speed;
         tempWeight = Weight;
     }
@@ -148,6 +152,7 @@ public class CalorieCheck implements Mode{
      *
      */
     public void startCalorieCheck() {
+        System.out.println("CalorieCheck start");
         pauseCalorieCheckFlag = false;
         startCalorieCheckFlag = true;
         cursor = false;
@@ -186,7 +191,9 @@ public class CalorieCheck implements Mode{
                 endCalorieCheck();
             }
             else{
-                CalorieTime = CalorieTime.plusNanos(100000);
+                CalorieTime = CalorieTime.plusNanos(10000000);
+                System.out.println(CalorieTime);
+                System.out.println("Calorie=" + getCalorie());
             }
         }
     }
@@ -200,7 +207,7 @@ public class CalorieCheck implements Mode{
     }
 
     private void calculateCalorie(){
-        int allSeconds = CalorieTime.getHour()*3600 + CalorieTime.getMinute()*60
+        double allSeconds = CalorieTime.getHour()*3600 + CalorieTime.getMinute()*60
                 + CalorieTime.getSecond();
         Calorie = (int) (0.0157 * ( ( 0.1 * Speed + 3.5 ) /3.5 ) * Weight * allSeconds);
     }
