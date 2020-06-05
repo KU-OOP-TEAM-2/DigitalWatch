@@ -24,7 +24,7 @@ public class ModeManager {
         modes = new Mode[6];
         modes[0] = new Time();
         modes[1] = new Alarm(buzzer, modes[0]);
-        modes[2] = new Timer();
+        modes[2] = new Timer(buzzer);
         modes[3] = new StopWatch();
         modes[4] = new CalorieCheck();
         modes[5] = new WorldTime();
