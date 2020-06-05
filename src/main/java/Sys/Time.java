@@ -41,7 +41,7 @@ public class Time implements Mode{
 
     public void timeflow() {//thread로 돌릴 함수 1초마다 currentTime 값 1씩 증가.
 
-            if(this.currentTime.plusNanos(10000000).getYear()<9999) {
+            if(this.currentTime.plusNanos(10000000).getYear()<10000) {
                 this.currentTime=this.currentTime.plusNanos(10000000);
             }
             else {
@@ -49,7 +49,7 @@ public class Time implements Mode{
             }
     }
     public void editTimeFlow(){
-        if(this.editTime.plusNanos(10000000).getYear()<9999) {
+        if(this.editTime.plusNanos(10000000).getYear()<10000) {
             this.editTime=this.editTime.plusNanos(10000000);
         }
         else {
