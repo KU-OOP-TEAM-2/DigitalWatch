@@ -79,6 +79,6 @@ public class StopWatchTest {
         assertFalse(stopWatch.getIsPaused());
 
     }
-    
+
 
 }
