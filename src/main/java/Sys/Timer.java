@@ -22,11 +22,12 @@ public class Timer implements  Mode{
         return this.isActivated;
     }
 
-    public Timer() {
+    public Timer(Buzzer buzzer) {
         isActivated=true;
         timerTime= LocalDateTime.of(2000,1,5,3,59,59);
         settingTimer=LocalDateTime.of(2000,1,5,3,59,59);
         pauseTimerFlag=true;
+        this.buzzer=buzzer;
     }
 
     //cancel 용 Timer 변수 저장
@@ -36,7 +37,7 @@ public class Timer implements  Mode{
     // 추가적으로 Day는 0값을 가질수 없어 1으로 초기값을 설정 그래서 Hour계산할때
     // (Day-1)*24 + Hour 이 Display될 시간
     private LocalDateTime timerTime;
-
+    private Buzzer buzzer;
     private Boolean saveTimerFlag;
 
     private Boolean pauseTimerFlag;
@@ -138,6 +139,8 @@ public class Timer implements  Mode{
             LocalDateTime defaulTime=LocalDateTime.of(2000,1,1,0,0,0);
             if(defaulTime.isAfter(timerTime) || defaulTime.isEqual(timerTime)){
                 //ModeManager.beepbuzzer()
+
+                buzzer.beepBuzzer();
                 pauseTimerFlag=true;
                 timerTime=LocalDateTime.of(2000,1,1,0,0,0);
                 return true;
@@ -148,7 +151,7 @@ public class Timer implements  Mode{
 
     public void start_pauseTimer(){
         if(pauseTimerFlag){
-            if(timerTime.getDayOfMonth()==1 && timerTime.getHour()==0 && timerTime.getSecond()==0 && timerTime.getMinute()==0){
+            if(timerTime.getDayOfMonth()==1 && timerTime.getHour()==0 && timerTime.getSecond()==0 && timerTime.getMinute()==0 &&timerTime.getNano()==0){
                 //0 리셋 상태일 때 아무작동 x
                 return;
             }
