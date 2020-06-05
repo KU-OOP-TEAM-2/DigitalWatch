@@ -490,5 +490,4 @@ public class ModeManager {
 
     public int getActiveModeCounter() {return this.ActiveModeCounter;}
 
-
 }

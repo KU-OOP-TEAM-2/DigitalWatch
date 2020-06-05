@@ -47,15 +47,15 @@ public class Time implements Mode{
             else {
                 this.currentTime = this.currentTime.plusSeconds(1).plusYears(-10000);
             }
-
-            if(this.editTime.plusSeconds(1).getYear()<9999) {
-            this.editTime=this.editTime.plusSeconds(1);
-            }
-            else {
-            this.editTime = this.editTime.plusSeconds(1).plusYears(-10000);
-            }
     }
-
+    public void editTimeFlow(){
+        if(this.editTime.plusSeconds(1).getYear()<9999) {
+            this.editTime=this.editTime.plusSeconds(1);
+        }
+        else {
+            this.editTime = this.editTime.plusSeconds(1).plusYears(-10000);
+        }
+    }
 
     public void enterEditData() {
         this.editTime=this.currentTime;
@@ -240,9 +240,7 @@ public class Time implements Mode{
         return this.GMT;
     }
 
-    public boolean getFormat() {
-        return this.format;
-    }
+    public boolean getFormat() {return this.format; }
 //    public boolean getIsActivated() {
 //        return this.isActivated;
 //    }
