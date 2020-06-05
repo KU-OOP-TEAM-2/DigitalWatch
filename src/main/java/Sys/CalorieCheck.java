@@ -201,6 +201,7 @@ public class CalorieCheck implements Mode{
             //23시 59분 59초가 되면 시간측정 및 계산 종료
             if(CalorieTime.getHour() == 23 && CalorieTime.getMinute() == 59
                     && CalorieTime.getSecond() == 59){
+                System.out.println("in end!!");
                 endCalorieCheck();
             }
             else{
