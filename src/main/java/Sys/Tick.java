@@ -38,10 +38,11 @@ public class Tick implements Callable<Void>{
             elapsedTime= duration.getNano()/1000000;
 
             //tick per 10millisecond
-            if(elapsedTime == 10) {
+            if(elapsedTime >= 10) {
                 //Timer
                 ((Timer)modes[2]).decreaseTimer();
-
+                //stopwatch : ms단위 갱신에 어색함이 있어서 따로 갱신 시간을 다르게 하였음
+                ((StopWatch)modes[3]).increaseCurrentTime();
                 //calorie check
                 ((CalorieCheck)modes[4]).increaseCalorieCheckTimer();
                 //when duration = 1 second
@@ -75,8 +76,7 @@ public class Tick implements Callable<Void>{
                 //기준 시간점 새로 갱신
                 prevTime = LocalDateTime.now();
             }else if(elapsedTime == 1){
-                //stopwatch : ms단위 갱신에 어색함이 있어서 따로 갱신 시간을 다르게 하였음
-                ((StopWatch)modes[3]).increaseCurrentTime();
+
             }
         }
         return null;

@@ -15,9 +15,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="Timer">
+    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="Timer minusNanos 값수정">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/Timer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/Timer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/Tick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/Tick.java" afterDir="false" />
     </list>
     <list id="75641970-afe3-41f4-8211-ac3bdcb41cb9" name="Revert &quot;edit Tick constructor&quot;" comment="reset branch" />
     <option name="SHOW_DIALOG" value="false" />
@@ -411,7 +411,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591312400650</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Timer minusNanos 값수정">
+      <created>1591313157480</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1591313157480</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -427,7 +434,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Timer -&gt;Thread 제거" />
     <MESSAGE value="1.8" />
     <MESSAGE value="Mode manager world time 추가" />
     <MESSAGE value="Mode manager 정리" />
@@ -452,7 +458,8 @@
     <MESSAGE value="activeList 최초 선언부 추가" />
     <MESSAGE value="timer" />
     <MESSAGE value="Timer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Timer" />
+    <MESSAGE value="Timer minusNanos 값수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="Timer minusNanos 값수정" />
   </component>
   <component name="WindowStateProjectService">
     <state x="760" y="274" key="#Project_Structure" timestamp="1591076943535">
@@ -484,22 +491,22 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="454" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1591073036048" />
-    <state width="2517" height="194" key="GridCell.Tab.0.bottom" timestamp="1591313051763">
+    <state width="2517" height="194" key="GridCell.Tab.0.bottom" timestamp="1591358149940">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="194" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591313051763" />
-    <state width="2517" height="194" key="GridCell.Tab.0.center" timestamp="1591313051762">
+    <state width="2517" height="194" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591358149940" />
+    <state width="2517" height="194" key="GridCell.Tab.0.center" timestamp="1591358149939">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="194" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591313051762" />
-    <state width="2517" height="194" key="GridCell.Tab.0.left" timestamp="1591313051762">
+    <state width="2517" height="194" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591358149939" />
+    <state width="2517" height="194" key="GridCell.Tab.0.left" timestamp="1591358149939">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="194" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591313051762" />
-    <state width="2517" height="194" key="GridCell.Tab.0.right" timestamp="1591313051762">
+    <state width="2517" height="194" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591358149939" />
+    <state width="2517" height="194" key="GridCell.Tab.0.right" timestamp="1591358149939">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="194" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591313051762" />
+    <state width="2517" height="194" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591358149939" />
     <state x="248" y="121" key="MergeDialog" timestamp="1591082012879">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -508,15 +515,15 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="781" y="344" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1591263207383" />
-    <state x="872" y="432" key="Vcs.Push.Dialog.v2" timestamp="1591312408505">
+    <state x="872" y="432" key="Vcs.Push.Dialog.v2" timestamp="1591313165714">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="654" y="321" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591256174062" />
-    <state x="872" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591312408505" />
-    <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591312306413">
+    <state x="872" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591313165714" />
+    <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591357765043">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591312306413" />
+    <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591357765043" />
     <state x="1002" y="486" key="git4idea.merge.GitPullDialog" timestamp="1591206191994">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
