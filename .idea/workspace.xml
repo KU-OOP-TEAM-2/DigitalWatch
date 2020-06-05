@@ -15,9 +15,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/Sys/StopWatchTest.java" afterDir="false" />
+    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="complete CalorieCheck with debugging print">
+      <change afterPath="$PROJECT_DIR$/src/test/java/Sys/CalorieCheckTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/CalorieCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/CalorieCheck.java" afterDir="false" />
     </list>
     <list id="75641970-afe3-41f4-8211-ac3bdcb41cb9" name="Revert &quot;edit Tick constructor&quot;" comment="reset branch" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,7 +55,6 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
       </list>
     </option>
@@ -61,6 +62,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="1ckVJvK3m1JWo3Gh7qo5Cp32Rep" />
   <component name="ProjectViewState">
@@ -74,11 +76,12 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="external.system.task.project.file.to.start" value="$PROJECT_DIR$" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/ImageFiles" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="dynamic.classpath" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -87,11 +90,38 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Windows Standards\Documents\GitHub\softwarevv\src\main\resources\ImageFiles" />
-    </key>
   </component>
-  <component name="RunManager" selected="JUnit.StopWatchTest.increaseCurrentTime">
+  <component name="RunManager" selected="JUnit.CalorieCheckTest.increaseCalorieCheckTimer">
+    <configuration name="CalorieCheckTest.resetCalorieCheck" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DWSystem.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Sys.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Sys" />
+      <option name="MAIN_CLASS_NAME" value="Sys.CalorieCheckTest" />
+      <option name="METHOD_NAME" value="resetCalorieCheck" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main_test (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GUI.Main_test" />
+      <module name="DWSystem.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="GUI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -126,141 +156,68 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="StopWatchTest.increaseCurrentTime" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="softwarevv.test" />
-      <shortenClasspath name="CLASSPATH_FILE" />
-      <useClassPathOnly />
+    <configuration name="CalorieCheckTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DWSystem.test" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Sys.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="PACKAGE_NAME" value="Sys" />
-      <option name="MAIN_CLASS_NAME" value="Sys.StopWatchTest" />
-      <option name="METHOD_NAME" value="increaseCurrentTime" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="PARAMETERS" value="" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StopWatchTest.lapStopwatch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="softwarevv.test" />
-      <shortenClasspath name="CLASSPATH_FILE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Sys.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
-      <option name="PACKAGE_NAME" value="Sys" />
-      <option name="MAIN_CLASS_NAME" value="Sys.StopWatchTest" />
-      <option name="METHOD_NAME" value="lapStopwatch" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="PARAMETERS" value="" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StopWatchTest.resetStopwatch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="softwarevv.test" />
-      <shortenClasspath name="CLASSPATH_FILE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Sys.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
-      <option name="PACKAGE_NAME" value="Sys" />
-      <option name="MAIN_CLASS_NAME" value="Sys.StopWatchTest" />
-      <option name="METHOD_NAME" value="resetStopwatch" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="PARAMETERS" value="" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StopWatchTest.resumeStopwatch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="softwarevv.test" />
-      <shortenClasspath name="CLASSPATH_FILE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Sys.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
-      <option name="PACKAGE_NAME" value="Sys" />
-      <option name="MAIN_CLASS_NAME" value="Sys.StopWatchTest" />
-      <option name="METHOD_NAME" value="resumeStopwatch" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="PARAMETERS" value="" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StopWatchTest.testincreaseCurrentTime" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="softwarevv.test" />
-      <shortenClasspath name="CLASSPATH_FILE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Sys.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
-      <option name="PACKAGE_NAME" value="Sys" />
-      <option name="MAIN_CLASS_NAME" value="Sys.StopWatchTest" />
-      <option name="METHOD_NAME" value="testincreaseCurrentTime" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="PARAMETERS" value="" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <module name="softwarevv.main" />
-      <shortenClasspath name="CLASSPATH_FILE" />
-      <useClassPathOnly />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
-      <option name="MAIN_CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Sys.CalorieCheckTest" />
       <option name="TEST_OBJECT" value="class" />
-      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CalorieCheckTest.increaseCalorieCheckTimer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DWSystem.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Sys.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Sys" />
+      <option name="MAIN_CLASS_NAME" value="Sys.CalorieCheckTest" />
+      <option name="METHOD_NAME" value="increaseCalorieCheckTimer" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CalorieCheckTest.resetCalorieCheck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DWSystem.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Sys.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Sys" />
+      <option name="MAIN_CLASS_NAME" value="Sys.CalorieCheckTest" />
+      <option name="METHOD_NAME" value="resetCalorieCheck" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
+      <item itemvalue="Android JUnit.CalorieCheckTest.resetCalorieCheck" />
+      <item itemvalue="Application.Main_test (1)" />
       <item itemvalue="Gradle.git_teampj" />
-      <item itemvalue="JUnit." />
-      <item itemvalue="JUnit.StopWatchTest.resumeStopwatch" />
-      <item itemvalue="JUnit.StopWatchTest.resetStopwatch" />
-      <item itemvalue="JUnit.StopWatchTest.lapStopwatch" />
-      <item itemvalue="JUnit.StopWatchTest.increaseCurrentTime" />
-      <item itemvalue="JUnit.StopWatchTest.testincreaseCurrentTime" />
+      <item itemvalue="JUnit.CalorieCheckTest.resetCalorieCheck" />
+      <item itemvalue="JUnit.CalorieCheckTest" />
+      <item itemvalue="JUnit.CalorieCheckTest.increaseCalorieCheckTimer" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.StopWatchTest.increaseCurrentTime" />
-        <item itemvalue="JUnit.StopWatchTest.testincreaseCurrentTime" />
-        <item itemvalue="JUnit.StopWatchTest.lapStopwatch" />
-        <item itemvalue="JUnit.StopWatchTest.resetStopwatch" />
-        <item itemvalue="JUnit.StopWatchTest.resumeStopwatch" />
+        <item itemvalue="JUnit.CalorieCheckTest.increaseCalorieCheckTimer" />
+        <item itemvalue="JUnit.CalorieCheckTest" />
+        <item itemvalue="JUnit.CalorieCheckTest.resetCalorieCheck" />
+        <item itemvalue="Android JUnit.CalorieCheckTest.resetCalorieCheck" />
+        <item itemvalue="Application.Main_test (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -478,63 +435,7 @@
       <option name="project" value="LOCAL" />
       <updated>1591312400650</updated>
     </task>
-    <task id="LOCAL-00030" summary="Timer minusNanos 값수정">
-      <created>1591313157480</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1591313157480</updated>
-    </task>
-    <task id="LOCAL-00031" summary="Stopwatch를 Timer와 따로두는 것과 같이두는것의 차이가 없어 같이 합친뒤 elapsedTime이 10인 순간을 점프해 버릴 경우의 대비해 if 문을 ==10에서 &gt;=10으로 수정">
-      <created>1591358317451</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1591358317452</updated>
-    </task>
-    <task id="LOCAL-00032" summary="Clicked button time {} 누락 수정">
-      <created>1591359288824</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1591359288824</updated>
-    </task>
-    <task id="LOCAL-00033" summary="Buzzer 수정">
-      <created>1591364792867</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1591364792867</updated>
-    </task>
-    <task id="LOCAL-00034" summary="Buzzer,Alarm,Timer 수정, 알람울리고 멈추는 기능 수정">
-      <created>1591372486404</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1591372486404</updated>
-    </task>
-    <task id="LOCAL-00035" summary="Buzzer,Alarm,Timer 수정, 알람울리고 멈추는 기능 수정">
-      <created>1591372592999</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1591372592999</updated>
-    </task>
-    <task id="LOCAL-00036" summary="Buzzer,Alarm,Timer 수정, 알람울리고 멈추는 기능 수정">
-      <created>1591378128800</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1591378128800</updated>
-    </task>
-    <task id="LOCAL-00037" summary="JunitTest 추가">
-      <created>1591380363218</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1591380363218</updated>
-    </task>
-    <option name="localTasksCounter" value="38" />
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -550,6 +451,12 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Timer -&gt;Thread 제거" />
+    <MESSAGE value="1.8" />
+    <MESSAGE value="Mode manager world time 추가" />
+    <MESSAGE value="Mode manager 정리" />
+    <MESSAGE value="gitnore" />
+    <MESSAGE value="clcikButton" />
     <MESSAGE value="ModeManger 변수" />
     <MESSAGE value="ModeManger getmmodes" />
     <MESSAGE value="return to default 추가" />
@@ -569,123 +476,79 @@
     <MESSAGE value="activeList 최초 선언부 추가" />
     <MESSAGE value="timer" />
     <MESSAGE value="Timer" />
-    <MESSAGE value="Timer minusNanos 값수정" />
-    <MESSAGE value="Stopwatch를 Timer와 따로두는 것과 같이두는것의 차이가 없어 같이 합친뒤 elapsedTime이 10인 순간을 점프해 버릴 경우의 대비해 if 문을 ==10에서 &gt;=10으로 수정" />
-    <MESSAGE value="Clicked button time {} 누락 수정" />
-    <MESSAGE value="Buzzer 수정" />
-    <MESSAGE value="Buzzer,Alarm,Timer 수정, 알람울리고 멈추는 기능 수정" />
-    <MESSAGE value="JunitTest 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="JunitTest 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="Timer" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="859" y="114" key="#&lt;template&gt;_of_JUnit" timestamp="1591379601139">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state x="569" y="119" key="#&lt;template&gt;_of_JUnit" timestamp="1591388343245">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="859" y="114" key="#&lt;template&gt;_of_JUnit/0.0.2560.1040@0.0.2560.1040" timestamp="1591379601139" />
-    <state x="332" y="137" key="#Main_test" timestamp="1591378048105">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state x="569" y="119" key="#&lt;template&gt;_of_JUnit/0.0.1920.1040@0.0.1920.1040" timestamp="1591388343245" />
+    <state x="606" y="129" key="#CalorieCheckTest.increaseCalorieCheckTimer" timestamp="1591389534517">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="332" y="137" key="#Main_test/0.0.2560.1040@0.0.2560.1040" timestamp="1591378048105" />
-    <state x="709" y="506" key="#Main_test/0.0.2560.1400@0.0.2560.1400" timestamp="1591377339935" />
-    <state x="972" y="334" key="#Main_test_2" timestamp="1591360110725">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state x="606" y="129" key="#CalorieCheckTest.increaseCalorieCheckTimer/0.0.1920.1040@0.0.1920.1040" timestamp="1591389534517" />
+    <state x="664" y="148" key="#Main_test" timestamp="1591384082237">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="972" y="334" key="#Main_test_2/0.0.2560.1440@0.0.2560.1440" timestamp="1591360110725" />
-    <state x="760" y="274" key="#Project_Structure" timestamp="1591076943535">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="664" y="148" key="#Main_test/0.0.1920.1040@0.0.1920.1040" timestamp="1591384082237" />
+    <state x="664" y="148" key="#Main_test_2" timestamp="1591384067276">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="664" y="148" key="#Main_test_2/0.0.1920.1040@0.0.1920.1040" timestamp="1591384067276" />
+    <state x="570" y="188" key="#Project_Structure" timestamp="1591384391988">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="570" y="188" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1591384391988" />
     <state x="760" y="274" key="#Project_Structure/0.0.2560.1400@0.0.2560.1400" timestamp="1591076943535" />
     <state x="986" y="314" key="#Tests_in_'git_teampj'" timestamp="1591074182315">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="986" y="314" key="#Tests_in_'git_teampj'/0.0.2560.1400@0.0.2560.1400" timestamp="1591074182315" />
-    <state x="734" y="263" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591372792979">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state x="734" y="354" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591076648908">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="734" y="263" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1591372792979" />
     <state x="734" y="354" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591076648908" />
-    <state x="93" y="111" width="2337" height="836" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1591381254607">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state x="218" y="133" width="1582" height="791" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1591389493284">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="93" y="111" width="2337" height="836" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1591381254607" />
-    <state x="1041" y="233" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1591379404808">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state x="218" y="133" width="1582" height="791" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591389493284" />
+    <state x="1085" y="405" key="#com.intellij.ide.util.MemberChooser" timestamp="1591074707858">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1041" y="233" key="#com.intellij.ide.macro.MacrosDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1591379404808" />
-    <state x="1085" y="301" key="#com.intellij.ide.util.MemberChooser" timestamp="1591379186941">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="1085" y="301" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1040@0.0.2560.1040" timestamp="1591379186941" />
     <state x="1085" y="405" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1591074707858" />
-    <state x="1085" y="417" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1440@0.0.2560.1440" timestamp="1591362506117" />
-    <state x="991" y="303" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1591379502401">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="991" y="303" key="#com.intellij.ide.util.PackageChooserDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1591379502401" />
-    <state x="746" y="505" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1591379497795">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="746" y="505" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1591379497795" />
-    <state x="746" y="680" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591377292557" />
-    <state x="829" y="71" key="CommitChangelistDialog2" timestamp="1591380362389">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state x="622" y="71" key="CommitChangelistDialog2" timestamp="1591255811922">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="622" y="71" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1591255811922" />
-    <state x="829" y="71" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1591380362389" />
-    <state x="92" y="68" width="2376" height="1216" key="DiffContextDialog" timestamp="1591364817897">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog" timestamp="1591265278185">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="69" y="68" width="1782" height="904" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591255833606" />
-    <state x="92" y="68" key="DiffContextDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1591364817897" />
     <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591265278185" />
-    <state x="1127" y="274" key="EnvironmentVariablesDialog" timestamp="1591379227194">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="1127" y="274" key="EnvironmentVariablesDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1591379227194" />
     <state x="1060" y="454" key="FileChooserDialogImpl" timestamp="1591073036048">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="454" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1591073036048" />
-    <state width="2477" height="335" key="GridCell.Tab.0.bottom" timestamp="1591383749633">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state width="1189" height="263" key="GridCell.Tab.0.bottom" timestamp="1591389698086">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="2477" height="335" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1591383749633" />
-    <state width="2517" height="194" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591359724852" />
-    <state width="2517" height="413" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1591362916706" />
-    <state width="2477" height="335" key="GridCell.Tab.0.center" timestamp="1591383749633">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state width="1189" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591389698086" />
+    <state width="2517" height="194" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591313051763" />
+    <state width="1189" height="263" key="GridCell.Tab.0.center" timestamp="1591389698086">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="2477" height="335" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1591383749633" />
-    <state width="2517" height="194" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591359724852" />
-    <state width="2517" height="413" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1591362916706" />
-    <state width="2477" height="335" key="GridCell.Tab.0.left" timestamp="1591383749633">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state width="1189" height="263" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591389698086" />
+    <state width="2517" height="194" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591313051762" />
+    <state width="1189" height="263" key="GridCell.Tab.0.left" timestamp="1591389698086">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="2477" height="335" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1591383749633" />
-    <state width="2517" height="194" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591359724851" />
-    <state width="2517" height="413" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1591362916706" />
-    <state width="2477" height="335" key="GridCell.Tab.0.right" timestamp="1591383749633">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state width="1189" height="263" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591389698086" />
+    <state width="2517" height="194" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591313051762" />
+    <state width="1189" height="263" key="GridCell.Tab.0.right" timestamp="1591389698086">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="2477" height="335" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1591383749633" />
-    <state width="2517" height="194" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591359724852" />
-    <state width="2517" height="413" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1591362916706" />
-    <state width="2477" height="342" key="GridCell.Tab.1.bottom" timestamp="1591383401106">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="2477" height="342" key="GridCell.Tab.1.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1591383401106" />
-    <state width="2477" height="342" key="GridCell.Tab.1.center" timestamp="1591383401106">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="2477" height="342" key="GridCell.Tab.1.center/0.0.2560.1040@0.0.2560.1040" timestamp="1591383401106" />
-    <state width="2477" height="342" key="GridCell.Tab.1.left" timestamp="1591383401106">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="2477" height="342" key="GridCell.Tab.1.left/0.0.2560.1040@0.0.2560.1040" timestamp="1591383401106" />
-    <state width="2477" height="342" key="GridCell.Tab.1.right" timestamp="1591383401106">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="2477" height="342" key="GridCell.Tab.1.right/0.0.2560.1040@0.0.2560.1040" timestamp="1591383401106" />
+    <state width="1189" height="263" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591389698086" />
+    <state width="2517" height="194" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591313051762" />
     <state x="248" y="121" key="MergeDialog" timestamp="1591082012879">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -694,56 +557,33 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="781" y="344" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1591263207383" />
-    <state x="872" y="321" key="Vcs.Push.Dialog.v2" timestamp="1591380392078">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="654" y="321" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591256174062" />
-    <state x="872" y="321" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1591380392078" />
-    <state x="872" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591359294938" />
-    <state x="871" y="144" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1591378944116">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="871" y="144" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.2560.1040@0.0.2560.1040" timestamp="1591378944116" />
-    <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591358938268">
+    <state x="872" y="432" key="Vcs.Push.Dialog.v2" timestamp="1591312408505">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591358938268" />
-    <state x="1025" y="204" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1591380416822">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state x="654" y="321" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591256174062" />
+    <state x="872" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591312408505" />
+    <state x="814" y="455" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591384047011">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1025" y="204" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1591380416822" />
-    <state x="1002" y="361" key="git4idea.merge.GitPullDialog" timestamp="1591372771300">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state x="814" y="455" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591384047011" />
+    <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591312306413" />
+    <state x="736" y="209" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1591384713819">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="736" y="209" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591384713819" />
+    <state x="1002" y="486" key="git4idea.merge.GitPullDialog" timestamp="1591206191994">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="752" y="361" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591078691554" />
-    <state x="1002" y="361" key="git4idea.merge.GitPullDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1591372771300" />
-    <state x="1002" y="486" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591358946612" />
-    <state x="902" y="259" width="700" height="530" key="recent.locations.popup" timestamp="1591378938293">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state x="1002" y="486" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591206191994" />
+    <state x="628" y="249" key="run.anything.popup" timestamp="1591388126125">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="902" y="259" width="700" height="530" key="recent.locations.popup/0.0.2560.1040@0.0.2560.1040" timestamp="1591378938293" />
-    <state x="917" y="245" key="run.anything.popup" timestamp="1591364529950">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state x="628" y="249" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1591388126125" />
+    <state x="707" y="234" width="672" height="504" key="search.everywhere.popup" timestamp="1591388394697">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="917" y="245" key="run.anything.popup/0.0.2560.1040@0.0.2560.1040" timestamp="1591364529950" />
-    <state x="943" y="234" width="672" height="504" key="search.everywhere.popup" timestamp="1591382154187">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="943" y="234" width="672" height="504" key="search.everywhere.popup/0.0.2560.1040@0.0.2560.1040" timestamp="1591382154187" />
+    <state x="707" y="234" width="672" height="504" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1591388394697" />
     <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1591312902535" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/Sys/StopWatchTest.java</url>
-          <line>68</line>
-          <properties class="Sys.StopWatchTest" method="increaseCurrentTime">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
