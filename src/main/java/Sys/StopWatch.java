@@ -20,8 +20,8 @@ public class StopWatch implements Mode{
         isActivated = true;
         lapTime= LocalTime.of(0,0,0,0);
         isPaused = true;
-        //overflowStopWatchTime= LocalTime.of(1,39,59,99000000);
-        overflowStopWatchTime = LocalTime.of(0,0,20);
+        overflowStopWatchTime= LocalTime.of(1,39,59,99000000);
+
         isEnd = false;
     }
 
@@ -71,19 +71,16 @@ public class StopWatch implements Mode{
     **/
     public void increaseCurrentTime() {
         is100ms = (is100ms + 1) % 10;
-        if(is100ms == 0){
             if(!isPaused && isEnd!=true) {
                 if (this.currentStopWatchTime.compareTo(overflowStopWatchTime) == 0) {
                     pauseStopwatch();
                     isEnd = true;
                 } else {
-                    currentStopWatchTime = currentStopWatchTime.plusNanos(10000);
+                    currentStopWatchTime = currentStopWatchTime.plusNanos(10000000);
                 }
             }
-            else
-                return;
         }
-    }
+
 
     //이게 왜 필요한지 모르곘습니다... 일단은 그냥 두겠습니다.
     public void stopCurrentTime() {

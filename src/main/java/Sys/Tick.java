@@ -42,6 +42,7 @@ public class Tick implements Callable<Void>{
                 //Timer
                 ((Timer)modes[2]).decreaseTimer();
                 ((Alarm)modes[1]).isAlarmTimeCheck();
+                ((StopWatch)modes[3]).increaseCurrentTime();
                 //calorie check
                 ((CalorieCheck)modes[4]).increaseCalorieCheckTimer();
                 //when duration = 1 second
@@ -76,7 +77,7 @@ public class Tick implements Callable<Void>{
                 prevTime = LocalDateTime.now();
             }else if(elapsedTime == 1){
                 //stopwatch : ms단위 갱신에 어색함이 있어서 따로 갱신 시간을 다르게 하였음
-                ((StopWatch)modes[3]).increaseCurrentTime();
+
             }
         }
         return null;

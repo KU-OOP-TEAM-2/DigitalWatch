@@ -153,4 +153,10 @@ public class Alarm implements Mode{
         return isActivated;
     }
 
+
+    //forJunitTesting
+    public AlarmTimer getCurrentAlarmTimerObject(){
+        return alarm[currentAlarmTimerIndex];
+    }
+
 }

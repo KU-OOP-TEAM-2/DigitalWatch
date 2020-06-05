@@ -42,4 +42,9 @@ public class AlarmTimer {
 
     public boolean isActivatedTimer(){return this.isActivated;}
 
+
+
+    //forTesting
+
+
 }
