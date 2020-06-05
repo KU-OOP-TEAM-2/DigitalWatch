@@ -28,6 +28,7 @@ public class ImageDir {
 	public static String cursor_dir = path + "cursor_20.png";
 	public static String cursur_10_dir = path + "cursor_10.png";
 	public static String centerLine_dir = path + "-Seg.png";
+	public static String plus_dir = path + "plusSeg.png";
 
 	//ICONS
 	public static String clock_dir = path + "clock45.png";

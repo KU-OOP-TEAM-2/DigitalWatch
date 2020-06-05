@@ -66,6 +66,7 @@ public class watchGUI extends JFrame implements Runnable{
 	private ImageIcon alphaMImg; // M
 	private ImageIcon alphaTImg; // T
 	private ImageIcon lineImg; // -
+	private ImageIcon plusImg; // +
 	private ImageIcon cursorImg; //cursor for mode setting
 	private ImageIcon cursorSmallImg; //cursor for 2nd seg
 
@@ -75,12 +76,15 @@ public class watchGUI extends JFrame implements Runnable{
 
 	//Variables to save TimeKeeping's value
 	private static boolean tkFormat;
+	private static boolean isGMTPlus;
+	private static int tkGMT;
 	private static int tkYear;
 	private static int tkMonth;
 	private static int tkDay;
 	private static int tkHour;
 	private static int tkMinute;
 	private static int tkSecond;
+	private static int tkGMTNum[] = new int[2];
 	private static int tkYearNum[] = new int[4];
 	private static int tkMonthNum[] = new int[2];
 	private static int tkDayNum[] = new int[2];
@@ -168,6 +172,7 @@ public class watchGUI extends JFrame implements Runnable{
 		alphaMImg = new ImageIcon(this.getClass().getResource(ImageDir.mSeg_dir));
 		alphaTImg = new ImageIcon(this.getClass().getResource(ImageDir.tSeg_dir));
 		lineImg = new ImageIcon(this.getClass().getResource(ImageDir.centerLine_dir));
+		plusImg = new ImageIcon(this.getClass().getResource(ImageDir.plus_dir));
 		cursorImg = new ImageIcon(this.getClass().getResource(ImageDir.cursor_dir));
 		cursorSmallImg = new ImageIcon(this.getClass().getResource(ImageDir.cursur_10_dir));
 		numBigImgs = new ImageIcon[10]; // first segment's numbers
@@ -355,6 +360,8 @@ public class watchGUI extends JFrame implements Runnable{
 	public ImageIcon getAlphaTImg() { return alphaTImg; }
 
 	public ImageIcon getLineImg() { return lineImg; }
+
+	public ImageIcon getPlusImg() { return plusImg; }
 
 
 	//GUI Update Methods
@@ -918,13 +925,21 @@ public class watchGUI extends JFrame implements Runnable{
 						LocalDateTime editTime = time.getEditTime();
 						int timeCursor = time.getCurrentCursor();
 
+
 						tkFormat = time.getFormat();
+						tkGMT = time.getGMT();
 						tkYear = editTime.getYear();
 						tkMonth = editTime.getMonthValue();
 						tkDay = editTime.getDayOfMonth();
 						tkHour = editTime.getHour();
 						tkMinute = editTime.getMinute();
 						tkSecond = editTime.getSecond();
+
+						if(tkGMT >= 0) isGMTPlus = true;
+						else{
+							isGMTPlus = false;
+							tkGMT = -tkGMT; //get absolute value
+						}
 
 						if (tkHour < 12) {
 							getTimeKeepingPane().getMeridiemLabel().setText("AM");
@@ -934,6 +949,7 @@ public class watchGUI extends JFrame implements Runnable{
 						getTimeKeepingPane().getDowLabel().setText(editTime.getDayOfWeek().toString().substring(0, 3)); //display tkDay of week only 3 words
 
 						//split time value
+						keepValueToArray(tkGMT, tkGMTNum);
 						keepYearToArray(tkYear, tkYearNum);
 						keepValueToArray(tkMonth, tkMonthNum);
 						keepValueToArray(tkDay, tkDayNum);
@@ -1018,13 +1034,16 @@ public class watchGUI extends JFrame implements Runnable{
 								else getTimeKeepingPane().getSecondSegs()[i].setIcon(getColonImg());
 							}
 							//set first segment Img (tkHour, tkMinute, sec)
-							//여기 짜다 말음
-							for (int i = 0; i < 8; i++) {
-								if (i >= 0 && i < 2) changefirstImg(MODE_TIMEKEEPING, i, tkHourNum[i]);
-								else if (i >= 3 && i < 5) changefirstImg(MODE_TIMEKEEPING, i, tkMinNum[i - 3]);
-								else if (i >= 6 && i < 8) changefirstImg(MODE_TIMEKEEPING, i, tkSecNum[i - 6]);
-								else if (i == 2 || i == 5) getTimeKeepingPane().getFirstSegs()[i].setIcon(getColonBigImg());
-							}
+							getTimeKeepingPane().getFirstSegs()[0].setIcon(getAlphaGImg());
+							getTimeKeepingPane().getFirstSegs()[1].setIcon(getAlphaMImg());
+							getTimeKeepingPane().getFirstSegs()[2].setIcon(getColonBigImg());
+							getTimeKeepingPane().getFirstSegs()[3].setIcon(getAlphaTImg());
+							getTimeKeepingPane().getFirstSegs()[5].setIcon(getColonBigImg());
+							for (int i = 6; i < 8; i++) changefirstImg(MODE_TIMEKEEPING, i, tkGMTNum[i-6]);
+
+							if(isGMTPlus) getTimeKeepingPane().getFirstSegs()[4].setIcon(getPlusImg());
+							else getTimeKeepingPane().getFirstSegs()[4].setIcon(getLineImg());
+
 						}
 						//12.24 Format
 						else if(timeCursor == 7){
