@@ -28,16 +28,13 @@ public class ModeManager {
         modes[3] = new StopWatch();
         modes[4] = new CalorieCheck();
         modes[5] = new WorldTime();
-        this.activeList=new int[4];
-        for(int i=0;i<4;i++){
-            this.activeList[i]=i;
-        }
         SingletonModeManager = this;
         nowMode = modes[0];
         editStatus= new Boolean[6];
         SingletonModeManager=this;
         isEditMode = false;
         buzzerFlag=false;
+
 
     }
     //모드매니저
@@ -52,8 +49,6 @@ public class ModeManager {
 
     private Mode[] modes;
     private int currentMode;//0~5 Time Alarm Timer Stopwatch Calorie Check 순으로    *8일경우 setMode
-    private int[] activeList;//활성된거 4개가 들어가는 배열 4개가 활성화되어있을 때 비활성화된걸 활성화시킬때 관리하기위함
-    //각 mode에 대한 index값이 들어가게 됨.
 
     //private Button clickedButton;
     //private Boolean longClickedFlag;
@@ -123,8 +118,14 @@ public class ModeManager {
                     ((CalorieCheck) modes[1]).saveCalorieSetting();
                     break;
                 case 8:
-                    this.saveModeData();
-                    break;
+                    this.currentMode=0;
+                    while(true){
+                        if(modes[currentMode].getActive() == true){
+                            break;
+                        }
+                        this.currentMode=(this.currentMode+1)%6;
+                    }
+                    break; //setMode중 return to default 발생시 저장안하고 종료
                 default: // 3-stopwatch, 5 worldtime은 set이 없다.
                     break;
 
@@ -416,8 +417,11 @@ public class ModeManager {
     public void enterEditMode() {
         this.currentMode=8;
         this.currentCursor=0;
+        this.ActiveModeCounter=4;
         isEditMode=true;
-        for(int i= 0; i<6;i++) editStatus[i]= modes[i].getActive();
+        for(int i= 0; i<6;i++)
+            editStatus[i]= modes[i].getActive();
+
     }
 
 
@@ -433,46 +437,34 @@ public class ModeManager {
     public void changeStatus() {// active->disable  disable->active
         if(this.editStatus[this.currentCursor]) {
             this.editStatus[this.currentCursor]=false;
-            for(int i=0;i<4;i++) {
-                if(this.activeList[i]==this.currentCursor) {
-                    for(int j=i+1;j<4;j++) {
-                        this.activeList[j-1]=this.activeList[j];
-                    }
-                    this.ActiveModeCounter--;
-                }
-            }
+            this.ActiveModeCounter--;
         }
         else {
             this.editStatus[this.currentCursor]=true;
             if(this.ActiveModeCounter==4) {
-                for(int i=1;i<4;i++) {
-                    this.activeList[i-1]=this.activeList[i];
+                for(int i=0;i<6;i++) {
+                    if(editStatus[i]==true){
+                        editStatus[i]=false;
+                        break;
+                    }
                 }
-                this.activeList[3]=this.currentCursor;
-            }
-            else {
-                this.activeList[this.ActiveModeCounter-1]=this.currentCursor;
-                this.ActiveModeCounter++;
             }
         }
     }
 
 
     public void saveModeData() {
+
         for (int i = 0; i < 5; i++) {
             this.modes[i].setActive(this.editStatus[i]);
         }
-        for (int i = 3; i > 0; i--) {
-            for (int j = 0; j < i; j++) {
-                if (this.activeList[j] > this.activeList[j + 1]) {
-                    int temp = this.activeList[j];
-                    this.activeList[j] = this.activeList[j + 1];
-                    this.activeList[j + 1] = temp;
-                }
-            }
-        }//active list 순서별로 다시 정렬-> display를 위해서
-
-        isEditMode = false;
+        for(int i=0;i<5;i++){
+           if(modes[i].getActive()==true){
+               this.currentMode=i;
+               break;
+           }
+        }
+        this.isEditMode=false;
     }
     public int getCurrentMode(){ return this.currentMode; }
     //시퀀스 다이어그램 수정 사항. 없애도 되는 함수.
@@ -480,16 +472,17 @@ public class ModeManager {
         // TODO implement here
     }
 
-    public int[] getActiveList(){ return this.activeList; }
 
-    public int getCurrentCursor(){ return this.currentCursor; }
+    public int getCurrentCursor(){
+        return this.currentCursor;
+    }
 
-    public Mode[] getmodes() { return modes; }
+    public Mode[] getmodes() {
+        return modes;
+    }
 
-    public boolean isEditMode() { return isEditMode; }
-
-    public Boolean[] getEditStatus(){ return this.editStatus;}
-
-    public Buzzer getBuzzer() { return buzzer; }
+    public boolean isEditMode() {
+        return isEditMode;
+    }
 
 }
