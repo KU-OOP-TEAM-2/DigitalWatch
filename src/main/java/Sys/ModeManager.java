@@ -148,12 +148,17 @@ public class ModeManager {
                         switch (Button) {
                             case 0:
                                 ((Time) this.modes[0]).changeCursor();
+                                break;
                             case 1:
                                 ((Time) this.modes[0]).saveData();
+                                isEditMode = !isEditMode;
+                                break;
                             case 2:
                                 ((Time) this.modes[0]).increaseData();
+                                break;
                             case 3:
                                 ((Time) this.modes[0]).decreaseData();
+                                break;
                         }
 
                     }
@@ -169,6 +174,7 @@ public class ModeManager {
                             case 1:
                                 if (longClickedFlag == true)
                                     ((Time) this.modes[0]).enterEditData();
+                                    isEditMode = !isEditMode;
                                 break;
                             case 2:
                                 //do nothing
@@ -285,6 +291,7 @@ public class ModeManager {
                             //save data and exit set speed and weight
                             case 1:
                                 ((CalorieCheck) modes[4]).saveCalorieSetting();
+                                isEditMode = !isEditMode;
                                 break;
 
                             //Forward Button

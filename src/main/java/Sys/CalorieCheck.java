@@ -15,8 +15,8 @@ public class CalorieCheck implements Mode{
     public CalorieCheck() {
         pauseCalorieCheckFlag = true;
         startCalorieCheckFlag = false;
-        isActivated = false;
-        cursor = false;
+        isActivated = true;
+        cursor = true;
         Speed = 5;
         Weight = 60;
         Calorie = 0;
@@ -30,6 +30,7 @@ public class CalorieCheck implements Mode{
      *
      */
     private int Speed;
+
     private int tempSpeed;
     public int getSpeed() {return Speed;};
     public void setSpeed(int Speed) {this.Speed = Speed;}
@@ -64,6 +65,13 @@ public class CalorieCheck implements Mode{
     public int getSecond(){return CalorieTime.getSecond();}
     */
 
+    //For set speend & weight
+    public int getTempSpeed() { return tempSpeed;
+    }
+
+    public int getTempWeight() { return tempWeight;
+    }
+
 
 
 
@@ -87,6 +95,8 @@ public class CalorieCheck implements Mode{
         System.out.println("CalorieCheck changeCursorS");
         cursor = !cursor;
     }
+
+    public boolean isCursor() { return cursor;}
 
     public void setActive(boolean act) {isActivated = act;};
     public boolean getActive() {return isActivated;};
@@ -135,8 +145,9 @@ public class CalorieCheck implements Mode{
      */
     public void saveCalorieSetting() {
         System.out.println("CalorieCheck saveData");
-        tempSpeed = Speed;
-        tempWeight = Weight;
+        Speed = tempSpeed;
+        Weight = tempWeight;
+        cursor = true;
     }
 
     /**
@@ -200,8 +211,6 @@ public class CalorieCheck implements Mode{
 
     public void resetCalorieCheck(){
         cursor = false;
-        Speed = 5;
-        Weight = 60;
         Calorie = 0;
         CalorieTime = LocalTime.of(0,0,0,0);
     }

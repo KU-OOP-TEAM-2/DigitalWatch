@@ -15,8 +15,8 @@ public class WorldTime_Pane extends JPanel {
   private JLabel clockLabel; //clock icon
 
   //text label owned by bodyPanel
+  private JLabel title; //mode name
   private JLabel meridiemLabel; //AM PM text label
-
   private JLabel wtLabel; // country text label
 
   public WorldTime_Pane() {
@@ -71,6 +71,8 @@ public class WorldTime_Pane extends JPanel {
     meridiemLabel = new JLabel("AM");
     wtLabel = new JLabel("COUNTRY");
 
+    title = new JLabel("WORLD TIME");
+
     //second seg panel Info
     secondSegBody.setSize(205, 55);
     secondSegBody.setLocation(25,35);
@@ -97,12 +99,16 @@ public class WorldTime_Pane extends JPanel {
     wtLabel.setHorizontalAlignment(SwingConstants.LEFT);
     wtLabel.setBounds((secondSegBody.getLocation().x+secondSegBody.getWidth()) + 5, secondSegBody.getLocation().y + 25, 60, 21);
 
+    title.setHorizontalAlignment(SwingConstants.CENTER);
+    title.setBounds(0, 10, this.getWidth(), 20);
+
     //Component adding
     add(firstSegBody);
     add(secondSegBody);
     add(clockLabel);
     add(meridiemLabel);
     add(wtLabel);
+    add(title);
 
 
     for(int i=0; i<10; i++){

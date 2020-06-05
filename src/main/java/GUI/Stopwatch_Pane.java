@@ -15,6 +15,7 @@ public class Stopwatch_Pane extends JPanel {
     private JLabel clockLabel; //clock icon
 
     //text label owned by bodyPanel
+    private JLabel title; //mode name
     private JLabel lapLabel; //AM PM text label
     private JLabel swLabel; // Stopwatch text label
 
@@ -70,6 +71,8 @@ public class Stopwatch_Pane extends JPanel {
         lapLabel = new JLabel("LAP");
         swLabel = new JLabel("STOPWATCH");
 
+        title = new JLabel("STOPWATCH");
+
         //second seg panel Info
         secondSegBody.setSize(205, 55);
         secondSegBody.setLocation(25, 35);
@@ -96,12 +99,16 @@ public class Stopwatch_Pane extends JPanel {
         swLabel.setHorizontalAlignment(SwingConstants.LEFT);
         swLabel.setBounds((secondSegBody.getLocation().x + secondSegBody.getWidth()) + 5, secondSegBody.getLocation().y + 25, 65, 21);
 
+        title.setHorizontalAlignment(SwingConstants.CENTER);
+        title.setBounds(0, 10, this.getWidth(), 20);
+
         //Component adding
         add(firstSegBody);
         add(secondSegBody);
         add(clockLabel);
         add(lapLabel);
         add(swLabel);
+        add(title);
 
         for(int i=0; i<10; i++){
             secondSegBody.add(secondSegs[i]);

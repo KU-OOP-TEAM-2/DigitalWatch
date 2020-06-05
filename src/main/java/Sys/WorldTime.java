@@ -32,7 +32,7 @@ public class WorldTime implements Mode{
         this.worldTimes[5]=new City(-4,"NYC");
 
         this.CurrentCity=0;
-        this.isActivated = true;
+        this.isActivated = false;
     }
 
 

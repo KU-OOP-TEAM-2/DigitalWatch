@@ -14,7 +14,10 @@ public class Alarm_Pane extends JPanel {
   private JLabel firstSegs[]; // First Segment. 8 components
   private JLabel clockLabel; //clock icon
 
+  private JLabel cursorLabel[]; //arrow icon
+
   //text label owned by bodyPanel
+  private JLabel title; //mode name
   private JLabel meridiemLabel; //AM PM text label
   private JLabel alarmLabel; // alarm text label
 
@@ -64,12 +67,18 @@ public class Alarm_Pane extends JPanel {
     firstSegs = new JLabel[8];
     for(int i=0; i<8; i++) firstSegs[i] = new JLabel();
 
+    //Cursor Icon
+    cursorLabel = new JLabel[2];
+    for(int i=0; i<2; i++) cursorLabel[i] = new JLabel();
+
     //Clock Icon
     clockLabel = new JLabel();
 
     //AMPM & Day of week Label
     meridiemLabel = new JLabel("AM");
     alarmLabel = new JLabel("ALARM");
+
+    title = new JLabel("ALARM");
 
     //second seg panel Info
     secondSegBody.setSize(205, 55);
@@ -85,6 +94,11 @@ public class Alarm_Pane extends JPanel {
     firstSegBody.setLayout(new GridLayout(1, 8, 0, 0));
     firstSegBody.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // Internal margin
 
+    //Cursor
+    for(int i=0; i<2; i++){
+      cursorLabel[i].setBounds(firstSegBody.getX() + 45 + (i*126), firstSegBody.getY() - 20, 20, 20);
+    }
+
     //Clock
     clockLabel.setSize(50, 50);
     clockLabel.setLocation(this.getWidth() - 80, secondSegBody.getLocation().y - 2);
@@ -97,20 +111,21 @@ public class Alarm_Pane extends JPanel {
     alarmLabel.setHorizontalAlignment(SwingConstants.LEFT);
     alarmLabel.setBounds((secondSegBody.getLocation().x + secondSegBody.getWidth()) + 5, secondSegBody.getLocation().y + 25, 50, 21);
 
+    title.setHorizontalAlignment(SwingConstants.CENTER);
+    title.setBounds(0, 10, this.getWidth(), 20);
+
     //Component adding
     add(firstSegBody);
     add(secondSegBody);
     add(clockLabel);
     add(meridiemLabel);
     add(alarmLabel);
+    add(title);
+    for(int i=0; i<2; i++) add(cursorLabel[i]);
 
-    for(int i=0; i<10; i++){
-      secondSegBody.add(secondSegs[i]);
-    }
+    for(int i=0; i<10; i++)secondSegBody.add(secondSegs[i]);
 
-    for(int i=0; i<8; i++){
-      firstSegBody.add(firstSegs[i]);
-    }
+    for(int i=0; i<8; i++)firstSegBody.add(firstSegs[i]);
 
     this.repaint();
     this.revalidate();
@@ -156,6 +171,10 @@ public class Alarm_Pane extends JPanel {
   public JLabel getAlarmLabel() {
     return alarmLabel;
   }
+
+  public JLabel getTitle() { return title; }
+
+  public JLabel[] getCursorLabel() { return cursorLabel; }
 
   //setters
   public void setSecondSegs(JLabel[] secondSegs) {

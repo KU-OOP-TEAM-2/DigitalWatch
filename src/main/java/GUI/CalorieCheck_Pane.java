@@ -14,8 +14,11 @@ public class CalorieCheck_Pane extends JPanel {
   private JLabel firstSegs[]; // First Segment. 8 components
   private JLabel clockLabel; //clock icon
 
+  private JLabel cursorLabel[]; //arrow icon
+
   //text label owned by bodyPanel
-  private JLabel ccLabel; // World Time text
+  private JLabel title; //mode name
+  private JLabel ccLabel; // Calorie text
 
   public CalorieCheck_Pane() {
 
@@ -63,11 +66,17 @@ public class CalorieCheck_Pane extends JPanel {
     firstSegs = new JLabel[8];
     for(int i=0; i<8; i++) firstSegs[i] = new JLabel();
 
+    //Cursor Icon
+    cursorLabel = new JLabel[2];
+    for(int i=0; i<2; i++) cursorLabel[i] = new JLabel();
+
     //Clock Icon
     clockLabel = new JLabel();
 
     //'Calorie' Text Label
     ccLabel = new JLabel("CALORIE");
+
+    title = new JLabel("CALORIE CHECK");
 
     //second seg panel Info
     secondSegBody.setSize(205, 55);
@@ -83,29 +92,34 @@ public class CalorieCheck_Pane extends JPanel {
     firstSegBody.setLayout(new GridLayout(1, 8, 0, 0));
     firstSegBody.setBorder(BorderFactory.createEmptyBorder(10,10,10,10)); // Internal margin
 
+    //Cursor
+    for(int i=0; i<2; i++){
+      cursorLabel[i].setBounds(secondSegBody.getX() + 52 + (i*117), secondSegBody.getY() - 10, 10, 10);
+    }
+
     //Clock
     clockLabel.setSize(50, 50);
-    clockLabel.setLocation(this.getWidth() - 80, secondSegBody.getLocation().y - 2);
+    clockLabel.setLocation(this.getWidth() - 80, secondSegBody.getY() - 2);
 
     //CALORIE text component
     ccLabel.setFont(new Font("Open Sans", Font.BOLD, 10));
     ccLabel.setHorizontalAlignment(SwingConstants.LEFT);
-    ccLabel.setBounds((secondSegBody.getLocation().x+secondSegBody.getWidth()) + 5, secondSegBody.getLocation().y + 25, 60, 21);
+    ccLabel.setBounds((secondSegBody.getX()+secondSegBody.getWidth()) + 5, secondSegBody.getY() + 25, 60, 21);
+
+    title.setHorizontalAlignment(SwingConstants.CENTER);
+    title.setBounds(0, 10, this.getWidth(), 20);
 
     //Component adding
     add(firstSegBody);
     add(secondSegBody);
     add(clockLabel);
     add(ccLabel);
+    add(title);
+    for(int i=0; i<2; i++) add(cursorLabel[i]);
 
+    for(int i=0; i<10; i++) secondSegBody.add(secondSegs[i]);
 
-    for(int i=0; i<10; i++){
-      secondSegBody.add(secondSegs[i]);
-    }
-
-    for(int i=0; i<8; i++){
-      firstSegBody.add(firstSegs[i]);
-    }
+    for(int i=0; i<8; i++) firstSegBody.add(firstSegs[i]);
 
     this.repaint();
     this.revalidate();
@@ -126,14 +140,11 @@ public class CalorieCheck_Pane extends JPanel {
 
   public JLabel[] getSecondSegs() { return secondSegs; }
 
-  public void setSecondSegs(JLabel[] secondSegs) { this.secondSegs = secondSegs; }
-
   public JLabel[] getFirstSegs() { return firstSegs; }
-
-  public void setFirstSegs(JLabel[] firstSegs) { this.firstSegs = firstSegs; }
 
   public JLabel getClockLabel() { return clockLabel; }
 
-  public void setClockLabel(JLabel clockLabel) { this.clockLabel = clockLabel; }
+  public JLabel getTitle() { return title; }
 
+  public JLabel[] getCursorLabel() { return cursorLabel; }
 }
