@@ -41,21 +41,21 @@ public class Time implements Mode{
 
     public void timeflow() {//thread로 돌릴 함수 1초마다 currentTime 값 1씩 증가.
 
-            if(this.currentTime.plusSeconds(1).getYear()<9999) {
-                this.currentTime=this.currentTime.plusSeconds(1);
+            if(this.currentTime.plusNanos(10000000).getYear()<9999) {
+                this.currentTime=this.currentTime.plusNanos(10000000);
             }
             else {
-                this.currentTime = this.currentTime.plusSeconds(1).plusYears(-10000);
-            }
-
-            if(this.editTime.plusSeconds(1).getYear()<9999) {
-            this.editTime=this.editTime.plusSeconds(1);
-            }
-            else {
-            this.editTime = this.editTime.plusSeconds(1).plusYears(-10000);
+                this.currentTime = this.currentTime.plusNanos(10000000).plusYears(-10000);
             }
     }
-
+    public void editTimeFlow(){
+        if(this.editTime.plusNanos(10000000).getYear()<9999) {
+            this.editTime=this.editTime.plusNanos(10000000);
+        }
+        else {
+            this.editTime = this.editTime.plusNanos(10000000).plusYears(-10000);
+        }
+    }
 
     public void enterEditData() {
         this.editTime=this.currentTime;
@@ -240,17 +240,7 @@ public class Time implements Mode{
         return this.GMT;
     }
 
-    public boolean getFormat() {
-        return this.format;
-    }
-//    public boolean getIsActivated() {
-//        return this.isActivated;
-//    }
-//
-//
-//    public void setActivated(boolean isActivated) {
-//        this.isActivated = isActivated;
-//    }
+    public boolean getFormat() {return this.format; }
 
     @Override
     public void setActive(boolean act) {
