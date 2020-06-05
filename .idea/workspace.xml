@@ -16,28 +16,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="Timer">
-      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/SetMode_Pane.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ImageFiles/alphaASeg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ImageFiles/alphaCSeg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ImageFiles/alphaDSeg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ImageFiles/alphaESeg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ImageFiles/alphaISeg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ImageFiles/alphaLSeg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ImageFiles/alphaPSeg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ImageFiles/alphaRSeg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ImageFiles/alphaWSeg.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/GUI/ImageDir.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/GUI/ImageDir.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/GUI/watchGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/GUI/watchGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/GUI/watchGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/GUI/watchGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/GUI/watchGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/GUI/watchGUI$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/GUI/watchGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/GUI/watchGUI$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/GUI/watchGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/GUI/watchGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Sys/ModeManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Sys/ModeManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Sys/Tick.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Sys/Tick.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Sys/Timer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Sys/Timer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/ImageDir.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/ImageDir.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/watchGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/watchGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/CalorieCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/CalorieCheck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/StopWatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/StopWatch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/Tick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/Tick.java" afterDir="false" />
     </list>
     <list id="75641970-afe3-41f4-8211-ac3bdcb41cb9" name="Revert &quot;edit Tick constructor&quot;" comment="reset branch" />
     <option name="SHOW_DIALOG" value="false" />
@@ -529,10 +511,11 @@
     </state>
     <state x="1085" y="405" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1591074707858" />
     <state x="1085" y="417" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1440@0.0.2560.1440" timestamp="1591362506117" />
-    <state x="622" y="71" key="CommitChangelistDialog2" timestamp="1591255811922">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="829" y="71" key="CommitChangelistDialog2" timestamp="1591363864615">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="622" y="71" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1591255811922" />
+    <state x="829" y="71" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1591363864615" />
     <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog" timestamp="1591265278185">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -542,26 +525,46 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="454" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1591073036048" />
-    <state width="2517" height="413" key="GridCell.Tab.0.bottom" timestamp="1591362916706">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state width="2463" height="2" key="GridCell.Tab.0.bottom" timestamp="1591364765785">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
+    <state width="2463" height="2" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1591364765785" />
     <state width="2517" height="194" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591359724852" />
     <state width="2517" height="413" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1591362916706" />
-    <state width="2517" height="413" key="GridCell.Tab.0.center" timestamp="1591362916706">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state width="2463" height="2" key="GridCell.Tab.0.center" timestamp="1591364765785">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
+    <state width="2463" height="2" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1591364765785" />
     <state width="2517" height="194" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591359724852" />
     <state width="2517" height="413" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1591362916706" />
-    <state width="2517" height="413" key="GridCell.Tab.0.left" timestamp="1591362916706">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state width="2463" height="2" key="GridCell.Tab.0.left" timestamp="1591364765785">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
+    <state width="2463" height="2" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1591364765785" />
     <state width="2517" height="194" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591359724851" />
     <state width="2517" height="413" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1591362916706" />
-    <state width="2517" height="413" key="GridCell.Tab.0.right" timestamp="1591362916706">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state width="2463" height="2" key="GridCell.Tab.0.right" timestamp="1591364765785">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
+    <state width="2463" height="2" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1591364765785" />
     <state width="2517" height="194" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591359724852" />
     <state width="2517" height="413" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1591362916706" />
+    <state width="2463" height="340" key="GridCell.Tab.1.bottom" timestamp="1591363580131">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="2463" height="340" key="GridCell.Tab.1.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1591363580131" />
+    <state width="2463" height="340" key="GridCell.Tab.1.center" timestamp="1591363580131">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="2463" height="340" key="GridCell.Tab.1.center/0.0.2560.1040@0.0.2560.1040" timestamp="1591363580131" />
+    <state width="2463" height="340" key="GridCell.Tab.1.left" timestamp="1591363580131">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="2463" height="340" key="GridCell.Tab.1.left/0.0.2560.1040@0.0.2560.1040" timestamp="1591363580131" />
+    <state width="2463" height="340" key="GridCell.Tab.1.right" timestamp="1591363580131">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="2463" height="340" key="GridCell.Tab.1.right/0.0.2560.1040@0.0.2560.1040" timestamp="1591363580131" />
     <state x="248" y="121" key="MergeDialog" timestamp="1591082012879">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -584,6 +587,10 @@
     </state>
     <state x="752" y="361" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591078691554" />
     <state x="1002" y="486" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591358946612" />
+    <state x="917" y="245" key="run.anything.popup" timestamp="1591364529950">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="917" y="245" key="run.anything.popup/0.0.2560.1040@0.0.2560.1040" timestamp="1591364529950" />
     <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1591312902535">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

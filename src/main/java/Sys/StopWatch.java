@@ -17,7 +17,7 @@ public class StopWatch implements Mode{
     public StopWatch() {
         LocalDate temp = LocalDate.now();
         currentStopWatchTime = LocalTime.of(0,0,0,0);
-        isActivated = false;
+        isActivated = true;
         lapTime= LocalTime.of(0,0,0,0);
         isPaused = true;
         overflowStopWatchTime= LocalTime.of(1,39,59,99000000);
