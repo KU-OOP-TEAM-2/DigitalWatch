@@ -15,10 +15,29 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="Clicked button time {} 누락 수정">
+    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="Timer">
+      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/SetMode_Pane.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ImageFiles/alphaASeg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ImageFiles/alphaCSeg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ImageFiles/alphaDSeg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ImageFiles/alphaESeg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ImageFiles/alphaISeg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ImageFiles/alphaLSeg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ImageFiles/alphaPSeg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ImageFiles/alphaRSeg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ImageFiles/alphaWSeg.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/Timer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/Timer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/GUI/ImageDir.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/GUI/ImageDir.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/GUI/watchGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/GUI/watchGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/GUI/watchGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/GUI/watchGUI$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/GUI/watchGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/GUI/watchGUI$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/GUI/watchGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/GUI/watchGUI$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/GUI/watchGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/GUI/watchGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Sys/ModeManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Sys/ModeManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Sys/Tick.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Sys/Tick.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Sys/Timer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Sys/Timer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/ImageDir.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/ImageDir.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/watchGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/watchGUI.java" afterDir="false" />
     </list>
     <list id="75641970-afe3-41f4-8211-ac3bdcb41cb9" name="Revert &quot;edit Tick constructor&quot;" comment="reset branch" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,6 +70,13 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
@@ -66,11 +92,16 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="external.system.task.project.file.to.start" value="$PROJECT_DIR$" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/ImageFiles" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Windows Standards\Documents\GitHub\softwarevv\src\main\resources\ImageFiles" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.Main_test_2">
     <configuration name="Main_test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -88,7 +119,7 @@
     </configuration>
     <configuration name="Main_test_2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GUI.Main_test_2" />
-      <module name="git_teampj.main" />
+      <module name="softwarevv.main" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="GUI.*" />
@@ -477,6 +508,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Clicked button time {} 누락 수정" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="972" y="334" key="#Main_test_2" timestamp="1591360110725">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="972" y="334" key="#Main_test_2/0.0.2560.1440@0.0.2560.1440" timestamp="1591360110725" />
     <state x="760" y="274" key="#Project_Structure" timestamp="1591076943535">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -489,10 +524,11 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="734" y="354" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591076648908" />
-    <state x="1085" y="405" key="#com.intellij.ide.util.MemberChooser" timestamp="1591074707858">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="1085" y="417" key="#com.intellij.ide.util.MemberChooser" timestamp="1591362506117">
+      <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="1085" y="405" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1591074707858" />
+    <state x="1085" y="417" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1440@0.0.2560.1440" timestamp="1591362506117" />
     <state x="622" y="71" key="CommitChangelistDialog2" timestamp="1591255811922">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -506,22 +542,26 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="454" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1591073036048" />
-    <state width="2517" height="194" key="GridCell.Tab.0.bottom" timestamp="1591359724852">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="2517" height="413" key="GridCell.Tab.0.bottom" timestamp="1591362916706">
+      <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="2517" height="194" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591359724852" />
-    <state width="2517" height="194" key="GridCell.Tab.0.center" timestamp="1591359724852">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="2517" height="413" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1591362916706" />
+    <state width="2517" height="413" key="GridCell.Tab.0.center" timestamp="1591362916706">
+      <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="2517" height="194" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591359724852" />
-    <state width="2517" height="194" key="GridCell.Tab.0.left" timestamp="1591359724851">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="2517" height="413" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1591362916706" />
+    <state width="2517" height="413" key="GridCell.Tab.0.left" timestamp="1591362916706">
+      <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="2517" height="194" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591359724851" />
-    <state width="2517" height="194" key="GridCell.Tab.0.right" timestamp="1591359724852">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="2517" height="413" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1591362916706" />
+    <state width="2517" height="413" key="GridCell.Tab.0.right" timestamp="1591362916706">
+      <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="2517" height="194" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591359724852" />
+    <state width="2517" height="413" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1591362916706" />
     <state x="248" y="121" key="MergeDialog" timestamp="1591082012879">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

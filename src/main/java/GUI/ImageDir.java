@@ -16,11 +16,22 @@ public class ImageDir {
 
 
 	//ALPHABETS
-	public static String fSeg_dir = path + "alphaFSeg_18.png";
-	public static String nSeg_dir = path + "alphaNSeg_18.png";
+	public static String aSeg_dir = path + "alphaASeg.png";
+	public static String cSeg_dir = path + "alphaCSeg.png";
+	public static String dSeg_dir = path + "alphaDSeg.png";
+	public static String eSeg_dir = path + "alphaESeg.png";
+	public static String gSeg_dir = path + "alphaGSeg.png";
+	public static String iSeg_dir = path + "alphaISeg.png";
+	public static String lSeg_dir = path + "alphaLSeg.png";
+	public static String pSeg_dir = path + "alphaPSeg.png";
+	public static String rSeg_dir = path + "alphaRSeg.png";
 	public static String tSeg_dir = path + "alphaTSeg.png";
 	public static String mSeg_dir = path + "alphaMSeg.png";
-	public static String gSeg_dir = path + "alphaGSeg.png";
+	public static String wSeg_dir = path + "alphaWSeg.png";
+	public static String fSeg_dir = path + "alphaFSeg_18.png";
+	public static String nSeg_dir = path + "alphaNSeg_18.png";
+
+
 
 	//SIGNS
 	public static String colon_dir = path + "colon_14.png";

@@ -27,6 +27,7 @@ public class watchGUI extends JFrame implements Runnable{
 	private static final int MODE_STOPWATCH = 3;
 	private static final int MODE_CCHECK = 4;
 	private static final int MODE_WTIME = 5;
+	private static final int MODE_SETMODE = 8;
 
 	private static final int MODE_BUTTON = 0;
 	private static final int ADJUST_BUTTON = 1;
@@ -44,6 +45,8 @@ public class watchGUI extends JFrame implements Runnable{
 	private WorldTime_Pane wtPane;
 	private CalorieCheck_Pane ccPane;
 
+	private SetMode_Pane smPane;
+
 	private JLabel nameLabel;
 
 	private JButton adjustB;
@@ -60,16 +63,26 @@ public class watchGUI extends JFrame implements Runnable{
 	private ImageIcon colonImg; //small colon image
 	private ImageIcon clockImg; //black clock image
 	private ImageIcon clockDeadImg; //grey clock image
+	private ImageIcon alphaAImg; //alphabet A
+	private ImageIcon alphaCImg; //alphabet C
+	private ImageIcon alphaDImg; //alphabet D
+	private ImageIcon alphaEImg; //alphabet E
+	private ImageIcon alphaIImg; //alphabet I
+	private ImageIcon alphaLImg; //alphabet L
+	//alphabet O = Number 0
+	private ImageIcon alphaPImg; //alphabet P
+	private ImageIcon alphaRImg; //alphabet R
 	private ImageIcon alphaNImg; //alphabet N
 	private ImageIcon alphaFImg; //alphabet F
 	private ImageIcon alphaGImg; //alphabet G
 	private ImageIcon alphaMImg; // M
 	private ImageIcon alphaTImg; // T
+	//alphabet S = Number 5
+	private ImageIcon alphaWImg; //alphabet W
 	private ImageIcon lineImg; // -
 	private ImageIcon plusImg; // +
 	private ImageIcon cursorImg; //cursor for mode setting
 	private ImageIcon cursorSmallImg; //cursor for 2nd seg
-
 
 	//Variables to save Mode Manager's value
 	private static boolean isEditMode;
@@ -153,6 +166,10 @@ public class watchGUI extends JFrame implements Runnable{
 	private static int wtMinNum[] = new int[2];
 	private static int wtSecNum[] = new int[2];
 
+	//Variables to save SET MODE value
+	private static int setModeCursor;
+	private static boolean isModeActive;
+
 
 	public watchGUI() {
 
@@ -171,6 +188,15 @@ public class watchGUI extends JFrame implements Runnable{
 		alphaGImg = new ImageIcon(this.getClass().getResource(ImageDir.gSeg_dir));
 		alphaMImg = new ImageIcon(this.getClass().getResource(ImageDir.mSeg_dir));
 		alphaTImg = new ImageIcon(this.getClass().getResource(ImageDir.tSeg_dir));
+		alphaAImg = new ImageIcon(this.getClass().getResource(ImageDir.aSeg_dir));
+		alphaCImg = new ImageIcon(this.getClass().getResource(ImageDir.cSeg_dir));
+		alphaDImg = new ImageIcon(this.getClass().getResource(ImageDir.dSeg_dir));
+		alphaEImg = new ImageIcon(this.getClass().getResource(ImageDir.eSeg_dir));
+		alphaIImg = new ImageIcon(this.getClass().getResource(ImageDir.iSeg_dir));
+		alphaLImg = new ImageIcon(this.getClass().getResource(ImageDir.lSeg_dir));
+		alphaPImg = new ImageIcon(this.getClass().getResource(ImageDir.pSeg_dir));
+		alphaRImg = new ImageIcon(this.getClass().getResource(ImageDir.rSeg_dir));
+		alphaWImg = new ImageIcon(this.getClass().getResource(ImageDir.wSeg_dir));
 		lineImg = new ImageIcon(this.getClass().getResource(ImageDir.centerLine_dir));
 		plusImg = new ImageIcon(this.getClass().getResource(ImageDir.plus_dir));
 		cursorImg = new ImageIcon(this.getClass().getResource(ImageDir.cursor_dir));
@@ -197,6 +223,7 @@ public class watchGUI extends JFrame implements Runnable{
 		swPane = new Stopwatch_Pane();
 		wtPane = new WorldTime_Pane();
 		ccPane = new CalorieCheck_Pane();
+		smPane = new SetMode_Pane();
 
 		framePane = new JPanel();
 
@@ -305,6 +332,8 @@ public class watchGUI extends JFrame implements Runnable{
 
 	public CalorieCheck_Pane getCcPane() { return ccPane; }
 
+	public SetMode_Pane getSmPane() { return smPane; }
+
 	public JPanel getFramePane() {
 		return framePane;
 	}
@@ -363,6 +392,23 @@ public class watchGUI extends JFrame implements Runnable{
 
 	public ImageIcon getPlusImg() { return plusImg; }
 
+	public ImageIcon getAlphaAImg() { return alphaAImg; }
+
+	public ImageIcon getAlphaCImg() { return alphaCImg; }
+
+	public ImageIcon getAlphaDImg() { return alphaDImg; }
+
+	public ImageIcon getAlphaEImg() { return alphaEImg; }
+
+	public ImageIcon getAlphaIImg() { return alphaIImg; }
+
+	public ImageIcon getAlphaLImg() { return alphaLImg; }
+
+	public ImageIcon getAlphaPImg() { return alphaPImg; }
+
+	public ImageIcon getAlphaRImg() { return alphaRImg; }
+
+	public ImageIcon getAlphaWImg() { return alphaWImg; }
 
 	//GUI Update Methods
 	private static void switchPanel(watchGUI mainGUI, JPanel newPanel){
@@ -1506,7 +1552,7 @@ public class watchGUI extends JFrame implements Runnable{
 					keepValueToArray(wtMinute, wtMinNum);
 					keepValueToArray(wtSecond, wtSecNum);
 
-					//set 2nd segment Img (tkYear, tkMonth, tkDay)
+					//set 2nd segment Img (Year, Month, Day)
 					for (int i=0; i<10; i++) {
 						if (i>=0 && i<4) changeSecondImg(MODE_WTIME, i, wtYearNum[i]);
 						else if (i>=5 && i<7) changeSecondImg(MODE_WTIME, i, wtMonthNum[i-5]);
@@ -1514,7 +1560,7 @@ public class watchGUI extends JFrame implements Runnable{
 						else if(i==4 || i==7) getWtPane().getSecondSegs()[i].setIcon(getColonImg());
 					}
 
-					//set first segment Img (tkHour, tkMinute, sec)
+					//set first segment Img (Hour, Minute, sec)
 					for (int i=0; i<8; i++) {
 						if (i>=0 && i<2) changefirstImg(MODE_WTIME, i, wtHourNum[i]);
 						else if (i>=3 && i<5) changefirstImg(MODE_WTIME, i, wtMinNum[i-3]);
@@ -1525,6 +1571,107 @@ public class watchGUI extends JFrame implements Runnable{
 					//set default clock icon
 					getWtPane().getClockLabel().setIcon(getClockDeadImg());
 					if(!(getWatchBodyPane().equals(wtPane))) switchPanel(this, wtPane);
+					break;
+
+				case MODE_SETMODE:
+
+					setModeCursor = modeManager.getCurrentCursor();
+					isModeActive = modeManager.getmodes()[setModeCursor].getActive();
+
+					//set 2nd segment Img
+					for (int i = 0; i < 10; i++) {
+						if (!(i == 4 || i == 7)) getSmPane().getSecondSegs()[i].setIcon(getSeg14DeadImg());
+						else getSmPane().getSecondSegs()[i].setIcon(colonImg);
+					}
+
+					switch(setModeCursor){
+						case MODE_TIMEKEEPING:
+							//set first segment Img
+							getSmPane().getFirstSegs()[0].setIcon(getAlphaTImg());
+							getSmPane().getFirstSegs()[1].setIcon(getAlphaIImg());
+							getSmPane().getFirstSegs()[2].setIcon(getColonBigImg());
+							getSmPane().getFirstSegs()[3].setIcon(getAlphaMImg());
+							getSmPane().getFirstSegs()[4].setIcon(getAlphaEImg());
+							getSmPane().getFirstSegs()[5].setIcon(getColonBigImg());
+							getSmPane().getFirstSegs()[7].setIcon(getSeg14DeadBigImg());
+
+							if(isModeActive) getSmPane().getFirstSegs()[6].setIcon(getAlphaAImg());
+							else getSmPane().getFirstSegs()[6].setIcon(getAlphaDImg());
+							break;
+
+						case MODE_ALARM:
+							//set first segment Img
+							getSmPane().getFirstSegs()[0].setIcon(getAlphaAImg());
+							getSmPane().getFirstSegs()[1].setIcon(getAlphaLImg());
+							getSmPane().getFirstSegs()[2].setIcon(getColonBigImg());
+							getSmPane().getFirstSegs()[3].setIcon(getAlphaRImg());
+							getSmPane().getFirstSegs()[4].setIcon(getAlphaMImg());
+							getSmPane().getFirstSegs()[5].setIcon(getColonBigImg());
+							getSmPane().getFirstSegs()[7].setIcon(getSeg14DeadBigImg());
+
+							if(isModeActive) getSmPane().getFirstSegs()[6].setIcon(getAlphaAImg());
+							else getSmPane().getFirstSegs()[6].setIcon(getAlphaDImg());
+							break;
+
+						case MODE_TIMER:
+							//set first segment Img
+							getSmPane().getFirstSegs()[0].setIcon(getAlphaTImg());
+							getSmPane().getFirstSegs()[1].setIcon(getAlphaMImg());
+							getSmPane().getFirstSegs()[2].setIcon(getColonBigImg());
+							getSmPane().getFirstSegs()[3].setIcon(getAlphaEImg());
+							getSmPane().getFirstSegs()[4].setIcon(getAlphaRImg());
+							getSmPane().getFirstSegs()[5].setIcon(getColonBigImg());
+							getSmPane().getFirstSegs()[7].setIcon(getSeg14DeadBigImg());
+
+							if(isModeActive) getSmPane().getFirstSegs()[6].setIcon(getAlphaAImg());
+							else getSmPane().getFirstSegs()[6].setIcon(getAlphaDImg());
+							break;
+
+						case MODE_STOPWATCH:
+							//set first segment Img
+							getSmPane().getFirstSegs()[0].setIcon(getNumBigImgs()[5]); // S = 5
+							getSmPane().getFirstSegs()[1].setIcon(getAlphaTImg());
+							getSmPane().getFirstSegs()[2].setIcon(getColonBigImg());
+							getSmPane().getFirstSegs()[3].setIcon(getAlphaPImg());
+							getSmPane().getFirstSegs()[4].setIcon(getAlphaWImg());
+							getSmPane().getFirstSegs()[5].setIcon(getColonBigImg());
+							getSmPane().getFirstSegs()[7].setIcon(getSeg14DeadBigImg());
+
+							if(isModeActive) getSmPane().getFirstSegs()[6].setIcon(getAlphaAImg());
+							else getSmPane().getFirstSegs()[6].setIcon(getAlphaDImg());
+							break;
+
+						case MODE_CCHECK:
+							//set first segment Img
+							getSmPane().getFirstSegs()[0].setIcon(getAlphaCImg());
+							getSmPane().getFirstSegs()[1].setIcon(getAlphaAImg());
+							getSmPane().getFirstSegs()[2].setIcon(getColonBigImg());
+							getSmPane().getFirstSegs()[3].setIcon(getAlphaLImg());
+							getSmPane().getFirstSegs()[4].setIcon(getNumBigImgs()[0]); // O = 0
+							getSmPane().getFirstSegs()[5].setIcon(getColonBigImg());
+							getSmPane().getFirstSegs()[7].setIcon(getSeg14DeadBigImg());
+
+							if(isModeActive) getSmPane().getFirstSegs()[6].setIcon(getAlphaAImg());
+							else getSmPane().getFirstSegs()[6].setIcon(getAlphaDImg());
+							break;
+
+						case MODE_WTIME:
+							//set first segment Img
+							getSmPane().getFirstSegs()[0].setIcon(getAlphaWImg());
+							getSmPane().getFirstSegs()[1].setIcon(getAlphaRImg());
+							getSmPane().getFirstSegs()[2].setIcon(getColonBigImg());
+							getSmPane().getFirstSegs()[3].setIcon(getAlphaLImg());
+							getSmPane().getFirstSegs()[4].setIcon(getAlphaDImg());
+							getSmPane().getFirstSegs()[5].setIcon(getColonBigImg());
+							getSmPane().getFirstSegs()[7].setIcon(getSeg14DeadBigImg());
+
+							if(isModeActive) getSmPane().getFirstSegs()[6].setIcon(getAlphaAImg());
+							else getSmPane().getFirstSegs()[6].setIcon(getAlphaDImg());
+							break;
+					}
+
+					getSmPane().getClockLabel().setIcon(getClockDeadImg());
+					if(!(getWatchBodyPane().equals(smPane))) switchPanel(this, smPane);
 					break;
 			}
 
