@@ -118,12 +118,11 @@ public class ModeManager {
                     ((CalorieCheck) modes[1]).saveCalorieSetting();
                     break;
                 case 8:
-                    this.currentMode=0;
-                    while(true){
-                        if(modes[currentMode].getActive() == true){
+                    for(int i=0;i<6;i++){
+                        if(modes[i].getActive()==true) {
+                            currentMode = i;
                             break;
                         }
-                        this.currentMode=(this.currentMode+1)%6;
                     }
                     break; //setMode중 return to default 발생시 저장안하고 종료
                 default: // 3-stopwatch, 5 worldtime은 set이 없다.
