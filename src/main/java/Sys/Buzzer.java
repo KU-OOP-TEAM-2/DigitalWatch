@@ -43,8 +43,6 @@ public class Buzzer {
                 try{
                     Thread.sleep(1000);
                 } catch(InterruptedException e){}
-                System.out.print(i);
-                System.out.println(buzzerOn);
 
                 if (buzzerOn == true && isBuzzerRinging == false) {
                     isBuzzerRinging = true;

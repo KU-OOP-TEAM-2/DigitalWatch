@@ -106,16 +106,16 @@ public class ModeManager {
         if(isEditMode && elapsedTime >= 5.0f){
             switch (currentMode){
                 case 0:
-                    ((Time) modes[1]).saveData();
+                    ((Time) modes[0]).saveData();
                     break;
                 case 1:
                     ((Alarm) modes[1]).saveAlarm();
                     break;
                 case 2:
-                    ((Timer) modes[1]).saveTimer();
+                    ((Timer) modes[2]).saveTimer();
                     break;
                 case 4:
-                    ((CalorieCheck) modes[1]).saveCalorieSetting();
+                    ((CalorieCheck) modes[4]).saveCalorieSetting();
                     break;
                 case 8:
                     for(int i=0;i<6;i++){
