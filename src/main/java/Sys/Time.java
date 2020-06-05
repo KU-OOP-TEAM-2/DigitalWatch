@@ -20,7 +20,7 @@ public class Time implements Mode{
 
     public Time() {
         this.currentTime=LocalDateTime.of(2020, 01, 01, 00, 00, 00, 00);
-        this.editTime=null;
+        this.editTime= null;
         this.format=true;
         this.isActivated=true;
         this.GMT=9;
