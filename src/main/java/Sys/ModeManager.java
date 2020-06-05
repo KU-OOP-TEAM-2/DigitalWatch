@@ -172,9 +172,9 @@ public class ModeManager {
                                     this.changeMode();
                                 break;
                             case 1:
-                                if (longClickedFlag == true)
+                                if (longClickedFlag == true){
                                     ((Time) this.modes[0]).enterEditData();
-                                    isEditMode = !isEditMode;
+                                    isEditMode = !isEditMode;}
                                 break;
                             case 2:
                                 //do nothing
