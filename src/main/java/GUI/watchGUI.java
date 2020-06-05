@@ -63,6 +63,7 @@ public class watchGUI extends JFrame implements Runnable{
 	private ImageIcon alphaFImg; //alphabet F
 
 	//Variables to save TimeKeeping's value
+	private static boolean tkFormat;
 	private static int tkYear;
 	private static int tkMonth;
 	private static int tkDay;
@@ -863,48 +864,67 @@ public class watchGUI extends JFrame implements Runnable{
 
 			switch (modeManager.getCurrentMode()) {
 				case MODE_TIMEKEEPING://if current Mode is Time Keeping
-					LocalDateTime temp = ((Time) (modeManager.getmodes()[0])).getCurrentTime();
 
-					tkYear = temp.getYear();
-					tkMonth = temp.getMonthValue();
-					tkDay = temp.getDayOfMonth();
-					tkHour = temp.getHour();
-					tkMinute = temp.getMinute();
-					tkSecond = temp.getSecond();
+					boolean isEditMode = modeManager.isEditMode();
 
-					if (tkHour < 12) {
-						getTimeKeepingPane().getMeridiemLabel().setText("AM");
-					} else {
-						getTimeKeepingPane().getMeridiemLabel().setText("PM");
+					// Set Time Mode
+					if(isEditMode){
+						Time timeTemp = (Time) modeManager.getmodes()[0];
+
+
+
 					}
-					getTimeKeepingPane().getDowLabel().setText(temp.getDayOfWeek().toString().substring(0, 3)); //display tkDay of week only 3 words
+					// Normal Time Keeping Mode
+					else
+						{
+						Time timeTemp = (Time) modeManager.getmodes()[0];
 
-					//split time value
-					keepYearToArray(tkYear, tkYearNum);
-					keepValueToArray(tkMonth, tkMonthNum);
-					keepValueToArray(tkDay, tkDayNum);
-					keepHourToArray(tkHour, tkHourNum);
-					keepValueToArray(tkMinute, tkMinNum);
-					keepValueToArray(tkSecond, tkSecNum);
+						LocalDateTime now = timeTemp.getCurrentTime();
 
-					//set 2nd segment Img (tkYear, tkMonth, tkDay)
-					for (int i=0; i<10; i++) {
-						if (i>=0 && i<4) changeSecondImg(MODE_TIMEKEEPING, i, tkYearNum[i]);
-						else if (i>=5 && i<7) changeSecondImg(MODE_TIMEKEEPING, i, tkMonthNum[i-5]);
-						else if (i>=8 && i<10) changeSecondImg(MODE_TIMEKEEPING, i, tkDayNum[i-8]);
-						else if(i==4 || i==7) getTimeKeepingPane().getSecondSegs()[i].setIcon(getColonImg());
-					}
+						tkFormat = timeTemp.getFormat();
+						tkYear = now.getYear();
+						tkMonth = now.getMonthValue();
+						tkDay = now.getDayOfMonth();
+						tkHour = now.getHour();
+						tkMinute = now.getMinute();
+						tkSecond = now.getSecond();
 
-					//set first segment Img (tkHour, tkMinute, sec)
-					for (int i=0; i<8; i++) {
-						if (i>=0 && i<2) changefirstImg(MODE_TIMEKEEPING, i, tkHourNum[i]);
-						else if (i>=3 && i<5) changefirstImg(MODE_TIMEKEEPING, i, tkMinNum[i-3]);
-						else if (i>=6 && i<8) changefirstImg(MODE_TIMEKEEPING, i, tkSecNum[i-6]);
-						else if(i==2 || i==5) getTimeKeepingPane().getFirstSegs()[i].setIcon(getColonBigImg());
-					}
+						if (tkHour < 12) {
+							getTimeKeepingPane().getMeridiemLabel().setText("AM");
+						} else {
+							getTimeKeepingPane().getMeridiemLabel().setText("PM");
+						}
+						getTimeKeepingPane().getDowLabel().setText(now.getDayOfWeek().toString().substring(0, 3)); //display tkDay of week only 3 words
 
-					//set default clock icon
+						//split time value
+						keepYearToArray(tkYear, tkYearNum);
+						keepValueToArray(tkMonth, tkMonthNum);
+						keepValueToArray(tkDay, tkDayNum);
+						keepHourToArray(tkHour, tkHourNum);
+						keepValueToArray(tkMinute, tkMinNum);
+						keepValueToArray(tkSecond, tkSecNum);
+
+						//set 2nd segment Img (tkYear, tkMonth, tkDay)
+						for (int i=0; i<10; i++) {
+							if (i>=0 && i<4) changeSecondImg(MODE_TIMEKEEPING, i, tkYearNum[i]);
+							else if (i>=5 && i<7) changeSecondImg(MODE_TIMEKEEPING, i, tkMonthNum[i-5]);
+							else if (i>=8 && i<10) changeSecondImg(MODE_TIMEKEEPING, i, tkDayNum[i-8]);
+							else if(i==4 || i==7) getTimeKeepingPane().getSecondSegs()[i].setIcon(getColonImg());
+						}
+
+						//set first segment Img (tkHour, tkMinute, sec)
+						for (int i=0; i<8; i++) {
+							if (i>=0 && i<2) changefirstImg(MODE_TIMEKEEPING, i, tkHourNum[i]);
+							else if (i>=3 && i<5) changefirstImg(MODE_TIMEKEEPING, i, tkMinNum[i-3]);
+							else if (i>=6 && i<8) changefirstImg(MODE_TIMEKEEPING, i, tkSecNum[i-6]);
+							else if(i==2 || i==5) getTimeKeepingPane().getFirstSegs()[i].setIcon(getColonBigImg());
+						}
+
+						//set default clock icon
 						getTimeKeepingPane().getClockLabel().setIcon(getClockDeadImg());
+					}
+
+
 					if(!(getWatchBodyPane().equals(timeKeepingPane))) switchPanel(this, timeKeepingPane);
 					break;
 
@@ -1087,13 +1107,53 @@ public class watchGUI extends JFrame implements Runnable{
 
 				case MODE_WTIME: //if current Mode is WorldTime
 
+					Time time = (Time) modeManager.getmodes()[0];
 					WorldTime wt = (WorldTime) modeManager.getmodes()[5];
 
+					LocalDateTime worldTime = wt.getWorldTime(time.getCurrentTime(), time.getGMT());
 
+					wtYear = worldTime.getYear();
+					wtMonth = worldTime.getMonthValue();
+					wtDay = worldTime.getDayOfMonth();
+					wtHour = worldTime.getHour();
+					wtMinute = worldTime.getMinute();
+					wtSecond = worldTime.getSecond();
+
+					if (wtHour < 12) {
+						getWtPane().getMeridiemLabel().setText("AM");
+					} else {
+						getWtPane().getMeridiemLabel().setText("PM");
+					}
+					getWtPane().getWtLabel().setText(wt.getCurrentCityName()); //display city name
+
+					//split time value
+					keepYearToArray(wtYear, wtYearNum);
+					keepValueToArray(wtMonth, wtMonthNum);
+					keepValueToArray(wtDay, wtDayNum);
+					keepHourToArray(wtHour, wtHourNum);
+					keepValueToArray(wtMinute, wtMinNum);
+					keepValueToArray(wtSecond, wtSecNum);
+
+					//set 2nd segment Img (tkYear, tkMonth, tkDay)
+					for (int i=0; i<10; i++) {
+						if (i>=0 && i<4) changeSecondImg(MODE_WTIME, i, wtYearNum[i]);
+						else if (i>=5 && i<7) changeSecondImg(MODE_WTIME, i, wtMonthNum[i-5]);
+						else if (i>=8 && i<10) changeSecondImg(MODE_WTIME, i, wtDayNum[i-8]);
+						else if(i==4 || i==7) getWtPane().getSecondSegs()[i].setIcon(getColonImg());
+					}
+
+					//set first segment Img (tkHour, tkMinute, sec)
+					for (int i=0; i<8; i++) {
+						if (i>=0 && i<2) changefirstImg(MODE_WTIME, i, wtHourNum[i]);
+						else if (i>=3 && i<5) changefirstImg(MODE_WTIME, i, wtMinNum[i-3]);
+						else if (i>=6 && i<8) changefirstImg(MODE_WTIME, i, wtSecNum[i-6]);
+						else if(i==2 || i==5) getWtPane().getFirstSegs()[i].setIcon(getColonBigImg());
+					}
+
+					//set default clock icon
+					getWtPane().getClockLabel().setIcon(getClockDeadImg());
+					if(!(getWatchBodyPane().equals(wtPane))) switchPanel(this, wtPane);
 					break;
-
-
-
 			}
 
 			revalidate();

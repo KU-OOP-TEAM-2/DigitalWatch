@@ -16,7 +16,8 @@ public class WorldTime_Pane extends JPanel {
 
   //text label owned by bodyPanel
   private JLabel meridiemLabel; //AM PM text label
-  private JLabel wtLabel; // day of week text label
+
+  private JLabel wtLabel; // country text label
 
   public WorldTime_Pane() {
 
@@ -159,5 +160,9 @@ public class WorldTime_Pane extends JPanel {
   public void setMeridiemLabel(JLabel meridiemLabel) {
     this.meridiemLabel = meridiemLabel;
   }
+
+  public JLabel getWtLabel() { return wtLabel; }
+
+  public void setWtLabel(JLabel wtLabel) { this.wtLabel = wtLabel; }
 
 }

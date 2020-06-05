@@ -32,6 +32,7 @@ public class WorldTime implements Mode{
         this.worldTimes[5]=new City(-4,"NYC");
 
         this.CurrentCity=0;
+        this.isActivated = true;
     }
 
 
@@ -57,6 +58,7 @@ public class WorldTime implements Mode{
         return returnTime;
     }
 
-    public int getCurrentCity() { return CurrentCity; }
+    //현재 City 이름 getter
+    public String getCurrentCityName(){ return this.worldTimes[this.CurrentCity].getCityName(); }
 
 }

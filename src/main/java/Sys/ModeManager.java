@@ -63,6 +63,7 @@ public class ModeManager {
     //Mode  Adjust  Forward Reverse
     //0     1       2       3
     private int Button;
+
     private boolean isEditMode;
 
     //객체 생성 ms
@@ -481,6 +482,10 @@ public class ModeManager {
 
     public Mode[] getmodes() {
         return modes;
+    }
+
+    public boolean isEditMode() {
+        return isEditMode;
     }
 
 }

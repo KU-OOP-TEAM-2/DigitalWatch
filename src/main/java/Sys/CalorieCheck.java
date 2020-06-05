@@ -15,7 +15,7 @@ public class CalorieCheck implements Mode{
     public CalorieCheck() {
         pauseCalorieCheckFlag = true;
         startCalorieCheckFlag = false;
-        isActivated = true;
+        isActivated = false;
         cursor = false;
         Speed = 5;
         Weight = 60;
