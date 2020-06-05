@@ -105,12 +105,16 @@ public class CalorieCheckTest {
         CalorieCheck calorieCheck = new CalorieCheck();
 
         LocalTime time = calorieCheck.getCalorieTime();
-        calorieCheck.startCalorieCheck();
-        //pause = false, start = true
-        //정상적일 때
+        //calorieCheck.startCalorieCheck();
+        calorieCheck.setStartFlag(true);
+        calorieCheck.setPauseFlag(false);
+
+        /*pause = false, start = true
+        최초로 시작하고 0시 0분 0초에서 한번 증가시켜줬을 때를 가정*/
         calorieCheck.increaseCalorieCheckTimer();
         time = time.plusNanos(10000000);
         assertEquals(time, calorieCheck.getCalorieTime());
+//        assertTrue(time.equals(calorieCheck.getCalorieTime()));
 
         //23시 59분 59초가 됐을 때
         /*
@@ -126,17 +130,20 @@ public class CalorieCheckTest {
         increaseCalorieCheckTimer를 n*100번만큼 호출하면
         23시 59분 59초까지 간다.
 
-        단, 처음에 한번 호출했으니 n*100 - 1만큼 호출한다.
+        처음에 한번 호출했으니 n*100 - 1만큼 호출해야 23시 59분 59초가 된다.
+        하지만 1번더 호출해야지 endCalorieCheck를 호출하므로
+        n*100 -1 + 1 = n*100 번 호출하는게 맞다.
         */
         double n = 23 * 3600 + 59 * 60 + 59;
         n = n*100;
-        for(int i=0; i<n-1; i++){
+        for(int i=0; i<n; i++){
             calorieCheck.increaseCalorieCheckTimer();
         }
         time = LocalTime.of(23, 59, 59);
 
         //시간이 23시 59분 59초까지 늘어났는지 체크
-        //assertEquals(time, calorieCheck.getCalorieTime());
+        assertEquals(time, calorieCheck.getCalorieTime());
+//        assertTrue(time.equals(calorieCheck.getCalorieTime()));
 
         assertTrue(calorieCheck.getIsPause());
         assertFalse(calorieCheck.getIsStart());

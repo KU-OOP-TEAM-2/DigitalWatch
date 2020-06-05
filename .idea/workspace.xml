@@ -15,11 +15,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="complete CalorieCheck with debugging print">
-      <change afterPath="$PROJECT_DIR$/src/test/java/Sys/CalorieCheckTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1/executionHistory/executionHistory.lock" afterDir="false" />
+    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="add CalorieCheck UnitTest">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sys/CalorieCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/CalorieCheck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Sys/CalorieCheckTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Sys/CalorieCheckTest.java" afterDir="false" />
     </list>
     <list id="75641970-afe3-41f4-8211-ac3bdcb41cb9" name="Revert &quot;edit Tick constructor&quot;" comment="reset branch" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +61,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="1ckVJvK3m1JWo3Gh7qo5Cp32Rep" />
   <component name="ProjectViewState">
@@ -215,9 +213,9 @@
       <list>
         <item itemvalue="JUnit.CalorieCheckTest.increaseCalorieCheckTimer" />
         <item itemvalue="JUnit.CalorieCheckTest" />
+        <item itemvalue="Application.Main_test (1)" />
         <item itemvalue="JUnit.CalorieCheckTest.resetCalorieCheck" />
         <item itemvalue="Android JUnit.CalorieCheckTest.resetCalorieCheck" />
-        <item itemvalue="Application.Main_test (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -435,7 +433,21 @@
       <option name="project" value="LOCAL" />
       <updated>1591312400650</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="add CalorieCheckTest, edit workspace.xml">
+      <created>1591389808517</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1591389808517</updated>
+    </task>
+    <task id="LOCAL-00031" summary="add CalorieCheck UnitTest">
+      <created>1591391137060</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1591391137060</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -451,8 +463,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Timer -&gt;Thread 제거" />
-    <MESSAGE value="1.8" />
     <MESSAGE value="Mode manager world time 추가" />
     <MESSAGE value="Mode manager 정리" />
     <MESSAGE value="gitnore" />
@@ -476,7 +486,9 @@
     <MESSAGE value="activeList 최초 선언부 추가" />
     <MESSAGE value="timer" />
     <MESSAGE value="Timer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Timer" />
+    <MESSAGE value="add CalorieCheckTest, edit workspace.xml" />
+    <MESSAGE value="add CalorieCheck UnitTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="add CalorieCheck UnitTest" />
   </component>
   <component name="WindowStateProjectService">
     <state x="569" y="119" key="#&lt;template&gt;_of_JUnit" timestamp="1591388343245">
@@ -520,47 +532,67 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="622" y="71" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1591255811922" />
-    <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog" timestamp="1591265278185">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="69" y="68" width="1782" height="904" key="DiffContextDialog" timestamp="1591392494297">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="69" y="68" width="1782" height="904" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591255833606" />
+    <state x="69" y="68" width="1782" height="904" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591392494297" />
     <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591265278185" />
     <state x="1060" y="454" key="FileChooserDialogImpl" timestamp="1591073036048">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="454" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1591073036048" />
-    <state width="1189" height="263" key="GridCell.Tab.0.bottom" timestamp="1591389698086">
+    <state width="1027" height="263" key="GridCell.Tab.0.bottom" timestamp="1591392642064">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1189" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591389698086" />
+    <state width="1027" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591392642064" />
     <state width="2517" height="194" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591313051763" />
-    <state width="1189" height="263" key="GridCell.Tab.0.center" timestamp="1591389698086">
+    <state width="1027" height="263" key="GridCell.Tab.0.center" timestamp="1591392642064">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1189" height="263" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591389698086" />
+    <state width="1027" height="263" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591392642064" />
     <state width="2517" height="194" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591313051762" />
-    <state width="1189" height="263" key="GridCell.Tab.0.left" timestamp="1591389698086">
+    <state width="1027" height="263" key="GridCell.Tab.0.left" timestamp="1591392642064">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1189" height="263" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591389698086" />
+    <state width="1027" height="263" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591392642064" />
     <state width="2517" height="194" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591313051762" />
-    <state width="1189" height="263" key="GridCell.Tab.0.right" timestamp="1591389698086">
+    <state width="1027" height="263" key="GridCell.Tab.0.right" timestamp="1591392642064">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1189" height="263" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591389698086" />
+    <state width="1027" height="263" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591392642064" />
     <state width="2517" height="194" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591313051762" />
+    <state width="1021" height="324" key="GridCell.Tab.1.bottom" timestamp="1591390935419">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1021" height="324" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591390935419" />
+    <state width="1021" height="324" key="GridCell.Tab.1.center" timestamp="1591390935419">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1021" height="324" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591390935419" />
+    <state width="1021" height="324" key="GridCell.Tab.1.left" timestamp="1591390935419">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1021" height="324" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591390935419" />
+    <state width="1021" height="324" key="GridCell.Tab.1.right" timestamp="1591390935419">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1021" height="324" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591390935419" />
     <state x="248" y="121" key="MergeDialog" timestamp="1591082012879">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="248" y="121" key="MergeDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591082012879" />
+    <state x="897" y="394" width="396" height="268" key="MultipleFileMergeDialog" timestamp="1591389837876">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="897" y="394" width="396" height="268" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591389837876" />
     <state x="781" y="344" key="SettingsEditor" timestamp="1591263207383">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="781" y="344" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1591263207383" />
-    <state x="872" y="432" key="Vcs.Push.Dialog.v2" timestamp="1591312408505">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="654" y="321" key="Vcs.Push.Dialog.v2" timestamp="1591391140814">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="654" y="321" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591256174062" />
+    <state x="654" y="321" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591391140814" />
     <state x="872" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591312408505" />
     <state x="814" y="455" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591384047011">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -571,6 +603,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="736" y="209" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591384713819" />
+    <state x="571" y="257" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1591390644424">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="571" y="257" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040@0.0.1920.1040" timestamp="1591390644424" />
     <state x="1002" y="486" key="git4idea.merge.GitPullDialog" timestamp="1591206191994">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
