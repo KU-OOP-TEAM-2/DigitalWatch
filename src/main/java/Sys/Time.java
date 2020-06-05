@@ -47,6 +47,13 @@ public class Time implements Mode{
             else {
                 this.currentTime = this.currentTime.plusSeconds(1).plusYears(-10000);
             }
+
+            if(this.editTime.plusSeconds(1).getYear()<9999) {
+            this.editTime=this.editTime.plusSeconds(1);
+            }
+            else {
+            this.editTime = this.editTime.plusSeconds(1).plusYears(-10000);
+            }
     }
 
 
