@@ -17,7 +17,8 @@
   <component name="ChangeListManager">
     <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="Timer minusNanos 값수정">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/Tick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/Tick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/Alarm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/Alarm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/Buzzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/Buzzer.java" afterDir="false" />
     </list>
     <list id="75641970-afe3-41f4-8211-ac3bdcb41cb9" name="Revert &quot;edit Tick constructor&quot;" comment="reset branch" />
     <option name="SHOW_DIALOG" value="false" />
@@ -86,14 +87,23 @@
       </method>
     </configuration>
     <configuration name="Main_test_2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="GUI.Main_test_2" />
-      <module name="git_teampj.main" />
+      <module name="softwarevv.main" />
+      <shortenClasspath name="NONE" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="GUI.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <shortenClasspath name="NONE" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -186,6 +196,7 @@
       <item itemvalue="Gradle.test1Test" />
       <item itemvalue="Gradle.Tests in 'git_teampj'" />
       <item itemvalue="JUnit.test1Test" />
+      <item itemvalue="Application." />
     </list>
     <recent_temporary>
       <list>
@@ -462,6 +473,14 @@
     <option name="LAST_COMMIT_MESSAGE" value="Timer minusNanos 값수정" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="940" y="111" key="#&lt;template&gt;_of_Application" timestamp="1591358996622">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="940" y="111" key="#&lt;template&gt;_of_Application/0.0.2560.1040@0.0.2560.1040" timestamp="1591358996622" />
+    <state x="954" y="139" key="#Main_test_2" timestamp="1591359017273">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="954" y="139" key="#Main_test_2/0.0.2560.1040@0.0.2560.1040" timestamp="1591359017273" />
     <state x="760" y="274" key="#Project_Structure" timestamp="1591076943535">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -487,25 +506,33 @@
     </state>
     <state x="69" y="68" width="1782" height="904" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591255833606" />
     <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591265278185" />
+    <state x="1127" y="270" key="EnvironmentVariablesDialog" timestamp="1591358944042">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1127" y="270" key="EnvironmentVariablesDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1591358944042" />
     <state x="1060" y="454" key="FileChooserDialogImpl" timestamp="1591073036048">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="454" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1591073036048" />
-    <state width="2517" height="194" key="GridCell.Tab.0.bottom" timestamp="1591358149940">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="2463" height="2" key="GridCell.Tab.0.bottom" timestamp="1591362797847">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
+    <state width="2463" height="2" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1591362797847" />
     <state width="2517" height="194" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591358149940" />
-    <state width="2517" height="194" key="GridCell.Tab.0.center" timestamp="1591358149939">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="2463" height="2" key="GridCell.Tab.0.center" timestamp="1591362797847">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
+    <state width="2463" height="2" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1591362797847" />
     <state width="2517" height="194" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591358149939" />
-    <state width="2517" height="194" key="GridCell.Tab.0.left" timestamp="1591358149939">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="2463" height="2" key="GridCell.Tab.0.left" timestamp="1591362797847">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
+    <state width="2463" height="2" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1591362797847" />
     <state width="2517" height="194" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591358149939" />
-    <state width="2517" height="194" key="GridCell.Tab.0.right" timestamp="1591358149939">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="2463" height="2" key="GridCell.Tab.0.right" timestamp="1591362797847">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
+    <state width="2463" height="2" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1591362797847" />
     <state width="2517" height="194" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591358149939" />
     <state x="248" y="121" key="MergeDialog" timestamp="1591082012879">
       <screen x="0" y="0" width="2560" height="1400" />
@@ -524,10 +551,11 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591357765043" />
-    <state x="1002" y="486" key="git4idea.merge.GitPullDialog" timestamp="1591206191994">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="1002" y="361" key="git4idea.merge.GitPullDialog" timestamp="1591358894194">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="752" y="361" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591078691554" />
+    <state x="1002" y="361" key="git4idea.merge.GitPullDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1591358894194" />
     <state x="1002" y="486" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591206191994" />
     <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1591312902535">
       <screen x="0" y="0" width="2560" height="1400" />

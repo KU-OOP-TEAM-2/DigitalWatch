@@ -28,30 +28,6 @@ public class Alarm implements Mode{
         //alarmThread = new AlarmThread("alarmThread");
     }
 
-    /*
-    private class AlarmThread implements Runnable{
-        Thread t;
-        
-        AlarmThread(String name){
-            t = new Thread(this, name);
-            t.start();
-        }
-
-        public void run(){
-            LocalDateTime traceCurrentTime;
-            LocalTime currentTime;
-            while(true){
-//                traceCurrentTime = time.getCurrentTime();/
-                currentTime = traceCurrentTime.toLocalTime();
-                
-                for(int i=0; i < 4; i++){
-                    if(currentTime.compareTo(alarm[i].requestExpirationTime()) == 0){
-                        buzzer.beepBuzzer();
-                    }
-                }
-            }
-        }
-    }*/
     //추가 - 변수(buzzer객체와 time객체를 받아서 사용하기 위해서)
     private Buzzer buzzer;
 
@@ -83,8 +59,8 @@ public class Alarm implements Mode{
 
         for(int i=0;i<4;i++){
             //LocalTime이 xx:xx:00이고 현재시간과 expirationTime을 비교해서 두 조건 충족.
-            if(currentTime.getSecond() == 0 && currentTime.compareTo(alarm[i].requestExpirationTime())==-0) {
-                buzzer.beepBuzzer();
+            if(currentTime.getSecond() == 0 && currentTime.compareTo(alarm[i].requestExpirationTime())==0 && alarm[i].isActivatedTimer()==true) {
+                buzzer.setBuzzerOn(true);
                 buzzer.setIsAlarmRinging(true);
                 return true;
             }
