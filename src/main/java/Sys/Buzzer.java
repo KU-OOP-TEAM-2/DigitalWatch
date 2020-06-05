@@ -1,6 +1,8 @@
 package Sys;
 
 
+import com.intellij.diagnostic.hprof.action.SystemTempFilenameSupplier;
+
 import java.util.*;
 import java.awt.*;
 /**
@@ -14,13 +16,14 @@ public class Buzzer {
     public Buzzer() {
         buzzerOn = false;
         buzzerThread = new BuzzerThread("buzzerThread");
+        Thread t = new Thread(buzzerThread);
+        t.start();
+
         isAlarmRinging = false;
         isBuzzerRinging = false;
     }
 
-    /**
-     *
-     */
+
     private Boolean buzzerOn;
     private Boolean isAlarmRinging;
     private Boolean isBuzzerRinging;
@@ -30,20 +33,26 @@ public class Buzzer {
     private BuzzerThread buzzerThread;
 
     private class BuzzerThread implements Runnable{
-        Thread t;
-
+        int i = 0;
         BuzzerThread(String name){
-            t = new Thread(this, name);
-            t.start();
-        }
 
+        }
         public void run(){
-            if(buzzerOn == true && isBuzzerRinging == false) {
-                isBuzzerRinging = true;
-                beepBuzzer();
-                buzzerOn = false;
-                isBuzzerRinging = false;
-                isAlarmRinging = false;
+            while(true) {
+                i++;
+                try{
+                    Thread.sleep(1000);
+                } catch(InterruptedException e){}
+                System.out.print(i);
+                System.out.println(buzzerOn);
+
+                if (buzzerOn == true && isBuzzerRinging == false) {
+                    isBuzzerRinging = true;
+                    beepBuzzer();
+                    buzzerOn = false;
+                    isBuzzerRinging = false;
+                    isAlarmRinging = false;
+                }
             }
         }
     }
@@ -54,6 +63,8 @@ public class Buzzer {
     public void beepBuzzer() {
         int i = 0;
         for(i=0; i < BEEPCOUNT && buzzerOn; i++){
+            if(buzzerOn == false)
+                return;
             java.awt.Toolkit.getDefaultToolkit().beep();
             try {
                 Thread.sleep(1000); // introduce delay

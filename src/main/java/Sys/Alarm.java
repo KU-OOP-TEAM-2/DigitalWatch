@@ -54,12 +54,14 @@ public class Alarm implements Mode{
     public boolean isAlarmTimeCheck(){
         LocalDateTime traceCurrentTime;
         LocalTime currentTime;
+        LocalTime tempTime;
         traceCurrentTime = time.getCurrentTime();
         currentTime = traceCurrentTime.toLocalTime();
+        tempTime = LocalTime.of(currentTime.getHour(), currentTime.getMinute(),0 );
 
         for(int i=0;i<4;i++){
             //LocalTime이 xx:xx:00이고 현재시간과 expirationTime을 비교해서 두 조건 충족.
-            if(currentTime.getSecond() == 0 && currentTime.compareTo(alarm[i].requestExpirationTime())==0 && alarm[i].isActivatedTimer()==true) {
+            if(currentTime.getSecond() == 0 && tempTime.compareTo(alarm[i].requestExpirationTime())==0 && alarm[i].isActivatedTimer()==true){
                 buzzer.setBuzzerOn(true);
                 buzzer.setIsAlarmRinging(true);
                 return true;

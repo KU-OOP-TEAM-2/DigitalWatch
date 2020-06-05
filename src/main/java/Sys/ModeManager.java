@@ -135,10 +135,13 @@ public class ModeManager {
 
     public void clickButton(int Button, boolean longClickedFlag) {
         elapsedTime=0.0f;
-        if(buzzerFlag){// 버저 울릴때
+        if(buzzer.getBuzzerOn()){// 버저 울릴때
             //아무 버튼이나 들어오면
-            if(Button != -1)
+            if(Button != -1) {
                 buzzer.stopBuzzer();
+                if(buzzer.getIsAlarmRinging() == true)
+                    buzzer.setIsAlarmRinging(false);
+            }
         }
         else{
             switch (currentMode){

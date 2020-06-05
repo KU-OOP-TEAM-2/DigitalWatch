@@ -140,7 +140,7 @@ public class Timer implements  Mode{
             if(defaulTime.isAfter(timerTime) || defaulTime.isEqual(timerTime)){
                 //ModeManager.beepbuzzer()
 
-                buzzer.beepBuzzer();
+                buzzer.setBuzzerOn(true);
                 pauseTimerFlag=true;
                 timerTime=LocalDateTime.of(2000,1,1,0,0,0);
                 return true;

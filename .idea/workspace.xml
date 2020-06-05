@@ -15,11 +15,13 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="Timer">
+    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/CalorieCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/CalorieCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/StopWatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/StopWatch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/Alarm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/Alarm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/Buzzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/Buzzer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sys/Tick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/Tick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/Timer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/Timer.java" afterDir="false" />
     </list>
     <list id="75641970-afe3-41f4-8211-ac3bdcb41cb9" name="Revert &quot;edit Tick constructor&quot;" comment="reset branch" />
     <option name="SHOW_DIALOG" value="false" />
@@ -446,7 +448,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591359288824</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Buzzer 수정">
+      <created>1591364792867</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1591364792867</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -462,7 +471,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Mode manager 정리" />
     <MESSAGE value="gitnore" />
     <MESSAGE value="clcikButton" />
     <MESSAGE value="ModeManger 변수" />
@@ -487,7 +495,8 @@
     <MESSAGE value="Timer minusNanos 값수정" />
     <MESSAGE value="Stopwatch를 Timer와 따로두는 것과 같이두는것의 차이가 없어 같이 합친뒤 elapsedTime이 10인 순간을 점프해 버릴 경우의 대비해 if 문을 ==10에서 &gt;=10으로 수정" />
     <MESSAGE value="Clicked button time {} 누락 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="Clicked button time {} 누락 수정" />
+    <MESSAGE value="Buzzer 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="Buzzer 수정" />
   </component>
   <component name="WindowStateProjectService">
     <state x="972" y="334" key="#Main_test_2" timestamp="1591360110725">
@@ -511,42 +520,43 @@
     </state>
     <state x="1085" y="405" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1591074707858" />
     <state x="1085" y="417" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1440@0.0.2560.1440" timestamp="1591362506117" />
-    <state x="829" y="71" key="CommitChangelistDialog2" timestamp="1591363864615">
+    <state x="829" y="71" key="CommitChangelistDialog2" timestamp="1591364792158">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="622" y="71" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1591255811922" />
-    <state x="829" y="71" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1591363864615" />
-    <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog" timestamp="1591265278185">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="829" y="71" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1591364792158" />
+    <state x="92" y="68" width="2376" height="1216" key="DiffContextDialog" timestamp="1591364817897">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="69" y="68" width="1782" height="904" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591255833606" />
+    <state x="92" y="68" key="DiffContextDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1591364817897" />
     <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591265278185" />
     <state x="1060" y="454" key="FileChooserDialogImpl" timestamp="1591073036048">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="454" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1591073036048" />
-    <state width="2463" height="2" key="GridCell.Tab.0.bottom" timestamp="1591364765785">
+    <state width="1234" height="82" key="GridCell.Tab.0.bottom" timestamp="1591372364155">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2463" height="2" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1591364765785" />
+    <state width="1234" height="82" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1591372364155" />
     <state width="2517" height="194" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591359724852" />
     <state width="2517" height="413" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1591362916706" />
-    <state width="2463" height="2" key="GridCell.Tab.0.center" timestamp="1591364765785">
+    <state width="1234" height="82" key="GridCell.Tab.0.center" timestamp="1591372364155">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2463" height="2" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1591364765785" />
+    <state width="1234" height="82" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1591372364155" />
     <state width="2517" height="194" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591359724852" />
     <state width="2517" height="413" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1591362916706" />
-    <state width="2463" height="2" key="GridCell.Tab.0.left" timestamp="1591364765785">
+    <state width="1234" height="82" key="GridCell.Tab.0.left" timestamp="1591372364155">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2463" height="2" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1591364765785" />
+    <state width="1234" height="82" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1591372364155" />
     <state width="2517" height="194" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591359724851" />
     <state width="2517" height="413" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1591362916706" />
-    <state width="2463" height="2" key="GridCell.Tab.0.right" timestamp="1591364765785">
+    <state width="1234" height="82" key="GridCell.Tab.0.right" timestamp="1591372364155">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2463" height="2" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1591364765785" />
+    <state width="1234" height="82" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1591372364155" />
     <state width="2517" height="194" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591359724852" />
     <state width="2517" height="413" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1591362916706" />
     <state width="2463" height="340" key="GridCell.Tab.1.bottom" timestamp="1591363580131">
@@ -573,19 +583,21 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="781" y="344" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1591263207383" />
-    <state x="872" y="432" key="Vcs.Push.Dialog.v2" timestamp="1591359294938">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="872" y="321" key="Vcs.Push.Dialog.v2" timestamp="1591364818510">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="654" y="321" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591256174062" />
+    <state x="872" y="321" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1591364818510" />
     <state x="872" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591359294938" />
     <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591358938268">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591358938268" />
-    <state x="1002" y="486" key="git4idea.merge.GitPullDialog" timestamp="1591358946612">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="1002" y="361" key="git4idea.merge.GitPullDialog" timestamp="1591364796942">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="752" y="361" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591078691554" />
+    <state x="1002" y="361" key="git4idea.merge.GitPullDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1591364796942" />
     <state x="1002" y="486" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591358946612" />
     <state x="917" y="245" key="run.anything.popup" timestamp="1591364529950">
       <screen x="0" y="0" width="2560" height="1040" />

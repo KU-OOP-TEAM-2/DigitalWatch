@@ -41,7 +41,7 @@ public class Tick implements Callable<Void>{
             if(elapsedTime >= 10) {
                 //Timer
                 ((Timer)modes[2]).decreaseTimer();
-
+                ((Alarm)modes[1]).isAlarmTimeCheck();
                 //calorie check
                 ((CalorieCheck)modes[4]).increaseCalorieCheckTimer();
                 //when duration = 1 second
@@ -53,7 +53,7 @@ public class Tick implements Callable<Void>{
                     //alarm
                     //Buzzer를 여기서 울리는것이 아니라 Alarm객체 내부에서 울리도록 함.
                     //구현 방식의 차이에 따라 추후 바뀔 수 있는 부분입니다.
-                    ((Alarm)modes[1]).isAlarmTimeCheck();
+                    //((Alarm)modes[1]).isAlarmTimeCheck();
                 }
                 //not yet 1 second
                 else {
