@@ -122,12 +122,16 @@ public class ModeManager {
                     isEditMode = !isEditMode;
                     break;
                 case 8:
-                    for(int i=0;i<6;i++){
-                        if(getActiveModeCounter() == 4 && editStatus[i].booleanValue() == true) {
-                            currentMode = i;
-                            isEditMode = !isEditMode;
-                            break;
+                    if(getActiveModeCounter() == 4) {
+                        for(int j = 0; j < 6; j++) modes[j].setActive(editStatus[j].booleanValue());
+                        for(int i = 0; i < 6; i++){
+                            if(modes[i].getActive()){
+                                currentMode = i;
+                                break;
+                            }
                         }
+                        isEditMode = !isEditMode;
+                        break;
                     }
                     break; //setMode중 return to default 발생시 저장안하고 종료
                 default: // 3-stopwatch, 5 worldtime은 set이 없다.
