@@ -13,18 +13,17 @@ public class Time implements Mode{
 
     private int currentCursor; // 초 분 시 일 월 년 GMT 12/24시간 형식 0~7
 
-    private final int GMT[]= {9,8,1,0,4,10};//gmt 값->서울 9 ,파리1, 런던0,  시드니10,LA -7 ,뉴욕 -4
-    private int currentGMTIndex;//현재 GMT의 index를 나타내는 변수 서울  파리 런던 시드니 LA 뉴욕 순
+    private int GMT;
 
     private boolean format; // false-> 12시간형식  True-> 24시간 형식
     //index와 format은 바로바로 저장되도 문제가 없기에 edit변수를 따로 만들지 않아도 된다.
 
     public Time() {
         this.currentTime=LocalDateTime.of(2020, 01, 01, 00, 00, 00, 00);
-        this.currentGMTIndex=0;
         this.editTime=null;
         this.format=true;
         this.isActivated=true;
+        this.GMT=9;
     }
 
 
@@ -124,11 +123,11 @@ public class Time implements Mode{
                 }
                 break;
             case 6:
-                if(this.currentGMTIndex==5) {
-                    this.currentGMTIndex=0;
+                if(this.GMT==14) {
+                    this.GMT=-12;
                 }
                 else {
-                    this.currentGMTIndex+=1;
+                    this.GMT+=1;
                 }
                 break;
             case 7:
@@ -193,11 +192,11 @@ public class Time implements Mode{
                 }
                 break;
             case 6:
-                if(this.currentGMTIndex==0) {
-                    this.currentGMTIndex=5;
+                if(this.GMT==-12) {
+                    this.GMT=14;
                 }
                 else {
-                    this.currentGMTIndex-=1;
+                    this.GMT-=1;
                 }
                 break;
             case 7:
@@ -231,7 +230,7 @@ public class Time implements Mode{
     }
 
     public int getGMT() {
-        return this.GMT[this.currentGMTIndex];
+        return this.GMT;
     }
 
     public boolean getFormat() {
