@@ -6,6 +6,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
+
+
 /**
  *
  */
@@ -25,8 +27,8 @@ public class ModeManager {
         modes[2] = new Timer();
         modes[3] = new StopWatch();
         modes[4] = new CalorieCheck();
-        modes[5] =new WorldTime();
         modes[5] = new WorldTime();
+        this.activeList=new int[4];
         for(int i=0;i<4;i++){
             this.activeList[i]=i;
         }
@@ -35,6 +37,8 @@ public class ModeManager {
         editStatus= new Boolean[6];
         SingletonModeManager=this;
         isEditMode = false;
+        buzzerFlag=false;
+
     }
     //모드매니저
     public static ModeManager SingletonModeManager;
@@ -61,6 +65,7 @@ public class ModeManager {
     //Mode  Adjust  Forward Reverse
     //0     1       2       3
     private int Button;
+
     private boolean isEditMode;
 
     //객체 생성 ms
@@ -129,10 +134,6 @@ public class ModeManager {
     }
 
     public void clickButton(int Button, boolean longClickedFlag) {
-        //이건 뭔가요..?
-//        if(currentMode==0 && Button==0 && longClickedFlag==false && isEditMode==false){
-//
-//        }
         elapsedTime=0.0f;
         if(buzzerFlag){// 버저 울릴때
             //아무 버튼이나 들어오면
@@ -147,12 +148,17 @@ public class ModeManager {
                         switch (Button) {
                             case 0:
                                 ((Time) this.modes[0]).changeCursor();
+                                break;
                             case 1:
                                 ((Time) this.modes[0]).saveData();
+                                isEditMode = !isEditMode;
+                                break;
                             case 2:
                                 ((Time) this.modes[0]).increaseData();
+                                break;
                             case 3:
                                 ((Time) this.modes[0]).decreaseData();
+                                break;
                         }
 
                     }
@@ -168,6 +174,7 @@ public class ModeManager {
                             case 1:
                                 if (longClickedFlag == true)
                                     ((Time) this.modes[0]).enterEditData();
+                                    isEditMode = !isEditMode;
                                 break;
                             case 2:
                                 //do nothing
@@ -198,18 +205,22 @@ public class ModeManager {
                             ((Alarm)modes[1]).decreaseAlarmTime();
                     }
                     else{
-                        if(Button == 0 && longClickedFlag == false)    //Mode : changeMode
+                        if(Button == 0 && longClickedFlag == false) {    //Mode : changeMode
                             this.changeMode();
-                        else if(Button == 0 && longClickedFlag == true)
+                        }
+                        else if(Button == 0 && longClickedFlag == true) {
                             this.enterEditMode();
+                        }
                         else if(Button == 1 && longClickedFlag == true) {    //Adjust 눌렀을 때 set Alarm으로 진잊
                             ((Alarm) modes[1]).enterEditAlarm(); //
                             isEditMode = !isEditMode;
                         }
-                        else if(Button == 1)    //Adjust : 현재 보고 있는 Alarm을 바꾼다.
-                            ((Alarm)modes[1]).changeAlarm();
-                        else if(Button == 2)    //Forward : 현재 보고 있는 알람을 on/off시킨다.
-                            ((Alarm)modes[1]).turnOnOffAlarm();
+                        else if(Button == 1 && longClickedFlag == false) {    //Adjust : 현재 보고 있는 Alarm을 바꾼다.
+                            ((Alarm) modes[1]).changeAlarm();
+                        }
+                        else if(Button == 2 && longClickedFlag == false) {    //Forward : 현재 보고 있는 알람을 on/off시킨다.
+                            ((Alarm) modes[1]).turnOnOffAlarm();
+                        }
                         else if(Button == 3);   //지정된 버튼이 없다.
                     }
                     break;
@@ -234,7 +245,7 @@ public class ModeManager {
                         }
                         else if(Button == 0 && longClickedFlag == false) {    //Mode : changeMode
                             this.changeMode();
-                        }else if(Button ==1){
+                        }else if(Button ==1 && longClickedFlag ==false){
                             ((Timer)modes[2]).cancelTimer();
                         }else if(Button ==1 && longClickedFlag ==true){ //setTimer 진입
                             ((Timer)modes[2]).enterEditTimer();
@@ -250,6 +261,7 @@ public class ModeManager {
 
                         }else{}
                     }
+                    break;
                 case 3: //StopWatch
                         if(Button == 0 && longClickedFlag == false)
                             this.changeMode();  //Mode : changeMode
@@ -259,13 +271,98 @@ public class ModeManager {
                             ((StopWatch)modes[3]).lapStopwatch();
                         else if(Button == 1 && ((StopWatch)modes[3]).getIsPaused()) //Adjust : paused라면 reset.
                             ((StopWatch)modes[3]).resetStopwatch();
-                        else if(Button == 2 && ((StopWatch)modes[3]).getIsPaused())  //Forward : puased라면 start. , 사실 Resume이나 Start나 operation 내부 동작은 같다...
+                        else if(Button == 2 && ((StopWatch)modes[3]).getIsPaused())  //Forward : paused라면 start. , 사실 Resume이나 Start나 operation 내부 동작은 같다...
                             ((StopWatch)modes[3]).startStopwatch();
                         else if(Button == 2 && !( ((StopWatch)modes[3]).getIsPaused() )) //Forward : paused가 아니라면 pause.
                             ((StopWatch)modes[3]).pauseStopwatch();
                         else if(Button == 3);    //지정된 버튼이 없다.
                     break;
-                case 4:
+                case 4: //CalorieCheck
+                    //Set speed and weight 일 때
+                    if(isEditMode){
+                        switch (Button){
+                            //Mode Button
+                            //change cursor로 speed와 weight중 선택
+                            case 0:
+                                ((CalorieCheck) modes[4]).changeCursor();
+                                break;
+
+                            //Adjust Button
+                            //save data and exit set speed and weight
+                            case 1:
+                                ((CalorieCheck) modes[4]).saveCalorieSetting();
+                                isEditMode = !isEditMode;
+                                break;
+
+                            //Forward Button
+                            case 2:
+                                ((CalorieCheck) modes[4]).increaseData();
+                                break;
+
+                            //Reverse Button
+                            case 3:
+                                ((CalorieCheck) modes[4]).decreaseData();
+                                break;
+                        }
+                    }
+
+                    //Set speed and weight가 아닐 때
+                    else {
+                        switch(Button) {
+                            //Mode Button
+                            case 0:
+                                //Mode Button이 꾹 눌렸을 때 = Set Mode를 한다
+                                if (longClickedFlag) {
+                                    this.enterEditMode();
+                                }
+                                //Mode Button이 짧게 눌렸을 때 = 다음 Mode를 화면에 디스플레이한다.
+                                else {
+                                    this.changeMode();
+                                }
+                                break;
+
+                            //Adjust Button
+                            case 1:
+                                //Adjust Button이 꾹 눌렸을 때 = Set Speed and Weight를 한다.
+                                if (longClickedFlag) {
+                                    ((CalorieCheck) modes[4]).enterSetSpeedandWeight();
+                                    isEditMode = !isEditMode;
+                                }
+                                //Adjust Button이 한번 짧게 누렸을 때 = Reset CalorieCheck
+                                else{
+                                    //pause 상태일 때만 reset
+                                    if(((CalorieCheck) modes[4]).getIsPause()){
+                                        ((CalorieCheck) modes[4]).resetCalorieCheck();
+                                    }
+                                }
+                                break;
+
+                            //Forward Button
+                            //start CalorieCheck, pause CalorieCheck, resume CalorieCheck
+                            case 2:
+                                //CalorieCheck가 시작된 상태다.
+                                if (((CalorieCheck) modes[4]).getIsStart()) {
+                                    //CalorieCheck가 시작된 상태고 puase 상태다.
+                                    if (((CalorieCheck) modes[4]).getIsPause()) {
+                                        ((CalorieCheck) modes[4]).resumeCaloreCheck();
+                                    }
+                                    //CalorieCheck가 시작된 상태고 pause 상태가 아니다.
+                                    else {
+                                        ((CalorieCheck) modes[4]).pauseCalorieCheck();
+                                    }
+                                }
+                                //CalorieCheck가 시작되지 않은 상태다.
+                                else {
+                                    ((CalorieCheck) modes[4]).startCalorieCheck();
+                                }
+                                break;
+
+                            //Reverse Button
+                            case 3:
+                                //아무일도 안함
+                                break;
+                        }
+                    }
                     break;
                 case 5: //World Time
                     switch (Button) {
@@ -319,7 +416,7 @@ public class ModeManager {
     public void enterEditMode() {
         this.currentMode=8;
         this.currentCursor=0;
-
+        isEditMode=true;
         for(int i= 0; i<6;i++)
             editStatus[i]= modes[i].getActive();
 
@@ -376,6 +473,8 @@ public class ModeManager {
                 }
             }
         }//active list 순서별로 다시 정렬-> display를 위해서
+
+        isEditMode=false;
     }
     public int getCurrentMode(){ return this.currentMode; }
     //시퀀스 다이어그램 수정 사항. 없애도 되는 함수.
@@ -392,6 +491,10 @@ public class ModeManager {
 
     public Mode[] getmodes() {
         return modes;
+    }
+
+    public boolean isEditMode() {
+        return isEditMode;
     }
 
 }

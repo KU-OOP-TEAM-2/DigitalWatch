@@ -16,15 +16,13 @@ public class StopWatch implements Mode{
     //객체를 만들 때 Time, Timer, Alarm, Stopwatch를 Activate 시키고 그 외 2개는 Deactivate.
     public StopWatch() {
         LocalDate temp = LocalDate.now();
-        currentStopWatchTime.of(0,0,0,0);
-        isActivated = true;
-        lapTime.of(0,0,0,0);
+        currentStopWatchTime = LocalTime.of(0,0,0,0);
+        isActivated = false;
+        lapTime= LocalTime.of(0,0,0,0);
         isPaused = true;
-        overflowStopWatchTime.of(0,59,59,99000000);
-
+        overflowStopWatchTime= LocalTime.of(1,39,59,99000000);
     }
 
-    private LocalDate temp;
     private LocalTime currentStopWatchTime;
     private LocalTime lapTime;
     private LocalTime overflowStopWatchTime;
@@ -52,8 +50,8 @@ public class StopWatch implements Mode{
 
     //버튼 검사를 해서 paused상태에서만 기능이 작동하는지 검사.
     public void resetStopwatch() {
-        currentStopWatchTime.of(0,0,0,0);
-        lapTime.of(0,0,0,0);
+        currentStopWatchTime = LocalTime.of(0,0,0,0);
+        lapTime = LocalTime.of(0,0,0,0);
     }
 
     public void lapStopwatch() {
@@ -69,14 +67,18 @@ public class StopWatch implements Mode{
      * 00:59:59:99를 지난다면 overflow가 발생하도록, 00:00:00:00부터 시작하도록 함.
     **/
     public void increaseCurrentTime() {
+        is100ms = (is100ms + 1) % 10;
+        if(is100ms == 0){
             if(!isPaused) {
                 if (this.currentStopWatchTime.compareTo(overflowStopWatchTime) == 0) {
                     pauseStopwatch();
                 } else {
-                    //millisecond의 앞 두자리만 보여줄것이므로 1e7
-                    currentStopWatchTime.plusNanos(10000000);
+                    currentStopWatchTime = currentStopWatchTime.plusNanos(10000);
                 }
             }
+            else
+                return;
+        }
     }
 
     //이게 왜 필요한지 모르곘습니다... 일단은 그냥 두겠습니다.
@@ -90,8 +92,8 @@ public class StopWatch implements Mode{
     }
     //이게 왜 필요한지 모르겠습니다... 일단은 그냥 두겠습니다.
     public void resetCurrentTime() {
-        currentStopWatchTime.of(0,0,0,0);
-        lapTime.of(0,0,0,0);
+        currentStopWatchTime = LocalTime.of(0,0,0,0);
+        lapTime = LocalTime.of(0,0,0,0);
     }
 
     private boolean isActivated;
@@ -105,10 +107,8 @@ public class StopWatch implements Mode{
         return isPaused;
     }
 
-    public LocalDateTime getCurrentStopWatchTime(){return currentStopWatchTime.atDate(temp);}
-    public LocalDateTime getLapStopWatchTime(){return currentStopWatchTime.atDate(temp);}
-
-
+    public LocalTime getCurrentStopWatchTime(){return currentStopWatchTime;}
+    public LocalTime getLapStopWatchTime(){return lapTime;}
 
 
 }

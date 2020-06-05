@@ -165,6 +165,9 @@ public class Alarm implements Mode{
         return (alarm[currentAlarmTimerIndex].requestExpirationTime()).atDate(temp);
     }
 
+    //Alarm Timer의 활성화/비활성화 여부를 알아내기 위한 getter
+    public boolean getCurrentAlarmisActivated(){ return this.alarm[currentAlarmTimerIndex].isActivatedTimer();}
+
     public void setActive(boolean act){
         isActivated = act;
     }

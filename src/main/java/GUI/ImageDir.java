@@ -18,10 +18,17 @@ public class ImageDir {
 	//ALPHABETS
 	public static String fSeg_dir = path + "alphaFSeg_18.png";
 	public static String nSeg_dir = path + "alphaNSeg_18.png";
+	public static String tSeg_dir = path + "alphaTSeg.png";
+	public static String mSeg_dir = path + "alphaMSeg.png";
+	public static String gSeg_dir = path + "alphaGSeg.png";
 
 	//SIGNS
 	public static String colon_dir = path + "colon_14.png";
 	public static String colonBig_dir = path + "colon_45.png";
+	public static String cursor_dir = path + "cursor_20.png";
+	public static String cursur_10_dir = path + "cursor_10.png";
+	public static String centerLine_dir = path + "-Seg.png";
+	public static String plus_dir = path + "plusSeg.png";
 
 	//ICONS
 	public static String clock_dir = path + "clock45.png";

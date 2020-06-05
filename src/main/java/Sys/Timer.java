@@ -24,10 +24,9 @@ public class Timer implements  Mode{
 
     public Timer() {
         isActivated=true;
-        timerTime= LocalDateTime.of(2000,1,1,0,0,0);
+        timerTime= LocalDateTime.of(2000,1,5,3,59,59);
+        settingTimer=LocalDateTime.of(2000,1,5,3,59,59);
         pauseTimerFlag=true;
-
-
     }
 
     //cancel 용 Timer 변수 저장
@@ -48,6 +47,7 @@ public class Timer implements  Mode{
     public void enterEditTimer(){
         pauseTimerFlag=true;
         saveTimerFlag=false;
+        timerCursor = 0;
     }
 
     public void changeCursor() {
@@ -60,27 +60,27 @@ public class Timer implements  Mode{
         // TODO implement here
         switch (timerCursor){
             case 0:
-                if(timerTime.getDayOfMonth() >= 4 && timerTime.getHour() >=3 ){
+                if(timerTime.getDayOfMonth() >= 5 && timerTime.getHour() >=3 ){
                     timerTime= LocalDateTime.of(2000,1,1,0,timerTime.getMinute(),timerTime.getSecond());
                 }
                 else{
-                    timerTime.plusHours(1);
+                    timerTime = timerTime.plusHours(1);
                 }
                 break;
             case 1:
                 if(timerTime.getMinute() >= 59){
-                    timerTime.minusMinutes(timerTime.getMinute());
+                    timerTime = timerTime.minusMinutes(timerTime.getMinute());
                 }
                 else{
-                    timerTime.plusMinutes(1);
+                    timerTime = timerTime.plusMinutes(1);
                 }
                 break;
             case 2:
                 if(timerTime.getSecond() >= 59){
-                    timerTime.minusSeconds(timerTime.getSecond());
+                    timerTime = timerTime.minusSeconds(timerTime.getSecond());
                 }
                 else{
-                    timerTime.plusSeconds(1);
+                    timerTime = timerTime.plusSeconds(1);
                 }
                 break;
         }
@@ -95,23 +95,23 @@ public class Timer implements  Mode{
                     timerTime= LocalDateTime.of(2000,1,5,3,timerTime.getMinute(),timerTime.getSecond());
                 }
                 else{
-                    timerTime.plusHours(-1);
+                    timerTime= timerTime.plusHours(-1);
                 }
                 break;
             case 1:
                 if(timerTime.getMinute() == 0){
-                    timerTime.plusMinutes(59);
+                    timerTime= timerTime.plusMinutes(59);
                 }
                 else{
-                    timerTime.plusMinutes(-1);
+                    timerTime= timerTime.plusMinutes(-1);
                 }
                 break;
             case 2:
                 if(timerTime.getSecond() == 0){
-                    timerTime.plusSeconds(59);
+                    timerTime= timerTime.plusSeconds(59);
                 }
                 else{
-                    timerTime.plusSeconds(-1);
+                    timerTime= timerTime.plusSeconds(-1);
                 }
                 break;
         }
@@ -132,7 +132,7 @@ public class Timer implements  Mode{
         }
 
         //
-        timerTime.minusNanos(10000000);
+        timerTime = timerTime.minusNanos(10000000);
 
         if(!pauseTimerFlag){
             LocalDateTime defaulTime=LocalDateTime.of(2000,1,1,0,0,0);
@@ -144,8 +144,6 @@ public class Timer implements  Mode{
             }
         }
         return false;
-
-
     }
 
     public void start_pauseTimer(){
@@ -189,7 +187,7 @@ public class Timer implements  Mode{
 
     public void cancelTimer() {
         // TODO implement here
-        timerTime= this.settingTimer;
+        if(pauseTimerFlag) timerTime= this.settingTimer;
     }
 
     //get cursor
@@ -199,6 +197,7 @@ public class Timer implements  Mode{
     //get Timer time
     public LocalDateTime getTimerTime() {return this.timerTime;}
     public boolean getpauseTimerFlag() {return this.pauseTimerFlag; }
+    public LocalDateTime getSettingTimer() { return settingTimer; }
 }
 
 

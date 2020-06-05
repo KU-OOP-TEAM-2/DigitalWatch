@@ -1,16 +1,37 @@
 package GUI;
 
+import Sys.*;
+import Sys.Timer;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 
 public class watchGUI extends JFrame implements Runnable{
+
+	public ModeManager modeManager;
 	
 	private static final int FRAME_WIDTH = 500;
 	private static final int FRAME_HEIGHT = 320;
 	private static final int BUTTON_WIDTH = 10;
 	private static final int BUTTON_HEIGHT = 45;
+
+	private static final int MODE_TIMEKEEPING = 0;
+	private static final int MODE_ALARM = 1;
+	private static final int MODE_TIMER = 2;
+	private static final int MODE_STOPWATCH = 3;
+	private static final int MODE_CCHECK = 4;
+	private static final int MODE_WTIME = 5;
+
+	private static final int MODE_BUTTON = 0;
+	private static final int ADJUST_BUTTON = 1;
+	private static final int FORWARD_BUTTON = 2;
+	private static final int REVERSE_BUTTON = 3;
 
 	private JPanel framePane;
 
@@ -30,10 +51,138 @@ public class watchGUI extends JFrame implements Runnable{
 	private JButton forwardB;
 	private JButton reverseB;
 
+	//ImageIcon (will put into JLabel)
+	private ImageIcon seg14DeadBigImg; //grey big seg image
+	private ImageIcon seg14DeadImg; //grey seg image
+	private ImageIcon numBigImgs[]; //big num image 0 ~ 9
+	private ImageIcon numImgs[]; //small num image 0 ~ 9
+	private ImageIcon colonBigImg; //big colon image
+	private ImageIcon colonImg; //small colon image
+	private ImageIcon clockImg; //black clock image
+	private ImageIcon clockDeadImg; //grey clock image
+	private ImageIcon alphaNImg; //alphabet N
+	private ImageIcon alphaFImg; //alphabet F
+	private ImageIcon alphaGImg; //alphabet G
+	private ImageIcon alphaMImg; // M
+	private ImageIcon alphaTImg; // T
+	private ImageIcon lineImg; // -
+	private ImageIcon plusImg; // +
+	private ImageIcon cursorImg; //cursor for mode setting
+	private ImageIcon cursorSmallImg; //cursor for 2nd seg
 
-	public watchGUI(LocalDateTime ldt) {
+
+	//Variables to save Mode Manager's value
+	private static boolean isEditMode;
+
+	//Variables to save TimeKeeping's value
+	private static boolean tkFormat;
+	private static boolean isGMTPlus;
+	private static int tkGMT;
+	private static int tkYear;
+	private static int tkMonth;
+	private static int tkDay;
+	private static int tkHour;
+	private static int tkMinute;
+	private static int tkSecond;
+	private static int tkGMTNum[] = new int[2];
+	private static int tkYearNum[] = new int[4];
+	private static int tkMonthNum[] = new int[2];
+	private static int tkDayNum[] = new int[2];
+	private static int tkHourNum[] = new int[2];
+	private static int tkMinNum[] = new int[2];
+	private static int tkSecNum[] = new int[2];
+
+	//Variables to save Alarm's value
+	private static int alarmHour;
+	private static int alarmMin;
+	private static int timerIndex;
+	private static int ahNum[] = new int[2];
+	private static int amNum[] = new int[2];
+
+	//Variables to save Timer's value
+	private static int stDay;
+	private static int stHour;
+	private static int stMin;
+	private static int stSec;
+	private static int timerDay;
+	private static int timerHour;
+	private static int timerMin;
+	private static int timerSec;
+	private static int sethNum[] = new int[2];
+	private static int setmNum[] = new int[2];
+	private static int setsNum[] = new int[2];
+	private static int thNum[] = new int[2];
+	private static int tmNum[] = new int[2];
+	private static int tsNum[] = new int[2];
+
+	//Variables to save Stopwatch's value
+	private static int swHour;
+	private static int swMin;
+	private static int swSec;
+	private static int swmSec;
+	private static int lapHour;
+	private static int lapMin;
+	private static int lapSec;
+	private static int lapmSec;
+	private static int smNum[] = new int[2];
+	private static int ssNum[] = new int[2];
+	private static int smsNum[] = new int[2];
+	private static int lmNum[] = new int[2];
+	private static int lsNum[] = new int[2];
+	private static int lmsNum[] = new int[2];
+
+	//Variables to save Calorie's value
+	private static int ccWeight;
+	private static int ccSpeed;
+	private static int ccCalorie;
+	private static int cwNum[] = new int[3];
+	private static int csNum[] = new int[2];
+	private static int ccNum[] = new int[6];
+
+	//Variables to save WorldTime's value
+	private static int wtYear;
+	private static int wtMonth;
+	private static int wtDay;
+	private static int wtHour;
+	private static int wtMinute;
+	private static int wtSecond;
+	private static int wtYearNum[] = new int[4];
+	private static int wtMonthNum[] = new int[2];
+	private static int wtDayNum[] = new int[2];
+	private static int wtHourNum[] = new int[2];
+	private static int wtMinNum[] = new int[2];
+	private static int wtSecNum[] = new int[2];
 
 
+	public watchGUI() {
+
+		modeManager = new ModeManager();
+		modeManager.makeThread();
+
+		//load Images from resource folder
+		seg14DeadBigImg = new ImageIcon(this.getClass().getResource(ImageDir.SegDead14Big_dir));
+		seg14DeadImg = new ImageIcon(this.getClass().getResource(ImageDir.SegDead14_dir));
+		colonImg = new ImageIcon(this.getClass().getResource(ImageDir.colon_dir));
+		colonBigImg = new ImageIcon(this.getClass().getResource(ImageDir.colonBig_dir));
+		clockImg = new ImageIcon(this.getClass().getResource(ImageDir.clock_dir));
+		clockDeadImg = new ImageIcon(this.getClass().getResource(ImageDir.clockDead_dir));
+		alphaFImg = new ImageIcon(this.getClass().getResource(ImageDir.fSeg_dir));
+		alphaNImg = new ImageIcon(this.getClass().getResource(ImageDir.nSeg_dir));
+		alphaGImg = new ImageIcon(this.getClass().getResource(ImageDir.gSeg_dir));
+		alphaMImg = new ImageIcon(this.getClass().getResource(ImageDir.mSeg_dir));
+		alphaTImg = new ImageIcon(this.getClass().getResource(ImageDir.tSeg_dir));
+		lineImg = new ImageIcon(this.getClass().getResource(ImageDir.centerLine_dir));
+		plusImg = new ImageIcon(this.getClass().getResource(ImageDir.plus_dir));
+		cursorImg = new ImageIcon(this.getClass().getResource(ImageDir.cursor_dir));
+		cursorSmallImg = new ImageIcon(this.getClass().getResource(ImageDir.cursur_10_dir));
+		numBigImgs = new ImageIcon[10]; // first segment's numbers
+		for(int i=0; i<10; i++){
+			numBigImgs[i] = new ImageIcon(this.getClass().getResource(ImageDir.numBigdirs[i]));
+		}
+		numImgs = new ImageIcon[10]; // second segment's numbers
+		for(int i=0; i<10; i++){
+			numImgs[i] = new ImageIcon(this.getClass().getResource(ImageDir.numdirs[i]));
+		}
 
 		//set window's name
 		this.setTitle("Digital Watch");
@@ -42,7 +191,7 @@ public class watchGUI extends JFrame implements Runnable{
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setResizable(false);
 
-		timeKeepingPane = new TimeKeeping_Pane(ldt);
+		timeKeepingPane = new TimeKeeping_Pane();
 		alarmPane = new Alarm_Pane();
 		timerPane = new Timer_Pane();
 		swPane = new Stopwatch_Pane();
@@ -54,9 +203,53 @@ public class watchGUI extends JFrame implements Runnable{
 		nameLabel = new JLabel("Digital Watch #2");
 
 		adjustB = new JButton();
+		adjustB.addMouseListener(new MouseCustomAdapter() {
+			@Override
+			public void shortActionPerformed(MouseEvent e) {
+				modeManager.clickButton(ADJUST_BUTTON, false);
+			}
+			@Override
+			public void longActionPerformed(MouseEvent e) {
+				modeManager.clickButton(ADJUST_BUTTON, true);
+			}
+		});
+
 		modeB = new JButton();
+		modeB.addMouseListener(new MouseCustomAdapter() {
+			@Override
+			public void shortActionPerformed(MouseEvent e) {
+				modeManager.clickButton(MODE_BUTTON, false);
+			}
+			@Override
+			public void longActionPerformed(MouseEvent e) {
+				modeManager.clickButton(MODE_BUTTON, true);
+			}
+		});
+
 		forwardB = new JButton();
+		forwardB.addMouseListener(new MouseCustomAdapter() {
+			@Override
+			public void shortActionPerformed(MouseEvent e) {
+				modeManager.clickButton(FORWARD_BUTTON, false);
+			}
+			@Override
+			public void longActionPerformed(MouseEvent e) {
+				modeManager.clickButton(FORWARD_BUTTON, true);
+			}
+		});
+
 		reverseB = new JButton();
+		reverseB.addMouseListener(new MouseCustomAdapter() {
+			@Override
+			public void shortActionPerformed(MouseEvent e) {
+				modeManager.clickButton(REVERSE_BUTTON, false);
+			}
+			@Override
+			public void longActionPerformed(MouseEvent e) {
+				modeManager.clickButton(REVERSE_BUTTON, true);
+			}
+		});
+
 
 		this.watchBodyPane = new JPanel();
 
@@ -140,72 +333,460 @@ public class watchGUI extends JFrame implements Runnable{
 		return reverseB;
 	}
 
-	private void changeSecondImg(int index, int digitIndex){
-		switch (digitIndex){
-			case 0:
-				getTimeKeepingPane().getSecondSegs()[index].setIcon(getTimeKeepingPane().getNumImgs()[0]);
+	public ImageIcon getSeg14DeadBigImg() { return seg14DeadBigImg; }
+
+	public ImageIcon getSeg14DeadImg() { return seg14DeadImg; }
+
+	public ImageIcon[] getNumBigImgs() { return numBigImgs; }
+
+	public ImageIcon[] getNumImgs() { return numImgs; }
+
+	public ImageIcon getColonBigImg() { return colonBigImg; }
+
+	public ImageIcon getColonImg() { return colonImg; }
+
+	public ImageIcon getClockImg() { return clockImg; }
+
+	public ImageIcon getClockDeadImg() { return clockDeadImg; }
+
+	public ImageIcon getAlphaNImg() { return alphaNImg; }
+
+	public ImageIcon getAlphaFImg() { return alphaFImg; }
+
+	public ImageIcon getAlphaGImg() { return alphaGImg; }
+
+	public ImageIcon getAlphaMImg() { return alphaMImg; }
+
+	public ImageIcon getAlphaTImg() { return alphaTImg; }
+
+	public ImageIcon getLineImg() { return lineImg; }
+
+	public ImageIcon getPlusImg() { return plusImg; }
+
+
+	//GUI Update Methods
+	private static void switchPanel(watchGUI mainGUI, JPanel newPanel){
+		mainGUI.getFramePane().remove(mainGUI.getWatchBodyPane());
+		mainGUI.setWatchBodyPane(newPanel);
+		mainGUI.getFramePane().add(mainGUI.getWatchBodyPane());
+		mainGUI.revalidate();
+		mainGUI.repaint();
+	}
+
+	private void changeSecondImg(int currentMode, int index, int digitIndex){
+		switch(currentMode) {
+			case MODE_TIMEKEEPING:
+				switch (digitIndex) {
+					case 0:
+						getTimeKeepingPane().getSecondSegs()[index].setIcon(getNumImgs()[0]);
+						break;
+					case 1:
+						getTimeKeepingPane().getSecondSegs()[index].setIcon(getNumImgs()[1]);
+						break;
+					case 2:
+						getTimeKeepingPane().getSecondSegs()[index].setIcon(getNumImgs()[2]);
+						break;
+					case 3:
+						getTimeKeepingPane().getSecondSegs()[index].setIcon(getNumImgs()[3]);
+						break;
+					case 4:
+						getTimeKeepingPane().getSecondSegs()[index].setIcon(getNumImgs()[4]);
+						break;
+					case 5:
+						getTimeKeepingPane().getSecondSegs()[index].setIcon(getNumImgs()[5]);
+						break;
+					case 6:
+						getTimeKeepingPane().getSecondSegs()[index].setIcon(getNumImgs()[6]);
+						break;
+					case 7:
+						getTimeKeepingPane().getSecondSegs()[index].setIcon(getNumImgs()[7]);
+						break;
+					case 8:
+						getTimeKeepingPane().getSecondSegs()[index].setIcon(getNumImgs()[8]);
+						break;
+					case 9:
+						getTimeKeepingPane().getSecondSegs()[index].setIcon(getNumImgs()[9]);
+						break;
+				}
 				break;
-			case 1:
-				getTimeKeepingPane().getSecondSegs()[index].setIcon(getTimeKeepingPane().getNumImgs()[1]);
+			case MODE_ALARM:
+				switch (digitIndex) {
+					case 0:
+						getAlarmPane().getSecondSegs()[index].setIcon(getNumImgs()[0]);
+						break;
+					case 1:
+						getAlarmPane().getSecondSegs()[index].setIcon(getNumImgs()[1]);
+						break;
+					case 2:
+						getAlarmPane().getSecondSegs()[index].setIcon(getNumImgs()[2]);
+						break;
+					case 3:
+						getAlarmPane().getSecondSegs()[index].setIcon(getNumImgs()[3]);
+						break;
+					case 4:
+						getAlarmPane().getSecondSegs()[index].setIcon(getNumImgs()[4]);
+						break;
+					case 5:
+						getAlarmPane().getSecondSegs()[index].setIcon(getNumImgs()[5]);
+						break;
+					case 6:
+						getAlarmPane().getSecondSegs()[index].setIcon(getNumImgs()[6]);
+						break;
+					case 7:
+						getAlarmPane().getSecondSegs()[index].setIcon(getNumImgs()[7]);
+						break;
+					case 8:
+						getAlarmPane().getSecondSegs()[index].setIcon(getNumImgs()[8]);
+						break;
+					case 9:
+						getAlarmPane().getSecondSegs()[index].setIcon(getNumImgs()[9]);
+						break;
+				}
 				break;
-			case 2:
-				getTimeKeepingPane().getSecondSegs()[index].setIcon(getTimeKeepingPane().getNumImgs()[2]);
+			case MODE_TIMER:
+				switch (digitIndex) {
+					case 0:
+						getTimerPane().getSecondSegs()[index].setIcon(getNumImgs()[0]);
+						break;
+					case 1:
+						getTimerPane().getSecondSegs()[index].setIcon(getNumImgs()[1]);
+						break;
+					case 2:
+						getTimerPane().getSecondSegs()[index].setIcon(getNumImgs()[2]);
+						break;
+					case 3:
+						getTimerPane().getSecondSegs()[index].setIcon(getNumImgs()[3]);
+						break;
+					case 4:
+						getTimerPane().getSecondSegs()[index].setIcon(getNumImgs()[4]);
+						break;
+					case 5:
+						getTimerPane().getSecondSegs()[index].setIcon(getNumImgs()[5]);
+						break;
+					case 6:
+						getTimerPane().getSecondSegs()[index].setIcon(getNumImgs()[6]);
+						break;
+					case 7:
+						getTimerPane().getSecondSegs()[index].setIcon(getNumImgs()[7]);
+						break;
+					case 8:
+						getTimerPane().getSecondSegs()[index].setIcon(getNumImgs()[8]);
+						break;
+					case 9:
+						getTimerPane().getSecondSegs()[index].setIcon(getNumImgs()[9]);
+						break;
+				}
 				break;
-			case 3:
-				getTimeKeepingPane().getSecondSegs()[index].setIcon(getTimeKeepingPane().getNumImgs()[3]);
+			case MODE_STOPWATCH:
+				switch (digitIndex) {
+					case 0:
+						getSwPane().getSecondSegs()[index].setIcon(getNumImgs()[0]);
+						break;
+					case 1:
+						getSwPane().getSecondSegs()[index].setIcon(getNumImgs()[1]);
+						break;
+					case 2:
+						getSwPane().getSecondSegs()[index].setIcon(getNumImgs()[2]);
+						break;
+					case 3:
+						getSwPane().getSecondSegs()[index].setIcon(getNumImgs()[3]);
+						break;
+					case 4:
+						getSwPane().getSecondSegs()[index].setIcon(getNumImgs()[4]);
+						break;
+					case 5:
+						getSwPane().getSecondSegs()[index].setIcon(getNumImgs()[5]);
+						break;
+					case 6:
+						getSwPane().getSecondSegs()[index].setIcon(getNumImgs()[6]);
+						break;
+					case 7:
+						getSwPane().getSecondSegs()[index].setIcon(getNumImgs()[7]);
+						break;
+					case 8:
+						getSwPane().getSecondSegs()[index].setIcon(getNumImgs()[8]);
+						break;
+					case 9:
+						getSwPane().getSecondSegs()[index].setIcon(getNumImgs()[9]);
+						break;
+				}
 				break;
-			case 4:
-				getTimeKeepingPane().getSecondSegs()[index].setIcon(getTimeKeepingPane().getNumImgs()[4]);
+			case MODE_CCHECK:
+				switch (digitIndex) {
+					case 0:
+						getCcPane().getSecondSegs()[index].setIcon(getNumImgs()[0]);
+						break;
+					case 1:
+						getCcPane().getSecondSegs()[index].setIcon(getNumImgs()[1]);
+						break;
+					case 2:
+						getCcPane().getSecondSegs()[index].setIcon(getNumImgs()[2]);
+						break;
+					case 3:
+						getCcPane().getSecondSegs()[index].setIcon(getNumImgs()[3]);
+						break;
+					case 4:
+						getCcPane().getSecondSegs()[index].setIcon(getNumImgs()[4]);
+						break;
+					case 5:
+						getCcPane().getSecondSegs()[index].setIcon(getNumImgs()[5]);
+						break;
+					case 6:
+						getCcPane().getSecondSegs()[index].setIcon(getNumImgs()[6]);
+						break;
+					case 7:
+						getCcPane().getSecondSegs()[index].setIcon(getNumImgs()[7]);
+						break;
+					case 8:
+						getCcPane().getSecondSegs()[index].setIcon(getNumImgs()[8]);
+						break;
+					case 9:
+						getCcPane().getSecondSegs()[index].setIcon(getNumImgs()[9]);
+						break;
+				}
 				break;
-			case 5:
-				getTimeKeepingPane().getSecondSegs()[index].setIcon(getTimeKeepingPane().getNumImgs()[5]);
-				break;
-			case 6:
-				getTimeKeepingPane().getSecondSegs()[index].setIcon(getTimeKeepingPane().getNumImgs()[6]);
-				break;
-			case 7:
-				getTimeKeepingPane().getSecondSegs()[index].setIcon(getTimeKeepingPane().getNumImgs()[7]);
-				break;
-			case 8:
-				getTimeKeepingPane().getSecondSegs()[index].setIcon(getTimeKeepingPane().getNumImgs()[8]);
-				break;
-			case 9:
-				getTimeKeepingPane().getSecondSegs()[index].setIcon(getTimeKeepingPane().getNumImgs()[9]);
+			case MODE_WTIME:
+				switch (digitIndex) {
+					case 0:
+						getWtPane().getSecondSegs()[index].setIcon(getNumImgs()[0]);
+						break;
+					case 1:
+						getWtPane().getSecondSegs()[index].setIcon(getNumImgs()[1]);
+						break;
+					case 2:
+						getWtPane().getSecondSegs()[index].setIcon(getNumImgs()[2]);
+						break;
+					case 3:
+						getWtPane().getSecondSegs()[index].setIcon(getNumImgs()[3]);
+						break;
+					case 4:
+						getWtPane().getSecondSegs()[index].setIcon(getNumImgs()[4]);
+						break;
+					case 5:
+						getWtPane().getSecondSegs()[index].setIcon(getNumImgs()[5]);
+						break;
+					case 6:
+						getWtPane().getSecondSegs()[index].setIcon(getNumImgs()[6]);
+						break;
+					case 7:
+						getWtPane().getSecondSegs()[index].setIcon(getNumImgs()[7]);
+						break;
+					case 8:
+						getWtPane().getSecondSegs()[index].setIcon(getNumImgs()[8]);
+						break;
+					case 9:
+						getWtPane().getSecondSegs()[index].setIcon(getNumImgs()[9]);
+						break;
+				}
 				break;
 		}
 	}
 
-	private void changefirstImg(int index, int digitIndex){
-		switch (digitIndex){
-			case 0:
-				getTimeKeepingPane().getFirstSegs()[index].setIcon(getTimeKeepingPane().getNumBigImgs()[0]);
+	private void changefirstImg(int currentMode, int index, int digitIndex){
+		switch(currentMode) {
+			case MODE_TIMEKEEPING:
+				switch (digitIndex) {
+					case 0:
+						getTimeKeepingPane().getFirstSegs()[index].setIcon(getNumBigImgs()[0]);
+						break;
+					case 1:
+						getTimeKeepingPane().getFirstSegs()[index].setIcon(getNumBigImgs()[1]);
+						break;
+					case 2:
+						getTimeKeepingPane().getFirstSegs()[index].setIcon(getNumBigImgs()[2]);
+						break;
+					case 3:
+						getTimeKeepingPane().getFirstSegs()[index].setIcon(getNumBigImgs()[3]);
+						break;
+					case 4:
+						getTimeKeepingPane().getFirstSegs()[index].setIcon(getNumBigImgs()[4]);
+						break;
+					case 5:
+						getTimeKeepingPane().getFirstSegs()[index].setIcon(getNumBigImgs()[5]);
+						break;
+					case 6:
+						getTimeKeepingPane().getFirstSegs()[index].setIcon(getNumBigImgs()[6]);
+						break;
+					case 7:
+						getTimeKeepingPane().getFirstSegs()[index].setIcon(getNumBigImgs()[7]);
+						break;
+					case 8:
+						getTimeKeepingPane().getFirstSegs()[index].setIcon(getNumBigImgs()[8]);
+						break;
+					case 9:
+						getTimeKeepingPane().getFirstSegs()[index].setIcon(getNumBigImgs()[9]);
+						break;
+				}
 				break;
-			case 1:
-				getTimeKeepingPane().getFirstSegs()[index].setIcon(getTimeKeepingPane().getNumBigImgs()[1]);
+			case MODE_ALARM:
+				switch (digitIndex) {
+					case 0:
+						getAlarmPane().getFirstSegs()[index].setIcon(getNumBigImgs()[0]);
+						break;
+					case 1:
+						getAlarmPane().getFirstSegs()[index].setIcon(getNumBigImgs()[1]);
+						break;
+					case 2:
+						getAlarmPane().getFirstSegs()[index].setIcon(getNumBigImgs()[2]);
+						break;
+					case 3:
+						getAlarmPane().getFirstSegs()[index].setIcon(getNumBigImgs()[3]);
+						break;
+					case 4:
+						getAlarmPane().getFirstSegs()[index].setIcon(getNumBigImgs()[4]);
+						break;
+					case 5:
+						getAlarmPane().getFirstSegs()[index].setIcon(getNumBigImgs()[5]);
+						break;
+					case 6:
+						getAlarmPane().getFirstSegs()[index].setIcon(getNumBigImgs()[6]);
+						break;
+					case 7:
+						getAlarmPane().getFirstSegs()[index].setIcon(getNumBigImgs()[7]);
+						break;
+					case 8:
+						getAlarmPane().getFirstSegs()[index].setIcon(getNumBigImgs()[8]);
+						break;
+					case 9:
+						getAlarmPane().getFirstSegs()[index].setIcon(getNumBigImgs()[9]);
+						break;
+				}
 				break;
-			case 2:
-				getTimeKeepingPane().getFirstSegs()[index].setIcon(getTimeKeepingPane().getNumBigImgs()[2]);
+			case MODE_TIMER:
+				switch (digitIndex) {
+					case 0:
+						getTimerPane().getFirstSegs()[index].setIcon(getNumBigImgs()[0]);
+						break;
+					case 1:
+						getTimerPane().getFirstSegs()[index].setIcon(getNumBigImgs()[1]);
+						break;
+					case 2:
+						getTimerPane().getFirstSegs()[index].setIcon(getNumBigImgs()[2]);
+						break;
+					case 3:
+						getTimerPane().getFirstSegs()[index].setIcon(getNumBigImgs()[3]);
+						break;
+					case 4:
+						getTimerPane().getFirstSegs()[index].setIcon(getNumBigImgs()[4]);
+						break;
+					case 5:
+						getTimerPane().getFirstSegs()[index].setIcon(getNumBigImgs()[5]);
+						break;
+					case 6:
+						getTimerPane().getFirstSegs()[index].setIcon(getNumBigImgs()[6]);
+						break;
+					case 7:
+						getTimerPane().getFirstSegs()[index].setIcon(getNumBigImgs()[7]);
+						break;
+					case 8:
+						getTimerPane().getFirstSegs()[index].setIcon(getNumBigImgs()[8]);
+						break;
+					case 9:
+						getTimerPane().getFirstSegs()[index].setIcon(getNumBigImgs()[9]);
+						break;
+				}
 				break;
-			case 3:
-				getTimeKeepingPane().getFirstSegs()[index].setIcon(getTimeKeepingPane().getNumBigImgs()[3]);
+			case MODE_STOPWATCH:
+				switch (digitIndex) {
+					case 0:
+						getSwPane().getFirstSegs()[index].setIcon(getNumBigImgs()[0]);
+						break;
+					case 1:
+						getSwPane().getFirstSegs()[index].setIcon(getNumBigImgs()[1]);
+						break;
+					case 2:
+						getSwPane().getFirstSegs()[index].setIcon(getNumBigImgs()[2]);
+						break;
+					case 3:
+						getSwPane().getFirstSegs()[index].setIcon(getNumBigImgs()[3]);
+						break;
+					case 4:
+						getSwPane().getFirstSegs()[index].setIcon(getNumBigImgs()[4]);
+						break;
+					case 5:
+						getSwPane().getFirstSegs()[index].setIcon(getNumBigImgs()[5]);
+						break;
+					case 6:
+						getSwPane().getFirstSegs()[index].setIcon(getNumBigImgs()[6]);
+						break;
+					case 7:
+						getSwPane().getFirstSegs()[index].setIcon(getNumBigImgs()[7]);
+						break;
+					case 8:
+						getSwPane().getFirstSegs()[index].setIcon(getNumBigImgs()[8]);
+						break;
+					case 9:
+						getSwPane().getFirstSegs()[index].setIcon(getNumBigImgs()[9]);
+						break;
+				}
 				break;
-			case 4:
-				getTimeKeepingPane().getFirstSegs()[index].setIcon(getTimeKeepingPane().getNumBigImgs()[4]);
+			case MODE_CCHECK:
+				switch (digitIndex) {
+					case 0:
+						getCcPane().getFirstSegs()[index].setIcon(getNumBigImgs()[0]);
+						break;
+					case 1:
+						getCcPane().getFirstSegs()[index].setIcon(getNumBigImgs()[1]);
+						break;
+					case 2:
+						getCcPane().getFirstSegs()[index].setIcon(getNumBigImgs()[2]);
+						break;
+					case 3:
+						getCcPane().getFirstSegs()[index].setIcon(getNumBigImgs()[3]);
+						break;
+					case 4:
+						getCcPane().getFirstSegs()[index].setIcon(getNumBigImgs()[4]);
+						break;
+					case 5:
+						getCcPane().getFirstSegs()[index].setIcon(getNumBigImgs()[5]);
+						break;
+					case 6:
+						getCcPane().getFirstSegs()[index].setIcon(getNumBigImgs()[6]);
+						break;
+					case 7:
+						getCcPane().getFirstSegs()[index].setIcon(getNumBigImgs()[7]);
+						break;
+					case 8:
+						getCcPane().getFirstSegs()[index].setIcon(getNumBigImgs()[8]);
+						break;
+					case 9:
+						getCcPane().getFirstSegs()[index].setIcon(getNumBigImgs()[9]);
+						break;
+				}
 				break;
-			case 5:
-				getTimeKeepingPane().getFirstSegs()[index].setIcon(getTimeKeepingPane().getNumBigImgs()[5]);
-				break;
-			case 6:
-				getTimeKeepingPane().getFirstSegs()[index].setIcon(getTimeKeepingPane().getNumBigImgs()[6]);
-				break;
-			case 7:
-				getTimeKeepingPane().getFirstSegs()[index].setIcon(getTimeKeepingPane().getNumBigImgs()[7]);
-				break;
-			case 8:
-				getTimeKeepingPane().getFirstSegs()[index].setIcon(getTimeKeepingPane().getNumBigImgs()[8]);
-				break;
-			case 9:
-				getTimeKeepingPane().getFirstSegs()[index].setIcon(getTimeKeepingPane().getNumBigImgs()[9]);
+			case MODE_WTIME:
+				switch (digitIndex) {
+					case 0:
+						getWtPane().getFirstSegs()[index].setIcon(getNumBigImgs()[0]);
+						break;
+					case 1:
+						getWtPane().getFirstSegs()[index].setIcon(getNumBigImgs()[1]);
+						break;
+					case 2:
+						getWtPane().getFirstSegs()[index].setIcon(getNumBigImgs()[2]);
+						break;
+					case 3:
+						getWtPane().getFirstSegs()[index].setIcon(getNumBigImgs()[3]);
+						break;
+					case 4:
+						getWtPane().getFirstSegs()[index].setIcon(getNumBigImgs()[4]);
+						break;
+					case 5:
+						getWtPane().getFirstSegs()[index].setIcon(getNumBigImgs()[5]);
+						break;
+					case 6:
+						getWtPane().getFirstSegs()[index].setIcon(getNumBigImgs()[6]);
+						break;
+					case 7:
+						getWtPane().getFirstSegs()[index].setIcon(getNumBigImgs()[7]);
+						break;
+					case 8:
+						getWtPane().getFirstSegs()[index].setIcon(getNumBigImgs()[8]);
+						break;
+					case 9:
+						getWtPane().getFirstSegs()[index].setIcon(getNumBigImgs()[9]);
+						break;
+				}
 				break;
 		}
 	}
@@ -251,65 +832,706 @@ public class watchGUI extends JFrame implements Runnable{
 		}
 	}
 
-	@Override
-	public void run() {
-		while(true) {
-
-			LocalDateTime temp = getTimeKeepingPane().getCurrentTime();
-
-			int year = temp.getYear();
-			int month = temp.getMonthValue();
-			int day = temp.getDayOfMonth();
-			int hour = temp.getHour();
-			int minute = temp.getMinute();
-			int second = temp.getSecond();
-
-			int yearNum[] = new int[4];
-			int monthNum[] = new int[2];
-			int dayNum[] = new int[2];
-			int hourNum[]  = new int[2];
-			int minuteNum[] = new int[2];
-			int secondNum[] = new int[2];
-
-			for(int i=yearNum.length - 1; i>=0; i--){
-				yearNum[i] = year%10;
+	private void keepYearToArray(int year, int yearArray[]){
+		if(year < 10){
+			for(int i=0; i<3; i++) yearArray[i] = 0;
+			yearArray[3] = year;
+		}else if(year>=10 && year<100){
+			for(int i=0; i<2; i++) yearArray[i] = 0;
+			for(int i=yearArray.length-1; i>=2; i--){
+				yearArray[i] = year%10;
 				year /= 10;
 			}
-
-			if(hour < 12){
-				getTimeKeepingPane().getMeridiemLabel().setText("AM");
-			}else{
-				getTimeKeepingPane().getMeridiemLabel().setText("PM");
+		}else if(year>=100 && year<1000){
+			yearArray[0] = 0;
+			for(int i=yearArray.length-1; i>=1; i--){
+				yearArray[i] = year%10;
+				year /= 10;
 			}
-			getTimeKeepingPane().getDowLabel().setText(temp.getDayOfWeek().toString().substring(0,3)); //display day of week only 3 words
-
-
-			keepValueToArray(month, monthNum);
-			keepValueToArray(day, dayNum);
-			keepHourToArray(hour, hourNum);
-			keepValueToArray(minute, minuteNum);
-			keepValueToArray(second, secondNum);
-
-
-			//set second segment Img (year, month, day)
-			for(int i=0; i<10; i++) {
-				if(i>=0 && i<4)changeSecondImg(i, yearNum[i]);
-				else if(i>=5 && i<7) changeSecondImg(i, monthNum[i-5]);
-				else if(i>=8 && i<10) changeSecondImg(i, dayNum[i-8]);
+		}else{
+			for(int i=yearArray.length-1; i>=0; i--){
+				yearArray[i] = year%10;
+				year /= 10;
 			}
+		}
+	}
 
-			//set first segment Img (hour, minute, sec)
-			for(int i=0; i<8; i++){
-				if(i>=0 && i<2) changefirstImg(i, hourNum[i]);
-				if(i>=3 && i<5) changefirstImg(i, minuteNum[i-3]);
-				if(i>=6 && i<8) changefirstImg(i, secondNum[i-6]);
+	private void keepWeightToArray(int weight, int weightArray[]){
+		if(weight < 10){
+			for(int i=0; i<2; i++) weightArray[i] = 0;
+			weightArray[2] = weight;
+		}else if(weight >= 10 && weight < 100){
+			weightArray[0] = 0;
+			for(int i=weightArray.length-1; i>=1; i--){
+				weightArray[i] = weight%10;
+				weight /= 10;
 			}
+		}else{
+			for(int i=weightArray.length-1; i>=0; i--){
+				weightArray[i] = weight%10;
+				weight /= 10;
+			}
+		}
+	}
 
+	private void keepCalorieToArray(int calorie, int calorieArray[]){
+		if(calorie < 10){
+			for(int i=0; i<5; i++) calorieArray[i] = 0;
+			calorieArray[5] = calorie;
+		}else if(calorie>=10 && calorie<100){
+			for(int i=0; i<4; i++) calorieArray[i] = 0;
+			for(int i=calorieArray.length-1; i>=4; i--){
+				calorieArray[i] = calorie%10;
+				calorie /= 10;
+			}
+		}else if(calorie>=100 && calorie<1000){
+			for(int i=0; i<3; i++) calorieArray[i] = 0;
+			for(int i=calorieArray.length-1; i>=3; i--){
+				calorieArray[i] = calorie%10;
+				calorie /= 10;
+			}
+		}else if(calorie>=1000 && calorie<10000){
+			for(int i=0; i<2; i++) calorieArray[i] = 0;
+			for(int i=calorieArray.length-1; i>=2; i--){
+				calorieArray[i] = calorie%10;
+				calorie /= 10;
+			}
+		}else if(calorie>=10000 && calorie<100000){
+			for(int i=0; i<1; i++) calorieArray[i] = 0;
+			for(int i=calorieArray.length-1; i>=1; i--){
+				calorieArray[i] = calorie%10;
+				calorie /= 10;
+			}
+		}else{
+			for(int i=calorieArray.length-1; i>=0; i--){
+				calorieArray[i] = calorie%10;
+				calorie /= 10;
+			}
+		}
+	}
+
+	@Override
+	public void run() { // update GUI
+		while(true) {
+
+			isEditMode = modeManager.isEditMode();
+
+			switch (modeManager.getCurrentMode()) {
+				case MODE_TIMEKEEPING://if current Mode is Time Keeping
+					// Set Time Mode
+					if(isEditMode){
+						Time time = (Time) modeManager.getmodes()[0];
+
+						LocalDateTime editTime = time.getEditTime();
+						int timeCursor = time.getCurrentCursor();
+
+
+						tkFormat = time.getFormat();
+						tkGMT = time.getGMT();
+						tkYear = editTime.getYear();
+						tkMonth = editTime.getMonthValue();
+						tkDay = editTime.getDayOfMonth();
+						tkHour = editTime.getHour();
+						tkMinute = editTime.getMinute();
+						tkSecond = editTime.getSecond();
+
+						if(tkGMT >= 0) isGMTPlus = true;
+						else{
+							isGMTPlus = false;
+							tkGMT = -tkGMT; //get absolute value
+						}
+
+						if (tkHour < 12) {
+							getTimeKeepingPane().getMeridiemLabel().setText("AM");
+						} else {
+							getTimeKeepingPane().getMeridiemLabel().setText("PM");
+						}
+						getTimeKeepingPane().getDowLabel().setText(editTime.getDayOfWeek().toString().substring(0, 3)); //display tkDay of week only 3 words
+
+						//split time value
+						keepValueToArray(tkGMT, tkGMTNum);
+						keepYearToArray(tkYear, tkYearNum);
+						keepValueToArray(tkMonth, tkMonthNum);
+						keepValueToArray(tkDay, tkDayNum);
+						keepValueToArray(tkMinute, tkMinNum);
+						keepValueToArray(tkSecond, tkSecNum);
+
+						if(tkFormat) keepValueToArray(tkHour, tkHourNum);
+						else keepHourToArray(tkHour, tkHourNum);
+
+						//set cursor image && choose visible cursor
+						for(int i=0; i<6; i++){
+							if(i<3)getTimeKeepingPane().getCursorLabel()[i].setIcon(cursorSmallImg);
+							else if(i>=3) getTimeKeepingPane().getCursorLabel()[i].setIcon(cursorImg);
+						}
+						switch(timeCursor){
+							case 0:
+								getTimeKeepingPane().getCursorLabel()[5].setVisible(true);
+								for(int i=0; i<4; i++) getTimeKeepingPane().getCursorLabel()[i].setVisible(false);
+								break;
+							case 1:
+								getTimeKeepingPane().getCursorLabel()[4].setVisible(true);
+								for(int i=0; i<6; i++){
+									if(i != 4) getTimeKeepingPane().getCursorLabel()[i].setVisible(false);
+								}
+								break;
+							case 2:
+								getTimeKeepingPane().getCursorLabel()[3].setVisible(true);
+								for(int i=0; i<6; i++){
+									if(i != 3) getTimeKeepingPane().getCursorLabel()[i].setVisible(false);
+								}
+								break;
+							case 3:
+								getTimeKeepingPane().getCursorLabel()[2].setVisible(true);
+								for(int i=0; i<6; i++){
+									if(i != 2) getTimeKeepingPane().getCursorLabel()[i].setVisible(false);
+								}
+								break;
+							case 4:
+								getTimeKeepingPane().getCursorLabel()[1].setVisible(true);
+								for(int i=0; i<6; i++){
+									if(i != 1) getTimeKeepingPane().getCursorLabel()[i].setVisible(false);
+								}
+								break;
+							case 5:
+								getTimeKeepingPane().getCursorLabel()[0].setVisible(true);
+								for(int i=1; i<6; i++)getTimeKeepingPane().getCursorLabel()[i].setVisible(false);
+								break;
+							case 6:
+								getTimeKeepingPane().getCursorLabel()[5].setVisible(true);
+								for(int i=0; i<4; i++) getTimeKeepingPane().getCursorLabel()[i].setVisible(false);
+								break;
+							case 7:
+								getTimeKeepingPane().getCursorLabel()[3].setVisible(true);
+								for(int i=0; i<6; i++){
+									if(i != 3) getTimeKeepingPane().getCursorLabel()[i].setVisible(false);
+								}
+								break;
+						}
+
+						//Normal Edit
+						if(timeCursor<6) {
+							//set 2nd segment Img (tkYear, tkMonth, tkDay)
+							for (int i = 0; i < 10; i++) {
+								if (i >= 0 && i < 4) changeSecondImg(MODE_TIMEKEEPING, i, tkYearNum[i]);
+								else if (i >= 5 && i < 7) changeSecondImg(MODE_TIMEKEEPING, i, tkMonthNum[i - 5]);
+								else if (i >= 8 && i < 10) changeSecondImg(MODE_TIMEKEEPING, i, tkDayNum[i - 8]);
+								else if (i == 4 || i == 7) getTimeKeepingPane().getSecondSegs()[i].setIcon(getColonImg());
+							}
+							//set first segment Img
+							for (int i = 0; i < 8; i++) {
+								if (i >= 0 && i < 2) changefirstImg(MODE_TIMEKEEPING, i, tkHourNum[i]);
+								else if (i >= 3 && i < 5) changefirstImg(MODE_TIMEKEEPING, i, tkMinNum[i - 3]);
+								else if (i >= 6 && i < 8) changefirstImg(MODE_TIMEKEEPING, i, tkSecNum[i - 6]);
+								else if (i == 2 || i == 5) getTimeKeepingPane().getFirstSegs()[i].setIcon(getColonBigImg());
+							}
+						}
+						//GMT
+						else if(timeCursor == 6){
+							//set 2nd segment Img
+							for (int i = 0; i < 10; i++) {
+								if (!(i==4 || i==7)) getTimeKeepingPane().getSecondSegs()[i].setIcon(getSeg14DeadImg());
+								else getTimeKeepingPane().getSecondSegs()[i].setIcon(getColonImg());
+							}
+							//set first segment Img (tkHour, tkMinute, sec)
+							getTimeKeepingPane().getFirstSegs()[0].setIcon(getAlphaGImg());
+							getTimeKeepingPane().getFirstSegs()[1].setIcon(getAlphaMImg());
+							getTimeKeepingPane().getFirstSegs()[2].setIcon(getColonBigImg());
+							getTimeKeepingPane().getFirstSegs()[3].setIcon(getAlphaTImg());
+							getTimeKeepingPane().getFirstSegs()[5].setIcon(getColonBigImg());
+							for (int i = 6; i < 8; i++) changefirstImg(MODE_TIMEKEEPING, i, tkGMTNum[i-6]);
+
+							if(isGMTPlus) getTimeKeepingPane().getFirstSegs()[4].setIcon(getPlusImg());
+							else getTimeKeepingPane().getFirstSegs()[4].setIcon(getLineImg());
+
+						}
+						//12.24 Format
+						else if(timeCursor == 7){
+							//set 2nd segment Img
+							for (int i = 0; i < 10; i++) {
+								if (!(i==4 || i==7)) getTimeKeepingPane().getSecondSegs()[i].setIcon(getSeg14DeadImg());
+								else getTimeKeepingPane().getSecondSegs()[i].setIcon(getColonImg());
+							}
+							//set 1st seg (12/24)
+							if(tkFormat){ // 24 Format
+								getTimeKeepingPane().getFirstSegs()[0].setIcon(getNumBigImgs()[2]);
+								getTimeKeepingPane().getFirstSegs()[1].setIcon(getNumBigImgs()[4]);
+								for(int i=2; i<8; i++){
+									if(!(i==2 || i==5)) getTimeKeepingPane().getFirstSegs()[i].setIcon(getSeg14DeadBigImg());
+									else getTimeKeepingPane().getFirstSegs()[i].setIcon(getColonBigImg());
+								}
+							}else{ // 12 Format
+								getTimeKeepingPane().getFirstSegs()[0].setIcon(getNumBigImgs()[1]);
+								getTimeKeepingPane().getFirstSegs()[1].setIcon(getNumBigImgs()[2]);
+								for(int i=2; i<8; i++){
+									if(!(i==2 || i==5)) getTimeKeepingPane().getFirstSegs()[i].setIcon(getSeg14DeadBigImg());
+									else getTimeKeepingPane().getFirstSegs()[i].setIcon(getColonBigImg());
+								}
+							}
+						}
+						getTimeKeepingPane().getTitle().setText("SET TIME");
+					}
+					// Normal Time Keeping Mode
+					else
+						{
+						Time time = (Time) modeManager.getmodes()[0];
+
+						LocalDateTime now = time.getCurrentTime();
+
+						tkFormat = time.getFormat();
+						tkYear = now.getYear();
+						tkMonth = now.getMonthValue();
+						tkDay = now.getDayOfMonth();
+						tkHour = now.getHour();
+						tkMinute = now.getMinute();
+						tkSecond = now.getSecond();
+
+						if (tkHour < 12) {
+							getTimeKeepingPane().getMeridiemLabel().setText("AM");
+						} else {
+							getTimeKeepingPane().getMeridiemLabel().setText("PM");
+						}
+						getTimeKeepingPane().getDowLabel().setText(now.getDayOfWeek().toString().substring(0, 3)); //display tkDay of week only 3 words
+
+						//split time value
+						keepYearToArray(tkYear, tkYearNum);
+						keepValueToArray(tkMonth, tkMonthNum);
+						keepValueToArray(tkDay, tkDayNum);
+						keepValueToArray(tkMinute, tkMinNum);
+						keepValueToArray(tkSecond, tkSecNum);
+
+						if(tkFormat) keepValueToArray(tkHour, tkHourNum);
+						else keepHourToArray(tkHour, tkHourNum);
+
+						//make cursors unvisible
+							for(int i=0; i<6; i++)getTimeKeepingPane().getCursorLabel()[i].setVisible(false);
+
+						//set 2nd segment Img (tkYear, tkMonth, tkDay)
+						for (int i=0; i<10; i++) {
+							if (i>=0 && i<4) changeSecondImg(MODE_TIMEKEEPING, i, tkYearNum[i]);
+							else if (i>=5 && i<7) changeSecondImg(MODE_TIMEKEEPING, i, tkMonthNum[i-5]);
+							else if (i>=8 && i<10) changeSecondImg(MODE_TIMEKEEPING, i, tkDayNum[i-8]);
+							else if(i==4 || i==7) getTimeKeepingPane().getSecondSegs()[i].setIcon(getColonImg());
+						}
+
+						//set first segment Img (tkHour, tkMinute, sec)
+						for (int i=0; i<8; i++) {
+							if (i>=0 && i<2) changefirstImg(MODE_TIMEKEEPING, i, tkHourNum[i]);
+							else if (i>=3 && i<5) changefirstImg(MODE_TIMEKEEPING, i, tkMinNum[i-3]);
+							else if (i>=6 && i<8) changefirstImg(MODE_TIMEKEEPING, i, tkSecNum[i-6]);
+							else if(i==2 || i==5) getTimeKeepingPane().getFirstSegs()[i].setIcon(getColonBigImg());
+						}
+							getTimeKeepingPane().getTitle().setText("TIME KEEPING");
+					}
+
+
+					//set default clock icon
+					getTimeKeepingPane().getClockLabel().setIcon(getClockDeadImg());
+					if(!(getWatchBodyPane().equals(timeKeepingPane))) switchPanel(this, timeKeepingPane);
+					break;
+
+				case MODE_ALARM: //if current Mode is Alarm
+
+					//Set Alarm
+					if(isEditMode){
+						Alarm alarm = (Alarm) modeManager.getmodes()[1];
+
+						LocalDateTime alarmTime = alarm.getCopyOfAlarmTimer();
+						boolean isActivatedTimer = alarm.getCurrentAlarmisActivated();
+						boolean isCursorHour = alarm.isCursorHour();
+						boolean currentFormat = ((Time)modeManager.getmodes()[0]).getFormat();
+
+						alarmHour = alarmTime.getHour();
+						alarmMin = alarmTime.getMinute();
+						timerIndex = alarm.getCurrentAlarmIndex() + 1;
+
+						if (alarmHour < 12) {
+							getAlarmPane().getMeridiemLabel().setText("AM");
+						} else {
+							getAlarmPane().getMeridiemLabel().setText("PM");
+						}
+
+						//split time value
+						keepValueToArray(alarmMin, amNum);
+
+						if(currentFormat) keepValueToArray(alarmHour, ahNum);
+						else keepHourToArray(alarmHour, ahNum);
+
+						//set cursor image && choose visible cursor
+						for(int i=0; i<2; i++)getAlarmPane().getCursorLabel()[i].setIcon(cursorImg);
+						if(isCursorHour){
+							getAlarmPane().getCursorLabel()[0].setVisible(true);
+							getAlarmPane().getCursorLabel()[1].setVisible(false);
+						}else{
+							getAlarmPane().getCursorLabel()[0].setVisible(false);
+							getAlarmPane().getCursorLabel()[1].setVisible(true);
+						}
+
+						//2nd Segment img set
+						if(isActivatedTimer){ //DISPLAY ON
+							for(int i=0; i<2; i++) getAlarmPane().getSecondSegs()[i].setIcon(getSeg14DeadImg());
+							getAlarmPane().getSecondSegs()[2].setIcon(getNumImgs()[0]);
+							getAlarmPane().getSecondSegs()[3].setIcon(getAlphaNImg());
+						}else{ // DISPLAY OFF
+							getAlarmPane().getSecondSegs()[0].setIcon(getSeg14DeadImg());
+							getAlarmPane().getSecondSegs()[1].setIcon(getNumImgs()[0]);
+							getAlarmPane().getSecondSegs()[2].setIcon(getAlphaFImg());
+							getAlarmPane().getSecondSegs()[3].setIcon(getAlphaFImg());
+						}
+						getAlarmPane().getSecondSegs()[4].setIcon(getColonImg());
+						getAlarmPane().getSecondSegs()[5].setIcon(getAlphaNImg());
+						getAlarmPane().getSecondSegs()[6].setIcon(getNumImgs()[0]);
+						getAlarmPane().getSecondSegs()[7].setIcon(getColonImg());
+						getAlarmPane().getSecondSegs()[8].setIcon(getNumImgs()[timerIndex]);
+						getAlarmPane().getSecondSegs()[9].setIcon(getSeg14DeadImg());
+
+						//first Segment img set
+						for (int i=0; i<8; i++) {
+							if (i>=0 && i<2) changefirstImg(MODE_ALARM, i, ahNum[i]);
+							else if (i>=3 && i<5) changefirstImg(MODE_ALARM, i, amNum[i-3]);
+							else if (i>=6 && i<8) getAlarmPane().getFirstSegs()[i].setIcon(getSeg14DeadBigImg());
+							else if(i==2 || i==5) getAlarmPane().getFirstSegs()[i].setIcon(getColonBigImg());
+						}
+
+						getAlarmPane().getTitle().setText("SET ALARM");
+					}
+					//Normal Alarm display
+					else{
+						Alarm alarm = (Alarm) modeManager.getmodes()[1];
+
+						LocalDateTime alarmTime = alarm.getCurrentAlarmTimer();
+						boolean isActivatedTimer = alarm.getCurrentAlarmisActivated();
+						boolean currentFormat = ((Time) modeManager.getmodes()[0]).getFormat();
+
+						alarmHour = alarmTime.getHour();
+						alarmMin = alarmTime.getMinute();
+						timerIndex = alarm.getCurrentAlarmIndex() + 1;
+
+						//split time value
+						keepValueToArray(alarmMin, amNum);
+
+						if(currentFormat) keepValueToArray(alarmHour, ahNum);
+						else keepHourToArray(alarmHour, ahNum);
+
+						//unvisible cursors
+						for(int i=0; i<2; i++) getAlarmPane().getCursorLabel()[i].setVisible(false);
+
+						//2nd Segment img set
+						if(isActivatedTimer){ //DISPLAY ON
+							for(int i=0; i<2; i++) getAlarmPane().getSecondSegs()[i].setIcon(getSeg14DeadImg());
+							getAlarmPane().getSecondSegs()[2].setIcon(getNumImgs()[0]);
+							getAlarmPane().getSecondSegs()[3].setIcon(getAlphaNImg());
+						}else{ // DISPLAY OFF
+							getAlarmPane().getSecondSegs()[0].setIcon(getSeg14DeadImg());
+							getAlarmPane().getSecondSegs()[1].setIcon(getNumImgs()[0]);
+							getAlarmPane().getSecondSegs()[2].setIcon(getAlphaFImg());
+							getAlarmPane().getSecondSegs()[3].setIcon(getAlphaFImg());
+						}
+						getAlarmPane().getSecondSegs()[4].setIcon(getColonImg());
+						getAlarmPane().getSecondSegs()[5].setIcon(getAlphaNImg());
+						getAlarmPane().getSecondSegs()[6].setIcon(getNumImgs()[0]);
+						getAlarmPane().getSecondSegs()[7].setIcon(getColonImg());
+						getAlarmPane().getSecondSegs()[8].setIcon(getNumImgs()[timerIndex]);
+						getAlarmPane().getSecondSegs()[9].setIcon(getSeg14DeadImg());
+
+						//first Segment img set
+						for (int i = 0; i < 8; i++) {
+							if (i >= 0 && i < 2) changefirstImg(MODE_ALARM, i, ahNum[i]);
+							else if (i >= 3 && i < 5) changefirstImg(MODE_ALARM, i, amNum[i - 3]);
+							else if (i >= 6 && i < 8) getAlarmPane().getFirstSegs()[i].setIcon(getSeg14DeadBigImg());
+							else if (i == 2 || i == 5) getAlarmPane().getFirstSegs()[i].setIcon(getColonBigImg());
+						}
+
+						getAlarmPane().getTitle().setText("ALARM");
+					}
+
+					getAlarmPane().getClockLabel().setIcon(getClockDeadImg());
+					if(!(getWatchBodyPane().equals(alarmPane))) switchPanel(this, alarmPane);
+					break;
+
+				case MODE_TIMER: //if current Mode is Timer
+					//Set timer mode
+					if(isEditMode) {
+						Sys.Timer timer = (Sys.Timer) modeManager.getmodes()[2];
+
+						LocalDateTime timerTime = timer.getTimerTime();
+						int timerCursor = timer.getCurrentCursor();
+
+						//save time value to variables
+						timerDay = timerTime.getDayOfMonth();
+						timerHour = (timerDay - 1) * 24 + timerTime.getHour();
+						timerMin = timerTime.getMinute();
+						timerSec = timerTime.getSecond();
+
+						//split Time Value to digit
+						keepValueToArray(timerHour, thNum);
+						keepValueToArray(timerMin, tmNum);
+						keepValueToArray(timerSec, tsNum);
+
+						//set cursor image && choose visible cursor
+						for(int i=0; i<3; i++){
+							getTimerPane().getCursorLabel()[i].setIcon(cursorImg);
+							if(!(i == timerCursor)){
+								getTimerPane().getCursorLabel()[i].setVisible(false);
+							}else{
+								getTimerPane().getCursorLabel()[i].setVisible(true);
+							}
+						}
+
+						//set 2nd segment Img (hour, min, sec)
+						for (int i = 0; i < 10; i++) {
+							if (!(i == 4 || i == 7)) getTimerPane().getSecondSegs()[i].setIcon(getSeg14DeadImg());
+							else getTimerPane().getSecondSegs()[i].setIcon(colonImg);
+						}
+
+						//set first segment Img (hour, min, sec)
+						for (int i = 0; i < 8; i++) {
+							if (i >= 0 && i < 2) changefirstImg(MODE_TIMER, i, thNum[i]);
+							else if (i >= 3 && i < 5) changefirstImg(MODE_TIMER, i, tmNum[i - 3]);
+							else if (i >= 6 && i < 8) changefirstImg(MODE_TIMER, i, tsNum[i - 6]);
+							else if (i == 2 || i == 5) getTimerPane().getFirstSegs()[i].setIcon(getColonBigImg());
+						}
+						getTimerPane().getTitle().setText("SET TIMER");
+					}
+					//normal timer mode
+					else{
+						Sys.Timer timer = (Sys.Timer) modeManager.getmodes()[2];
+
+						LocalDateTime timerTime = timer.getTimerTime();
+						LocalDateTime setTime = timer.getSettingTimer();
+
+						stDay = setTime.getDayOfMonth();
+						stHour = (stDay - 1) * 24 + setTime.getHour();
+						stMin = setTime.getMinute();
+						stSec = setTime.getSecond();
+						timerDay = timerTime.getDayOfMonth();
+						timerHour = (timerDay - 1) * 24 + timerTime.getHour();
+						timerMin = timerTime.getMinute();
+						timerSec = timerTime.getSecond();
+
+
+						//split Time Value to digit
+						keepValueToArray(stHour, sethNum);
+						keepValueToArray(stMin, setmNum);
+						keepValueToArray(stSec, setsNum);
+						keepValueToArray(timerHour, thNum);
+						keepValueToArray(timerMin, tmNum);
+						keepValueToArray(timerSec, tsNum);
+
+						//unvisible cursors
+						for(int i=0; i<3; i++) getTimerPane().getCursorLabel()[i].setVisible(false);
+
+						//set 2nd segment Img (hour, min, sec)
+						for (int i = 0; i < 10; i++) {
+							if (i >= 0 && i < 2) getTimerPane().getSecondSegs()[i].setIcon(getSeg14DeadImg());
+							else if (i >= 2 && i < 4) changeSecondImg(MODE_TIMER, i, sethNum[i - 2]);
+							else if (i >= 5 && i < 7) changeSecondImg(MODE_TIMER, i, setmNum[i - 5]);
+							else if (i >= 8 && i < 10) changeSecondImg(MODE_TIMER, i, setsNum[i - 8]);
+							else if (i == 4 || i == 7) getTimerPane().getSecondSegs()[i].setIcon(colonImg);
+						}
+
+						//set first segment Img (hour, min, sec)
+						for (int i = 0; i < 8; i++) {
+							if (i >= 0 && i < 2) changefirstImg(MODE_TIMER, i, thNum[i]);
+							else if (i >= 3 && i < 5) changefirstImg(MODE_TIMER, i, tmNum[i - 3]);
+							else if (i >= 6 && i < 8) changefirstImg(MODE_TIMER, i, tsNum[i - 6]);
+							else if (i == 2 || i == 5) getTimerPane().getFirstSegs()[i].setIcon(getColonBigImg());
+						}
+						getTimerPane().getTitle().setText("TIMER");
+					}
+
+					//set default clock icon
+					timerPane.getClockLabel().setIcon(getClockDeadImg());
+					if(!(getWatchBodyPane().equals(timerPane))) switchPanel(this, timerPane);
+
+					break;
+
+				case MODE_STOPWATCH: //if current Mode is Stopwatch
+
+					StopWatch stopwatch = (StopWatch) modeManager.getmodes()[3];
+
+					LocalTime swTime = stopwatch.getCurrentStopWatchTime();
+					LocalTime lapTime = stopwatch.getLapStopWatchTime();
+
+					swHour = swTime.getHour(); // we will not print 'HOUR'. But to convert it into minutes.
+					swMin = swTime.getMinute();
+					swSec = swTime.getSecond();
+					swmSec = swTime.getNano()/10000000;
+
+					lapHour = lapTime.getHour();
+					lapMin = lapTime.getMinute();
+					lapSec = lapTime.getSecond();
+					lapmSec = lapTime.getNano()/10000000;
+
+					if(swHour == 1) swMin += 60;
+					if(lapHour == 1) lapMin += 60;
+
+					//split Time Value
+					keepValueToArray(swMin, smNum);
+					keepValueToArray(swSec, ssNum);
+					keepValueToArray(swmSec, smsNum);
+					keepValueToArray(lapMin, lmNum);
+					keepValueToArray(lapSec, lsNum);
+					keepValueToArray(lapmSec, lmsNum);
+
+					//set second segment Img (min, sec, ms)
+					for (int i = 0; i < 10; i++) {
+						if (i>=0 && i<2) getSwPane().getSecondSegs()[i].setIcon(getSeg14DeadImg());
+						else if(i>=2 && i<4) changeSecondImg(MODE_STOPWATCH, i, lmNum[i-2]);
+						else if(i>=5 && i<7) changeSecondImg(MODE_STOPWATCH, i, lsNum[i-5]);
+						else if(i>=8 && i<10) changeSecondImg(MODE_STOPWATCH, i, lmsNum[i-8]);
+						else if(i==4 || i==7) getSwPane().getSecondSegs()[i].setIcon(colonImg);
+					}
+
+					//set first segment Img (min, sec, ms)
+					for (int i = 0; i < 8; i++) {
+						if (i>=0 && i<2) changefirstImg(MODE_STOPWATCH, i, smNum[i]);
+						else if (i>=3 && i<5) changefirstImg(MODE_STOPWATCH, i, ssNum[i-3]);
+						else if (i>=6 && i<8) changefirstImg(MODE_STOPWATCH, i, smsNum[i-6]);
+						else if(i==2 || i==5) getSwPane().getFirstSegs()[i].setIcon(getColonBigImg());
+					}
+
+					//set default clock icon
+					swPane.getClockLabel().setIcon(getClockDeadImg());
+					if(!(getWatchBodyPane().equals(swPane))) switchPanel(this, swPane);
+					break;
+
+				case MODE_CCHECK: //if current Mode is CalorieCheck
+
+					//Set Speed and Weight Display
+					if(isEditMode){
+						CalorieCheck cCheck = (CalorieCheck) modeManager.getmodes()[4];
+						boolean calorieCursor = cCheck.isCursor(); // false = speed, true = weight
+
+						ccWeight = cCheck.getTempWeight();
+						ccSpeed = cCheck.getTempSpeed();
+
+						//split value to array
+						keepWeightToArray(ccWeight, cwNum);
+						keepValueToArray(ccSpeed, csNum);
+
+						//set cursor image && choose visible cursor
+						for(int i=0; i<2; i++) getCcPane().getCursorLabel()[i].setIcon(cursorSmallImg);
+							if(calorieCursor){
+								getCcPane().getCursorLabel()[0].setVisible(true);
+								getCcPane().getCursorLabel()[1].setVisible(false);
+							}else{
+								getCcPane().getCursorLabel()[0].setVisible(false);
+								getCcPane().getCursorLabel()[1].setVisible(true);
+							}
+
+
+						//set Second seg Img (weight, speed)
+						for (int i = 0; i < 10; i++) {
+							if (i==0 || i==5 || i==6) getCcPane().getSecondSegs()[i].setIcon(getSeg14DeadImg());
+							else if(i>=1 && i<4) changeSecondImg(MODE_CCHECK, i, cwNum[i-1]);
+							else if(i>=8 && i<10) changeSecondImg(MODE_CCHECK, i, csNum[i-8]);
+							else if(i==4 || i==7) getCcPane().getSecondSegs()[i].setIcon(colonImg);
+						}
+
+						//set first seg Img
+						for (int i = 0; i < 8; i++) {
+							if(!(i==2 || i==5)) getCcPane().getFirstSegs()[i].setIcon(getSeg14DeadBigImg());
+							else getCcPane().getFirstSegs()[i].setIcon(getColonBigImg());
+						}
+
+						getCcPane().getTitle().setText("SET SPEED & WEIGHT");
+					}
+					//Normal Calorie Check Display
+					else{
+						CalorieCheck cCheck = (CalorieCheck) modeManager.getmodes()[4];
+
+						ccWeight = cCheck.getWeight();
+						ccSpeed = cCheck.getSpeed();
+						ccCalorie = cCheck.getCalorie();
+
+						//split value to array
+						keepWeightToArray(ccWeight, cwNum);
+						keepValueToArray(ccSpeed, csNum);
+						keepCalorieToArray(ccCalorie, ccNum);
+
+						//unvisible cursors
+						for(int i=0; i<2; i++) getCcPane().getCursorLabel()[i].setVisible(false);
+
+						//set Second seg Img (weight, speed)
+						for (int i = 0; i < 10; i++) {
+							if (i==0 || i==5 || i==6) getCcPane().getSecondSegs()[i].setIcon(getSeg14DeadImg());
+							else if(i>=1 && i<4) changeSecondImg(MODE_CCHECK, i, cwNum[i-1]);
+							else if(i>=8 && i<10) changeSecondImg(MODE_CCHECK, i, csNum[i-8]);
+							else if(i==4 || i==7) getCcPane().getSecondSegs()[i].setIcon(colonImg);
+						}
+
+						//set first seg Img
+						for (int i = 0; i < 8; i++) {
+							if (i==2 || i==5) getCcPane().getFirstSegs()[i].setIcon(getColonBigImg());
+							else if(i>=0 && i<2) changefirstImg(MODE_CCHECK, i, ccNum[i]);
+							else if(i>=3 && i<5) changefirstImg(MODE_CCHECK, i, ccNum[i-1]);
+							else if(i>=6 && i<8) changefirstImg(MODE_CCHECK, i, ccNum[i-2]);
+						}
+
+						getCcPane().getTitle().setText("CALORIE CHECK");
+					}
+
+					//set default clock icon
+					getCcPane().getClockLabel().setIcon(getClockDeadImg());
+					if(!(getWatchBodyPane().equals(ccPane))) switchPanel(this, ccPane);
+					break;
+
+				case MODE_WTIME: //if current Mode is WorldTime
+
+					Time time = (Time) modeManager.getmodes()[0];
+					WorldTime wt = (WorldTime) modeManager.getmodes()[5];
+
+					LocalDateTime worldTime = wt.getWorldTime(time.getCurrentTime(), time.getGMT());
+
+					wtYear = worldTime.getYear();
+					wtMonth = worldTime.getMonthValue();
+					wtDay = worldTime.getDayOfMonth();
+					wtHour = worldTime.getHour();
+					wtMinute = worldTime.getMinute();
+					wtSecond = worldTime.getSecond();
+
+					if (wtHour < 12) {
+						getWtPane().getMeridiemLabel().setText("AM");
+					} else {
+						getWtPane().getMeridiemLabel().setText("PM");
+					}
+					getWtPane().getWtLabel().setText(wt.getCurrentCityName()); //display city name
+
+					//split time value
+					keepYearToArray(wtYear, wtYearNum);
+					keepValueToArray(wtMonth, wtMonthNum);
+					keepValueToArray(wtDay, wtDayNum);
+					keepHourToArray(wtHour, wtHourNum);
+					keepValueToArray(wtMinute, wtMinNum);
+					keepValueToArray(wtSecond, wtSecNum);
+
+					//set 2nd segment Img (tkYear, tkMonth, tkDay)
+					for (int i=0; i<10; i++) {
+						if (i>=0 && i<4) changeSecondImg(MODE_WTIME, i, wtYearNum[i]);
+						else if (i>=5 && i<7) changeSecondImg(MODE_WTIME, i, wtMonthNum[i-5]);
+						else if (i>=8 && i<10) changeSecondImg(MODE_WTIME, i, wtDayNum[i-8]);
+						else if(i==4 || i==7) getWtPane().getSecondSegs()[i].setIcon(getColonImg());
+					}
+
+					//set first segment Img (tkHour, tkMinute, sec)
+					for (int i=0; i<8; i++) {
+						if (i>=0 && i<2) changefirstImg(MODE_WTIME, i, wtHourNum[i]);
+						else if (i>=3 && i<5) changefirstImg(MODE_WTIME, i, wtMinNum[i-3]);
+						else if (i>=6 && i<8) changefirstImg(MODE_WTIME, i, wtSecNum[i-6]);
+						else if(i==2 || i==5) getWtPane().getFirstSegs()[i].setIcon(getColonBigImg());
+					}
+
+					//set default clock icon
+					getWtPane().getClockLabel().setIcon(getClockDeadImg());
+					if(!(getWatchBodyPane().equals(wtPane))) switchPanel(this, wtPane);
+					break;
+			}
 
 			revalidate();
 			repaint();
 			try {
-				Thread.sleep(10);
+				Thread.sleep(0, 100000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
