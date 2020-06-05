@@ -20,7 +20,9 @@ public class StopWatch implements Mode{
         isActivated = true;
         lapTime= LocalTime.of(0,0,0,0);
         isPaused = true;
-        overflowStopWatchTime= LocalTime.of(1,39,59,99000000);
+        //overflowStopWatchTime= LocalTime.of(1,39,59,99000000);
+        overflowStopWatchTime = LocalTime.of(0,0,20);
+        isEnd = false;
     }
 
     private LocalTime currentStopWatchTime;
@@ -28,6 +30,7 @@ public class StopWatch implements Mode{
     private LocalTime overflowStopWatchTime;
     private int is100ms = 0;
     private Boolean isPaused;
+    private Boolean isEnd;
 
 
     public void startStopwatch() {
@@ -52,10 +55,11 @@ public class StopWatch implements Mode{
     public void resetStopwatch() {
         currentStopWatchTime = LocalTime.of(0,0,0,0);
         lapTime = LocalTime.of(0,0,0,0);
+        isEnd = false;
     }
 
     public void lapStopwatch() {
-        lapTime = currentStopWatchTime;
+        if(isPaused != true) lapTime = currentStopWatchTime;
     }
 
     /**
@@ -63,15 +67,15 @@ public class StopWatch implements Mode{
      * Tick에서 사용할 함수.
      * Paused되지 않았다면 틱마다 1ms == 1e7만큼 증가.
      * Paused되어있다면 증가시키지 않는다.
-     * 증가되는 함수는 GUI Display부분이나 중간 단계에서 00:59:59:99를 가져갈 수 있도록 getCurrentStopWatchTime_XXX()구현.
-     * 00:59:59:99를 지난다면 overflow가 발생하도록, 00:00:00:00부터 시작하도록 함.
+     * 최대 시간이 되면 정지시킨다.
     **/
     public void increaseCurrentTime() {
         is100ms = (is100ms + 1) % 10;
         if(is100ms == 0){
-            if(!isPaused) {
+            if(!isPaused && isEnd!=true) {
                 if (this.currentStopWatchTime.compareTo(overflowStopWatchTime) == 0) {
                     pauseStopwatch();
+                    isEnd = true;
                 } else {
                     currentStopWatchTime = currentStopWatchTime.plusNanos(10000);
                 }

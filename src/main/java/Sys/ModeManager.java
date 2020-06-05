@@ -270,7 +270,7 @@ public class ModeManager {
                             this.changeMode();  //Mode : changeMode
                         else if(Button == 0 && longClickedFlag == true)
                             this.enterEditMode();
-                        else if(Button == 1 && !( ((StopWatch)modes[3]).getIsPaused() ))  //Adjust 장타 : resume 되어있었다면 laptime save.
+                        else if(Button == 1 && !( ((StopWatch)modes[3]).getIsPaused() ))  //Adjust : resume 되어있었다면 laptime save.
                             ((StopWatch)modes[3]).lapStopwatch();
                         else if(Button == 1 && ((StopWatch)modes[3]).getIsPaused()) //Adjust : paused라면 reset.
                             ((StopWatch)modes[3]).resetStopwatch();
