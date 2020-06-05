@@ -419,9 +419,7 @@ public class ModeManager {
         this.currentCursor=0;
         this.ActiveModeCounter=4;
         isEditMode=true;
-        for(int i= 0; i<6;i++)
-            editStatus[i]= modes[i].getActive();
-
+        for(int i= 0; i<6;i++) editStatus[i]= modes[i].getActive();
     }
 
 
@@ -477,12 +475,13 @@ public class ModeManager {
         return this.currentCursor;
     }
 
-    public Mode[] getmodes() {
-        return modes;
-    }
 
-    public boolean isEditMode() {
-        return isEditMode;
-    }
+    public Mode[] getmodes() { return modes; }
+
+    public boolean isEditMode() { return isEditMode; }
+
+    public Boolean[] getEditStatus(){ return this.editStatus;}
+
+    public Buzzer getBuzzer() { return buzzer; }
 
 }
