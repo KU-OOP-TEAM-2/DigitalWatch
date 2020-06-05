@@ -443,15 +443,23 @@ public class ModeManager {
                 for(int i=0;i<6;i++) {
                     if(editStatus[i]==true){
                         editStatus[i]=false;
-                        break;
+                       break;
                     }
                 }
             }
+            else{
+                this.ActiveModeCounter++;
+            }
+
         }
     }
 
 
     public void saveModeData() {
+
+        if(this.ActiveModeCounter!=4){
+            return;
+        }
 
         for (int i = 0; i < 5; i++) {
             this.modes[i].setActive(this.editStatus[i]);
