@@ -107,29 +107,36 @@ public class ModeManager {
             switch (currentMode){
                 case 0:
                     ((Time) modes[0]).saveData();
+                    isEditMode = !isEditMode;
                     break;
                 case 1:
                     ((Alarm) modes[1]).saveAlarm();
+                    isEditMode = !isEditMode;
                     break;
                 case 2:
                     ((Timer) modes[2]).saveTimer();
+                    isEditMode = !isEditMode;
                     break;
                 case 4:
                     ((CalorieCheck) modes[4]).saveCalorieSetting();
+                    isEditMode = !isEditMode;
                     break;
                 case 8:
-                    for(int i=0;i<6;i++){
-                        if(modes[i].getActive()==true) {
-                            currentMode = i;
-                            break;
+                    if(getActiveModeCounter() == 4) {
+                        for(int j = 0; j < 6; j++) modes[j].setActive(editStatus[j].booleanValue());
+                        for(int i = 0; i < 6; i++){
+                            if(modes[i].getActive()){
+                                currentMode = i;
+                                break;
+                            }
                         }
+                        isEditMode = !isEditMode;
+                        break;
                     }
                     break; //setMode중 return to default 발생시 저장안하고 종료
                 default: // 3-stopwatch, 5 worldtime은 set이 없다.
                     break;
-
             }
-            isEditMode = !isEditMode;
         }
     }
 

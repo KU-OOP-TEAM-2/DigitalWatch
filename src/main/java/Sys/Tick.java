@@ -41,7 +41,7 @@ public class Tick implements Callable<Void>{
             if(elapsedTime >= 10) {
                 //Timer
                 ((Timer)modes[2]).decreaseTimer();
-                //stopwatch : ms단위 갱신에 어색함이 있어서 따로 갱신 시간을 다르게 하였음
+                //stopwatch
                 myModeManager.plus_ElapsedTime(0.01f);
                 ((Alarm)modes[1]).isAlarmTimeCheck();
                 ((StopWatch)modes[3]).increaseCurrentTime();

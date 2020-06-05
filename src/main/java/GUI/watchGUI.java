@@ -1698,7 +1698,7 @@ public class watchGUI extends JFrame implements Runnable{
 			revalidate();
 			repaint();
 			try {
-				Thread.sleep(1);
+				Thread.sleep(10);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
