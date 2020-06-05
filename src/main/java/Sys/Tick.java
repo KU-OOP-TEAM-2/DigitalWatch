@@ -48,11 +48,12 @@ public class Tick implements Callable<Void>{
                 //calorie check
                 ((CalorieCheck)modes[4]).increaseCalorieCheckTimer();
                 //when duration = 1 second
+                ((Time)modes[0]).timeflow();
+                if(myModeManager.getCurrentMode()==0&&myModeManager.isEditMode()==true)
+                    ((Time)modes[0]).editTimeFlow();
                 if (checkSecond == 100) {
 
-                    ((Time)modes[0]).timeflow();
-                    if(myModeManager.getCurrentMode()==0&&myModeManager.isEditMode()==true)
-                        ((Time)modes[0]).editTimeFlow();
+
                     checkSecond = 0;
                     //alarm
                     //Buzzer를 여기서 울리는것이 아니라 Alarm객체 내부에서 울리도록 함.
