@@ -15,10 +15,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="Buzzer,Alarm,Timer 수정, 알람울리고 멈추는 기능 수정">
+    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="Timer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/StopWatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/StopWatch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/Tick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/Tick.java" afterDir="false" />
     </list>
     <list id="75641970-afe3-41f4-8211-ac3bdcb41cb9" name="Revert &quot;edit Tick constructor&quot;" comment="reset branch" />
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +85,6 @@
   <component name="RunManager" selected="Application.Main_test">
     <configuration name="Main_test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GUI.Main_test" />
-      <module name="softwarevv.main" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="GUI.*" />
@@ -509,10 +507,11 @@
     <option name="LAST_COMMIT_MESSAGE" value="Buzzer,Alarm,Timer 수정, 알람울리고 멈추는 기능 수정" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="332" y="137" key="#Main_test" timestamp="1591372723287">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state x="709" y="506" key="#Main_test" timestamp="1591377339935">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="332" y="137" key="#Main_test/0.0.2560.1040@0.0.2560.1040" timestamp="1591372723287" />
+    <state x="709" y="506" key="#Main_test/0.0.2560.1400@0.0.2560.1400" timestamp="1591377339935" />
     <state x="972" y="334" key="#Main_test_2" timestamp="1591360110725">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
@@ -535,6 +534,10 @@
     </state>
     <state x="1085" y="405" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1591074707858" />
     <state x="1085" y="417" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1440@0.0.2560.1440" timestamp="1591362506117" />
+    <state x="746" y="680" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1591377292557">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="746" y="680" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591377292557" />
     <state x="829" y="71" key="CommitChangelistDialog2" timestamp="1591372690625">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
