@@ -1087,7 +1087,8 @@ public class watchGUI extends JFrame implements Runnable{
 
 				case MODE_WTIME: //if current Mode is WorldTime
 
-					WorldTime wTime = (WorldTime) modeManager.getmodes()[5];
+					WorldTime wt = (WorldTime) modeManager.getmodes()[5];
+
 
 					break;
 

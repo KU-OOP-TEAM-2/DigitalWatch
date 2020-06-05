@@ -23,7 +23,6 @@ public class Time implements Mode{
         this.currentTime=LocalDateTime.of(2020, 01, 01, 00, 00, 00, 00);
         this.currentGMTIndex=0;
         this.editTime=null;
-        this.currentGMTIndex=0;
         this.format=true;
         this.isActivated=true;
     }

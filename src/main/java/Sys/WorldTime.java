@@ -7,6 +7,7 @@ import java.time.LocalTime;
 //서울 SEL, 파리PAR, 런던LON,시드니SYD,LA LAX , 뉴욕 NYC
 public class WorldTime implements Mode{
     private City[] worldTimes;
+
     private int CurrentCity;//0~5
 
     private boolean isActivated;
@@ -55,5 +56,7 @@ public class WorldTime implements Mode{
 
         return returnTime;
     }
+
+    public int getCurrentCity() { return CurrentCity; }
 
 }

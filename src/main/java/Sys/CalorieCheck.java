@@ -186,7 +186,7 @@ public class CalorieCheck implements Mode{
                 endCalorieCheck();
             }
             else{
-                CalorieTime = CalorieTime.plusNanos(10000000);
+                CalorieTime = CalorieTime.plusNanos(10000);
             }
         }
     }
