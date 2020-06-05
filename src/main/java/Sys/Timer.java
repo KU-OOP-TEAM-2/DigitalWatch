@@ -24,8 +24,8 @@ public class Timer implements  Mode{
 
     public Timer(Buzzer buzzer) {
         isActivated=true;
-        timerTime= LocalDateTime.of(2000,1,5,3,59,59);
-        settingTimer=LocalDateTime.of(2000,1,5,3,59,59);
+        timerTime= LocalDateTime.of(2000,1,1,0,0,0);
+        settingTimer=LocalDateTime.of(2000,1,1,0,0,0);
         pauseTimerFlag=true;
         this.buzzer=buzzer;
     }
