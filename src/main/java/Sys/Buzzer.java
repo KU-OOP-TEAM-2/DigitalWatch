@@ -15,6 +15,7 @@ public class Buzzer {
         buzzerOn = false;
         buzzerThread = new BuzzerThread("buzzerThread");
         isAlarmRinging = false;
+        isBuzzerRinging = false;
     }
 
     /**
@@ -22,6 +23,7 @@ public class Buzzer {
      */
     private Boolean buzzerOn;
     private Boolean isAlarmRinging;
+    private Boolean isBuzzerRinging;
     //추가된 부분
     private final int BEEPCOUNT = 10;
     //추가된 부분
@@ -36,7 +38,13 @@ public class Buzzer {
         }
 
         public void run(){
-            beepBuzzer();
+            if(buzzerOn == true && isBuzzerRinging == false) {
+                isBuzzerRinging = true;
+                beepBuzzer();
+                buzzerOn = false;
+                isBuzzerRinging = false;
+                isAlarmRinging = false;
+            }
         }
     }
 
@@ -44,9 +52,6 @@ public class Buzzer {
      *
      */
     public void beepBuzzer() {
-        if(buzzerOn == true)
-            return;
-        buzzerOn = true;
         int i = 0;
         for(i=0; i < BEEPCOUNT && buzzerOn; i++){
             java.awt.Toolkit.getDefaultToolkit().beep();
@@ -67,5 +72,6 @@ public class Buzzer {
     public boolean getBuzzerOn(){return buzzerOn;}
     public boolean getIsAlarmRinging(){return isAlarmRinging;}
     public void setIsAlarmRinging(boolean isAlarmRinging){this.isAlarmRinging = isAlarmRinging;}
+    public void setBuzzerOn(boolean onOff){this.buzzerOn = onOff;}
 
 }
