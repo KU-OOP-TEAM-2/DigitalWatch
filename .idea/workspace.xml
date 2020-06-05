@@ -16,8 +16,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/Sys/StopWatchTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/Tick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/Tick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/Time.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/Time.java" afterDir="false" />
     </list>
     <list id="75641970-afe3-41f4-8211-ac3bdcb41cb9" name="Revert &quot;edit Tick constructor&quot;" comment="reset branch" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,6 +63,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="1ckVJvK3m1JWo3Gh7qo5Cp32Rep" />
   <component name="ProjectViewState">
@@ -91,7 +94,20 @@
       <recent name="E:\Windows Standards\Documents\GitHub\softwarevv\src\main\resources\ImageFiles" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.StopWatchTest.increaseCurrentTime">
+  <component name="RunManager" selected="Application.Main_test">
+    <configuration name="Main_test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GUI.Main_test" />
+      <module name="git_teampj.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="GUI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -126,7 +142,7 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="StopWatchTest.increaseCurrentTime" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AlarmTests.testChangeCursor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softwarevv.test" />
       <shortenClasspath name="CLASSPATH_FILE" />
       <useClassPathOnly />
@@ -139,15 +155,15 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="PACKAGE_NAME" value="Sys" />
-      <option name="MAIN_CLASS_NAME" value="Sys.StopWatchTest" />
-      <option name="METHOD_NAME" value="increaseCurrentTime" />
+      <option name="MAIN_CLASS_NAME" value="Sys.AlarmTests" />
+      <option name="METHOD_NAME" value="testChangeCursor" />
       <option name="TEST_OBJECT" value="method" />
       <option name="PARAMETERS" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StopWatchTest.lapStopwatch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AlarmTests.testDecreaseAlarmTime" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softwarevv.test" />
       <shortenClasspath name="CLASSPATH_FILE" />
       <useClassPathOnly />
@@ -160,15 +176,15 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="PACKAGE_NAME" value="Sys" />
-      <option name="MAIN_CLASS_NAME" value="Sys.StopWatchTest" />
-      <option name="METHOD_NAME" value="lapStopwatch" />
+      <option name="MAIN_CLASS_NAME" value="Sys.AlarmTests" />
+      <option name="METHOD_NAME" value="testDecreaseAlarmTime" />
       <option name="TEST_OBJECT" value="method" />
       <option name="PARAMETERS" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StopWatchTest.resetStopwatch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AlarmTests.testIncreaseAlarmTime" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softwarevv.test" />
       <shortenClasspath name="CLASSPATH_FILE" />
       <useClassPathOnly />
@@ -181,15 +197,15 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="PACKAGE_NAME" value="Sys" />
-      <option name="MAIN_CLASS_NAME" value="Sys.StopWatchTest" />
-      <option name="METHOD_NAME" value="resetStopwatch" />
+      <option name="MAIN_CLASS_NAME" value="Sys.AlarmTests" />
+      <option name="METHOD_NAME" value="testIncreaseAlarmTime" />
       <option name="TEST_OBJECT" value="method" />
       <option name="PARAMETERS" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StopWatchTest.resumeStopwatch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AlarmTests.testSaveAlarm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softwarevv.test" />
       <shortenClasspath name="CLASSPATH_FILE" />
       <useClassPathOnly />
@@ -202,29 +218,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="PACKAGE_NAME" value="Sys" />
-      <option name="MAIN_CLASS_NAME" value="Sys.StopWatchTest" />
-      <option name="METHOD_NAME" value="resumeStopwatch" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="PARAMETERS" value="" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StopWatchTest.testincreaseCurrentTime" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="softwarevv.test" />
-      <shortenClasspath name="CLASSPATH_FILE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Sys.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
-      <option name="PACKAGE_NAME" value="Sys" />
-      <option name="MAIN_CLASS_NAME" value="Sys.StopWatchTest" />
-      <option name="METHOD_NAME" value="testincreaseCurrentTime" />
+      <option name="MAIN_CLASS_NAME" value="Sys.AlarmTests" />
+      <option name="METHOD_NAME" value="testSaveAlarm" />
       <option name="TEST_OBJECT" value="method" />
       <option name="PARAMETERS" value="" />
       <method v="2">
@@ -246,21 +241,20 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Main_test" />
       <item itemvalue="Gradle.git_teampj" />
-      <item itemvalue="JUnit." />
-      <item itemvalue="JUnit.StopWatchTest.resumeStopwatch" />
-      <item itemvalue="JUnit.StopWatchTest.resetStopwatch" />
-      <item itemvalue="JUnit.StopWatchTest.lapStopwatch" />
-      <item itemvalue="JUnit.StopWatchTest.increaseCurrentTime" />
-      <item itemvalue="JUnit.StopWatchTest.testincreaseCurrentTime" />
+      <item itemvalue="JUnit.AlarmTests.testIncreaseAlarmTime" />
+      <item itemvalue="JUnit.AlarmTests.testDecreaseAlarmTime" />
+      <item itemvalue="JUnit.AlarmTests.testChangeCursor" />
+      <item itemvalue="JUnit.AlarmTests.testSaveAlarm" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.StopWatchTest.increaseCurrentTime" />
-        <item itemvalue="JUnit.StopWatchTest.testincreaseCurrentTime" />
-        <item itemvalue="JUnit.StopWatchTest.lapStopwatch" />
-        <item itemvalue="JUnit.StopWatchTest.resetStopwatch" />
-        <item itemvalue="JUnit.StopWatchTest.resumeStopwatch" />
+        <item itemvalue="Application.Main_test" />
+        <item itemvalue="JUnit.AlarmTests.testSaveAlarm" />
+        <item itemvalue="JUnit.AlarmTests.testChangeCursor" />
+        <item itemvalue="JUnit.AlarmTests.testDecreaseAlarmTime" />
+        <item itemvalue="JUnit.AlarmTests.testIncreaseAlarmTime" />
       </list>
     </recent_temporary>
   </component>
@@ -527,14 +521,7 @@
       <option name="project" value="LOCAL" />
       <updated>1591378128800</updated>
     </task>
-    <task id="LOCAL-00037" summary="JunitTest 추가">
-      <created>1591380363218</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1591380363218</updated>
-    </task>
-    <option name="localTasksCounter" value="38" />
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -550,6 +537,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="clcikButton" />
     <MESSAGE value="ModeManger 변수" />
     <MESSAGE value="ModeManger getmmodes" />
     <MESSAGE value="return to default 추가" />
@@ -574,8 +562,7 @@
     <MESSAGE value="Clicked button time {} 누락 수정" />
     <MESSAGE value="Buzzer 수정" />
     <MESSAGE value="Buzzer,Alarm,Timer 수정, 알람울리고 멈추는 기능 수정" />
-    <MESSAGE value="JunitTest 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="JunitTest 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="Buzzer,Alarm,Timer 수정, 알람울리고 멈추는 기능 수정" />
   </component>
   <component name="WindowStateProjectService">
     <state x="859" y="114" key="#&lt;template&gt;_of_JUnit" timestamp="1591379601139">
@@ -604,10 +591,10 @@
     </state>
     <state x="734" y="263" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1591372792979" />
     <state x="734" y="354" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591076648908" />
-    <state x="93" y="111" width="2337" height="836" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1591381254607">
+    <state x="93" y="111" width="2337" height="836" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1591379874557">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="93" y="111" width="2337" height="836" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1591381254607" />
+    <state x="93" y="111" width="2337" height="836" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1591379874557" />
     <state x="1041" y="233" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1591379404808">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
@@ -627,17 +614,17 @@
     </state>
     <state x="746" y="505" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1591379497795" />
     <state x="746" y="680" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591377292557" />
-    <state x="829" y="71" key="CommitChangelistDialog2" timestamp="1591380362389">
+    <state x="829" y="71" key="CommitChangelistDialog2" timestamp="1591378128076">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="622" y="71" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1591255811922" />
-    <state x="829" y="71" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1591380362389" />
-    <state x="92" y="68" width="2376" height="1216" key="DiffContextDialog" timestamp="1591364817897">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state x="829" y="71" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1591378128076" />
+    <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog" timestamp="1591385372108">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="69" y="68" width="1782" height="904" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591255833606" />
     <state x="92" y="68" key="DiffContextDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1591364817897" />
-    <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591265278185" />
+    <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591385372108" />
     <state x="1127" y="274" key="EnvironmentVariablesDialog" timestamp="1591379227194">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
@@ -646,72 +633,72 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="454" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1591073036048" />
-    <state width="2477" height="335" key="GridCell.Tab.0.bottom" timestamp="1591383749633">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="2477" height="335" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1591383749633" />
-    <state width="2517" height="194" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591359724852" />
-    <state width="2517" height="413" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1591362916706" />
-    <state width="2477" height="335" key="GridCell.Tab.0.center" timestamp="1591383749633">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="2477" height="335" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1591383749633" />
-    <state width="2517" height="194" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591359724852" />
-    <state width="2517" height="413" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1591362916706" />
-    <state width="2477" height="335" key="GridCell.Tab.0.left" timestamp="1591383749633">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="2477" height="335" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1591383749633" />
-    <state width="2517" height="194" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591359724851" />
-    <state width="2517" height="413" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1591362916706" />
-    <state width="2477" height="335" key="GridCell.Tab.0.right" timestamp="1591383749633">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="2477" height="335" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1591383749633" />
-    <state width="2517" height="194" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591359724852" />
-    <state width="2517" height="413" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1591362916706" />
-    <state width="2477" height="342" key="GridCell.Tab.1.bottom" timestamp="1591383401106">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="2477" height="342" key="GridCell.Tab.1.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1591383401106" />
-    <state width="2477" height="342" key="GridCell.Tab.1.center" timestamp="1591383401106">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="2477" height="342" key="GridCell.Tab.1.center/0.0.2560.1040@0.0.2560.1040" timestamp="1591383401106" />
-    <state width="2477" height="342" key="GridCell.Tab.1.left" timestamp="1591383401106">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="2477" height="342" key="GridCell.Tab.1.left/0.0.2560.1040@0.0.2560.1040" timestamp="1591383401106" />
-    <state width="2477" height="342" key="GridCell.Tab.1.right" timestamp="1591383401106">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="2477" height="342" key="GridCell.Tab.1.right/0.0.2560.1040@0.0.2560.1040" timestamp="1591383401106" />
-    <state x="248" y="121" key="MergeDialog" timestamp="1591082012879">
+    <state width="1258" height="194" key="GridCell.Tab.0.bottom" timestamp="1591385335516">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="248" y="121" key="MergeDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591082012879" />
+    <state width="2477" height="335" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1591380254100" />
+    <state width="1258" height="194" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591385335516" />
+    <state width="2517" height="413" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1591362916706" />
+    <state width="1258" height="194" key="GridCell.Tab.0.center" timestamp="1591385335516">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2477" height="335" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1591380254100" />
+    <state width="1258" height="194" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591385335516" />
+    <state width="2517" height="413" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1591362916706" />
+    <state width="1258" height="194" key="GridCell.Tab.0.left" timestamp="1591385335516">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2477" height="335" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1591380254100" />
+    <state width="1258" height="194" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591385335516" />
+    <state width="2517" height="413" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1591362916706" />
+    <state width="1258" height="194" key="GridCell.Tab.0.right" timestamp="1591385335516">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2477" height="335" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1591380254100" />
+    <state width="1258" height="194" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591385335516" />
+    <state width="2517" height="413" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1591362916706" />
+    <state width="2477" height="342" key="GridCell.Tab.1.bottom" timestamp="1591379883650">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="2477" height="342" key="GridCell.Tab.1.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1591379883650" />
+    <state width="2477" height="342" key="GridCell.Tab.1.center" timestamp="1591379883650">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="2477" height="342" key="GridCell.Tab.1.center/0.0.2560.1040@0.0.2560.1040" timestamp="1591379883650" />
+    <state width="2477" height="342" key="GridCell.Tab.1.left" timestamp="1591379883650">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="2477" height="342" key="GridCell.Tab.1.left/0.0.2560.1040@0.0.2560.1040" timestamp="1591379883650" />
+    <state width="2477" height="342" key="GridCell.Tab.1.right" timestamp="1591379883650">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="2477" height="342" key="GridCell.Tab.1.right/0.0.2560.1040@0.0.2560.1040" timestamp="1591379883650" />
+    <state x="248" y="121" key="MergeDialog" timestamp="1591385291241">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="248" y="121" key="MergeDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591385291241" />
     <state x="781" y="344" key="SettingsEditor" timestamp="1591263207383">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="781" y="344" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1591263207383" />
-    <state x="872" y="321" key="Vcs.Push.Dialog.v2" timestamp="1591380392078">
+    <state x="872" y="321" key="Vcs.Push.Dialog.v2" timestamp="1591378138806">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="654" y="321" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591256174062" />
-    <state x="872" y="321" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1591380392078" />
+    <state x="872" y="321" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1591378138806" />
     <state x="872" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591359294938" />
     <state x="871" y="144" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1591378944116">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="871" y="144" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.2560.1040@0.0.2560.1040" timestamp="1591378944116" />
-    <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591358938268">
+    <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591385362872">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591358938268" />
-    <state x="1025" y="204" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1591380416822">
+    <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591385362872" />
+    <state x="1025" y="204" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1591379516507">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="1025" y="204" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1591380416822" />
+    <state x="1025" y="204" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1591379516507" />
     <state x="1002" y="361" key="git4idea.merge.GitPullDialog" timestamp="1591372771300">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
@@ -726,24 +713,9 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="917" y="245" key="run.anything.popup/0.0.2560.1040@0.0.2560.1040" timestamp="1591364529950" />
-    <state x="943" y="234" width="672" height="504" key="search.everywhere.popup" timestamp="1591382154187">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1591312902535">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="943" y="234" width="672" height="504" key="search.everywhere.popup/0.0.2560.1040@0.0.2560.1040" timestamp="1591382154187" />
     <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1591312902535" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/Sys/StopWatchTest.java</url>
-          <line>68</line>
-          <properties class="Sys.StopWatchTest" method="increaseCurrentTime">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
