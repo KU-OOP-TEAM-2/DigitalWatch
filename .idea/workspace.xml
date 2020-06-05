@@ -15,7 +15,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="" />
+    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="Alarm Buzzer 수정">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <list id="75641970-afe3-41f4-8211-ac3bdcb41cb9" name="Revert &quot;edit Tick constructor&quot;" comment="reset branch" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,14 +84,23 @@
       </method>
     </configuration>
     <configuration name="Main_test_2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="GUI.Main_test_2" />
-      <module name="git_teampj.main" />
+      <module name="softwarevv" />
+      <shortenClasspath name="NONE" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="GUI.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <shortenClasspath name="NONE" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -182,6 +193,7 @@
       <item itemvalue="Gradle.test1Test" />
       <item itemvalue="Gradle.Tests in 'git_teampj'" />
       <item itemvalue="JUnit.test1Test" />
+      <item itemvalue="Application." />
     </list>
     <recent_temporary>
       <list>
@@ -428,7 +440,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591359288824</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Alarm Buzzer 수정">
+      <created>1591363147769</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1591363147769</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -444,7 +463,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Mode manager 정리" />
     <MESSAGE value="gitnore" />
     <MESSAGE value="clcikButton" />
     <MESSAGE value="ModeManger 변수" />
@@ -469,9 +487,18 @@
     <MESSAGE value="Timer minusNanos 값수정" />
     <MESSAGE value="Stopwatch를 Timer와 따로두는 것과 같이두는것의 차이가 없어 같이 합친뒤 elapsedTime이 10인 순간을 점프해 버릴 경우의 대비해 if 문을 ==10에서 &gt;=10으로 수정" />
     <MESSAGE value="Clicked button time {} 누락 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="Clicked button time {} 누락 수정" />
+    <MESSAGE value="Alarm Buzzer 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="Alarm Buzzer 수정" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="940" y="111" key="#&lt;template&gt;_of_Application" timestamp="1591363411937">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="940" y="111" key="#&lt;template&gt;_of_Application/0.0.2560.1040@0.0.2560.1040" timestamp="1591363411937" />
+    <state x="954" y="139" key="#Main_test_2" timestamp="1591363434881">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="954" y="139" key="#Main_test_2/0.0.2560.1040@0.0.2560.1040" timestamp="1591363434881" />
     <state x="760" y="274" key="#Project_Structure" timestamp="1591076943535">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -488,10 +515,11 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1085" y="405" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1591074707858" />
-    <state x="622" y="71" key="CommitChangelistDialog2" timestamp="1591255811922">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="829" y="71" key="CommitChangelistDialog2" timestamp="1591363177891">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="622" y="71" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1591255811922" />
+    <state x="829" y="71" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1591363177891" />
     <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog" timestamp="1591265278185">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -501,21 +529,25 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="454" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1591073036048" />
-    <state width="2517" height="194" key="GridCell.Tab.0.bottom" timestamp="1591359724852">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="2463" height="2" key="GridCell.Tab.0.bottom" timestamp="1591363444333">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
+    <state width="2463" height="2" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1591363444333" />
     <state width="2517" height="194" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591359724852" />
-    <state width="2517" height="194" key="GridCell.Tab.0.center" timestamp="1591359724852">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="2463" height="2" key="GridCell.Tab.0.center" timestamp="1591363444333">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
+    <state width="2463" height="2" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1591363444333" />
     <state width="2517" height="194" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591359724852" />
-    <state width="2517" height="194" key="GridCell.Tab.0.left" timestamp="1591359724851">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="2463" height="2" key="GridCell.Tab.0.left" timestamp="1591363444332">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
+    <state width="2463" height="2" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1591363444332" />
     <state width="2517" height="194" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591359724851" />
-    <state width="2517" height="194" key="GridCell.Tab.0.right" timestamp="1591359724852">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="2463" height="2" key="GridCell.Tab.0.right" timestamp="1591363444333">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
+    <state width="2463" height="2" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1591363444333" />
     <state width="2517" height="194" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591359724852" />
     <state x="248" y="121" key="MergeDialog" timestamp="1591082012879">
       <screen x="0" y="0" width="2560" height="1400" />
@@ -525,10 +557,11 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="781" y="344" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1591263207383" />
-    <state x="872" y="432" key="Vcs.Push.Dialog.v2" timestamp="1591359294938">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="872" y="321" key="Vcs.Push.Dialog.v2" timestamp="1591363183112">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="654" y="321" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591256174062" />
+    <state x="872" y="321" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1591363183112" />
     <state x="872" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591359294938" />
     <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591358938268">
       <screen x="0" y="0" width="2560" height="1400" />
