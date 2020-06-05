@@ -15,7 +15,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="Timer">
+    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sys/Tick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/Tick.java" afterDir="false" />
     </list>
@@ -85,6 +85,7 @@
   <component name="RunManager" selected="Application.Main_test">
     <configuration name="Main_test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GUI.Main_test" />
+      <module name="softwarevv.main" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="GUI.*" />
@@ -507,10 +508,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Buzzer,Alarm,Timer 수정, 알람울리고 멈추는 기능 수정" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="709" y="506" key="#Main_test" timestamp="1591377339935">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="332" y="137" key="#Main_test" timestamp="1591378048105">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="332" y="137" key="#Main_test/0.0.2560.1040@0.0.2560.1040" timestamp="1591372723287" />
+    <state x="332" y="137" key="#Main_test/0.0.2560.1040@0.0.2560.1040" timestamp="1591378048105" />
     <state x="709" y="506" key="#Main_test/0.0.2560.1400@0.0.2560.1400" timestamp="1591377339935" />
     <state x="972" y="334" key="#Main_test_2" timestamp="1591360110725">
       <screen x="0" y="0" width="2560" height="1440" />
@@ -553,28 +554,28 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="454" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1591073036048" />
-    <state width="2517" height="82" key="GridCell.Tab.0.bottom" timestamp="1591373611458">
+    <state width="2477" height="80" key="GridCell.Tab.0.bottom" timestamp="1591378050344">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2517" height="82" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1591373611458" />
+    <state width="2477" height="80" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1591378050344" />
     <state width="2517" height="194" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591359724852" />
     <state width="2517" height="413" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1591362916706" />
-    <state width="2517" height="82" key="GridCell.Tab.0.center" timestamp="1591373611458">
+    <state width="2477" height="80" key="GridCell.Tab.0.center" timestamp="1591378050344">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2517" height="82" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1591373611458" />
+    <state width="2477" height="80" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1591378050344" />
     <state width="2517" height="194" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591359724852" />
     <state width="2517" height="413" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1591362916706" />
-    <state width="2517" height="82" key="GridCell.Tab.0.left" timestamp="1591373611458">
+    <state width="2477" height="80" key="GridCell.Tab.0.left" timestamp="1591378050344">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2517" height="82" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1591373611458" />
+    <state width="2477" height="80" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1591378050344" />
     <state width="2517" height="194" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591359724851" />
     <state width="2517" height="413" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1591362916706" />
-    <state width="2517" height="82" key="GridCell.Tab.0.right" timestamp="1591373611458">
+    <state width="2477" height="80" key="GridCell.Tab.0.right" timestamp="1591378050344">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2517" height="82" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1591373611458" />
+    <state width="2477" height="80" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1591378050344" />
     <state width="2517" height="194" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591359724852" />
     <state width="2517" height="413" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1591362916706" />
     <state width="2463" height="340" key="GridCell.Tab.1.bottom" timestamp="1591363580131">
@@ -601,11 +602,11 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="781" y="344" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1591263207383" />
-    <state x="872" y="321" key="Vcs.Push.Dialog.v2" timestamp="1591372491909">
+    <state x="872" y="321" key="Vcs.Push.Dialog.v2" timestamp="1591377914134">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="654" y="321" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591256174062" />
-    <state x="872" y="321" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1591372491909" />
+    <state x="872" y="321" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1591377914134" />
     <state x="872" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591359294938" />
     <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591358938268">
       <screen x="0" y="0" width="2560" height="1400" />
