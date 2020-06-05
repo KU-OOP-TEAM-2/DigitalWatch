@@ -79,9 +79,11 @@ public class CalorieCheck implements Mode{
     //    flag
     private boolean pauseCalorieCheckFlag;
     public boolean getIsPause(){return pauseCalorieCheckFlag;}
+    public void setPauseFlag(boolean flag){pauseCalorieCheckFlag = flag;}
 
     private boolean startCalorieCheckFlag;
     public boolean getIsStart(){return startCalorieCheckFlag;}
+    public void setStartFlag(boolean flag){startCalorieCheckFlag = true;}
     private boolean isActivated;
 
     //    false = speed, true = weight

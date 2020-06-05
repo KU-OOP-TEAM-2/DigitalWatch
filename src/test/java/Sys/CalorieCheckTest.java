@@ -105,7 +105,9 @@ public class CalorieCheckTest {
         CalorieCheck calorieCheck = new CalorieCheck();
 
         LocalTime time = calorieCheck.getCalorieTime();
-        calorieCheck.startCalorieCheck();
+        //calorieCheck.startCalorieCheck();
+        calorieCheck.setStartFlag(true);
+        calorieCheck.setPauseFlag(false);
 
         /*pause = false, start = true
         최초로 시작하고 0시 0분 0초에서 한번 증가시켜줬을 때를 가정*/
