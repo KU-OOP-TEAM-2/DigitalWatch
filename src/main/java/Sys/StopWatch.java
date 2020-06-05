@@ -69,8 +69,6 @@ public class StopWatch implements Mode{
      * 00:59:59:99를 지난다면 overflow가 발생하도록, 00:00:00:00부터 시작하도록 함.
     **/
     public void increaseCurrentTime() {
-        is100ms = (is100ms + 1) % 100;
-        if(is100ms == 0){
             if(!isPaused) {
                 if (this.currentStopWatchTime.compareTo(overflowStopWatchTime) == 0) {
                     pauseStopwatch();
@@ -79,9 +77,6 @@ public class StopWatch implements Mode{
                     currentStopWatchTime.plusNanos(10000000);
                 }
             }
-            else
-                return;
-        }
     }
 
     //이게 왜 필요한지 모르곘습니다... 일단은 그냥 두겠습니다.
