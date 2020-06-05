@@ -241,14 +241,6 @@ public class Time implements Mode{
     }
 
     public boolean getFormat() {return this.format; }
-//    public boolean getIsActivated() {
-//        return this.isActivated;
-//    }
-//
-//
-//    public void setActivated(boolean isActivated) {
-//        this.isActivated = isActivated;
-//    }
 
     @Override
     public void setActive(boolean act) {
