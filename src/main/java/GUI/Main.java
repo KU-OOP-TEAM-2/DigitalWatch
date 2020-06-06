@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 import Sys.*;
 
-public class Main_test {
+public class Main {
 
   public static void main(String[] args) {
 
