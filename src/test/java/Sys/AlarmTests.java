@@ -14,7 +14,21 @@ public class AlarmTests extends TestCase {
     }
 
     public void testIsAlarmTimeCheck() {
+        ModeManager man = new ModeManager();
+        Buzzer buzzer = man.getBuzzer();
 
+        Alarm alarm = ((Alarm)(man.getmodes()[1]));
+        alarm.enterEditAlarm();
+        alarm.increaseAlarmTime();
+        alarm.changeCursor();
+        alarm.increaseAlarmTime();
+        alarm.saveAlarm();
+        Time time = ((Time)(man.getmodes()[0]));
+        time.setCurrentTime(LocalDateTime.of(2020,1,1,1,1));
+
+        alarm.isAlarmTimeCheck();
+        assertEquals(false, buzzer.getBuzzerOn());
+        assertFalse(buzzer.getIsAlarmRinging());
     }
 
     public void testChangeAlarm() {
@@ -144,4 +158,29 @@ public class AlarmTests extends TestCase {
         assertEquals(0, alarm.getCopyOfAlarmTimer().toLocalTime().compareTo(alarm.getCurrentAlarmTimerObject().requestExpirationTime()));
 
     }
+
+    public void testTurnOffAlarm(){
+        ModeManager man = new ModeManager();
+        Buzzer buzzer = man.getBuzzer();
+
+        Alarm alarm = ((Alarm)(man.getmodes()[1]));
+        alarm.enterEditAlarm();
+        alarm.increaseAlarmTime();
+        alarm.changeCursor();
+        alarm.increaseAlarmTime();
+        alarm.saveAlarm();
+        Time time = ((Time)(man.getmodes()[0]));
+        time.setCurrentTime(LocalDateTime.of(2020,1,1,1,1));
+
+        alarm.isAlarmTimeCheck();
+        assertEquals(false, buzzer.getBuzzerOn());
+        assertFalse(buzzer.getIsAlarmRinging());
+
+        alarm.turnOnOffAlarm();
+        alarm.isAlarmTimeCheck();
+        assertEquals(true, buzzer.getBuzzerOn());
+
+    }
+
+
 }
