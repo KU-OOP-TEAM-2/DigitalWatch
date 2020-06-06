@@ -178,6 +178,30 @@ public class TimerTest {
     }
 
     @Test
+    public void decreaseTimer() {
+        Buzzer buzzer = new Buzzer();
+        Timer timer = new Timer(buzzer);
+
+        timer.setTimerTime(LocalDateTime.of(2000,1,1,0,0,4));
+        timer.startTimer();
+        //timer가 시작되었는지 확인
+        assertEquals(timer.getpauseTimerFlag(),false);
+        //10ms씩 100번 내려서 1초 감소 시키고 4->3 확인
+        for(int i=0;i<100;i++)
+            timer.decreaseTimer();
+        assertEquals(timer.getTimerTime().getSecond(),3);
+        //3초가 더흐르게 하고 buzzer가 on되었는지 확인
+        for(int i=0;i<300;i++)
+            timer.decreaseTimer();
+        //buzzer on 확인
+        assertEquals(buzzer.getBuzzerOn(),true);
+        //Timer멈췄는지 확인
+        assertEquals(timer.getpauseTimerFlag(),true);
+        //Timer
+        assertEquals(timer.getTimerTime(),LocalDateTime.of(2000,1,1,0,0,0));
+
+    }
+        @Test
     public void startTimer(){
         Buzzer buzzer = new Buzzer();
         Timer timer = new Timer(buzzer);

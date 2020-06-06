@@ -129,7 +129,7 @@ public class AlarmTest {
         assertEquals(0, alarm.getCopyOfAlarmTimer().toLocalTime().compareTo(alarm.getCurrentAlarmTimerObject().requestExpirationTime()));
 
     }
-    
+
     @Test
     public void TurnOffAlarm(){
         ModeManager man = new ModeManager();
