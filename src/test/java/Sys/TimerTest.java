@@ -15,8 +15,10 @@ public class TimerTest {
         Timer timer=new Timer(buzzer);
 
         timer.enterEditTimer();
-
-        assertEquals(timer.getTimerTime(),timer.getSettingTimer());
+        //enter Edit시 Timer 변수 체크
+        assertEquals(timer.getpauseTimerFlag(),true);
+        assertEquals(timer.getsaveTimerFlag(),false);
+        assertEquals(timer.getCurrentCursor(),0);
 
     }
 
@@ -28,6 +30,7 @@ public class TimerTest {
         int tempCursor=timer.getCurrentCursor();
         tempCursor=(tempCursor+1)%3;
         timer.changeCursor();
+        //changeCursor 후 현재 커서가 제대로 변경되었는지 check
         assertEquals(timer.getCurrentCursor(),tempCursor);
 
     }
@@ -38,8 +41,6 @@ public class TimerTest {
         Timer timer=new Timer(buzzer);
 
         timer.enterEditTimer();
-
-
         //시간test
         //현재 커서가 0(시간인지 확인)
         assertEquals(timer.getCurrentCursor(),0);
@@ -54,8 +55,6 @@ public class TimerTest {
         int temp=timer.getTimerTime().getHour()+1;
         timer.increaseData();
         assertEquals(timer.getTimerTime().getHour(), temp);
-
-
 
         //분 테스트
         timer.changeCursor();
@@ -74,8 +73,6 @@ public class TimerTest {
         timer.increaseData();
         assertEquals(timer.getTimerTime().getMinute(),temp);
 
-
-
         //초 테스트
         timer.changeCursor();
         //현재 커서가 2(초)인지 확인
@@ -91,9 +88,6 @@ public class TimerTest {
         temp=timer.getTimerTime().getSecond()+1;
         timer.increaseData();
         assertEquals(timer.getTimerTime().getSecond(),temp);
-
-
-
     }
 
     @Test
@@ -102,7 +96,6 @@ public class TimerTest {
         Timer timer=new Timer(buzzer);
 
         timer.enterEditTimer();
-
 
         //시간test
         //현재 커서가 0(시간인지 확인)
@@ -118,8 +111,6 @@ public class TimerTest {
         int temp=timer.getTimerTime().getHour()-1;
         timer.decreaseData();
         assertEquals(timer.getTimerTime().getHour(), temp);
-
-
 
         //분 테스트
         timer.changeCursor();
@@ -138,8 +129,6 @@ public class TimerTest {
         timer.decreaseData();
         assertEquals(timer.getTimerTime().getMinute(),temp);
 
-
-
         //초 테스트
         timer.changeCursor();
         //현재 커서가 2(초)인지 확인
@@ -155,9 +144,6 @@ public class TimerTest {
         temp=timer.getTimerTime().getSecond()-1;
         timer.decreaseData();
         assertEquals(timer.getTimerTime().getSecond(),temp);
-
-
-
     }
 
     @Test
