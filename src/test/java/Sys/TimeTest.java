@@ -27,7 +27,7 @@ public class TimeTest {
     }
 
     @Test
-    public void changeCursor1() {
+    public void changeCursor() {
         Time t= new Time();
         t.changeCursor();
         //한 번 바꿨을 때 cursor증가하는지
