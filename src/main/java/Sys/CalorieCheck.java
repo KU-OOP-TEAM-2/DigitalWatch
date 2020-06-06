@@ -89,6 +89,7 @@ public class CalorieCheck implements Mode{
     //    false = speed, true = weight
     private boolean cursor;
     public boolean getCursor(){return cursor;}
+    public void setCursor(boolean cursor){this.cursor=cursor;}
 
 
 
@@ -114,7 +115,7 @@ public class CalorieCheck implements Mode{
                 tempWeight += 1;
             }
         }else{
-            if(Speed == 99){
+            if(tempSpeed == 99){
                 tempSpeed = 0;
             } else {
                 tempSpeed += 1;

@@ -19,20 +19,75 @@ public class CalorieCheckTest {
         assertEquals(!cursor, calorieCheck.getCursor());
     }
 
-    /*@Test
+    @Test
     public void increaseData() {
         CalorieCheck calorieCheck = new CalorieCheck();
 
         //cursor의 기본값은 true
         //cursor = true, tempWeight 증가
-        assert
+        //정상적인 경우
+        int tempWeight = calorieCheck.getWeight();
+        calorieCheck.setTempWeight(tempWeight);
+        calorieCheck.increaseData();
+        assertTrue(calorieCheck.getCursor());
+        assertEquals(tempWeight+1, calorieCheck.getTempWeight());
+
+        //tempWeight = 999이면 0으로 바꿔야 한다
+        tempWeight = 999;
+        calorieCheck.setTempWeight(tempWeight);
+        calorieCheck.increaseData();
+        assertEquals(0, calorieCheck.getTempWeight());
+
 
         //cursor = false, Speed 증가
+        calorieCheck.setCursor(false);
+        int tempSpeed = calorieCheck.getSpeed();
+        calorieCheck.setTempSpeed(tempSpeed);
+        calorieCheck.increaseData();
+        assertFalse(calorieCheck.getCursor());
+        assertEquals(tempSpeed+1, calorieCheck.getTempSpeed());
+
+        //tempSpeed = 99면 0으로 바꿔야 한다.
+        tempSpeed = 99;
+        calorieCheck.setTempSpeed(tempSpeed);
+        calorieCheck.increaseData();
+        assertEquals(0, calorieCheck.getTempSpeed());
     }
 
     @Test
     public void decreaseData() {
-    }*/
+        CalorieCheck calorieCheck = new CalorieCheck();
+
+        //cursor의 기본값은 true
+        //cursor = true, tempWeight 감소
+        //정상적인 경우
+        int tempWeight = calorieCheck.getWeight();
+        calorieCheck.setTempWeight(tempWeight);
+        calorieCheck.decreaseData();
+        assertTrue(calorieCheck.getCursor());
+        assertEquals(tempWeight-1, calorieCheck.getTempWeight());
+
+        //tempWeight = 0이면 999으로 바꿔야 한다
+        tempWeight = 0;
+        calorieCheck.setTempWeight(tempWeight);
+        calorieCheck.decreaseData();
+        assertEquals(999, calorieCheck.getTempWeight());
+
+
+        //cursor = false, Speed 증가
+        calorieCheck.setCursor(false);
+        int tempSpeed = calorieCheck.getSpeed();
+        calorieCheck.setTempSpeed(tempSpeed);
+        calorieCheck.decreaseData();
+        assertFalse(calorieCheck.getCursor());
+        assertEquals(tempSpeed-1, calorieCheck.getTempSpeed());
+
+        //tempSpeed = 0면 99으로 바꿔야 한다.
+        tempSpeed = 0;
+        calorieCheck.setTempSpeed(tempSpeed);
+        calorieCheck.decreaseData();
+        assertEquals(99, calorieCheck.getTempSpeed());
+    }
 
     @Test
     public void saveCalorieSetting() {

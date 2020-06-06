@@ -258,7 +258,7 @@ public class ModeManager {
                             this.changeMode();
                         }else if(Button ==1 && longClickedFlag ==false){
                             ((Timer)modes[2]).cancelTimer();
-                        }else if(Button ==1 && longClickedFlag ==true){ //setTimer 진입
+                        }else if(Button ==1 && longClickedFlag ==true && ((Timer)modes[2]).getpauseTimerFlag()){ //setTimer 진입
                             ((Timer)modes[2]).enterEditTimer();
                             isEditMode= !isEditMode;
                         }else if(Button==2 ){ //start Timer , pause Timer
