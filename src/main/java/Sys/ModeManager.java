@@ -334,8 +334,8 @@ public class ModeManager {
 
                             //Adjust Button
                             case 1:
-                                //Adjust Button이 꾹 눌렸을 때 = Set Speed and Weight를 한다.
-                                if (longClickedFlag) {
+                                //Adjust Button이 꾹 눌렸을 때 = Set Speed and Weight를 한다, Non-start 상태일때만
+                                if (longClickedFlag && !((CalorieCheck) modes[4]).getIsStart()) {
                                     ((CalorieCheck) modes[4]).enterSetSpeedandWeight();
                                     isEditMode = !isEditMode;
                                 }
