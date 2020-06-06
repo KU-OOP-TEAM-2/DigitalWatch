@@ -68,7 +68,7 @@ public class Alarm implements Mode{
             }
         }
         return false;
-    }
+}
 
     public LocalTime changeAlarm(){
         currentAlarmTimerIndex = (currentAlarmTimerIndex + 1) % 4;

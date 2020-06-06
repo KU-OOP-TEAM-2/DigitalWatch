@@ -20,7 +20,8 @@ public class StopWatch implements Mode{
         isActivated = true;
         lapTime= LocalTime.of(0,0,0,0);
         isPaused = true;
-        overflowStopWatchTime= LocalTime.of(1,39,59,99000000);
+        overflowStopWatchTime= LocalTime.of(1,39,59,990000000);
+
 
         isEnd = false;
     }
@@ -72,7 +73,7 @@ public class StopWatch implements Mode{
     public void increaseCurrentTime() {
         is100ms = (is100ms + 1) % 10;
             if(!isPaused && isEnd!=true) {
-                if (this.currentStopWatchTime.compareTo(overflowStopWatchTime) == 0) {
+                if (this.currentStopWatchTime.compareTo(overflowStopWatchTime) >= 0) {
                     pauseStopwatch();
                     isEnd = true;
                 } else {

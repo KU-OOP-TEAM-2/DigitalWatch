@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 public class StopWatchTest {
 
     @Test
-    public void startStopwatch() {
+    public void teststartStopwatch() {
         StopWatch stopWatch = new StopWatch();
         int i;
         stopWatch.startStopwatch();
@@ -22,9 +22,21 @@ public class StopWatchTest {
         assertEquals(false, stopWatch.getIsPaused());
 
     }
+    @Test
+    public void teststartStopwatch_overflow() {
+        StopWatch stopWatch = new StopWatch();
+        int i;
+        stopWatch.startStopwatch();
+        for(i=0; i < 60000000; i++)
+            stopWatch.increaseCurrentTime();
+        assertEquals(0, stopWatch.getCurrentStopWatchTime().compareTo(LocalTime.of(1,39,59,990000000)));
+
+        assertEquals(true, stopWatch.getIsPaused());
+
+    }
 
     @Test
-    public void resumeStopwatch() {
+    public void testresumeStopwatch() {
         StopWatch stopWatch = new StopWatch();
         stopWatch.startStopwatch(); stopWatch.pauseStopwatch();
 
@@ -33,15 +45,15 @@ public class StopWatchTest {
     }
 
     @Test
-    public void pauseStopwatch() {
+    public void testpauseStopwatch() {
         StopWatch stopWatch = new StopWatch();
         stopWatch.startStopwatch();
         stopWatch.pauseStopwatch();
-        assertFalse(stopWatch.getIsPaused());
+        assertTrue(stopWatch.getIsPaused());
     }
 
     @Test
-    public void resetStopwatch() {
+    public void testresetStopwatch() {
         StopWatch stopWatch = new StopWatch();
         int i;
         stopWatch.startStopwatch();
@@ -53,7 +65,7 @@ public class StopWatchTest {
     }
 
     @Test
-    public void lapStopwatch() {
+    public void testlapStopwatch() {
         StopWatch stopWatch = new StopWatch();
         int i;
         stopWatch.startStopwatch();
@@ -66,7 +78,7 @@ public class StopWatchTest {
     }
 
     @Test
-    public void increaseCurrentTime() {
+    public void testincreaseCurrentTime() {
 
         StopWatch stopWatch = new StopWatch();
 
@@ -77,6 +89,10 @@ public class StopWatchTest {
         for(i=0; i < 6; i++)
             stopWatch.increaseCurrentTime();
         assertFalse(stopWatch.getIsPaused());
+
+        for(i=0; i < 70000000; i++)
+            stopWatch.increaseCurrentTime();
+        assertEquals(0, stopWatch.getCurrentStopWatchTime().compareTo(LocalTime.of(1,39,59,990000000)));
 
     }
 

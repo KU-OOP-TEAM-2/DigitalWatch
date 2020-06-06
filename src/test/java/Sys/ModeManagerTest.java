@@ -72,7 +72,14 @@ class ModeManagerTest {
         m.saveModeData();
         result=m.isEditMode();
         assertEquals(true,result);
-        
 
+    }
+
+    @Test
+    void testchangeMode(){
+        ModeManager manager = new ModeManager();
+        manager.changeMode();
+        manager.changeMode();
+        assertEquals(3, manager.getCurrentMode());
     }
 }

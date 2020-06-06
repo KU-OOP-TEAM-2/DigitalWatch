@@ -45,9 +45,6 @@ public class AlarmTests extends TestCase {
 
     }
 
-    public void testEnterEditAlarm() {
-
-    }
 
     public void testIncreaseAlarmTime() {
         Buzzer buzzer = new Buzzer();
@@ -64,6 +61,23 @@ public class AlarmTests extends TestCase {
         LocalTime t = s.toLocalTime();
 
         assertEquals(0,  t.compareTo(LocalTime.of(3,2,0)));
+    }
+    public void testIncreaseAlarmTime_overflow() {
+        Buzzer buzzer = new Buzzer();
+        Time time = new Time();
+        int i;
+        Alarm alarm = new Alarm(buzzer, time);
+
+        alarm.enterEditAlarm();
+        for(i=0; i < 25; i++)
+            alarm.increaseAlarmTime();
+        alarm.changeCursor();
+        for(i=0; i < 70; i++)
+            alarm.increaseAlarmTime();
+        LocalDateTime s = alarm.getCopyOfAlarmTimer();
+        LocalTime t = s.toLocalTime();
+
+        assertEquals(0,  t.compareTo(LocalTime.of(2,10,0)));
     }
 
     public void testDecreaseAlarmTime() {
@@ -85,6 +99,22 @@ public class AlarmTests extends TestCase {
         LocalTime t = s.toLocalTime();
 
         assertEquals(0,  t.compareTo(LocalTime.of(2,1,0)));
+    }
+    public void testDecreaseAlarmTime_overflow() {
+        Buzzer buzzer = new Buzzer();
+        Time time = new Time();
+
+        Alarm alarm = new Alarm(buzzer, time);
+
+        alarm.enterEditAlarm();
+        alarm.decreaseAlarmTime();
+        alarm.changeCursor();
+        alarm.decreaseAlarmTime();
+
+        LocalDateTime s = alarm.getCopyOfAlarmTimer();
+        LocalTime t = s.toLocalTime();
+
+        assertEquals(0,  t.compareTo(LocalTime.of(22,59,0)));
     }
 
     public void testChangeCursor() {
