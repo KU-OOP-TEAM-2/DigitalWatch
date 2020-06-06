@@ -60,5 +60,7 @@ public class WorldTime implements Mode{
 
     //현재 City 이름 getter
     public String getCurrentCityName(){ return this.worldTimes[this.CurrentCity].getCityName(); }
-
+    public int getCurrentCity(){
+        return this.CurrentCity;
+    }
 }

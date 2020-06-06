@@ -39,6 +39,9 @@ public class Tick implements Callable<Void>{
 
             //tick per 10millisecond
             if(elapsedTime >= 10) {
+                //기준 시간점 새로 갱신
+                prevTime = LocalDateTime.now();
+
                 //Timer
                 ((Timer)modes[2]).decreaseTimer();
                 //stopwatch
@@ -48,11 +51,13 @@ public class Tick implements Callable<Void>{
                 //calorie check
                 ((CalorieCheck)modes[4]).increaseCalorieCheckTimer();
                 //when duration = 1 second
+                ((Time)modes[0]).timeflow();
+                if(myModeManager.getCurrentMode()==0&&myModeManager.isEditMode()==true)
+                    ((Time)modes[0]).editTimeFlow();
                 if (checkSecond == 100) {
-                    checkSecond = 0;
-                    //Time
-                    ((Time)modes[0]).timeflow();
 
+
+                    checkSecond = 0;
                     //alarm
                     //Buzzer를 여기서 울리는것이 아니라 Alarm객체 내부에서 울리도록 함.
                     //구현 방식의 차이에 따라 추후 바뀔 수 있는 부분입니다.
@@ -75,8 +80,7 @@ public class Tick implements Callable<Void>{
                     checkMinute++;
                 }
 
-                //기준 시간점 새로 갱신
-                prevTime = LocalDateTime.now();
+
             }
         }
         return null;

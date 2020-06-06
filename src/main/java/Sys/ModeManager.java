@@ -85,8 +85,11 @@ public class ModeManager {
 
 
     public void plus_ElapsedTime(float tt){
-        elapsedTime += tt;
-        returnToDefault();
+        if(isEditMode){
+            elapsedTime += tt;
+            returnToDefault();
+        }
+
     }
 
     /**
@@ -399,6 +402,7 @@ public class ModeManager {
                             this.changeCursor();
                             break;
                         case 1:
+
                             this.saveModeData();
                             break;
                         case 2:
@@ -489,6 +493,5 @@ public class ModeManager {
     public Buzzer getBuzzer() { return buzzer; }
 
     public int getActiveModeCounter() {return this.ActiveModeCounter;}
-
 
 }

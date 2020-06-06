@@ -30,10 +30,10 @@ public class CalorieCheck implements Mode{
      *
      */
     private int Speed;
-
     private int tempSpeed;
     public int getSpeed() {return Speed;};
     public void setSpeed(int Speed) {this.Speed = Speed;}
+    public void setTempSpeed(int tempSpeed){this.tempSpeed = tempSpeed;}
     /**
      *
      */
@@ -41,6 +41,7 @@ public class CalorieCheck implements Mode{
     private int tempWeight;
     public int getWeight() {return Weight;}
     public void setWeight(int Weight){this.Weight = Weight;}
+    public void setTempWeight(int tempWeight){this.tempWeight = tempWeight;}
     /**
      *
      */
@@ -78,13 +79,16 @@ public class CalorieCheck implements Mode{
     //    flag
     private boolean pauseCalorieCheckFlag;
     public boolean getIsPause(){return pauseCalorieCheckFlag;}
+    public void setPauseFlag(boolean flag){pauseCalorieCheckFlag = flag;}
 
     private boolean startCalorieCheckFlag;
     public boolean getIsStart(){return startCalorieCheckFlag;}
+    public void setStartFlag(boolean flag){startCalorieCheckFlag = true;}
     private boolean isActivated;
 
     //    false = speed, true = weight
     private boolean cursor;
+    public boolean getCursor(){return cursor;}
 
 
 
@@ -144,7 +148,7 @@ public class CalorieCheck implements Mode{
      임시변수에 저장해놓은 값을 실제 speed, weigth 변수에 저장
      */
     public void saveCalorieSetting() {
-        System.out.println("CalorieCheck saveData");
+        //System.out.println("CalorieCheck saveData");
         Speed = tempSpeed;
         Weight = tempWeight;
         cursor = true;
@@ -163,7 +167,7 @@ public class CalorieCheck implements Mode{
      *
      */
     public void startCalorieCheck() {
-        System.out.println("CalorieCheck start");
+        //System.out.println("CalorieCheck start");
         pauseCalorieCheckFlag = false;
         startCalorieCheckFlag = true;
         cursor = false;
@@ -199,12 +203,13 @@ public class CalorieCheck implements Mode{
             //23시 59분 59초가 되면 시간측정 및 계산 종료
             if(CalorieTime.getHour() == 23 && CalorieTime.getMinute() == 59
                     && CalorieTime.getSecond() == 59){
+                System.out.println("in end!!");
                 endCalorieCheck();
             }
             else{
                 CalorieTime = CalorieTime.plusNanos(10000000);
-                System.out.println(CalorieTime);
-                System.out.println("Calorie=" + getCalorie());
+                /*System.out.println(CalorieTime);
+                System.out.println("Calorie=" + getCalorie());*/
             }
         }
     }
