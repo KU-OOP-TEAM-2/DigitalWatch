@@ -6,10 +6,10 @@ import java.time.LocalDateTime;
 
 import static org.junit.Assert.*;
 
-class TimeTest {
+public class TimeTest {
 
     @Test
-    void timeflow() {
+    public void timeflow() {
         Time t=new Time();
         for(int i=0;i<100;i++){
             t.timeflow();
@@ -27,7 +27,7 @@ class TimeTest {
     }
 
     @Test
-    void changeCursor1() {
+    public void changeCursor1() {
         Time t= new Time();
         t.changeCursor();
         //한 번 바꿨을 때 cursor증가하는지
@@ -48,7 +48,7 @@ class TimeTest {
 
 
     @Test
-    void increaseData() {
+    public void increaseData() {
         Time t= new Time();
         t.enterEditData();
 
@@ -84,7 +84,7 @@ class TimeTest {
     }
 
     @Test
-    void decreaseData() {
+    public void decreaseData() {
         Time t= new Time();
         t.enterEditData();
 
@@ -120,7 +120,7 @@ class TimeTest {
     }
 
     @Test
-    void saveData() {
+    public void saveData() {
         Time t= new Time();
         LocalDateTime test=LocalDateTime.of(7878, 1, 1, 00, 00, 00, 0);
         t.setEditTime(test);

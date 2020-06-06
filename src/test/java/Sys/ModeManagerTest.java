@@ -1,17 +1,14 @@
 package Sys;
 
 import org.junit.Test;
-import java.time.LocalDateTime;
+
 import static org.junit.Assert.*;
 
-class ModeManagerTest {
+public class ModeManagerTest {
+
 
     @Test
-    void clickButton() {
-    }
-
-    @Test
-    void enterEditMode() {
+    public void enterEditMode() {
         ModeManager m = new ModeManager();
         m.enterEditMode();
         int result=m.getCurrentMode();
@@ -19,7 +16,7 @@ class ModeManagerTest {
     }
 
     @Test
-    void changeCursor() {
+    public void changeCursor() {
         ModeManager m = new ModeManager();
         m.changeCursor();
         int result=m.getCurrentCursor();
@@ -36,7 +33,7 @@ class ModeManagerTest {
     }
 
     @Test
-    void changeStatus() {
+    public void changeStatus() {
         ModeManager m=new ModeManager();
         m.enterEditMode();
         m.changeStatus();
@@ -47,7 +44,7 @@ class ModeManagerTest {
     }
 
     @Test
-    void saveModeData() {
+    public void saveModeData() {
         ModeManager m=new ModeManager();
 
         m.enterEditMode();
@@ -74,12 +71,22 @@ class ModeManagerTest {
         assertEquals(true,result);
 
     }
-
     @Test
-    void testchangeMode(){
+    public void testchangeMode(){
         ModeManager manager = new ModeManager();
         manager.changeMode();
         manager.changeMode();
-        assertEquals(3, manager.getCurrentMode());
+        assertEquals(2, manager.getCurrentMode());
+    }
+
+    @Test
+    public void testchangeMode_overflow(){
+        ModeManager manager = new ModeManager();
+        manager.changeMode();
+        manager.changeMode();
+        manager.changeMode();
+        manager.changeMode();
+        manager.changeMode();
+        assertEquals(1, manager.getCurrentMode());
     }
 }

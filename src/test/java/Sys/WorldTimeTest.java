@@ -4,10 +4,10 @@ import org.junit.Test;
 import java.time.LocalDateTime;
 import static org.junit.Assert.*;
 
-class WorldTimeTest {
+public class WorldTimeTest {
 
     @Test
-    void changeTimezone1() {
+    public void changeTimezone1() {
         WorldTime w= new WorldTime();
         w.changeTimezone();
         int result=w.getCurrentCity();
@@ -26,7 +26,7 @@ class WorldTimeTest {
 
 
     @Test
-    void getWorldTime() {
+    public void getWorldTime() {
         Time t=new Time();
         WorldTime w= new WorldTime();
         w.changeTimezone();
