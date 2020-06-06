@@ -187,10 +187,12 @@ public class Timer implements  Mode{
     //get Timer time
     public LocalDateTime getTimerTime() {return this.timerTime;}
     public boolean getpauseTimerFlag() {return this.pauseTimerFlag; }
+    public boolean getsaveTimerFlag() {return this.saveTimerFlag; }
     public LocalDateTime getSettingTimer() { return settingTimer; }
 
     public void setSettingTimer(LocalDateTime setTime){this.settingTimer=setTime;}
     public void setTimerTime(LocalDateTime timerTime){this.timerTime=timerTime;}
+
 }
 
 

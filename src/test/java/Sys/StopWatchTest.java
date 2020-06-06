@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 public class StopWatchTest {
 
     @Test
-    public void teststartStopwatch() {
+    public void startStopwatch() {
         StopWatch stopWatch = new StopWatch();
         int i;
         stopWatch.startStopwatch();
@@ -21,22 +21,19 @@ public class StopWatchTest {
 
         assertEquals(false, stopWatch.getIsPaused());
 
-    }
-    @Test
-    public void teststartStopwatch_overflow() {
-        StopWatch stopWatch = new StopWatch();
-        int i;
-        stopWatch.startStopwatch();
         for(i=0; i < 60000000; i++)
             stopWatch.increaseCurrentTime();
         assertEquals(0, stopWatch.getCurrentStopWatchTime().compareTo(LocalTime.of(1,39,59,990000000)));
 
         assertEquals(true, stopWatch.getIsPaused());
 
+
+
     }
 
+
     @Test
-    public void testresumeStopwatch() {
+    public void resumeStopwatch() {
         StopWatch stopWatch = new StopWatch();
         stopWatch.startStopwatch(); stopWatch.pauseStopwatch();
 
@@ -45,7 +42,7 @@ public class StopWatchTest {
     }
 
     @Test
-    public void testpauseStopwatch() {
+    public void pauseStopwatch() {
         StopWatch stopWatch = new StopWatch();
         stopWatch.startStopwatch();
         stopWatch.pauseStopwatch();
@@ -53,7 +50,7 @@ public class StopWatchTest {
     }
 
     @Test
-    public void testresetStopwatch() {
+    public void resetStopwatch() {
         StopWatch stopWatch = new StopWatch();
         int i;
         stopWatch.startStopwatch();
@@ -65,7 +62,7 @@ public class StopWatchTest {
     }
 
     @Test
-    public void testlapStopwatch() {
+    public void lapStopwatch() {
         StopWatch stopWatch = new StopWatch();
         int i;
         stopWatch.startStopwatch();
@@ -78,7 +75,7 @@ public class StopWatchTest {
     }
 
     @Test
-    public void testincreaseCurrentTime() {
+    public void increaseCurrentTime() {
 
         StopWatch stopWatch = new StopWatch();
 

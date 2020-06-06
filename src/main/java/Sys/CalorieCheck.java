@@ -89,6 +89,7 @@ public class CalorieCheck implements Mode{
     //    false = speed, true = weight
     private boolean cursor;
     public boolean getCursor(){return cursor;}
+    public void setCursor(boolean cursor){this.cursor=cursor;}
 
 
 
@@ -96,7 +97,6 @@ public class CalorieCheck implements Mode{
      *
      */
     public void changeCursor() {
-        System.out.println("CalorieCheck changeCursorS");
         cursor = !cursor;
     }
 
@@ -108,7 +108,6 @@ public class CalorieCheck implements Mode{
      *
      */
     public void increaseData() {
-        System.out.println("CalorieCheck increaseData");
         if(cursor){
             if(tempWeight == 999){
                 tempWeight = 0;
@@ -116,7 +115,7 @@ public class CalorieCheck implements Mode{
                 tempWeight += 1;
             }
         }else{
-            if(Speed == 99){
+            if(tempSpeed == 99){
                 tempSpeed = 0;
             } else {
                 tempSpeed += 1;
@@ -128,7 +127,6 @@ public class CalorieCheck implements Mode{
      *
      */
     public void decreaseData() {
-        System.out.println("CalorieCheck decreaseData");
         if(cursor){
             if(tempWeight == 0){
                 tempWeight = 999;
@@ -203,7 +201,6 @@ public class CalorieCheck implements Mode{
             //23시 59분 59초가 되면 시간측정 및 계산 종료
             if(CalorieTime.getHour() == 23 && CalorieTime.getMinute() == 59
                     && CalorieTime.getSecond() == 59){
-                System.out.println("in end!!");
                 endCalorieCheck();
             }
             else{
@@ -217,6 +214,7 @@ public class CalorieCheck implements Mode{
     public void resetCalorieCheck(){
         cursor = false;
         Calorie = 0;
+        startCalorieCheckFlag = false;
         CalorieTime = LocalTime.of(0,0,0,0);
     }
 

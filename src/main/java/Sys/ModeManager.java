@@ -258,7 +258,7 @@ public class ModeManager {
                             this.changeMode();
                         }else if(Button ==1 && longClickedFlag ==false){
                             ((Timer)modes[2]).cancelTimer();
-                        }else if(Button ==1 && longClickedFlag ==true){ //setTimer 진입
+                        }else if(Button ==1 && longClickedFlag ==true && ((Timer)modes[2]).getpauseTimerFlag()){ //setTimer 진입
                             ((Timer)modes[2]).enterEditTimer();
                             isEditMode= !isEditMode;
                         }else if(Button==2 ){ //start Timer , pause Timer
@@ -334,8 +334,8 @@ public class ModeManager {
 
                             //Adjust Button
                             case 1:
-                                //Adjust Button이 꾹 눌렸을 때 = Set Speed and Weight를 한다.
-                                if (longClickedFlag) {
+                                //Adjust Button이 꾹 눌렸을 때 = Set Speed and Weight를 한다, Non-start 상태일때만
+                                if (longClickedFlag && !((CalorieCheck) modes[4]).getIsStart()) {
                                     ((CalorieCheck) modes[4]).enterSetSpeedandWeight();
                                     isEditMode = !isEditMode;
                                 }
@@ -460,8 +460,8 @@ public class ModeManager {
     public void saveModeData() {
         if(this.ActiveModeCounter!=4) return;
 
-        for(int i = 0; i < 6; i++) this.modes[i].setActive(this.editStatus[i]);
-        for(int i=0;i<6;i++){
+        for(int i=0; i<6; i++) this.modes[i].setActive(this.editStatus[i]);
+        for(int i=0; i<6; i++){
            if(modes[i].getActive()==true){
                this.currentMode=i;
                break;
