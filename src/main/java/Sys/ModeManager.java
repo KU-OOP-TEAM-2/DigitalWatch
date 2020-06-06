@@ -29,7 +29,7 @@ public class ModeManager {
         modes[5] = new WorldTime();
 
         editStatus= new Boolean[6];
-
+        currentMode=0;
         isEditMode = false;
         buzzerFlag=false;
 
