@@ -27,17 +27,14 @@ public class ModeManager {
         modes[3] = new StopWatch();
         modes[4] = new CalorieCheck();
         modes[5] = new WorldTime();
-        SingletonModeManager = this;
+
         nowMode = modes[0];
         editStatus= new Boolean[6];
-        SingletonModeManager=this;
+
         isEditMode = false;
         buzzerFlag=false;
 
     }
-    //모드매니저
-    public static ModeManager SingletonModeManager;
-
 
 
     //Time Alarm Timer Stopwatch CalorieCheck WorldTime
@@ -66,7 +63,6 @@ public class ModeManager {
 
     //private CalorieCheck calorieCheck;
 
-    private Mode nowMode;
     //ms
 //   clicked 매개에 넣음
 //    public void setButton(int Button){this.Button = Button;}
