@@ -83,7 +83,7 @@ public class StopWatch implements Mode{
         }
 
 
-    //이게 왜 필요한지 모르곘습니다... 일단은 그냥 두겠습니다.
+   /* //이게 왜 필요한지 모르곘습니다... 일단은 그냥 두겠습니다.
     public void stopCurrentTime() {
         lapTime = currentStopWatchTime;
     }
@@ -96,7 +96,7 @@ public class StopWatch implements Mode{
     public void resetCurrentTime() {
         currentStopWatchTime = LocalTime.of(0,0,0,0);
         lapTime = LocalTime.of(0,0,0,0);
-    }
+    }*/
 
     private boolean isActivated;
     public void setActive(boolean act) {

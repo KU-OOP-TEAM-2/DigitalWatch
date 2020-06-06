@@ -15,10 +15,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="">
+    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="add increase, decrease data in CalorieCheckTest">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/CalorieCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/CalorieCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Sys/CalorieCheckTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Sys/CalorieCheckTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/StopWatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/StopWatch.java" afterDir="false" />
     </list>
     <list id="75641970-afe3-41f4-8211-ac3bdcb41cb9" name="Revert &quot;edit Tick constructor&quot;" comment="reset branch" />
     <option name="SHOW_DIALOG" value="false" />
@@ -222,8 +222,8 @@
     </configuration>
     <list>
       <item itemvalue="Gradle.git_teampj" />
-      <item itemvalue="JUnit.StopWatchTest" />
       <item itemvalue="JUnit.CalorieCheckTest" />
+      <item itemvalue="JUnit.StopWatchTest" />
       <item itemvalue="JUnit.AlarmTests.testTurnOffAlarm" />
       <item itemvalue="JUnit.AlarmTests.testIsActivatedAlarm" />
       <item itemvalue="JUnit.BuzzerTest.testTwoBuzz" />
@@ -488,7 +488,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591413569660</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="add increase, decrease data in CalorieCheckTest">
+      <created>1591426715836</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1591426715836</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -504,7 +511,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Mode manager world time 추가" />
     <MESSAGE value="Mode manager 정리" />
     <MESSAGE value="gitnore" />
     <MESSAGE value="clcikButton" />
@@ -529,7 +535,8 @@
     <MESSAGE value="Timer" />
     <MESSAGE value="add CalorieCheckTest, edit workspace.xml" />
     <MESSAGE value="add CalorieCheck UnitTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="add CalorieCheck UnitTest" />
+    <MESSAGE value="add increase, decrease data in CalorieCheckTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="add increase, decrease data in CalorieCheckTest" />
   </component>
   <component name="WindowStateProjectService">
     <state x="569" y="119" key="#&lt;template&gt;_of_JUnit" timestamp="1591388343245">
@@ -595,28 +602,28 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="454" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1591073036048" />
-    <state width="915" height="263" key="GridCell.Tab.0.bottom" timestamp="1591426534121">
+    <state width="915" height="263" key="GridCell.Tab.0.bottom" timestamp="1591426739504">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="915" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591426534121" />
+    <state width="915" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591426739504" />
     <state width="2477" height="248" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1591414691383" />
     <state width="2517" height="194" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591313051763" />
-    <state width="915" height="263" key="GridCell.Tab.0.center" timestamp="1591426534121">
+    <state width="915" height="263" key="GridCell.Tab.0.center" timestamp="1591426739504">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="915" height="263" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591426534121" />
+    <state width="915" height="263" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591426739504" />
     <state width="2477" height="248" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1591414691382" />
     <state width="2517" height="194" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591313051762" />
-    <state width="915" height="263" key="GridCell.Tab.0.left" timestamp="1591426534121">
+    <state width="915" height="263" key="GridCell.Tab.0.left" timestamp="1591426739504">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="915" height="263" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591426534121" />
+    <state width="915" height="263" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591426739504" />
     <state width="2477" height="248" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1591414691382" />
     <state width="2517" height="194" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591313051762" />
-    <state width="915" height="263" key="GridCell.Tab.0.right" timestamp="1591426534121">
+    <state width="915" height="263" key="GridCell.Tab.0.right" timestamp="1591426739504">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="915" height="263" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591426534121" />
+    <state width="915" height="263" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591426739504" />
     <state width="2477" height="248" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1591414691382" />
     <state width="2517" height="194" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591313051762" />
     <state width="2477" height="342" key="GridCell.Tab.1.bottom" timestamp="1591409398603">
@@ -643,24 +650,24 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="248" y="121" key="MergeDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591082012879" />
-    <state x="897" y="394" width="396" height="268" key="MultipleFileMergeDialog" timestamp="1591389837876">
+    <state x="897" y="394" width="396" height="268" key="MultipleFileMergeDialog" timestamp="1591426736306">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="897" y="394" width="396" height="268" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591389837876" />
+    <state x="897" y="394" width="396" height="268" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591426736306" />
     <state x="781" y="344" key="SettingsEditor" timestamp="1591263207383">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="781" y="344" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1591263207383" />
-    <state x="872" y="321" key="Vcs.Push.Dialog.v2" timestamp="1591413573757">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="654" y="321" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591391140814" />
-    <state x="872" y="321" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1591413573757" />
-    <state x="872" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591312408505" />
-    <state x="814" y="455" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591384047011">
+    <state x="654" y="321" key="Vcs.Push.Dialog.v2" timestamp="1591426748287">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="814" y="455" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591384047011" />
+    <state x="654" y="321" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591426748287" />
+    <state x="872" y="321" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1591413573757" />
+    <state x="872" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591312408505" />
+    <state x="814" y="455" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591429662550">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="814" y="455" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591429662550" />
     <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591312306413" />
     <state x="981" y="209" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1591412764521">
       <screen x="0" y="0" width="2560" height="1040" />
@@ -699,7 +706,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/Sys/BuzzerTest.java</url>
-          <line>50</line>
+          <line>34</line>
           <option name="timeStamp" value="41" />
         </line-breakpoint>
       </breakpoints>
