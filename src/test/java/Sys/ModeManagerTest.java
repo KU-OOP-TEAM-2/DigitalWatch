@@ -72,7 +72,7 @@ public class ModeManagerTest {
 
     }
     @Test
-    public void testchangeMode(){
+    public void changeMode(){
         ModeManager manager = new ModeManager();
         manager.changeMode();
         manager.changeMode();
@@ -80,7 +80,7 @@ public class ModeManagerTest {
     }
 
     @Test
-    public void testchangeMode_overflow(){
+    public void changeMode_overflow(){
         ModeManager manager = new ModeManager();
         manager.changeMode();
         manager.changeMode();

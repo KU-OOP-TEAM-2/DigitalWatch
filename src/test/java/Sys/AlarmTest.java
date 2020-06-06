@@ -1,6 +1,5 @@
 package Sys;
 
-import junit.framework.TestCase;
 import org.junit.Test;
 
 import java.time.LocalDateTime;
@@ -8,12 +7,13 @@ import java.time.LocalTime;
 
 import static org.junit.Assert.*;
 
-public class AlarmTests extends TestCase {
+public class AlarmTest {
 
     public void tearDown() throws Exception {
     }
 
-    public void testIsAlarmTimeCheck() {
+    @Test
+    public void IsAlarmTimeCheck() {
         ModeManager man = new ModeManager();
         Buzzer buzzer = man.getBuzzer();
 
@@ -31,7 +31,8 @@ public class AlarmTests extends TestCase {
         assertFalse(buzzer.getIsAlarmRinging());
     }
 
-    public void testChangeAlarm() {
+    @Test
+    public void ChangeAlarm() {
         Buzzer buzzer = new Buzzer();
         Time time = new Time();
 
@@ -45,7 +46,8 @@ public class AlarmTests extends TestCase {
         assertEquals(0, alarm.getCurrentAlarmIndex());
     }
 
-    public void testTurnOnOffAlarm() {
+    @Test
+    public void TurnOnOffAlarm() {
         Buzzer buzzer = new Buzzer();
         Time time = new Time();
 
@@ -59,8 +61,8 @@ public class AlarmTests extends TestCase {
 
     }
 
-
-    public void testIncreaseAlarmTime() {
+    @Test
+    public void IncreaseAlarmTime() {
         Buzzer buzzer = new Buzzer();
         Time time = new Time();
 
@@ -76,7 +78,9 @@ public class AlarmTests extends TestCase {
 
         assertEquals(0,  t.compareTo(LocalTime.of(3,2,0)));
     }
-    public void testIncreaseAlarmTime_overflow() {
+
+    @Test
+    public void IncreaseAlarmTime_overflow() {
         Buzzer buzzer = new Buzzer();
         Time time = new Time();
         int i;
@@ -94,7 +98,8 @@ public class AlarmTests extends TestCase {
         assertEquals(0,  t.compareTo(LocalTime.of(2,10,0)));
     }
 
-    public void testDecreaseAlarmTime() {
+    @Test
+    public void DecreaseAlarmTime() {
         Buzzer buzzer = new Buzzer();
         Time time = new Time();
 
@@ -114,7 +119,9 @@ public class AlarmTests extends TestCase {
 
         assertEquals(0,  t.compareTo(LocalTime.of(2,1,0)));
     }
-    public void testDecreaseAlarmTime_overflow() {
+
+    @Test
+    public void DecreaseAlarmTime_overflow() {
         Buzzer buzzer = new Buzzer();
         Time time = new Time();
 
@@ -131,7 +138,8 @@ public class AlarmTests extends TestCase {
         assertEquals(0,  t.compareTo(LocalTime.of(22,59,0)));
     }
 
-    public void testChangeCursor() {
+    @Test
+    public void ChangeCursor() {
         Buzzer buzzer = new Buzzer();
         Time time = new Time();
 
@@ -141,7 +149,8 @@ public class AlarmTests extends TestCase {
 
     }
 
-    public void testSaveAlarm() {
+    @Test
+    public void SaveAlarm() {
         Buzzer buzzer = new Buzzer();
         Time time = new Time();
 
@@ -158,8 +167,9 @@ public class AlarmTests extends TestCase {
         assertEquals(0, alarm.getCopyOfAlarmTimer().toLocalTime().compareTo(alarm.getCurrentAlarmTimerObject().requestExpirationTime()));
 
     }
-
-    public void testTurnOffAlarm(){
+    
+    @Test
+    public void TurnOffAlarm(){
         ModeManager man = new ModeManager();
         Buzzer buzzer = man.getBuzzer();
 
@@ -181,6 +191,5 @@ public class AlarmTests extends TestCase {
         assertEquals(true, buzzer.getBuzzerOn());
 
     }
-
 
 }
