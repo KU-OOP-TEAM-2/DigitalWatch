@@ -17,7 +17,6 @@
   <component name="ChangeListManager">
     <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Sys/BuzzerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Sys/BuzzerTest.java" afterDir="false" />
     </list>
     <list id="75641970-afe3-41f4-8211-ac3bdcb41cb9" name="Revert &quot;edit Tick constructor&quot;" comment="reset branch" />
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +87,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main_test">
+  <component name="RunManager" selected="JUnit.BuzzerTest.beepBuzzer">
     <configuration name="Main_test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GUI.Main_test" />
       <module name="softwarevv.main" />
@@ -167,7 +166,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BuzzerTest.TwoBuzz" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BuzzerTest.beepBuzzer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softwarevv.test" />
       <extension name="coverage">
         <pattern>
@@ -177,7 +176,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="Sys" />
       <option name="MAIN_CLASS_NAME" value="Sys.BuzzerTest" />
-      <option name="METHOD_NAME" value="TwoBuzz" />
+      <option name="METHOD_NAME" value="beepBuzzer" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -202,18 +201,18 @@
     <list>
       <item itemvalue="Gradle.git_teampj" />
       <item itemvalue="Application.Main_test" />
-      <item itemvalue="JUnit.BuzzerTest.TwoBuzz" />
       <item itemvalue="JUnit.BuzzerTest.stopBuzzer" />
       <item itemvalue="JUnit.BuzzerTest.ExpiredAlarmBuzzer" />
       <item itemvalue="JUnit.BuzzerTest" />
+      <item itemvalue="JUnit.BuzzerTest.beepBuzzer" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BuzzerTest.beepBuzzer" />
         <item itemvalue="Application.Main_test" />
         <item itemvalue="JUnit.BuzzerTest" />
         <item itemvalue="JUnit.BuzzerTest.ExpiredAlarmBuzzer" />
         <item itemvalue="JUnit.BuzzerTest.stopBuzzer" />
-        <item itemvalue="JUnit.BuzzerTest.TwoBuzz" />
       </list>
     </recent_temporary>
   </component>
@@ -473,7 +472,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591414909764</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Timer set추가 안쓰는 함수 삭제, TimerTest추가">
+      <created>1591427282958</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1591427282958</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -562,11 +568,11 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1085" y="405" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1591074707858" />
-    <state x="829" y="71" key="CommitChangelistDialog2" timestamp="1591414909076">
+    <state x="829" y="71" key="CommitChangelistDialog2" timestamp="1591427282255">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="622" y="71" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1591255811922" />
-    <state x="829" y="71" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1591414909076" />
+    <state x="829" y="71" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1591427282255" />
     <state x="69" y="68" width="1782" height="904" key="DiffContextDialog" timestamp="1591392494297">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -576,29 +582,29 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="454" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1591073036048" />
-    <state width="2477" height="248" key="GridCell.Tab.0.bottom" timestamp="1591427086791">
+    <state width="2477" height="248" key="GridCell.Tab.0.bottom" timestamp="1591427304176">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="1027" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591392642064" />
-    <state width="2477" height="248" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1591427086791" />
+    <state width="2477" height="248" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1591427304176" />
     <state width="1258" height="194" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591421086839" />
-    <state width="2477" height="248" key="GridCell.Tab.0.center" timestamp="1591427086791">
+    <state width="2477" height="248" key="GridCell.Tab.0.center" timestamp="1591427304176">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="1027" height="263" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591392642064" />
-    <state width="2477" height="248" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1591427086791" />
+    <state width="2477" height="248" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1591427304176" />
     <state width="1258" height="194" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591421086839" />
-    <state width="2477" height="248" key="GridCell.Tab.0.left" timestamp="1591427086791">
+    <state width="2477" height="248" key="GridCell.Tab.0.left" timestamp="1591427304176">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="1027" height="263" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591392642064" />
-    <state width="2477" height="248" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1591427086791" />
+    <state width="2477" height="248" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1591427304176" />
     <state width="1258" height="194" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591421086839" />
-    <state width="2477" height="248" key="GridCell.Tab.0.right" timestamp="1591427086791">
+    <state width="2477" height="248" key="GridCell.Tab.0.right" timestamp="1591427304176">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="1027" height="263" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591392642064" />
-    <state width="2477" height="248" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1591427086791" />
+    <state width="2477" height="248" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1591427304176" />
     <state width="1258" height="194" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591421086839" />
     <state width="2477" height="342" key="GridCell.Tab.1.bottom" timestamp="1591409398603">
       <screen x="0" y="0" width="2560" height="1040" />
