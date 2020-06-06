@@ -15,12 +15,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="">
+    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="Timer set추가 안쓰는 함수 삭제, TimerTest추가">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Sys/AlarmTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Sys/AlarmTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Sys/BuzzerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Sys/BuzzerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Sys/ModeManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Sys/ModeManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Sys/StopWatchTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Sys/StopWatchTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Sys/TimerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Sys/TimerTest.java" afterDir="false" />
     </list>
     <list id="75641970-afe3-41f4-8211-ac3bdcb41cb9" name="Revert &quot;edit Tick constructor&quot;" comment="reset branch" />
     <option name="SHOW_DIALOG" value="false" />
@@ -91,7 +88,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AlarmTests.TurnOffAlarm">
+  <component name="RunManager" selected="JUnit.TimerTest">
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -126,7 +123,7 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="AlarmTests.TurnOffAlarm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ModeManagerTest.enterEditMode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softwarevv.test" />
       <extension name="coverage">
         <pattern>
@@ -135,33 +132,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Sys" />
-      <option name="MAIN_CLASS_NAME" value="Sys.AlarmTests" />
-      <option name="METHOD_NAME" value="TurnOffAlarm" />
+      <option name="MAIN_CLASS_NAME" value="Sys.ModeManagerTest" />
+      <option name="METHOD_NAME" value="enterEditMode" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AlarmTests.testIsAlarmTimeCheck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="softwarevv.test" />
-      <shortenClasspath name="CLASSPATH_FILE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Sys.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Sys" />
-      <option name="MAIN_CLASS_NAME" value="Sys.AlarmTests" />
-      <option name="METHOD_NAME" value="testIsAlarmTimeCheck" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="PARAMETERS" value="" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AlarmTests.testSaveAlarm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ModeManagerTest.saveModeData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softwarevv.test" />
       <extension name="coverage">
         <pattern>
@@ -170,14 +148,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Sys" />
-      <option name="MAIN_CLASS_NAME" value="Sys.AlarmTests" />
-      <option name="METHOD_NAME" value="testSaveAlarm" />
+      <option name="MAIN_CLASS_NAME" value="Sys.ModeManagerTest" />
+      <option name="METHOD_NAME" value="saveModeData" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BuzzerTest.stopBuzzer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ModeManagerTest.testchangeMode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softwarevv.test" />
       <extension name="coverage">
         <pattern>
@@ -186,14 +164,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Sys" />
-      <option name="MAIN_CLASS_NAME" value="Sys.BuzzerTest" />
-      <option name="METHOD_NAME" value="stopBuzzer" />
+      <option name="MAIN_CLASS_NAME" value="Sys.ModeManagerTest" />
+      <option name="METHOD_NAME" value="testchangeMode" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StopWatchTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ModeManagerTest.testchangeMode_overflow" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softwarevv.test" />
       <extension name="coverage">
         <pattern>
@@ -202,7 +180,23 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Sys" />
-      <option name="MAIN_CLASS_NAME" value="Sys.StopWatchTest" />
+      <option name="MAIN_CLASS_NAME" value="Sys.ModeManagerTest" />
+      <option name="METHOD_NAME" value="testchangeMode_overflow" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TimerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="git_teampj.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Sys.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Sys" />
+      <option name="MAIN_CLASS_NAME" value="Sys.TimerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -210,19 +204,19 @@
     </configuration>
     <list>
       <item itemvalue="Gradle.git_teampj" />
-      <item itemvalue="JUnit.AlarmTests.testSaveAlarm" />
-      <item itemvalue="JUnit.AlarmTests.testIsAlarmTimeCheck" />
-      <item itemvalue="JUnit.BuzzerTest.stopBuzzer" />
-      <item itemvalue="JUnit.StopWatchTest" />
-      <item itemvalue="JUnit.AlarmTests.TurnOffAlarm" />
+      <item itemvalue="JUnit.ModeManagerTest.saveModeData" />
+      <item itemvalue="JUnit.ModeManagerTest.testchangeMode_overflow" />
+      <item itemvalue="JUnit.ModeManagerTest.testchangeMode" />
+      <item itemvalue="JUnit.ModeManagerTest.enterEditMode" />
+      <item itemvalue="JUnit.TimerTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AlarmTests.TurnOffAlarm" />
-        <item itemvalue="JUnit.AlarmTests.testIsAlarmTimeCheck" />
-        <item itemvalue="JUnit.StopWatchTest" />
-        <item itemvalue="JUnit.BuzzerTest.stopBuzzer" />
-        <item itemvalue="JUnit.AlarmTests.testSaveAlarm" />
+        <item itemvalue="JUnit.TimerTest" />
+        <item itemvalue="JUnit.ModeManagerTest.enterEditMode" />
+        <item itemvalue="JUnit.ModeManagerTest.saveModeData" />
+        <item itemvalue="JUnit.ModeManagerTest.testchangeMode" />
+        <item itemvalue="JUnit.ModeManagerTest.testchangeMode_overflow" />
       </list>
     </recent_temporary>
   </component>
@@ -482,14 +476,7 @@
       <option name="project" value="LOCAL" />
       <updated>1591414909764</updated>
     </task>
-    <task id="LOCAL-00036" summary="add CalorieCheck UnitTest">
-      <created>1591417754178</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1591417754178</updated>
-    </task>
-    <option name="localTasksCounter" value="37" />
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -505,7 +492,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Mode manager world time 추가" />
     <MESSAGE value="Mode manager 정리" />
     <MESSAGE value="gitnore" />
     <MESSAGE value="clcikButton" />
@@ -530,7 +516,8 @@
     <MESSAGE value="Timer" />
     <MESSAGE value="add CalorieCheckTest, edit workspace.xml" />
     <MESSAGE value="add CalorieCheck UnitTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="add CalorieCheck UnitTest" />
+    <MESSAGE value="Timer set추가 안쓰는 함수 삭제, TimerTest추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="Timer set추가 안쓰는 함수 삭제, TimerTest추가" />
   </component>
   <component name="WindowStateProjectService">
     <state x="569" y="119" key="#&lt;template&gt;_of_JUnit" timestamp="1591388343245">
@@ -562,10 +549,9 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="986" y="314" key="#Tests_in_'git_teampj'/0.0.2560.1400@0.0.2560.1400" timestamp="1591074182315" />
-    <state x="734" y="263" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591420901385">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state x="734" y="354" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591076648908">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="734" y="263" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1591420901385" />
     <state x="734" y="354" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591076648908" />
     <state x="218" y="133" width="1582" height="791" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1591389493284">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -575,11 +561,11 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1085" y="405" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1591074707858" />
-    <state x="829" y="71" key="CommitChangelistDialog2" timestamp="1591417753357">
+    <state x="829" y="71" key="CommitChangelistDialog2" timestamp="1591414909076">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="622" y="71" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1591255811922" />
-    <state x="829" y="71" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1591417753357" />
+    <state x="829" y="71" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1591414909076" />
     <state x="69" y="68" width="1782" height="904" key="DiffContextDialog" timestamp="1591392494297">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -589,30 +575,30 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="454" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1591073036048" />
-    <state width="2477" height="248" key="GridCell.Tab.0.bottom" timestamp="1591420933268">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state width="1258" height="194" key="GridCell.Tab.0.bottom" timestamp="1591421086839">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1027" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591392642064" />
-    <state width="2477" height="248" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1591420933268" />
-    <state width="2517" height="194" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591313051763" />
-    <state width="2477" height="248" key="GridCell.Tab.0.center" timestamp="1591420933268">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state width="2477" height="248" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1591417655375" />
+    <state width="1258" height="194" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591421086839" />
+    <state width="1258" height="194" key="GridCell.Tab.0.center" timestamp="1591421086839">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1027" height="263" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591392642064" />
-    <state width="2477" height="248" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1591420933268" />
-    <state width="2517" height="194" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591313051762" />
-    <state width="2477" height="248" key="GridCell.Tab.0.left" timestamp="1591420933268">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state width="2477" height="248" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1591417655375" />
+    <state width="1258" height="194" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591421086839" />
+    <state width="1258" height="194" key="GridCell.Tab.0.left" timestamp="1591421086839">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1027" height="263" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591392642064" />
-    <state width="2477" height="248" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1591420933268" />
-    <state width="2517" height="194" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591313051762" />
-    <state width="2477" height="248" key="GridCell.Tab.0.right" timestamp="1591420933268">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state width="2477" height="248" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1591417655375" />
+    <state width="1258" height="194" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591421086839" />
+    <state width="1258" height="194" key="GridCell.Tab.0.right" timestamp="1591421086839">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1027" height="263" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591392642064" />
-    <state width="2477" height="248" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1591420933268" />
-    <state width="2517" height="194" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591313051762" />
+    <state width="2477" height="248" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1591417655375" />
+    <state width="1258" height="194" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591421086839" />
     <state width="2477" height="342" key="GridCell.Tab.1.bottom" timestamp="1591409398603">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
@@ -645,17 +631,17 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="781" y="344" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1591263207383" />
-    <state x="872" y="321" key="Vcs.Push.Dialog.v2" timestamp="1591417760559">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state x="872" y="432" key="Vcs.Push.Dialog.v2" timestamp="1591419958103">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="654" y="321" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591391140814" />
-    <state x="872" y="321" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1591417760559" />
-    <state x="872" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591312408505" />
-    <state x="814" y="455" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591384047011">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="872" y="321" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1591414914463" />
+    <state x="872" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591419958103" />
+    <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591419948758">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="814" y="455" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591384047011" />
-    <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591312306413" />
+    <state x="1085" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591419948758" />
     <state x="981" y="209" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1591412764521">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
@@ -690,6 +676,14 @@
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/Sys/ModeManagerTest.java</url>
+          <line>82</line>
+          <properties class="Sys.ModeManagerTest">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/Sys/BuzzerTest.java</url>
