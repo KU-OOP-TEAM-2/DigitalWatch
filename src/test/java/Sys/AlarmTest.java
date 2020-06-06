@@ -7,7 +7,7 @@ import java.time.LocalTime;
 
 import static org.junit.Assert.*;
 
-public class AlarmTests {
+public class AlarmTest {
 
     public void tearDown() throws Exception {
     }
