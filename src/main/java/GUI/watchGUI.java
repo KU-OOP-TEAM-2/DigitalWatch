@@ -974,7 +974,6 @@ public class watchGUI extends JFrame implements Runnable{
 						LocalDateTime editTime = time.getEditTime();
 						int timeCursor = time.getCurrentCursor();
 
-
 						tkFormat = time.getFormat();
 						tkGMT = time.getGMT();
 						tkYear = editTime.getYear();
@@ -1561,6 +1560,9 @@ public class watchGUI extends JFrame implements Runnable{
 					keepHourToArray(wtHour, wtHourNum);
 					keepValueToArray(wtMinute, wtMinNum);
 					keepValueToArray(wtSecond, wtSecNum);
+
+					if(((Time)modeManager.getmodes()[0]).getFormat()) keepValueToArray(wtHour, wtHourNum);
+					else keepHourToArray(wtHour, wtHourNum);
 
 					//set 2nd segment Img (Year, Month, Day)
 					for (int i=0; i<10; i++) {
