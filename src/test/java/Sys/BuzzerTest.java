@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 public class BuzzerTest {
 
     @Test
-    public void ExpiredAlarmBuzzer() {
+    public void beepBuzzer(){
         ModeManager man = new ModeManager();
         Buzzer buzzer = man.getBuzzer();
 
@@ -21,6 +21,8 @@ public class BuzzerTest {
         alarm.saveAlarm();
         alarm.turnOnOffAlarm();
         Time time = ((Time)(man.getmodes()[0]));
+        time.setCurrentTime(LocalDateTime.of(2020,1,1,0,0));
+
         time.setCurrentTime(LocalDateTime.of(2020,1,1,1,1));
 
         alarm.isAlarmTimeCheck();
@@ -42,31 +44,6 @@ public class BuzzerTest {
         alarm.turnOnOffAlarm();
         Time time = ((Time)(man.getmodes()[0]));
         time.setCurrentTime(LocalDateTime.of(2020,1,1,1,1));
-
-        alarm.isAlarmTimeCheck();
-        assertTrue(buzzer.getBuzzerOn());
-        buzzer.stopBuzzer();
-        assertFalse(buzzer.getBuzzerOn());
-        assertFalse(buzzer.getIsAlarmRinging());
-    }
-    @Test
-    public void TwoBuzz(){
-        ModeManager man = new ModeManager();
-        Buzzer buzzer = man.getBuzzer();
-
-        Alarm alarm = ((Alarm)(man.getmodes()[1]));
-        alarm.enterEditAlarm();
-        alarm.increaseAlarmTime();
-        alarm.changeCursor();
-        alarm.increaseAlarmTime();
-        alarm.saveAlarm();
-        alarm.turnOnOffAlarm();
-
-        alarm.changeAlarm();
-        alarm.turnOnOffAlarm();
-
-        Time time = ((Time)(man.getmodes()[0]));
-        time.setCurrentTime(LocalDateTime.of(2020,1,1,0,0));
         alarm.isAlarmTimeCheck();
         time.setCurrentTime(LocalDateTime.of(2020,1,1,1,1));
         alarm.isAlarmTimeCheck();
