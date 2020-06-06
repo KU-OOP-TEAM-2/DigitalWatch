@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 public class BuzzerTest {
 
     @Test
-    public void testExpiredAlarmBuzzer() {
+    public void ExpiredAlarmBuzzer() {
         ModeManager man = new ModeManager();
         Buzzer buzzer = man.getBuzzer();
 
@@ -29,7 +29,7 @@ public class BuzzerTest {
     }
 
     @Test
-    public void teststopBuzzer() {
+    public void stopBuzzer() {
         ModeManager man = new ModeManager();
         Buzzer buzzer = man.getBuzzer();
 
@@ -50,7 +50,7 @@ public class BuzzerTest {
         assertFalse(buzzer.getIsAlarmRinging());
     }
     @Test
-    public void testTwoBuzz(){
+    public void TwoBuzz(){
         ModeManager man = new ModeManager();
         Buzzer buzzer = man.getBuzzer();
 
