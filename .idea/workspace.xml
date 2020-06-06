@@ -89,24 +89,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CalorieCheckTest.increaseCalorieCheckTimer">
-    <configuration name="CalorieCheckTest.resetCalorieCheck" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
-      <module name="DWSystem.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Sys.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Sys" />
-      <option name="MAIN_CLASS_NAME" value="Sys.CalorieCheckTest" />
-      <option name="METHOD_NAME" value="resetCalorieCheck" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.AlarmTests">
     <configuration name="Main_test (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GUI.Main_test" />
       <module name="DWSystem.main" />
@@ -153,6 +136,21 @@
       </ExternalSystemSettings>
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
+    </configuration>
+    <configuration name="AlarmTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="softwarevv.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Sys.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Sys" />
+      <option name="MAIN_CLASS_NAME" value="Sys.AlarmTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="CalorieCheckTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DWSystem.test" />
@@ -202,20 +200,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Android JUnit.CalorieCheckTest.resetCalorieCheck" />
       <item itemvalue="Application.Main_test (1)" />
       <item itemvalue="Gradle.git_teampj" />
       <item itemvalue="JUnit.CalorieCheckTest.resetCalorieCheck" />
       <item itemvalue="JUnit.CalorieCheckTest" />
       <item itemvalue="JUnit.CalorieCheckTest.increaseCalorieCheckTimer" />
+      <item itemvalue="JUnit.AlarmTests" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AlarmTests" />
         <item itemvalue="JUnit.CalorieCheckTest.increaseCalorieCheckTimer" />
         <item itemvalue="JUnit.CalorieCheckTest" />
         <item itemvalue="Application.Main_test (1)" />
         <item itemvalue="JUnit.CalorieCheckTest.resetCalorieCheck" />
-        <item itemvalue="Android JUnit.CalorieCheckTest.resetCalorieCheck" />
       </list>
     </recent_temporary>
   </component>
