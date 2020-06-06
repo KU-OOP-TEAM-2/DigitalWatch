@@ -20,7 +20,6 @@ public class ModeManager {
 
         buzzer = new Buzzer();
 
-
         modes = new Mode[6];
         modes[0] = new Time();
         modes[1] = new Alarm(buzzer, modes[0]);
@@ -34,7 +33,6 @@ public class ModeManager {
         SingletonModeManager=this;
         isEditMode = false;
         buzzerFlag=false;
-
 
     }
     //모드매니저
@@ -432,7 +430,9 @@ public class ModeManager {
         this.currentCursor=0;
         this.ActiveModeCounter=4;
         isEditMode=true;
-        for(int i= 0; i<6;i++) editStatus[i]= modes[i].getActive();
+        for(int i=0; i<6;i++){
+            editStatus[i]= modes[i].getActive();
+        }
     }
 
 
@@ -458,15 +458,10 @@ public class ModeManager {
 
 
     public void saveModeData() {
+        if(this.ActiveModeCounter!=4) return;
 
-        if(this.ActiveModeCounter!=4){
-            return;
-        }
-
-        for (int i = 0; i < 5; i++) {
-            this.modes[i].setActive(this.editStatus[i]);
-        }
-        for(int i=0;i<5;i++){
+        for(int i = 0; i < 6; i++) this.modes[i].setActive(this.editStatus[i]);
+        for(int i=0;i<6;i++){
            if(modes[i].getActive()==true){
                this.currentMode=i;
                break;
