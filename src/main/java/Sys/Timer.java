@@ -149,20 +149,7 @@ public class Timer implements  Mode{
         return false;
     }
 
-    public void start_pauseTimer(){
-        if(pauseTimerFlag){
-            if(timerTime.getDayOfMonth()==1 && timerTime.getHour()==0 && timerTime.getSecond()==0 && timerTime.getMinute()==0 &&timerTime.getNano()==0){
-                //0 리셋 상태일 때 아무작동 x
-                return;
-            }
-            else{
-                pauseTimerFlag=false;
-            }
-        }
-        else{ //pauseTimer;
-            pauseTimerFlag=true;
-        }
-    }
+
 
     public void startTimer() {
         // TODO implement here
@@ -201,6 +188,9 @@ public class Timer implements  Mode{
     public LocalDateTime getTimerTime() {return this.timerTime;}
     public boolean getpauseTimerFlag() {return this.pauseTimerFlag; }
     public LocalDateTime getSettingTimer() { return settingTimer; }
+
+    public void setSettingTimer(LocalDateTime setTime){this.settingTimer=setTime;}
+    public void setTimerTime(LocalDateTime timerTime){this.timerTime=timerTime;}
 }
 
 
