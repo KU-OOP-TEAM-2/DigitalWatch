@@ -15,10 +15,8 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="add increase, decrease data in CalorieCheckTest">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="delete unused object and function">
       <change beforePath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/StopWatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/StopWatch.java" afterDir="false" />
     </list>
     <list id="75641970-afe3-41f4-8211-ac3bdcb41cb9" name="Revert &quot;edit Tick constructor&quot;" comment="reset branch" />
     <option name="SHOW_DIALOG" value="false" />
@@ -495,7 +493,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591426715836</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="delete unused object and function">
+      <created>1591432961411</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1591432961411</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -511,7 +516,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Mode manager 정리" />
     <MESSAGE value="gitnore" />
     <MESSAGE value="clcikButton" />
     <MESSAGE value="ModeManger 변수" />
@@ -536,7 +540,8 @@
     <MESSAGE value="add CalorieCheckTest, edit workspace.xml" />
     <MESSAGE value="add CalorieCheck UnitTest" />
     <MESSAGE value="add increase, decrease data in CalorieCheckTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="add increase, decrease data in CalorieCheckTest" />
+    <MESSAGE value="delete unused object and function" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete unused object and function" />
   </component>
   <component name="WindowStateProjectService">
     <state x="569" y="119" key="#&lt;template&gt;_of_JUnit" timestamp="1591388343245">
@@ -658,10 +663,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="781" y="344" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1591263207383" />
-    <state x="654" y="321" key="Vcs.Push.Dialog.v2" timestamp="1591426748287">
+    <state x="654" y="321" key="Vcs.Push.Dialog.v2" timestamp="1591432964130">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="654" y="321" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591426748287" />
+    <state x="654" y="321" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591432964130" />
     <state x="872" y="321" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1591413573757" />
     <state x="872" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591312408505" />
     <state x="814" y="455" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591429662550">

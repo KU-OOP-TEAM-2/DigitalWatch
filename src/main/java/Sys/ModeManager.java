@@ -28,7 +28,6 @@ public class ModeManager {
         modes[4] = new CalorieCheck();
         modes[5] = new WorldTime();
 
-        nowMode = modes[0];
         editStatus= new Boolean[6];
 
         isEditMode = false;
