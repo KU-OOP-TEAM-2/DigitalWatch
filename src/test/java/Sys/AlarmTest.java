@@ -11,6 +11,7 @@ public class AlarmTest {
 
     public void tearDown() throws Exception {
     }
+
     @Test
     public void IsAlarmTimeCheck() {
         ModeManager man = new ModeManager();
@@ -77,6 +78,7 @@ public class AlarmTest {
 
         assertEquals(0,  t.compareTo(LocalTime.of(3,2,0)));
     }
+
     @Test
     public void IncreaseAlarmTime_overflow() {
         Buzzer buzzer = new Buzzer();
@@ -95,6 +97,7 @@ public class AlarmTest {
 
         assertEquals(0,  t.compareTo(LocalTime.of(2,10,0)));
     }
+
     @Test
     public void DecreaseAlarmTime() {
         Buzzer buzzer = new Buzzer();
@@ -116,6 +119,7 @@ public class AlarmTest {
 
         assertEquals(0,  t.compareTo(LocalTime.of(2,1,0)));
     }
+
     @Test
     public void DecreaseAlarmTime_overflow() {
         Buzzer buzzer = new Buzzer();
@@ -133,6 +137,7 @@ public class AlarmTest {
 
         assertEquals(0,  t.compareTo(LocalTime.of(22,59,0)));
     }
+
     @Test
     public void ChangeCursor() {
         Buzzer buzzer = new Buzzer();
@@ -143,6 +148,7 @@ public class AlarmTest {
         assertEquals(true, alarm.isCursorHour());
 
     }
+
     @Test
     public void SaveAlarm() {
         Buzzer buzzer = new Buzzer();
@@ -161,6 +167,7 @@ public class AlarmTest {
         assertEquals(0, alarm.getCopyOfAlarmTimer().toLocalTime().compareTo(alarm.getCurrentAlarmTimerObject().requestExpirationTime()));
 
     }
+    
     @Test
     public void TurnOffAlarm(){
         ModeManager man = new ModeManager();

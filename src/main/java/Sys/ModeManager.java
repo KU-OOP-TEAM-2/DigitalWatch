@@ -460,8 +460,8 @@ public class ModeManager {
     public void saveModeData() {
         if(this.ActiveModeCounter!=4) return;
 
-        for(int i = 0; i < 6; i++) this.modes[i].setActive(this.editStatus[i]);
-        for(int i=0;i<6;i++){
+        for(int i=0; i<6; i++) this.modes[i].setActive(this.editStatus[i]);
+        for(int i=0; i<6; i++){
            if(modes[i].getActive()==true){
                this.currentMode=i;
                break;
