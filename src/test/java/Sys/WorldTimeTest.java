@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 public class WorldTimeTest {
 
     @Test
-    public void changeTimezone1() {
+    public void changeTimezone() {
         WorldTime w= new WorldTime();
         w.changeTimezone();
         int result=w.getCurrentCity();
