@@ -21,19 +21,16 @@ public class StopWatchTest {
 
         assertEquals(false, stopWatch.getIsPaused());
 
-    }
-    @Test
-    public void startStopwatch_overflow() {
-        StopWatch stopWatch = new StopWatch();
-        int i;
-        stopWatch.startStopwatch();
         for(i=0; i < 60000000; i++)
             stopWatch.increaseCurrentTime();
         assertEquals(0, stopWatch.getCurrentStopWatchTime().compareTo(LocalTime.of(1,39,59,990000000)));
 
         assertEquals(true, stopWatch.getIsPaused());
 
+
+
     }
+
 
     @Test
     public void resumeStopwatch() {

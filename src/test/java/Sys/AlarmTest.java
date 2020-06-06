@@ -65,24 +65,6 @@ public class AlarmTest {
     public void IncreaseAlarmTime() {
         Buzzer buzzer = new Buzzer();
         Time time = new Time();
-
-        Alarm alarm = new Alarm(buzzer, time);
-
-        alarm.enterEditAlarm();
-        alarm.increaseAlarmTime(); alarm.increaseAlarmTime(); alarm.increaseAlarmTime();
-        alarm.changeCursor();
-        alarm.increaseAlarmTime();
-        alarm.increaseAlarmTime();
-        LocalDateTime s = alarm.getCopyOfAlarmTimer();
-        LocalTime t = s.toLocalTime();
-
-        assertEquals(0,  t.compareTo(LocalTime.of(3,2,0)));
-    }
-
-    @Test
-    public void IncreaseAlarmTime_overflow() {
-        Buzzer buzzer = new Buzzer();
-        Time time = new Time();
         int i;
         Alarm alarm = new Alarm(buzzer, time);
 
@@ -98,30 +80,9 @@ public class AlarmTest {
         assertEquals(0,  t.compareTo(LocalTime.of(2,10,0)));
     }
 
+
     @Test
     public void DecreaseAlarmTime() {
-        Buzzer buzzer = new Buzzer();
-        Time time = new Time();
-
-        Alarm alarm = new Alarm(buzzer, time);
-
-        alarm.enterEditAlarm();
-        alarm.increaseAlarmTime(); alarm.increaseAlarmTime(); alarm.increaseAlarmTime();
-        alarm.changeCursor();
-        alarm.increaseAlarmTime();alarm.increaseAlarmTime();
-
-        alarm.decreaseAlarmTime();
-        alarm.changeCursor();
-        alarm.decreaseAlarmTime();
-
-        LocalDateTime s = alarm.getCopyOfAlarmTimer();
-        LocalTime t = s.toLocalTime();
-
-        assertEquals(0,  t.compareTo(LocalTime.of(2,1,0)));
-    }
-
-    @Test
-    public void DecreaseAlarmTime_overflow() {
         Buzzer buzzer = new Buzzer();
         Time time = new Time();
 
@@ -137,6 +98,7 @@ public class AlarmTest {
 
         assertEquals(0,  t.compareTo(LocalTime.of(22,59,0)));
     }
+
 
     @Test
     public void ChangeCursor() {
