@@ -21,8 +21,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/객체2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <list id="75641970-afe3-41f4-8211-ac3bdcb41cb9" name="Revert &quot;edit Tick constructor&quot;" comment="reset branch" />
     <option name="SHOW_DIALOG" value="false" />
@@ -521,7 +520,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591520437838</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="delete unused object and function">
+      <created>1591520451401</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1591520451401</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -621,11 +627,11 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="1527" y="492" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1591434192882" />
-    <state x="829" y="71" key="CommitChangelistDialog2" timestamp="1591520436514">
+    <state x="829" y="71" key="CommitChangelistDialog2" timestamp="1591520450610">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="622" y="71" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1591255811922" />
-    <state x="829" y="71" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1591520436514" />
+    <state x="829" y="71" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1591520450610" />
     <state x="69" y="68" width="1782" height="904" key="DiffContextDialog" timestamp="1591392494297">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -717,10 +723,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="571" y="257" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040@0.0.1920.1040" timestamp="1591390644424" />
-    <state x="1002" y="486" key="git4idea.merge.GitPullDialog" timestamp="1591206191994">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="1002" y="361" key="git4idea.merge.GitPullDialog" timestamp="1591520463921">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="752" y="361" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591078691554" />
+    <state x="1002" y="361" key="git4idea.merge.GitPullDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1591520463921" />
     <state x="1002" y="486" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591206191994" />
     <state x="1299" y="329" key="new project wizard" timestamp="1591436469519">
       <screen x="0" y="0" width="2560" height="1440" />
