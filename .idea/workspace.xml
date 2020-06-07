@@ -21,48 +21,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Digital_Watch_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1/javaCompile/jarAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/GUI/Main_test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/META-INF/softwarevv.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/Sys/ModeManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/Sys/ModeManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/GUI/Main_test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/META-INF/softwarevv.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Sys/ModeManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Sys/ModeManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/META-INF/softwarevv.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/Sys/AlarmTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/Sys/AlarmTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/Sys/BuzzerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/Sys/CalorieCheckTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/Sys/ModeManagerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/Sys/StopWatchTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/Sys/TimeTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/Sys/TimerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/Sys/WorldTimeTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/test1Test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/META-INF/softwarevv.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/softwarevv10SNAPSHOTjar-classes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/softwarevv10SNAPSHOTjar-classes.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/git_teampj-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/softwarevv-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/patchedPluginXmlFiles/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/patchedPluginXmlFiles/plugin.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/META-INF/plugin.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/jar/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/jar/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/MouseCustomAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/MouseCustomAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/watchGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/watchGUI.java" afterDir="false" />
     </list>
     <list id="75641970-afe3-41f4-8211-ac3bdcb41cb9" name="Revert &quot;edit Tick constructor&quot;" comment="reset branch" />
     <option name="SHOW_DIALOG" value="false" />
