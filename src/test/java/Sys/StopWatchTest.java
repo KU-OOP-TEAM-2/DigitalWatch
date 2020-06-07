@@ -15,12 +15,14 @@ public class StopWatchTest {
         StopWatch stopWatch = new StopWatch();
         int i;
         stopWatch.startStopwatch();
+
         for(i=0; i < 10002; i++)
             stopWatch.increaseCurrentTime();
         assertEquals(0, stopWatch.getCurrentStopWatchTime().compareTo(LocalTime.of(0,1,40,20000000)));
 
         assertEquals(false, stopWatch.getIsPaused());
 
+        //한계를 넘어서 stopwatch가 진행되었을 때 한계점에서 멈춘다.
         for(i=0; i < 60000000; i++)
             stopWatch.increaseCurrentTime();
         assertEquals(0, stopWatch.getCurrentStopWatchTime().compareTo(LocalTime.of(1,39,59,990000000)));
@@ -71,6 +73,7 @@ public class StopWatchTest {
         stopWatch.lapStopwatch();
         for(i=0; i < 10002; i++)
             stopWatch.increaseCurrentTime();
+        //lapTIme의 저장.
         assertEquals(0,  stopWatch.getLapStopWatchTime().compareTo(LocalTime.of(0,1,40,20000000)));
     }
 
