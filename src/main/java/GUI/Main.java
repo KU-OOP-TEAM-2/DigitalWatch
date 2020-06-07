@@ -14,6 +14,7 @@ public class Main {
     watchGUI mainGUI = new watchGUI(); //initialized with TimeKeeping mode
     Thread updateGUI = new Thread(mainGUI);
     updateGUI.start();
+
   }
 
 }
