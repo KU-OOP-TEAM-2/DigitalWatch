@@ -37,11 +37,11 @@ abstract class MouseCustomAdapter extends MouseAdapter {
     flashTimer.cancel();
     e.getComponent().setForeground(originalForegroungColor);
     if(e.getWhen() - mousePressedTime > delay)
-      longActionPerformed(e);
+      longClicked(e);
     else
-      shortActionPerformed(e);
+      shortClicked(e);
   }
 
-  public abstract void shortActionPerformed(MouseEvent e);
-  public abstract void longActionPerformed(MouseEvent e);
+  public abstract void shortClicked(MouseEvent e);
+  public abstract void longClicked(MouseEvent e);
 }
