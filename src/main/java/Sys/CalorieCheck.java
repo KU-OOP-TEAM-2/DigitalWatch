@@ -197,7 +197,7 @@ public class CalorieCheck implements Mode{
         //하지만 기본단위는 초이다.
 
         //calorie check가 pause 상태가 아닐 때
-        if(!pauseCalorieCheckFlag && startCalorieCheckFlag){
+//        if(!pauseCalorieCheckFlag && startCalorieCheckFlag){
             //23시 59분 59초가 되면 시간측정 및 계산 종료
             if(CalorieTime.getHour() == 23 && CalorieTime.getMinute() == 59
                     && CalorieTime.getSecond() == 59){
@@ -208,7 +208,7 @@ public class CalorieCheck implements Mode{
                 /*System.out.println(CalorieTime);
                 System.out.println("Calorie=" + getCalorie());*/
             }
-        }
+//        }
     }
 
     public void resetCalorieCheck(){
