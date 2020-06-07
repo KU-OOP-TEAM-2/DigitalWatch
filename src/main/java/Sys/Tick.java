@@ -43,7 +43,7 @@ public class Tick implements Callable<Void>{
                 prevTime = LocalDateTime.now();
 
                 //Timer
-                ((Timer)modes[2]).decreaseTimer();
+                if(!((Timer)modes[2]).getpauseTimerFlag()) ((Timer)modes[2]).decreaseTimer();
                 //stopwatch
                 myModeManager.plus_ElapsedTime(0.01f);
                 ((Alarm)modes[1]).isAlarmTimeCheck();
