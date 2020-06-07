@@ -47,18 +47,11 @@ public class Tick implements Callable<Void>{
                 //stopwatch
                 myModeManager.plus_ElapsedTime(0.01f);
                 ((Alarm)modes[1]).isAlarmTimeCheck();
-                ((StopWatch)modes[3]).increaseCurrentTime();
 
-
-
-
+                if(((StopWatch)modes[3]).getIsPaused() == false && ((StopWatch)modes[3]).getIsEnd() == false)
+                    ((StopWatch)modes[3]).increaseCurrentTime();
                 //calorie check
-                boolean pauseCalorieCheckFlag = ((CalorieCheck)modes[4]).getIsPause();
-                boolean startCalorieCheckFlag = ((CalorieCheck)modes[4]).getIsStart();
-                if(!pauseCalorieCheckFlag && startCalorieCheckFlag){
-                    ((CalorieCheck)modes[4]).increaseCalorieCheckTimer();
-                }
-
+                ((CalorieCheck)modes[4]).increaseCalorieCheckTimer();
                 //when duration = 1 second
                 ((Time)modes[0]).timeflow();
                 if(myModeManager.getCurrentMode()==0&&myModeManager.isEditMode()==true)
