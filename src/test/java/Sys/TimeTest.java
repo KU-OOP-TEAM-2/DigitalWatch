@@ -41,7 +41,7 @@ public class TimeTest {
         t.changeCursor();
         t.changeCursor();
 
-        //계속 change해서 끝에다다랐을 때 다시 처음으로 돌아오는지
+        //계속 change해서 끝에 다다랐을 때 다시 처음으로 돌아오는지
         result=t.getCurrentCursor();
         assertEquals(0,result);
     }
@@ -62,12 +62,13 @@ public class TimeTest {
         result=t.getEditTime().getYear();
         assertEquals(0,result);
 
-        //gmt
+        //gmt 증가확인
         t.setCurrentCursor(6);
         t.increaseData();
         result=t.getGMT();
         assertEquals(10,result);
 
+        //gmt가 14보다 커지면 -12에서부터 다시 계산되는지 check
         t.increaseData();
         t.increaseData();
         t.increaseData();
@@ -94,16 +95,17 @@ public class TimeTest {
         LocalDateTime test=LocalDateTime.of(0, 1, 1, 00, 00, 00, 0);
         t.setEditTime(test);
         t.decreaseData();
-        //년도 10000이상일 경우 0이되는지
+        //decrease로 년도가 음수가 될 경우 9999로 설정되는지
         result=t.getEditTime().getYear();
         assertEquals(9999,result);
 
-        //gmt
+        //gmt 감소 확인
         t.setCurrentCursor(6);
         t.decreaseData();
         result=t.getGMT();
         assertEquals(8,result);
-
+        
+        //gmt 범위 확인 -12보다 작아질시 14부터 다시 시작되는지
         t.setGMT(-10);
         t.decreaseData();
         t.decreaseData();
@@ -128,5 +130,6 @@ public class TimeTest {
         int result=t.getCurrentTime().getYear();
         assertEquals(7878,result);
         assertEquals(null,t.getEditTime());
+        //editTime이 currentTime으로 정상적으로 반영되는지
     }
 }

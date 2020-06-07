@@ -242,7 +242,6 @@ public class watchGUI extends JFrame implements Runnable{
 				modeManager.clickButton(ADJUST_BUTTON, true);
 			}
 		});
-
 		modeB = new JButton();
 		modeB.addMouseListener(new MouseCustomAdapter() {
 			@Override
