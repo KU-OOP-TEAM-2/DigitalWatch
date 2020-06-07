@@ -71,32 +71,16 @@ public class StopWatch implements Mode{
      * 최대 시간이 되면 정지시킨다.
     **/
     public void increaseCurrentTime() {
-        is100ms = (is100ms + 1) % 10;
-            if(!isPaused && isEnd!=true) {
-                if (this.currentStopWatchTime.compareTo(overflowStopWatchTime) >= 0) {
-                    pauseStopwatch();
-                    isEnd = true;
-                } else {
-                    currentStopWatchTime = currentStopWatchTime.plusNanos(10000000);
-                }
+
+            if (this.currentStopWatchTime.compareTo(overflowStopWatchTime) >= 0) {
+                pauseStopwatch();
+                isEnd = true;
+            } else {
+                currentStopWatchTime = currentStopWatchTime.plusNanos(10000000);
             }
-        }
-
-
-   /* //이게 왜 필요한지 모르곘습니다... 일단은 그냥 두겠습니다.
-    public void stopCurrentTime() {
-        lapTime = currentStopWatchTime;
     }
 
-    //이게 왜 필요한지 모르겠습니다... 일단은 그냥 두겠습니다.
-    public void saveLapTime() {
-        lapTime = currentStopWatchTime;
-    }
-    //이게 왜 필요한지 모르겠습니다... 일단은 그냥 두겠습니다.
-    public void resetCurrentTime() {
-        currentStopWatchTime = LocalTime.of(0,0,0,0);
-        lapTime = LocalTime.of(0,0,0,0);
-    }*/
+
 
     private boolean isActivated;
     public void setActive(boolean act) {
@@ -108,6 +92,7 @@ public class StopWatch implements Mode{
     public boolean getIsPaused(){
         return isPaused;
     }
+    public boolean getIsEnd() {return isEnd; }
 
     public LocalTime getCurrentStopWatchTime(){return currentStopWatchTime;}
     public LocalTime getLapStopWatchTime(){return lapTime;}

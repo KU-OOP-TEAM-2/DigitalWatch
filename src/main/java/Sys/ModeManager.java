@@ -33,6 +33,7 @@ public class ModeManager {
         isEditMode = false;
         buzzerFlag=false;
 
+
     }
 
 
@@ -195,7 +196,7 @@ public class ModeManager {
                 case 1://알람 모드  일때
                     if(isEditMode){
                         //button 1234
-                        if(elapsedTime >= 5) {    //elapsedTime이 5초 이상일 때 저장하고 defaultScreen으로.
+                        if(elapsedTime >= 5.0f) {    //elapsedTime이 5초 이상일 때 저장하고 defaultScreen으로.
                            ((Alarm) modes[1]).saveAlarm();
                            isEditMode = !isEditMode;
                         }
