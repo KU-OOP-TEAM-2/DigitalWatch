@@ -234,11 +234,11 @@ public class watchGUI extends JFrame implements Runnable{
 		adjustB = new JButton();
 		adjustB.addMouseListener(new MouseCustomAdapter() {
 			@Override
-			public void shortActionPerformed(MouseEvent e) {
+			public void shortClicked(MouseEvent e) {
 				modeManager.clickButton(ADJUST_BUTTON, false);
 			}
 			@Override
-			public void longActionPerformed(MouseEvent e) {
+			public void longClicked(MouseEvent e) {
 				modeManager.clickButton(ADJUST_BUTTON, true);
 			}
 		});
@@ -246,11 +246,11 @@ public class watchGUI extends JFrame implements Runnable{
 		modeB = new JButton();
 		modeB.addMouseListener(new MouseCustomAdapter() {
 			@Override
-			public void shortActionPerformed(MouseEvent e) {
+			public void shortClicked(MouseEvent e) {
 				modeManager.clickButton(MODE_BUTTON, false);
 			}
 			@Override
-			public void longActionPerformed(MouseEvent e) {
+			public void longClicked(MouseEvent e) {
 				modeManager.clickButton(MODE_BUTTON, true);
 			}
 		});
@@ -258,11 +258,11 @@ public class watchGUI extends JFrame implements Runnable{
 		forwardB = new JButton();
 		forwardB.addMouseListener(new MouseCustomAdapter() {
 			@Override
-			public void shortActionPerformed(MouseEvent e) {
+			public void shortClicked(MouseEvent e) {
 				modeManager.clickButton(FORWARD_BUTTON, false);
 			}
 			@Override
-			public void longActionPerformed(MouseEvent e) {
+			public void longClicked(MouseEvent e) {
 				modeManager.clickButton(FORWARD_BUTTON, true);
 			}
 		});
@@ -270,11 +270,11 @@ public class watchGUI extends JFrame implements Runnable{
 		reverseB = new JButton();
 		reverseB.addMouseListener(new MouseCustomAdapter() {
 			@Override
-			public void shortActionPerformed(MouseEvent e) {
+			public void shortClicked(MouseEvent e) {
 				modeManager.clickButton(REVERSE_BUTTON, false);
 			}
 			@Override
-			public void longActionPerformed(MouseEvent e) {
+			public void longClicked(MouseEvent e) {
 				modeManager.clickButton(REVERSE_BUTTON, true);
 			}
 		});
