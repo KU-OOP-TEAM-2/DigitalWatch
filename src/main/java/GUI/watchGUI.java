@@ -988,10 +988,14 @@ public class watchGUI extends JFrame implements Runnable{
 							tkGMT = -tkGMT; //get absolute value
 						}
 
-						if (tkHour < 12) {
-							getTimeKeepingPane().getMeridiemLabel().setText("AM");
-						} else {
-							getTimeKeepingPane().getMeridiemLabel().setText("PM");
+						if(!tkFormat) {
+							if (tkHour < 12) {
+								getTimeKeepingPane().getMeridiemLabel().setText("AM");
+							} else {
+								getTimeKeepingPane().getMeridiemLabel().setText("PM");
+							}
+						}else{
+							getTimeKeepingPane().getMeridiemLabel().setText("");
 						}
 						getTimeKeepingPane().getDowLabel().setText(editTime.getDayOfWeek().toString().substring(0, 3)); //display tkDay of week only 3 words
 
@@ -1133,10 +1137,14 @@ public class watchGUI extends JFrame implements Runnable{
 						tkMinute = now.getMinute();
 						tkSecond = now.getSecond();
 
-						if (tkHour < 12) {
-							getTimeKeepingPane().getMeridiemLabel().setText("AM");
-						} else {
-							getTimeKeepingPane().getMeridiemLabel().setText("PM");
+						if(!tkFormat) {
+							if (tkHour < 12) {
+								getTimeKeepingPane().getMeridiemLabel().setText("AM");
+							} else {
+								getTimeKeepingPane().getMeridiemLabel().setText("PM");
+							}
+						}else{
+								getTimeKeepingPane().getMeridiemLabel().setText("");
 						}
 						getTimeKeepingPane().getDowLabel().setText(now.getDayOfWeek().toString().substring(0, 3)); //display tkDay of week only 3 words
 
@@ -1194,10 +1202,14 @@ public class watchGUI extends JFrame implements Runnable{
 						alarmMin = alarmTime.getMinute();
 						timerIndex = alarm.getCurrentAlarmIndex() + 1;
 
-						if (alarmHour < 12) {
-							getAlarmPane().getMeridiemLabel().setText("AM");
-						} else {
-							getAlarmPane().getMeridiemLabel().setText("PM");
+						if(!currentFormat) {
+							if (alarmHour < 12) {
+								getAlarmPane().getMeridiemLabel().setText("AM");
+							} else {
+								getAlarmPane().getMeridiemLabel().setText("PM");
+							}
+						}else{
+							getAlarmPane().getMeridiemLabel().setText("");
 						}
 
 						//split time value
@@ -1255,6 +1267,9 @@ public class watchGUI extends JFrame implements Runnable{
 						alarmHour = alarmTime.getHour();
 						alarmMin = alarmTime.getMinute();
 						timerIndex = alarm.getCurrentAlarmIndex() + 1;
+
+
+
 
 						//split time value
 						keepValueToArray(alarmMin, amNum);
@@ -1535,6 +1550,7 @@ public class watchGUI extends JFrame implements Runnable{
 
 					Time time = (Time) modeManager.getmodes()[0];
 					WorldTime wt = (WorldTime) modeManager.getmodes()[5];
+					boolean currentFormat = ((Time)modeManager.getmodes()[0]).getFormat();
 
 					LocalDateTime worldTime = wt.getWorldTime(time.getCurrentTime(), time.getGMT());
 
@@ -1545,10 +1561,14 @@ public class watchGUI extends JFrame implements Runnable{
 					wtMinute = worldTime.getMinute();
 					wtSecond = worldTime.getSecond();
 
-					if (wtHour < 12) {
-						getWtPane().getMeridiemLabel().setText("AM");
-					} else {
-						getWtPane().getMeridiemLabel().setText("PM");
+					if(!currentFormat) {
+						if (wtHour < 12) {
+							getWtPane().getMeridiemLabel().setText("AM");
+						} else {
+							getWtPane().getMeridiemLabel().setText("PM");
+						}
+					}else{
+						getWtPane().getMeridiemLabel().setText("");
 					}
 					getWtPane().getWtLabel().setText(wt.getCurrentCityName()); //display city name
 
@@ -1560,7 +1580,7 @@ public class watchGUI extends JFrame implements Runnable{
 					keepValueToArray(wtMinute, wtMinNum);
 					keepValueToArray(wtSecond, wtSecNum);
 
-					if(((Time)modeManager.getmodes()[0]).getFormat()) keepValueToArray(wtHour, wtHourNum);
+					if(currentFormat) keepValueToArray(wtHour, wtHourNum);
 					else keepHourToArray(wtHour, wtHourNum);
 
 					//set 2nd segment Img (Year, Month, Day)
