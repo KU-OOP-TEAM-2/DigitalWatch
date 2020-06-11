@@ -140,7 +140,9 @@ public class AlarmTest {
 
         alarm.saveAlarm();
         //alarm의 시간이 저장되어 보고있던 alarm의 index에 저장이 되는지 test.
-        assertEquals(0, alarm.getCopyOfAlarmTimer().toLocalTime().compareTo(alarm.getCurrentAlarmTimerObject().requestExpirationTime()));
+        assertEquals(0, alarm.getCopyOfAlarmTimer().toLocalTime().
+                compareTo(alarm.getCurrentAlarmTimerObject().requestExpirationTime()));
+
 
     }
 
