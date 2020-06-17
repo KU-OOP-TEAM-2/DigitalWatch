@@ -21,7 +21,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="delete unused object and function">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <list id="75641970-afe3-41f4-8211-ac3bdcb41cb9" name="Revert &quot;edit Tick constructor&quot;" comment="reset branch" />
@@ -95,7 +94,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Gradle.test [test]">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -145,21 +144,24 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="AlarmTest.IsAlarmTimeCheck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="객체2.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Sys.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Sys" />
-      <option name="MAIN_CLASS_NAME" value="Sys.AlarmTest" />
-      <option name="METHOD_NAME" value="IsAlarmTimeCheck" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="test [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="test" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
     </configuration>
     <configuration name="AlarmTest.TurnOffAlarm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="객체2.test" />
@@ -232,18 +234,18 @@
       <item itemvalue="Application.Main" />
       <item itemvalue="Gradle.git_teampj" />
       <item itemvalue="JUnit.CalorieCheckTest" />
-      <item itemvalue="JUnit.AlarmTest.IsAlarmTimeCheck" />
       <item itemvalue="JUnit.AlarmTest.TurnOffAlarm" />
       <item itemvalue="JUnit.BuzzerTest.beepBuzzer" />
       <item itemvalue="JUnit.StopWatchTest.startStopwatch" />
+      <item itemvalue="Gradle.test [test]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.test [test]" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.StopWatchTest.startStopwatch" />
         <item itemvalue="JUnit.BuzzerTest.beepBuzzer" />
         <item itemvalue="JUnit.AlarmTest.TurnOffAlarm" />
-        <item itemvalue="JUnit.AlarmTest.IsAlarmTimeCheck" />
       </list>
     </recent_temporary>
   </component>

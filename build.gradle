@@ -25,7 +25,8 @@ dependencies {
 }
 
 test{
-    useJUnitPlatform();
+    useJUnitPlatform()
+    ignoreFailures=true
 }
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 
