@@ -13,10 +13,9 @@ repositories {
 
 jar {
     manifest {
-        attributes 'Title' : 'Digital Watch by #2',
-        'Main-Class': 'GUI.Main'
+        attributes 'Main-Class': 'GUI/Main'
     }
-    baseName 'Digital_Watch'
+
 }
 
 dependencies {
