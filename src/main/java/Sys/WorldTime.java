@@ -49,10 +49,10 @@ public class WorldTime implements Mode{
         int gap=currentGMT-this.worldTimes[this.CurrentCity].getGMT();
         LocalDateTime returnTime=currentTime.plusHours(-gap);
         if(returnTime.getYear()>9999) {//9999이상일경우 0부터다시 시작
-            returnTime.plusYears(-10000);
+           returnTime= returnTime.plusYears(-10000);
         }
         else if(returnTime.getYear()<0) {//음수일경우 9999부터
-            returnTime.plusYears(10000);
+             returnTime= returnTime.plusYears(10000);
         }
 
         return returnTime;
