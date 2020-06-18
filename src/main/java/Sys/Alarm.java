@@ -24,8 +24,7 @@ public class Alarm implements Mode{
             alarm[i] = new AlarmTimer();
         }
         isActivated=true;
-        //Thread
-        //alarmThread = new AlarmThread("alarmThread");
+
     }
 
     //추가 - 변수(buzzer객체와 time객체를 받아서 사용하기 위해서)

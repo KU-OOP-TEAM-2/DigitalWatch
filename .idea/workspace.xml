@@ -20,8 +20,13 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="delete unused object and function">
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Sys/Buzzer$BuzzerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Sys/Buzzer$BuzzerThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/Alarm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/Alarm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/ModeManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/StopWatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/StopWatch.java" afterDir="false" />
     </list>
     <list id="75641970-afe3-41f4-8211-ac3bdcb41cb9" name="Revert &quot;edit Tick constructor&quot;" comment="reset branch" />
     <option name="SHOW_DIALOG" value="false" />
@@ -233,11 +238,11 @@
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="Gradle.git_teampj" />
+      <item itemvalue="Gradle.test [test]" />
       <item itemvalue="JUnit.CalorieCheckTest" />
       <item itemvalue="JUnit.AlarmTest.TurnOffAlarm" />
       <item itemvalue="JUnit.BuzzerTest.beepBuzzer" />
       <item itemvalue="JUnit.StopWatchTest.startStopwatch" />
-      <item itemvalue="Gradle.test [test]" />
     </list>
     <recent_temporary>
       <list>

@@ -29,7 +29,7 @@ public class StopWatch implements Mode{
     private LocalTime currentStopWatchTime;
     private LocalTime lapTime;
     private LocalTime overflowStopWatchTime;
-    private int is100ms = 0;
+
     private Boolean isPaused;
     private Boolean isEnd;
 
