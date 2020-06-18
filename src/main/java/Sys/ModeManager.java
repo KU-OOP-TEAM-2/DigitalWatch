@@ -184,11 +184,7 @@ public class ModeManager {
                 case 1://알람 모드  일때
                     if(isEditMode){
                         //button 1234
-                        if(elapsedTime >= 5.0f) {    //elapsedTime이 5초 이상일 때 저장하고 defaultScreen으로.
-                           ((Alarm) modes[1]).saveAlarm();
-                           isEditMode = !isEditMode;
-                        }
-                        else if(Button == 0)    //Mode : Cursor 옮김
+                        if(Button == 0)    //Mode : Cursor 옮김
                             ((Alarm)modes[1]).changeCursor();
                         else if(Button == 1) {  //Adjust를 눌렀을 때 저장하고 defualtScreen으로.
                             ((Alarm) modes[1]).saveAlarm();

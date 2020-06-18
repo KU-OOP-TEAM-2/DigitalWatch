@@ -42,7 +42,11 @@ public class Buzzer {
                 i++;
                 try{
                     Thread.sleep(1000);
-                } catch(InterruptedException e){}
+                } catch(InterruptedException e){
+                    System.out.println("Sleep interrupted");
+                    e.printStackTrace();
+                    Thread.currentThread().interrupt();
+                }
 
                 if (buzzerOn == true && isBuzzerRinging == false) {
                     isBuzzerRinging = true;
@@ -67,6 +71,9 @@ public class Buzzer {
             try {
                 Thread.sleep(1000); // introduce delay
             } catch (InterruptedException e) {
+                System.out.println("Sleep interrupted");
+                e.printStackTrace();
+                Thread.currentThread().interrupt();
             }
         }
     }
