@@ -6,34 +6,22 @@
     </artifacts-to-build>
   </component>
   <component name="BranchesTreeState">
-    <expand />
-    <select />
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/GUI/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/GUI/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/Sys/CalorieCheck.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/Sys/CalorieCheck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/Sys/ModeManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/Sys/ModeManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/Sys/StopWatch.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/Sys/StopWatch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/Sys/Tick.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/Sys/Tick.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/GUI/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/GUI/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Sys/CalorieCheck.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Sys/CalorieCheck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Sys/ModeManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Sys/ModeManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Sys/StopWatch.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Sys/StopWatch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Sys/Tick.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Sys/Tick.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/DigitalWatch10SNAPSHOTjar-classes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/DigitalWatch10SNAPSHOTjar-classes.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/Digital Watch-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/GUI/watchGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/GUI/watchGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sys/Timer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sys/Timer.java" afterDir="false" />
+    <list default="true" id="335c24a7-f8d0-41be-98c8-834040b8e298" name="Default Changelist" comment="delete unused object and function">
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <list id="75641970-afe3-41f4-8211-ac3bdcb41cb9" name="Revert &quot;edit Tick constructor&quot;" comment="reset branch" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,17 +46,6 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="git_teampj" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="git_teampj" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="git_teampj" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -107,7 +84,7 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -117,7 +94,22 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.softwarevv [jar]">
+  <component name="RunManager" selected="Gradle.test [test]">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="GUI.Main" />
+      <module name="test.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="GUI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -152,7 +144,7 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="softwarevv [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="test [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -163,7 +155,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="jar" />
+            <option value="test" />
           </list>
         </option>
         <option name="vmOptions" value="" />
@@ -171,8 +163,8 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="AlarmTests.testIsActivatedAlarm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="softwarevv.test" />
+    <configuration name="AlarmTest.TurnOffAlarm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="객체2.test" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Sys.*" />
@@ -180,31 +172,15 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Sys" />
-      <option name="MAIN_CLASS_NAME" value="Sys.AlarmTests" />
-      <option name="METHOD_NAME" value="testIsActivatedAlarm" />
+      <option name="MAIN_CLASS_NAME" value="Sys.AlarmTest" />
+      <option name="METHOD_NAME" value="TurnOffAlarm" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AlarmTests.testTurnOffAlarm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="softwarevv.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Sys.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Sys" />
-      <option name="MAIN_CLASS_NAME" value="Sys.AlarmTests" />
-      <option name="METHOD_NAME" value="testTurnOffAlarm" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BuzzerTest.testTwoBuzz" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="softwarevv.test" />
+    <configuration name="BuzzerTest.beepBuzzer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="객체2.test" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Sys.*" />
@@ -213,29 +189,15 @@
       </extension>
       <option name="PACKAGE_NAME" value="Sys" />
       <option name="MAIN_CLASS_NAME" value="Sys.BuzzerTest" />
-      <option name="METHOD_NAME" value="testTwoBuzz" />
+      <option name="METHOD_NAME" value="beepBuzzer" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CalorieCheckTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="DWSystem.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Sys.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Sys" />
-      <option name="MAIN_CLASS_NAME" value="Sys.CalorieCheckTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="CalorieCheckTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
-      <module name="DWSystem" />
+      <module name="객체2.main" />
+      <shortenClasspath name="CLASSPATH_FILE" />
       <useClassPathOnly />
       <extension name="coverage">
         <pattern>
@@ -252,22 +214,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="StopWatchTest.startStopwatch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="객체2.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Sys.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Sys" />
+      <option name="MAIN_CLASS_NAME" value="Sys.StopWatchTest" />
+      <option name="METHOD_NAME" value="startStopwatch" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
+      <item itemvalue="Application.Main" />
       <item itemvalue="Gradle.git_teampj" />
-      <item itemvalue="Gradle.softwarevv [jar]" />
       <item itemvalue="JUnit.CalorieCheckTest" />
-      <item itemvalue="JUnit.AlarmTests.testTurnOffAlarm" />
-      <item itemvalue="JUnit.AlarmTests.testIsActivatedAlarm" />
-      <item itemvalue="JUnit.BuzzerTest.testTwoBuzz" />
-      <item itemvalue="JUnit.CalorieCheckTest (1)" />
+      <item itemvalue="JUnit.AlarmTest.TurnOffAlarm" />
+      <item itemvalue="JUnit.BuzzerTest.beepBuzzer" />
+      <item itemvalue="JUnit.StopWatchTest.startStopwatch" />
+      <item itemvalue="Gradle.test [test]" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.softwarevv [jar]" />
-        <item itemvalue="JUnit.CalorieCheckTest (1)" />
-        <item itemvalue="JUnit.BuzzerTest.testTwoBuzz" />
-        <item itemvalue="JUnit.AlarmTests.testIsActivatedAlarm" />
-        <item itemvalue="JUnit.AlarmTests.testTurnOffAlarm" />
+        <item itemvalue="Gradle.test [test]" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.StopWatchTest.startStopwatch" />
+        <item itemvalue="JUnit.BuzzerTest.beepBuzzer" />
+        <item itemvalue="JUnit.AlarmTest.TurnOffAlarm" />
       </list>
     </recent_temporary>
   </component>
@@ -536,7 +514,35 @@
       <option name="project" value="LOCAL" />
       <updated>1591432961411</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="delete unused object and function">
+      <created>1591520437838</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1591520437838</updated>
+    </task>
+    <task id="LOCAL-00038" summary="delete unused object and function">
+      <created>1591520451401</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1591520451401</updated>
+    </task>
+    <task id="LOCAL-00039" summary="delete unused object and function">
+      <created>1591522398004</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1591522398004</updated>
+    </task>
+    <task id="LOCAL-00040" summary="delete unused object and function">
+      <created>1591540009413</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1591540009413</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -587,18 +593,23 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="569" y="119" key="#&lt;template&gt;_of_JUnit/0.0.1920.1040@0.0.1920.1040" timestamp="1591388343245" />
-    <state x="699" y="148" key="#CalorieCheckTest" timestamp="1591426392254">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="932" y="148" key="#CalorieCheckTest" timestamp="1591525715900">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="606" y="129" key="#CalorieCheckTest.increaseCalorieCheckTimer" timestamp="1591389534517">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="606" y="129" key="#CalorieCheckTest.increaseCalorieCheckTimer/0.0.1920.1040@0.0.1920.1040" timestamp="1591389534517" />
     <state x="699" y="148" key="#CalorieCheckTest/0.0.1920.1040@0.0.1920.1040" timestamp="1591426392254" />
+    <state x="932" y="148" key="#CalorieCheckTest/0.0.2560.1040@0.0.2560.1040" timestamp="1591525715900" />
     <state x="699" y="148" key="#CalorieCheckTest_(1)" timestamp="1591426412855">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="699" y="148" key="#CalorieCheckTest_(1)/0.0.1920.1040@0.0.1920.1040" timestamp="1591426412855" />
+    <state x="437" y="28" key="#Main" timestamp="1592316182122">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="437" y="28" key="#Main/0.0.1536.824@0.0.1536.824" timestamp="1592316182122" />
     <state x="664" y="148" key="#Main_test" timestamp="1591384082237">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -620,9 +631,11 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="986" y="314" key="#Tests_in_'git_teampj'/0.0.2560.1400@0.0.2560.1400" timestamp="1591074182315" />
-    <state x="734" y="354" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591076648908">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="440" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592316148371">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="440" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1592316148371" />
+    <state x="734" y="263" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1591525726180" />
     <state x="734" y="354" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591076648908" />
     <state x="218" y="133" width="1582" height="791" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1591389493284">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -636,68 +649,81 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="1527" y="492" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1591434192882" />
-    <state x="829" y="71" key="CommitChangelistDialog2" timestamp="1591413568950">
+    <state x="549" y="279" width="437" height="272" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1592389931592">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="279" width="437" height="272" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1592389931592" />
+    <state x="829" y="71" key="CommitChangelistDialog2" timestamp="1591540008668">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="622" y="71" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1591255811922" />
-    <state x="829" y="71" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1591413568950" />
-    <state x="69" y="68" width="1782" height="904" key="DiffContextDialog" timestamp="1591392494297">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="829" y="71" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1591540008668" />
+    <state x="92" y="68" width="1782" height="904" key="DiffContextDialog" timestamp="1591539989865">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="69" y="68" width="1782" height="904" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591392494297" />
+    <state x="92" y="68" key="DiffContextDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1591539989865" />
     <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591265278185" />
-    <state x="1060" y="454" key="FileChooserDialogImpl" timestamp="1592064723367">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="636" y="267" key="FileChooserDialogImpl" timestamp="1592316142933">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="1060" y="454" key="FileChooserDialogImpl/0.0.2560.1400/2560.815.1920.1040@0.0.2560.1400" timestamp="1592064723367" />
+    <state x="636" y="267" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1592316142933" />
     <state x="1060" y="454" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1591073036048" />
     <state x="1060" y="467" key="FileChooserDialogImpl/0.0.2560.1440@0.0.2560.1440" timestamp="1591506651005" />
-    <state width="1236" height="413" key="GridCell.Tab.0.bottom" timestamp="1591436092567">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state width="746" height="261" key="GridCell.Tab.0.bottom" timestamp="1592316342388">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="746" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592316342388" />
     <state width="915" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591426739504" />
-    <state width="2477" height="248" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1591414691383" />
+    <state width="2517" height="11" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1591840322189" />
     <state width="2517" height="194" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591313051763" />
     <state width="1236" height="413" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1591436092567" />
-    <state width="1236" height="413" key="GridCell.Tab.0.center" timestamp="1591436092567">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state width="746" height="261" key="GridCell.Tab.0.center" timestamp="1592316342388">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="746" height="261" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592316342388" />
     <state width="915" height="263" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591426739504" />
-    <state width="2477" height="248" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1591414691382" />
+    <state width="2517" height="11" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1591840322189" />
     <state width="2517" height="194" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591313051762" />
     <state width="1236" height="413" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1591436092567" />
-    <state width="1236" height="413" key="GridCell.Tab.0.left" timestamp="1591436092567">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state width="746" height="261" key="GridCell.Tab.0.left" timestamp="1592316342388">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="746" height="261" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592316342388" />
     <state width="915" height="263" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591426739504" />
-    <state width="2477" height="248" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1591414691382" />
+    <state width="2517" height="11" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1591840322189" />
     <state width="2517" height="194" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591313051762" />
     <state width="1236" height="413" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1591436092567" />
-    <state width="1236" height="413" key="GridCell.Tab.0.right" timestamp="1591436092567">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state width="746" height="261" key="GridCell.Tab.0.right" timestamp="1592316342388">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="746" height="261" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592316342388" />
     <state width="915" height="263" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591426739504" />
-    <state width="2477" height="248" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1591414691382" />
+    <state width="2517" height="11" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1591840322189" />
     <state width="2517" height="194" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591313051762" />
     <state width="1236" height="413" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1591436092567" />
-    <state width="2477" height="342" key="GridCell.Tab.1.bottom" timestamp="1591409398603">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state width="746" height="261" key="GridCell.Tab.1.bottom" timestamp="1592316342388">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="746" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592316342388" />
     <state width="1021" height="324" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591390935419" />
     <state width="2477" height="342" key="GridCell.Tab.1.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1591409398602" />
-    <state width="2477" height="342" key="GridCell.Tab.1.center" timestamp="1591409398602">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state width="746" height="261" key="GridCell.Tab.1.center" timestamp="1592316342388">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="746" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1592316342388" />
     <state width="1021" height="324" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591390935419" />
     <state width="2477" height="342" key="GridCell.Tab.1.center/0.0.2560.1040@0.0.2560.1040" timestamp="1591409398602" />
-    <state width="2477" height="342" key="GridCell.Tab.1.left" timestamp="1591409398602">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state width="746" height="261" key="GridCell.Tab.1.left" timestamp="1592316342388">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="746" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1592316342388" />
     <state width="1021" height="324" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591390935419" />
     <state width="2477" height="342" key="GridCell.Tab.1.left/0.0.2560.1040@0.0.2560.1040" timestamp="1591409398602" />
-    <state width="2477" height="342" key="GridCell.Tab.1.right" timestamp="1591409398602">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state width="746" height="261" key="GridCell.Tab.1.right" timestamp="1592316342388">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="746" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1592316342388" />
     <state width="1021" height="324" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591390935419" />
     <state width="2477" height="342" key="GridCell.Tab.1.right/0.0.2560.1040@0.0.2560.1040" timestamp="1591409398602" />
     <state x="248" y="121" key="MergeDialog" timestamp="1591082012879">
@@ -708,16 +734,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="897" y="394" width="396" height="268" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591426736306" />
-    <state x="1278" y="272" width="1040" height="862" key="SettingsEditor" timestamp="1591434298179">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state x="302" y="52" width="914" height="707" key="SettingsEditor" timestamp="1592316075279">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="302" y="52" width="914" height="707" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1592316075279" />
     <state x="781" y="344" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1591263207383" />
     <state x="1278" y="272" width="1040" height="862" key="SettingsEditor/0.0.2560.1440@0.0.2560.1440" timestamp="1591434298179" />
-    <state x="654" y="321" key="Vcs.Push.Dialog.v2" timestamp="1591432964130">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="872" y="321" key="Vcs.Push.Dialog.v2" timestamp="1591540014500">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="654" y="321" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591432964130" />
-    <state x="872" y="321" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1591413573757" />
+    <state x="872" y="321" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1591540014500" />
     <state x="872" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591312408505" />
     <state x="814" y="455" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591429662550">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -733,15 +760,15 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="571" y="257" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040@0.0.1920.1040" timestamp="1591390644424" />
-    <state x="1002" y="486" key="git4idea.merge.GitPullDialog" timestamp="1591206191994">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="1002" y="361" key="git4idea.merge.GitPullDialog" timestamp="1591522403458">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="752" y="361" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591078691554" />
+    <state x="1002" y="361" key="git4idea.merge.GitPullDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1591522403458" />
     <state x="1002" y="486" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591206191994" />
-    <state x="1299" y="320" key="new project wizard" timestamp="1592064751044">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="1299" y="329" key="new project wizard" timestamp="1591436469519">
+      <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="1299" y="320" key="new project wizard/0.0.2560.1400/2560.815.1920.1040@0.0.2560.1400" timestamp="1592064751044" />
     <state x="1299" y="329" key="new project wizard/0.0.2560.1440@0.0.2560.1440" timestamp="1591436469519" />
     <state x="628" y="249" key="run.anything.popup" timestamp="1591388126125">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -752,24 +779,5 @@
     </state>
     <state x="707" y="234" width="672" height="504" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1591388394697" />
     <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1591312902535" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/Sys/BuzzerTest.java</url>
-          <line>11</line>
-          <properties class="Sys.BuzzerTest" method="beepBuzzer">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/Sys/BuzzerTest.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
