@@ -12,11 +12,11 @@ public class CalorieCheckTest {
     @Test
     public void changeCursor() {
         CalorieCheck calorieCheck = new CalorieCheck();
-        boolean cursor = calorieCheck.getCursor();
+        boolean cursor = calorieCheck.isCursor();
         calorieCheck.changeCursor();
 
         //커서를 바꿔보고 실제로 바뀌었는지 확인
-        assertEquals(!cursor, calorieCheck.getCursor());
+        assertEquals(!cursor, calorieCheck.isCursor());
     }
 
     @Test
@@ -29,7 +29,7 @@ public class CalorieCheckTest {
         int tempWeight = calorieCheck.getWeight();
         calorieCheck.setTempWeight(tempWeight);
         calorieCheck.increaseData();
-        assertTrue(calorieCheck.getCursor());
+        assertTrue(calorieCheck.isCursor());
         assertEquals(tempWeight+1, calorieCheck.getTempWeight());
 
         //tempWeight = 999이면 0으로 바꿔야 한다
@@ -44,7 +44,7 @@ public class CalorieCheckTest {
         int tempSpeed = calorieCheck.getSpeed();
         calorieCheck.setTempSpeed(tempSpeed);
         calorieCheck.increaseData();
-        assertFalse(calorieCheck.getCursor());
+        assertFalse(calorieCheck.isCursor());
         assertEquals(tempSpeed+1, calorieCheck.getTempSpeed());
 
         //tempSpeed = 99면 0으로 바꿔야 한다.
@@ -64,7 +64,7 @@ public class CalorieCheckTest {
         int tempWeight = calorieCheck.getWeight();
         calorieCheck.setTempWeight(tempWeight);
         calorieCheck.decreaseData();
-        assertTrue(calorieCheck.getCursor());
+        assertTrue(calorieCheck.isCursor());
         assertEquals(tempWeight-1, calorieCheck.getTempWeight());
 
         //tempWeight = 0이면 999으로 바꿔야 한다
@@ -79,7 +79,7 @@ public class CalorieCheckTest {
         int tempSpeed = calorieCheck.getSpeed();
         calorieCheck.setTempSpeed(tempSpeed);
         calorieCheck.decreaseData();
-        assertFalse(calorieCheck.getCursor());
+        assertFalse(calorieCheck.isCursor());
         assertEquals(tempSpeed-1, calorieCheck.getTempSpeed());
 
         //tempSpeed = 0면 99으로 바꿔야 한다.
@@ -106,7 +106,7 @@ public class CalorieCheckTest {
         assertEquals(expectedWeight, calorieCheck.getWeight());
 
         //cursor=true로 변했는지 확인
-        assertTrue(calorieCheck.getCursor());
+        assertTrue(calorieCheck.isCursor());
     }
 
     @Test
@@ -210,7 +210,7 @@ public class CalorieCheckTest {
 
         calorieCheck.resetCalorieCheck();
 
-        assertFalse(calorieCheck.getCursor());
+        assertFalse(calorieCheck.isCursor());
         assertEquals(0, calorieCheck.getCalorie());
         assertEquals(LocalTime.of(0,0,0,0)
             , calorieCheck.getCalorieTime());

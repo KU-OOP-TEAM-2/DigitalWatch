@@ -83,12 +83,12 @@ public class CalorieCheck implements Mode{
 
     private boolean startCalorieCheckFlag;
     public boolean getIsStart(){return startCalorieCheckFlag;}
-    public void setStartFlag(boolean flag){startCalorieCheckFlag = true;}
+    public void setStartFlag(boolean flag){startCalorieCheckFlag = flag;}
     private boolean isActivated;
 
     //    false = speed, true = weight
     private boolean cursor;
-    public boolean getCursor(){return cursor;}
+
     public void setCursor(boolean cursor){this.cursor=cursor;}
 
 

@@ -32,8 +32,6 @@ public class ModeManager {
         currentMode=0;
         isEditMode = false;
         buzzerFlag=false;
-
-
     }
 
 
@@ -45,8 +43,6 @@ public class ModeManager {
     private Mode[] modes;
     private int currentMode;//0~5 Time Alarm Timer Stopwatch Calorie Check 순으로    *8일경우 setMode
 
-    //private Button clickedButton;
-    //private Boolean longClickedFlag;
     private Boolean buzzerFlag;
     private float elapsedTime;
     private int ActiveModeCounter;//setMode때 4개의 mode가 활성화되어야만 탈출가능 그때 참조할 변수 active된 mode의 개수
@@ -61,14 +57,6 @@ public class ModeManager {
     //객체 생성 ms
     private Buzzer buzzer;
 
-    //private CalorieCheck calorieCheck;
-
-    //ms
-//   clicked 매개에 넣음
-//    public void setButton(int Button){this.Button = Button;}
-//    public int getButton() {return this.Button;}
-//
-//    public void setLongClickedFlag(boolean flag){longClickedFlag = flag;}
 
 
     public void makeThread(){
@@ -266,7 +254,7 @@ public class ModeManager {
                             }
                         }else if(Button ==3){
 
-                        }else{}
+                        }
                     }
                     break;
                 case 3: //StopWatch
