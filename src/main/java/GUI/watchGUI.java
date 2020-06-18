@@ -288,6 +288,8 @@ public class watchGUI extends JFrame implements Runnable{
 
 		nameLabel.setBounds(12, 10, 94, 15);
 
+//		watchBodyPane.setLocation(45, 30);
+
 		adjustB.setSize(BUTTON_WIDTH, BUTTON_HEIGHT);
 		adjustB.setLocation(watchBodyPane.getLocation().x - BUTTON_WIDTH, watchBodyPane.getLocation().y + 55);
 		adjustB.setBackground(Color.BLACK);
@@ -303,7 +305,7 @@ public class watchGUI extends JFrame implements Runnable{
 		reverseB.setSize(BUTTON_WIDTH, BUTTON_HEIGHT);
 		reverseB.setLocation((watchBodyPane.getLocation().x + watchBodyPane.getWidth()), watchBodyPane.getLocation().y + 135);
 		reverseB.setBackground(Color.BLACK);
-
+		
 
 		this.add(framePane);
 
@@ -1015,7 +1017,6 @@ public class watchGUI extends JFrame implements Runnable{
 						}
 						switch(timeCursor){
 							case 0:
-							case 6:
 								getTimeKeepingPane().getCursorLabel()[5].setVisible(true);
 								for(int i=0; i<4; i++) getTimeKeepingPane().getCursorLabel()[i].setVisible(false);
 								break;
@@ -1026,7 +1027,6 @@ public class watchGUI extends JFrame implements Runnable{
 								}
 								break;
 							case 2:
-							case 7:
 								getTimeKeepingPane().getCursorLabel()[3].setVisible(true);
 								for(int i=0; i<6; i++){
 									if(i != 3) getTimeKeepingPane().getCursorLabel()[i].setVisible(false);
@@ -1047,6 +1047,16 @@ public class watchGUI extends JFrame implements Runnable{
 							case 5:
 								getTimeKeepingPane().getCursorLabel()[0].setVisible(true);
 								for(int i=1; i<6; i++)getTimeKeepingPane().getCursorLabel()[i].setVisible(false);
+								break;
+							case 6:
+								getTimeKeepingPane().getCursorLabel()[5].setVisible(true);
+								for(int i=0; i<4; i++) getTimeKeepingPane().getCursorLabel()[i].setVisible(false);
+								break;
+							case 7:
+								getTimeKeepingPane().getCursorLabel()[3].setVisible(true);
+								for(int i=0; i<6; i++){
+									if(i != 3) getTimeKeepingPane().getCursorLabel()[i].setVisible(false);
+								}
 								break;
 						}
 
@@ -1469,10 +1479,7 @@ public class watchGUI extends JFrame implements Runnable{
 						keepValueToArray(ccSpeed, csNum);
 
 						//set cursor image && choose visible cursor
-						for(int i=0; i<2; i++){
-							getCcPane().getCursorLabel()[i].setIcon(cursorSmallImg);
-						}
-
+						for(int i=0; i<2; i++) getCcPane().getCursorLabel()[i].setIcon(cursorSmallImg);
 							if(calorieCursor){
 								getCcPane().getCursorLabel()[0].setVisible(true);
 								getCcPane().getCursorLabel()[1].setVisible(false);
@@ -1714,7 +1721,6 @@ public class watchGUI extends JFrame implements Runnable{
 			try {
 				Thread.sleep(10);
 			} catch (InterruptedException e) {
-				Thread.currentThread().interrupt();
 				e.printStackTrace();
 			}
 		}

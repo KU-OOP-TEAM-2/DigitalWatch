@@ -28,7 +28,6 @@ public class SetMode_Pane extends JPanel{
     setLayout(null);
 
     secondSegBody = new JPanel() {
-      @Override
       public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
@@ -43,7 +42,6 @@ public class SetMode_Pane extends JPanel{
       }
     };
     firstSegBody = new JPanel() {
-      @Override
       public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
@@ -113,7 +111,6 @@ public class SetMode_Pane extends JPanel{
     this.revalidate();
   }
 
-  @Override
   public void paintComponent(Graphics g) {
     super.paintComponent(g);
 
