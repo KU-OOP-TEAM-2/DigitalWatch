@@ -135,16 +135,14 @@ public class Timer implements  Mode{
         //
         timerTime = timerTime.minusNanos(10000000);
 
-        if(!pauseTimerFlag){
-            LocalDateTime defaulTime=LocalDateTime.of(2000,1,1,0,0,0);
-            if(defaulTime.isAfter(timerTime) || defaulTime.isEqual(timerTime)){
-                //ModeManager.beepbuzzer()
+        LocalDateTime defaulTime=LocalDateTime.of(2000,1,1,0,0,0);
+        if(defaulTime.isAfter(timerTime) || defaulTime.isEqual(timerTime)){
+            //ModeManager.beepbuzzer()
 
-                buzzer.setBuzzerOn(true);
-                pauseTimerFlag=true;
-                timerTime=LocalDateTime.of(2000,1,1,0,0,0);
-                return true;
-            }
+            buzzer.setBuzzerOn(true);
+            pauseTimerFlag=true;
+            timerTime=LocalDateTime.of(2000,1,1,0,0,0);
+            return true;
         }
         return false;
     }
