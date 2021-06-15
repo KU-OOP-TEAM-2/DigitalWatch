@@ -1,5 +1,8 @@
 # (2020) 디지털 시계:살빼시계 - OOP Team Project
 
+## 개요
+자바 스윙을 UI로 활용한 디지털 시계 구현
+
 ## 개발 참여원 (총 5명)
 
 [@ttc1018](https://github.com/ttc1018)<br/>
