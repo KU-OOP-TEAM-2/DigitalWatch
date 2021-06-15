@@ -5,11 +5,11 @@
 
 ## 개발 참여원 (총 5명)
 
-[@ttc1018](https://github.com/ttc1018)<br/>
-[@naem1023](https://github.com/naem1023)<br/>
-[@ChanwooAn](https://github.com/ChanwooAn)<br/>
-[@daumtto53](https://github.com/daumtto53)<br/>
-[@choyj0920](https://github.com/choyj0920)<br/>
+[@ttc1018](https://github.com/ttc1018) <br/>
+[@naem1023](https://github.com/naem1023) <br/>
+[@ChanwooAn](https://github.com/ChanwooAn) <br/>
+[@daumtto53](https://github.com/daumtto53) <br/>
+[@choyj0920](https://github.com/choyj0920) <br/>
 
 ## 기능
 1. 시간 확인: TimeKeeping
