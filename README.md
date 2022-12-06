@@ -5,11 +5,11 @@
 
 ## 개발 참여원 (총 5명)
 
-[@ttc1018](https://github.com/ttc1018) <br/>
-[@naem1023](https://github.com/naem1023) <br/>
-[@ChanwooAn](https://github.com/ChanwooAn) <br/>
-[@daumtto53](https://github.com/daumtto53) <br/>
-[@choyj0920](https://github.com/choyj0920) <br/>
+[@ttc1018](https://github.com/ttc1018)  
+[@naem1023](https://github.com/naem1023)  
+[@ChanwooAn](https://github.com/ChanwooAn)  
+[@daumtto53](https://github.com/daumtto53)  
+[@choyj0920](https://github.com/choyj0920)  
 
 ## 기능
 1. 시간 확인: TimeKeeping
@@ -19,7 +19,12 @@
 5. 칼로리 재기: Calorie Check
 6. 세계시간: World Time
 
-[매뉴얼.pdf](https://konkukackr-my.sharepoint.com/:b:/g/personal/pdh1018_konkuk_ac_kr/EaJPKqMQl6FNhGdJEX8e3YYBp85PIwHTUzfbnW5tKNtT4A?e=8ec9a1)
+## Documents
+
+[OOAD Stage 1000.pdf](https://github.com/KU-OOP-TEAM-2/DigitalWatch/files/10166917/OOAD.Stage.1000.pdf)  
+[OOAD Stage 2030.pdf](https://github.com/KU-OOP-TEAM-2/DigitalWatch/files/10166926/OOAD.Stage.2000.pdf)  
+[OOAD Stage 2040.pdf](https://github.com/KU-OOP-TEAM-2/DigitalWatch/files/10166930/OOAD.Stage.2040.pdf)  
+[Manual.pdf](https://konkukackr-my.sharepoint.com/:b:/g/personal/pdh1018_konkuk_ac_kr/EaJPKqMQl6FNhGdJEX8e3YYBp85PIwHTUzfbnW5tKNtT4A?e=8ec9a1)  
 
 ## Time Keeping Mode
 
